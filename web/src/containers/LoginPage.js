@@ -6,12 +6,12 @@ class LoginPage extends Component {
     render(){
         return(
             <div>
-            <form className='container'>
-                <h1>Member Login</h1>
-                <input type="text" placeholder="username" className='container--field'/>
-                <input type="text" placeholder="password" className='container--field'/>
-                <input type="submit" value="Login" className='container--button'/>
-            </form>
+                <form className='container'>
+                    <h1>Member Login</h1>
+                    <input type="text" placeholder="username" className='container--field'/>
+                    <input type="text" placeholder="password" className='container--field'/>
+                    <input type="submit" value="Login" className='container--button'/>
+                </form>
                 <label>Remember Me</label>
                 <input type="checkbox" />
                 <p className="container--option">Forgot Password?</p>
