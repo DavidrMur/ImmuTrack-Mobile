@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 300px;
+    left: 50vw;
+}
+
+.container--field {
+    margin: 10px;
+    flex: 1
+}
+
+.container--option {
+    margin: 20px;
+    flex: 2;
+    width: 200px;
+    display: inline-flex;
+}
