@@ -1,39 +1,22 @@
 import React, { Component } from 'react';
-//import './LoginPage.css';
+import SignupPagePatient from '../../components/SignupPage/SignupPagePatient';
 
-class LoginPage extends Component {
+class SignupPage extends Component {
+
+    constructor (props) {
+        super(props);
+    }
+
 
     render(){
-        return(
+        return (
             <div>
-                <form className='container'>
-                    <h1>Member Signup</h1>
-                    <input type="text" placeholder="username" className='container--field'/>
-                    <input type="text" placeholder="password" className='container--field'/>
-                    <input type="submit" value="Login" className='container--button'/>
-                </form>
-                <label>Remember Me</label>
-                <input type="checkbox" />
-                <p className="container--option">Forgot Password?</p>
-                <p>Not a member?</p>
-                <button>Create account</button>
+                <SignupPagePatient />
             </div>
-
-        );
+            )
     }
 }
 
 
-const mapStateToProps = state => {
-    return {
-        
-    };
-};
-
-const mapDispathToProps = dispatch => {
-    return {
-    };
-};
-
 //export default connect(mapStateToProps,mapDispathToProps)(SummonerProfile);
-export default LoginPage
+export default SignupPage
