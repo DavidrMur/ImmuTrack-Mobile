@@ -37,9 +37,9 @@ class SignupPagePatient extends Component {
         return (
             <div>
                 {signupView}
-                {/* TODO: Make into a component */}
-                <button onClick={() => this.setState({pageCount: this.state.pageCount - 1})}>Back</button>
-                <button onClick={() => this.setState({pageCount: this.state.pageCount + 1})}>Front</button> 
+                {/* TODO: Make into a component (do we really need to?)*/}
+                <button onClick={() => this.setState({pageCount: this.state.pageCount - 1})} disabled ={this.state.pageCount === 1} >Back</button>
+                <button onClick={() => this.setState({pageCount: this.state.pageCount + 1})}>Next</button> 
             </div>
         )
     }

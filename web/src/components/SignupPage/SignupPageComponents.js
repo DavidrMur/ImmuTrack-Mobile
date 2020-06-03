@@ -1,15 +1,15 @@
 import React from 'react';
 
 const SignupOHIP = (props) => {
-    return (<div>
-        OHIPOHIPOHIPOHIPOHIPOHIPOHIPOHIPOHIPOHIPOHIPOHIPOHIPOHIP
-    </div>)
+    return (
+        <input type="text" placeholder="OHIP Number" />
+    )
 };
 
 const SignupSCN = (props) => {
-    return (<div>
-        SCN
-    </div>)
+    return (
+        <input type="text" placeholder="SCN - Back of Healthcard" />
+    )
 };
 
 const SignupOwner = (props) => {
