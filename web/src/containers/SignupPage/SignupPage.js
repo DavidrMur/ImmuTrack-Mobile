@@ -12,7 +12,8 @@ class SignupPage extends Component {
     render(){
         let signupView;
         if (this.state.type === 'patient') signupView = (<SignupPagePatient />);
-        if (this.state.type === 'healthcare') signupView = (<SignupPageHealthcare />);
+        else if (this.state.type === 'healthcare') signupView = (<SignupPageHealthcare />);
+        else signupView = (<></>);
         return (
             <div>
                 {/* TODO: Make sure the fields do not mix if someone wants to switch to a different signup flow */}

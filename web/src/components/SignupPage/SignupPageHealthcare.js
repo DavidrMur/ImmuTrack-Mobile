@@ -3,12 +3,6 @@ import {  SignupName, SignupLicense, SignupProfession, SignupPrimaryWork, Signup
 
 class SignupPageHealthcare extends Component {
 
-    state = {
-        pageCount: 1,
-        maxPageCount: 8 // This is general info, maybe a constant?
-    }
-
-
     render() {
 
         return (
