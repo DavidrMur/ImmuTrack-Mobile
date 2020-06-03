@@ -49,11 +49,86 @@ const SignupGender = (props) => {
     )
 }
 
+const SignupReview = (props) => {
+    return (
+        <div>
+            Review information
+        </div>
+    )
+}
+
+const SignupCredentials = (props) => {
+    return (
+        <div>
+            <input type="text" placeholder="username" />
+            <input type="email" placeholder="email" />
+            <input type="password" placeholder="password" />
+        </div>    
+    )
+}
+
+const SignupGeneral = (props) => {
+    return (
+        <div>
+            <p>General Information</p>
+            <input type="text" placeholder="Postal Code" />
+            {/* DROPDOWN - Race / Depends on UI*/}
+            {/* DROPDOWN - Level of Education / Depends on UI*/}
+        </div>
+    )
+}
+
+const SignupProfession = (props) => {
+    return (
+        <input type="text" placeholder="DROPDOWN - profession" />
+    )
+}
+
+const SignupLicense = (props) => {
+    return (
+        <input type="text" placeholder="License Number" />
+    )
+}
+
+const SignupWorkLocation = (props) => {
+    return (
+        <div>
+            <h1>{`${props.workType} Work Location`}</h1>
+            <input type="text" placeholder="Organization Name" />
+            <input type="text" placeholder="Address" />
+            <input type="text" placeholder="City" />
+            <input type="text" placeholder="Postal Code" />
+            <input type="text" placeholder="Clinic Phone Number" />
+            {/* TODO: need checkboxes - depends on ui */}
+            <input type="text" placeholder="EMR Integration - NEEDS something else too?" />
+        </div>
+    )
+}
+
+const SignupPrimaryWork = (props) => {
+    return (
+        <SignupWorkLocation workType="Primary"/>
+    )
+}
+
+const SignupOtherWork = (props) => {
+    return (
+        <SignupWorkLocation workType="(Optional) Other"/>
+    )
+}
+
 export {
     SignupOHIP,
     SignupSCN,
     SignupOwner,
     SignupName,
     SignupDOB,
-    SignupGender
+    SignupGender,
+    SignupReview,
+    SignupCredentials,
+    SignupGeneral,
+    SignupProfession,
+    SignupLicense,
+    SignupPrimaryWork,
+    SignupOtherWork
 };
