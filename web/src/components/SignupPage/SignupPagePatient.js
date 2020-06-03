@@ -5,7 +5,7 @@ class SignupPagePatient extends Component {
 
     state = {
         pageCount: 1,
-        maxPageCount: 8 // This is general info, maybe a constant?
+        maxPageCount: 8 // TODO: This is general info, maybe a constant?
     }
 
 
@@ -35,8 +35,8 @@ class SignupPagePatient extends Component {
                 signupView = <SignupReview />  
                 break;    
             case 8:
-            signupView = <div><SignupCredentials /><SignupGeneral /></div>
-            break;       
+                signupView = <div><SignupCredentials /><SignupGeneral /></div>
+                break;       
             default:
                 break;
         }
