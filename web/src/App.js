@@ -1,10 +1,16 @@
 import React from 'react';
-import LoginPage from './containers/LoginPage'
+import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
+import LoginPage from './containers/LoginPage';
+import SignupPage from './containers/SignupPage/SignupPage';
 
 function App() {
   return (
     <div className="App">
-      <LoginPage />
+      <Switch>
+        <Route path='/login' component={LoginPage}/>
+        <Route path='/signup' component={SignupPage}/>
+        <Redirect to='/login'/>
+      </Switch>
     </div>
   );
 }
