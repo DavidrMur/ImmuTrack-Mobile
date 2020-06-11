@@ -3,13 +3,23 @@ import './LoginPage.css';
 
 class LoginPage extends Component {
 
+    state = {
+        username: '',
+        password: '',
+    }
+    
+    setValue = (e, key) => {
+        debugger;
+        this.setState({[key]: e.target.value})
+    }
+
     render(){
         return(
             <div>
                 <form className='container'>
                     <h1>Member Login</h1>
-                    <input type="text" placeholder="username" className='container--field'/>
-                    <input type="text" placeholder="password" className='container--field'/>
+                    <input type="text" placeholder="username" className='container--field' onChange={(event) => this.setValue(event, 'username')}/>
+                    <input type="password" placeholder="password" className='container--field' onChange={(event) => this.setValue(event, 'password')}/>
                     <input type="submit" value="Login" className='container--button'/>
                 </form>
                 <label>Remember Me</label>
