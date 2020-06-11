@@ -6,6 +6,6 @@ export function* authPending(action){
     try {
         console.log ('Saga response');
     } catch (error) {
-        yield put (actions.setError());
+        console.log('Saga Error')
     }
 }
