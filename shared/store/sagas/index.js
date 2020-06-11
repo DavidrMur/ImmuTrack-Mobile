@@ -1,12 +1,7 @@
-  
-import { put } from 'redux-saga/effects';
-import * as actions from '../actions';
+import {takeEvery} from 'redux-saga/effects';
+import * as actionTypes from '../actions/actionTypes';
+import { authPending } from './auth';
 
-
-export function* getSummonerId(action){
-    try {
-        console.log ('Saga response');
-    } catch (error) {
-        yield put (actions.setError());
-    }
+export function* watchAuthentication(){
+    yield takeEvery(actionTypes.AUTH_PENDING, authPending);
 }
