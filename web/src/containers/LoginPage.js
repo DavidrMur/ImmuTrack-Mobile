@@ -20,7 +20,7 @@ class LoginPage extends Component {
                     <h1>Member Login</h1>
                     <input type="text" placeholder="username" className='container--field' onChange={(event) => this.setValue(event, 'username')}/>
                     <input type="password" placeholder="password" className='container--field' onChange={(event) => this.setValue(event, 'password')}/>
-                    <input type="submit" value="Login" className='container--button'/>
+                    <input type="submit" value="Login" className='container--button' />
                 </form>
                 <label>Remember Me</label>
                 <input type="checkbox" />
