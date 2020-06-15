@@ -1,9 +1,23 @@
 import * as actionTypes from './actionTypes';
 
-export const authPending = (username, password) => {
+export const loginPending = (username, password) => {
     return {
-        type: actionTypes.AUTH_PENDING,
+        type: actionTypes.LOGIN_PENDING,
         username: username,
         password: password
+    };
+};
+
+export const loginSuccess = (payload) => {
+    return {
+        type: actionTypes.LOGIN_SUCCESS,
+        payload: payload
+    };
+};
+
+export const loginFail = (payload) => {
+    return {
+        type: actionTypes.LOGIN_PENDING,
+        payload: payload
     };
 };

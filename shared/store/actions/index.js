@@ -1,3 +1,5 @@
 export {
-    authPending
+    loginPending,
+    loginSuccess,
+    loginFail
 } from './auth';
