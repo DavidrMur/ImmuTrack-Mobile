@@ -17,7 +17,7 @@ class LoginPage extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        this.props.authPending(this.state.username, this.state.password);
+        this.props.loginPending(this.state.username, this.state.password);
     }
 
     render(){
@@ -49,7 +49,7 @@ const mapStateToProps = state => {
 
 const mapDispathToProps = dispatch => {
     return {
-        authPending: (username, password) => dispatch(actions.authPending(username, password)) 
+        loginPending: (username, password) => dispatch(actions.loginPending(username, password)) 
     };
 };
 
