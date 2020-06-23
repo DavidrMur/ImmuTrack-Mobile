@@ -80,13 +80,13 @@ const SignupGeneral = (props) => {
 
 const SignupProfession = (props) => {
     return (
-        <input type="text" placeholder="DROPDOWN - profession" />
+        <input type="text" placeholder="DROPDOWN - profession" onChange={(event) => props.fieldFunction(event.target.value)} />
     )
 }
 
 const SignupLicense = (props) => {
     return (
-        <input type="text" placeholder="License Number" />
+        <input type="text" placeholder="License Number" onChange={(event) => props.fieldFunction(event.target.value)}/>
     )
 }
 
@@ -107,7 +107,7 @@ const SignupWorkLocation = (props) => {
 
 const SignupPrimaryWork = (props) => {
     return (
-        <SignupWorkLocation workType="Primary"/>
+        <SignupWorkLocation workType="Primary" onChange={(event) => props.fieldFunction(event.target.value)}/>
     )
 }
 
