@@ -10,23 +10,23 @@ class SignupPage extends Component {
         type: 'none'
     }
 
-    healthcareSignupFunctions = {
-        signupSetProfession: this.props.signupSetProfession,
-        signupSetLicense: this.props.signupSetLicense,
-        signupSetName: this.props.signupSetName,
-        signupSetPrimaryWork: this.props.signupSetPrimaryWork,
-        signupSetOtherWork: this.props.signupSetOtherWork,
-        signupSetCredentials: this.props.signupSetCredentials,
-    }
-
     patientSignupFunctions = {
+        signupSetName: this.props.signupSetName,
+        signupSetCredentials: this.props.signupSetCredentials,
         signupSetOHIP: this.props.signupSetOHIP,
         signupSetSCN: this.props.signupSetSCN,
         signupSetOwner: this.props.signupSetOwner,
-        signupSetName: this.props.signupSetName,
         signupSetDOB: this.props.signupSetDOB,
         signupSetGender: this.props.signupSetGender,
-        signupSetCredentials: this.props.signupSetCredentials
+    }
+    
+    healthcareSignupFunctions = {
+        signupSetName: this.props.signupSetName,
+        signupSetCredentials: this.props.signupSetCredentials,
+        signupSetProfession: this.props.signupSetProfession,
+        signupSetLicense: this.props.signupSetLicense,
+        signupSetPrimaryWork: this.props.signupSetPrimaryWork,
+        signupSetOtherWork: this.props.signupSetOtherWork,
     }
 
 
@@ -53,20 +53,24 @@ const mapDispathToProps = dispatch => {
 
         signupPending: () => dispatch(actions.signupPending()),
 
-        signupSetProfession: (payload) => dispatch(actions.signupSetProfession(payload)),
-        signupSetLicense: (payload) => dispatch(actions.signupSetLicense(payload)),
-        signupSetName: () => dispatch(actions.signupSetName()),
-        signupSetPrimaryWork: (payload) => dispatch(actions.signupSetPrimaryWork(payload)),
-        signupSetOtherWork: () => dispatch(actions.signupSetOtherWork()),
+        // General functions
+        signupSetName: (payload) => dispatch(actions.signupSetName(payload)),
         signupSetCredentials: () => dispatch(actions.signupSetCredentials()),
 
+        // Patient functions
         signupSetOHIP: (payload) => dispatch(actions.signupSetOHIP(payload)),
         signupSetSCN: (payload) => dispatch(actions.signupSetSCN(payload)),
         signupSetOwner: (payload) => dispatch(actions.signupSetOwner(payload)),
-        signupSetName: (payload) => dispatch(actions.signupSetName(payload)),
         signupSetDOB: (payload) => dispatch(actions.signupSetDOB(payload)),
         signupSetGender: (payload) => dispatch(actions.signupSetGender(payload)),
         signupSetOHIP: (payload) => dispatch(actions.signupSetOHIP(payload)),
+
+        // Healthcare functions
+        signupSetProfession: (payload) => dispatch(actions.signupSetProfession(payload)),
+        signupSetLicense: (payload) => dispatch(actions.signupSetLicense(payload)),
+        signupSetPrimaryWork: (payload) => dispatch(actions.signupSetPrimaryWork(payload)),
+        signupSetOtherWork: () => dispatch(actions.signupSetOtherWork()),
+
     };
 };
 

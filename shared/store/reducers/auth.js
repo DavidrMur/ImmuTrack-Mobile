@@ -1,14 +1,17 @@
 import * as actionTypes from '../actions/actionTypes';
-import { updateObject } from 'helper-functions/utility';
-import { signupSuccess, signupFail } from '../actions/auth';
 
 const initialState = {
     type: null, // healthcare or patient
+    generalInfo: {
+        signupFirstName: '',
+        signupLastName: '',
+        signupUsername: '',
+        signupPassword: '',
+    },
     patientInfo: {
         signupOHIP: '',
         signupSCN: '',
         signupOwner: '',
-        signupName: '',
         signupDOB: '',
         signupGender: '',
     },
@@ -24,6 +27,24 @@ const loginSuccess = (state, action) => {
 }
 
 const loginFail = (state, action) => {
+    return state;
+}
+
+const signupSuccess = (state, action) => {
+    return state;
+}
+
+const signupFail = (state, action) => {
+    return state;
+}
+
+const signupSetName = (state, action) => {
+    console.log('setting name');
+    return state;
+}
+
+const signupSetCredentials = (state, action) => {
+    console.log('setting credentials');
     return state;
 }
 
@@ -83,7 +104,7 @@ const signupSetGender = (state, action) => {
 }
 
 
-const setSignupProfession = (state, action) => {
+const signupSetProfession = (state, action) => {
     console.log('setting profession');
     return {
         ...state,
@@ -94,7 +115,7 @@ const setSignupProfession = (state, action) => {
     }
 }
 
-const setSignupLicense = (state, action) => {
+const signupSetLicense = (state, action) => {
     console.log('setting license');
     return {
         ...state,
@@ -105,23 +126,13 @@ const setSignupLicense = (state, action) => {
     }
 }
 
-const setSignupName = (state, action) => {
-    console.log('setting name');
-    return state;
-}
-
-const setSignupPrimaryWork = (state, action) => {
+const signupSetPrimaryWork = (state, action) => {
     console.log('setting primary work');
     return state;
 }
 
-const setSignupOtherWork = (state, action) => {
+const signupSetOtherWork = (state, action) => {
     console.log('setting other worm');
-    return state;
-}
-
-const setSignupCredentials = (state, action) => {
-    console.log('setting credentials');
     return state;
 }
 
@@ -143,6 +154,18 @@ const reducer = (state = initialState, action) => {
             return signupFail(state,action);
 
         // Synchronous
+
+        // General
+
+        case actionTypes.SIGNUP_SET_NAME:
+            console.log('name case');
+            return signupSetName(state,action);
+        case actionTypes.SIGNUP_SET_CREDENTIALS:
+            console.log('credentials case');
+            return signupSetCredentials(state,action);      
+
+        // Patient
+
         case actionTypes.SIGNUP_SET_OHIP:
             console.log('ohip case');
             return signupSetOHIP(state,action);
@@ -157,25 +180,22 @@ const reducer = (state = initialState, action) => {
             return signupSetDOB(state,action);
         case actionTypes.SIGNUP_SET_GENDER:
             console.log('Gender case');
-            return signupSetGender(state,action);                        
+            return signupSetGender(state,action); 
+            
+        // Healthcare
+
         case actionTypes.SIGNUP_SET_PROFESSION:
             console.log('profession case');
-            return setSignupProfession(state,action); 
+            return signupSetProfession(state,action); 
         case actionTypes.SIGNUP_SET_LICENSE:
             console.log('license case');
-            return setSignupLicense(state,action); 
-        case actionTypes.SIGNUP_SET_NAME:
-            console.log('name case');
-            return setSignupName(state,action); 
+            return signupSetLicense(state,action);  
         case actionTypes.SIGNUP_SET_PRIMARY_WORK:
             console.log('primary work case');
-            return setSignupPrimaryWork(state,action);
+            return signupSetPrimaryWork(state,action);
         case actionTypes.SIGNUP_SET_OTHER_WORK:
             console.log('other work case');
-            return setSignupOtherWork(state,action);  
-        case actionTypes.SIGNUP_SET_CREDENTIALS:
-            console.log('credentials case');
-            return setSignupCredentials(state,action);              
+            return signupSetOtherWork(state,action);              
         default:
             return state;        
 

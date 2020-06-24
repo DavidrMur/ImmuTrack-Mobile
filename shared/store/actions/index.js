@@ -6,15 +6,16 @@ export {
     signupSuccess,
     signupFail,
 
+    signupSetName,
+    signupSetCredentials,
+    
     signupSetOHIP,
     signupSetSCN,
     signupSetOwner,
     signupSetDOB,
     signupSetGender,
-    signupSetCredentials,
     signupSetProfession,
     signupSetLicense,
-    signupSetName,
     signupSetPrimaryWork,
     signupSetOtherWork,
 } from './auth';

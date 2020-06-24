@@ -48,39 +48,9 @@ export const signupFail = (payload) => {
 
 // Synchronous actions
 
-
-export const signupSetProfession = (payload) => {
-    console.log('signupprof');
-    return {
-        type: actionTypes.SIGNUP_SET_PROFESSION,
-        payload
-    };
-};
-
-export const signupSetLicense = (payload) => {
-    return {
-        type: actionTypes.SIGNUP_SET_LICENSE,
-        payload
-    };
-};
-
 export const signupSetName = (payload) => {
     return {
         type: actionTypes.SIGNUP_SET_NAME,
-        payload
-    };
-};
-
-export const signupSetPrimaryWork = (payload) => {
-    return {
-        type: actionTypes.SIGNUP_SET_PRIMARY_WORK,
-        payload
-    };
-};
-
-export const signupSetOtherWork = (payload) => {
-    return {
-        type: actionTypes.SIGNUP_SET_OTHER_WORK,
         payload
     };
 };
@@ -138,6 +108,36 @@ export const signupSetReview = (payload) => {
 export const signupSetGeneral = (payload) => {
     return {
         type: actionTypes.SIGNUP_SET_GENERAL,
+        payload
+    };
+};
+
+
+export const signupSetProfession = (payload) => {
+    console.log('signupprof');
+    return {
+        type: actionTypes.SIGNUP_SET_PROFESSION,
+        payload
+    };
+};
+
+export const signupSetLicense = (payload) => {
+    return {
+        type: actionTypes.SIGNUP_SET_LICENSE,
+        payload
+    };
+};
+
+export const signupSetPrimaryWork = (payload) => {
+    return {
+        type: actionTypes.SIGNUP_SET_PRIMARY_WORK,
+        payload
+    };
+};
+
+export const signupSetOtherWork = (payload) => {
+    return {
+        type: actionTypes.SIGNUP_SET_OTHER_WORK,
         payload
     };
 };
