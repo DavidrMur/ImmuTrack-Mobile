@@ -14,28 +14,28 @@ class SignupPagePatient extends Component {
         let signupView;
         switch (this.state.pageCount) {
             case 1:
-                signupView = <SignupOHIP />
+                signupView = <SignupOHIP fieldFunction={this.props.patientSignupFunctions.signupSetOHIP}/>
                 break;
             case 2:
-                signupView = <SignupSCN />  
+                signupView = <SignupSCN fieldFunction={this.props.patientSignupFunctions.signupSetSCN}/>  
                 break;
             case 3:
-                signupView = <SignupOwner />  
+                signupView = <SignupOwner fieldFunction={this.props.patientSignupFunctions.signupSetOwner}/>  
                 break; 
             case 4:
-                signupView = <SignupName />
+                signupView = <SignupName fieldFunction={this.props.patientSignupFunctions.signupSetName}/>
                 break;
             case 5:
-                signupView = <SignupDOB />  
+                signupView = <SignupDOB fieldFunction={this.props.patientSignupFunctions.signupSetDOB}/>  
                 break;
             case 6:
-                signupView = <SignupGender />  
+                signupView = <SignupGender fieldFunction={this.props.patientSignupFunctions.signupSetGender}/>  
                 break; 
             case 7:
                 signupView = <SignupReview />  
                 break;    
             case 8:
-                signupView = <div><SignupCredentials /><SignupGeneral /></div>
+                signupView = <div><SignupCredentials fieldFunction={this.props.patientSignupFunctions.signupSetCredentials} /><SignupGeneral /></div>
                 break;       
             default:
                 break;

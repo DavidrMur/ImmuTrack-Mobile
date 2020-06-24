@@ -2,13 +2,13 @@ import React from 'react';
 
 const SignupOHIP = (props) => {
     return (
-        <input type="text" placeholder="OHIP Number" />
+        <input type="text" placeholder="OHIP Number" onChange={(event) => props.fieldFunction(event.target.value)}/>
     )
 };
 
 const SignupSCN = (props) => {
     return (
-        <input type="text" placeholder="SCN - Back of Healthcard" />
+        <input type="text" placeholder="SCN - Back of Healthcard" onChange={(event) => props.fieldFunction(event.target.value)} />
     )
 };
 
@@ -34,7 +34,7 @@ const SignupName = (props) => {
 const SignupDOB = (props) => {
     return (
         <div>
-            <input type="text" placeholder="date" />
+            <input type="text" placeholder="date" onChange={(event) => props.fieldFunction(event.target.value)} />
             {/* TODO: change this, depends on the UI module we use */}
         </div>
     )
@@ -44,7 +44,7 @@ const SignupGender = (props) => {
     return (
         <div>
             {/* TODO: change this, depends on the UI module we use */}
-            <input type="text" placeholder="If other, please specify" />
+            <input type="text" placeholder="If other, please specify"  onChange={(event) => props.fieldFunction(event.target.value)} />
         </div>
     )
 }

@@ -1,5 +1,20 @@
 export {
     loginPending,
     loginSuccess,
-    loginFail
+    loginFail,
+    signupPending,
+    signupSuccess,
+    signupFail,
+
+    signupSetOHIP,
+    signupSetSCN,
+    signupSetOwner,
+    signupSetDOB,
+    signupSetGender,
+    signupSetCredentials,
+    signupSetProfession,
+    signupSetLicense,
+    signupSetName,
+    signupSetPrimaryWork,
+    signupSetOtherWork,
 } from './auth';

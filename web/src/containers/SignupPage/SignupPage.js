@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import SignupPagePatient from '../../components/SignupPage/SignupPagePatient';
 import SignupPageHealthcare from '../../components/SignupPage/SignupPageHealthcare';
-import { setSignupAttributes } from 'helper-functions/Authentication';
 import * as actions from 'redux-saga-store/actions/index';
 
 class SignupPage extends Component {
@@ -20,10 +19,20 @@ class SignupPage extends Component {
         signupSetCredentials: this.props.signupSetCredentials,
     }
 
+    patientSignupFunctions = {
+        signupSetOHIP: this.props.signupSetOHIP,
+        signupSetSCN: this.props.signupSetSCN,
+        signupSetOwner: this.props.signupSetOwner,
+        signupSetName: this.props.signupSetName,
+        signupSetDOB: this.props.signupSetDOB,
+        signupSetGender: this.props.signupSetGender,
+        signupSetCredentials: this.props.signupSetCredentials
+    }
+
 
     render(){
         let signupView;
-        if (this.state.type === 'patient') signupView = (<SignupPagePatient />);
+        if (this.state.type === 'patient') signupView = (<SignupPagePatient patientSignupFunctions={this.patientSignupFunctions}/>);
         else if (this.state.type === 'healthcare') signupView = (<SignupPageHealthcare healthcareSignupFunctions={this.healthcareSignupFunctions} />);
         else signupView = (<></>);
         return (
@@ -49,7 +58,15 @@ const mapDispathToProps = dispatch => {
         signupSetName: () => dispatch(actions.signupSetName()),
         signupSetPrimaryWork: (payload) => dispatch(actions.signupSetPrimaryWork(payload)),
         signupSetOtherWork: () => dispatch(actions.signupSetOtherWork()),
-        signupSetCredentials: () => dispatch(actions.signupSetCredentials())
+        signupSetCredentials: () => dispatch(actions.signupSetCredentials()),
+
+        signupSetOHIP: (payload) => dispatch(actions.signupSetOHIP(payload)),
+        signupSetSCN: (payload) => dispatch(actions.signupSetSCN(payload)),
+        signupSetOwner: (payload) => dispatch(actions.signupSetOwner(payload)),
+        signupSetName: (payload) => dispatch(actions.signupSetName(payload)),
+        signupSetDOB: (payload) => dispatch(actions.signupSetDOB(payload)),
+        signupSetGender: (payload) => dispatch(actions.signupSetGender(payload)),
+        signupSetOHIP: (payload) => dispatch(actions.signupSetOHIP(payload)),
     };
 };
 
