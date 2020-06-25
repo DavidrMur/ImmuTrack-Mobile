@@ -128,16 +128,37 @@ export const signupSetLicense = (payload) => {
     };
 };
 
-export const signupSetPrimaryWork = (payload) => {
+export const signupSetWorkName = (payload) => {
     return {
-        type: actionTypes.SIGNUP_SET_PRIMARY_WORK,
+        type: actionTypes.SIGNUP_SET_WORK_NAME,
         payload
     };
 };
 
-export const signupSetOtherWork = (payload) => {
+export const signupSetWorkAddress = (payload) => {
     return {
-        type: actionTypes.SIGNUP_SET_OTHER_WORK,
+        type: actionTypes.SIGNUP_SET_WORK_ADDRESS,
+        payload
+    };
+};
+
+export const signupSetWorkCity = (payload) => {
+    return {
+        type: actionTypes.SIGNUP_SET_WORK_CITY,
+        payload
+    };
+};
+
+export const signupSetWorkPostal = (payload) => {
+    return {
+        type: actionTypes.SIGNUP_SET_WORK_POSTAL,
+        payload
+    };
+};
+
+export const signupSetWorkPhoneNumber = (payload) => {
+    return {
+        type: actionTypes.SIGNUP_SET_WORK_PHONE_NUMBER,
         payload
     };
 };

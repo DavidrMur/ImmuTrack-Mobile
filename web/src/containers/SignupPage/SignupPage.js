@@ -25,8 +25,14 @@ class SignupPage extends Component {
         signupSetCredentials: this.props.signupSetCredentials,
         signupSetProfession: this.props.signupSetProfession,
         signupSetLicense: this.props.signupSetLicense,
-        signupSetPrimaryWork: this.props.signupSetPrimaryWork,
-        signupSetOtherWork: this.props.signupSetOtherWork,
+
+        signupSetWork: {
+            signupSetWorkName: this.props.signupSetWorkName,
+            signupSetWorkAddress: this.props.signupSetWorkAddress,
+            signupSetWorkCity: this.props.signupSetWorkCity,
+            signupSetWorkPostal: this.props.signupSetWorkPostal,
+            signupSetWorkPhoneNumber: this.props.signupSetWorkPhoneNumber,
+        }
     }
 
 
@@ -68,8 +74,11 @@ const mapDispathToProps = dispatch => {
         // Healthcare functions
         signupSetProfession: (payload) => dispatch(actions.signupSetProfession(payload)),
         signupSetLicense: (payload) => dispatch(actions.signupSetLicense(payload)),
-        signupSetPrimaryWork: (payload) => dispatch(actions.signupSetPrimaryWork(payload)),
-        signupSetOtherWork: () => dispatch(actions.signupSetOtherWork()),
+        signupSetWorkName: (payload) => dispatch(actions.signupSetWorkName(payload)),
+        signupSetWorkAddress: (payload) => dispatch(actions.signupSetWorkAddress(payload)),
+        signupSetWorkCity: (payload) => dispatch(actions.signupSetWorkCity(payload)),
+        signupSetWorkPostal: (payload) => dispatch(actions.signupSetWorkPostal(payload)),
+        signupSetWorkPhoneNumber: (payload) => dispatch(actions.signupSetWorkPhoneNumber(payload)),
 
     };
 };

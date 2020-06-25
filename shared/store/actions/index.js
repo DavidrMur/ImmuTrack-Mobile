@@ -16,6 +16,9 @@ export {
     signupSetGender,
     signupSetProfession,
     signupSetLicense,
-    signupSetPrimaryWork,
-    signupSetOtherWork,
+    signupSetWorkName,
+    signupSetWorkAddress,
+    signupSetWorkCity,
+    signupSetWorkPostal,
+    signupSetWorkPhoneNumber,
 } from './auth';

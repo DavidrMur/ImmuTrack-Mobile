@@ -9,8 +9,7 @@ class SignupPageHealthcare extends Component {
                <SignupProfession fieldFunction = {this.props.healthcareSignupFunctions.signupSetProfession} />
                <SignupLicense fieldFunction = {this.props.healthcareSignupFunctions.signupSetLicense}/>
                <SignupName fieldFunction = {this.props.healthcareSignupFunctions.signupSetName}/>
-               <SignupPrimaryWork fieldFunction = {this.props.healthcareSignupFunctions.signupSetPrimaryWork}/>
-               <SignupOtherWork fieldFunction = {this.props.healthcareSignupFunctions.signupSetOtherWork}/>
+               <SignupPrimaryWork nestedFieldFunction = {this.props.healthcareSignupFunctions.signupSetWork}/>
                <SignupCredentials fieldFunction = {this.props.healthcareSignupFunctions.signupSetCredentials}/>
             </div>
         )

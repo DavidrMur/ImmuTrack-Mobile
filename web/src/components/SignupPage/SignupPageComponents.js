@@ -94,11 +94,11 @@ const SignupWorkLocation = (props) => {
     return (
         <div>
             <h1>{`${props.workType} Work Location`}</h1>
-            <input type="text" placeholder="Organization Name" />
-            <input type="text" placeholder="Address" />
-            <input type="text" placeholder="City" />
-            <input type="text" placeholder="Postal Code" />
-            <input type="text" placeholder="Clinic Phone Number" />
+            <input type="text" placeholder="Organization Name" onChange={(event) => props.nestedFieldFunction.signupSetWorkName(event.target.value)}/>
+            <input type="text" placeholder="Address" onChange={(event) => props.nestedFieldFunction.signupSetWorkAddress(event.target.value)}/>
+            <input type="text" placeholder="City" onChange={(event) => props.nestedFieldFunction.signupSetWorkCity(event.target.value)}/>
+            <input type="text" placeholder="Postal Code" onChange={(event) => props.nestedFieldFunction.signupSetWorkPostal(event.target.value)} />
+            <input type="text" placeholder="Clinic Phone Number" onChange={(event) => props.nestedFieldFunction.signupSetWorkPhoneNumber(event.target.value)}/>
             {/* TODO: need checkboxes - depends on ui */}
             <input type="text" placeholder="EMR Integration - NEEDS something else too?" />
         </div>
@@ -107,7 +107,7 @@ const SignupWorkLocation = (props) => {
 
 const SignupPrimaryWork = (props) => {
     return (
-        <SignupWorkLocation workType="Primary" onChange={(event) => props.fieldFunction(event.target.value)}/>
+        <SignupWorkLocation workType="Primary" nestedFieldFunction={props.nestedFieldFunction}/>
     )
 }
 

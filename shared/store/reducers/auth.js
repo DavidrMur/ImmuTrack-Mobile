@@ -1,4 +1,5 @@
 import * as actionTypes from '../actions/actionTypes';
+import _  from 'lodash';
 
 const initialState = {
     type: null, // healthcare or patient
@@ -17,7 +18,8 @@ const initialState = {
     },
     healthcareInfo: {
         signupProfession: '',
-        signupLicense: ''
+        signupLicense: '',
+        signupWorkLocations: {},
     }
 
 }
@@ -126,15 +128,90 @@ const signupSetLicense = (state, action) => {
     }
 }
 
-const signupSetPrimaryWork = (state, action) => {
-    console.log('setting primary work');
-    return state;
+const signupSetWorkName = (state, action) => {
+
+    // TODO: work locations probably needs to be reworked in the future
+    console.log('setting primary work name');
+    // TODO: make this work for multiple work places (will probably need each "form" to have an index)
+    
+    // TODO: this lets me generate a new work place, should pull this out for other work places
+    let workLocations = _.cloneDeep(state.healthcareInfo.signupWorkLocations);
+    // Need this for every entry in case they don't start with work name
+    if (typeof(workLocations[0]) !== 'object') workLocations[0] = {}
+    workLocations[0].workName = action.payload;
+
+    return {
+        ...state,
+        healthcareInfo: {
+            ...state.healthcareInfo,
+            signupWorkLocations: workLocations
+        }
+    }
 }
 
-const signupSetOtherWork = (state, action) => {
-    console.log('setting other worm');
-    return state;
+const signupSetWorkAddress = (state, action) => {
+    console.log('setting primary work address');
+    let workLocations = _.cloneDeep(state.healthcareInfo.signupWorkLocations);
+    // Need this for every entry in case they don't start with work name
+    if (typeof(workLocations[0]) !== 'object') workLocations[0] = {}
+    workLocations[0].workAddress = action.payload;
+
+    return {
+        ...state,
+        healthcareInfo: {
+            ...state.healthcareInfo,
+            signupWorkLocations: workLocations
+        }
+    }
 }
+
+const signupSetWorkCity = (state, action) => {
+    console.log('setting primary work city');
+    let workLocations = _.cloneDeep(state.healthcareInfo.signupWorkLocations);
+    // Need this for every entry in case they don't start with work name
+    if (typeof(workLocations[0]) !== 'object') workLocations[0] = {}
+    workLocations[0].workCity = action.payload;
+
+    return {
+        ...state,
+        healthcareInfo: {
+            ...state.healthcareInfo,
+            signupWorkLocations: workLocations
+        }
+    }
+}
+
+const signupSetWorkPostal = (state, action) => {
+    console.log('setting primary work postal');
+    let workLocations = _.cloneDeep(state.healthcareInfo.signupWorkLocations);
+    // Need this for every entry in case they don't start with work name
+    if (typeof(workLocations[0]) !== 'object') workLocations[0] = {}
+    workLocations[0].workPostal = action.payload;
+
+    return {
+        ...state,
+        healthcareInfo: {
+            ...state.healthcareInfo,
+            signupWorkLocations: workLocations
+        }
+    }
+}
+
+const signupSetWorkPhoneNumber = (state, action) => {
+    console.log('setting primary work phone number');
+    let workLocations = _.cloneDeep(state.healthcareInfo.signupWorkLocations);
+    if (typeof(workLocations[0]) !== 'object') workLocations[0] = {}
+    workLocations[0].workPhoneNumber = action.payload;
+
+    return {
+        ...state,
+        healthcareInfo: {
+            ...state.healthcareInfo,
+            signupWorkLocations: workLocations
+        }
+    }
+}
+
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
@@ -190,12 +267,21 @@ const reducer = (state = initialState, action) => {
         case actionTypes.SIGNUP_SET_LICENSE:
             console.log('license case');
             return signupSetLicense(state,action);  
-        case actionTypes.SIGNUP_SET_PRIMARY_WORK:
-            console.log('primary work case');
-            return signupSetPrimaryWork(state,action);
-        case actionTypes.SIGNUP_SET_OTHER_WORK:
-            console.log('other work case');
-            return signupSetOtherWork(state,action);              
+        case actionTypes.SIGNUP_SET_WORK_NAME:
+            console.log('primary work name case');
+            return signupSetWorkName(state,action); 
+        case actionTypes.SIGNUP_SET_WORK_ADDRESS:
+            console.log('primary work address case');
+            return signupSetWorkAddress(state,action);
+        case actionTypes.SIGNUP_SET_WORK_CITY:
+            console.log('primary work city case');
+            return signupSetWorkCity(state,action);  
+        case actionTypes.SIGNUP_SET_WORK_POSTAL:
+            console.log('primary work postal case');
+            return signupSetWorkPostal(state,action);
+        case actionTypes.SIGNUP_SET_WORK_PHONE_NUMBER:
+            console.log('primary work phone number case');
+            return signupSetWorkPhoneNumber(state,action);                             
         default:
             return state;        
 

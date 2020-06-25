@@ -19,6 +19,7 @@ export function* signupPending(action){
         console.log ('Saga response');
         let auth = yield select(getAuth);
         // auth holds relevant auth information
+        console.log(auth);
         let response = {data: 'bop'};
         yield put (actions.loginSuccess(response.data))
     } catch (error) {
