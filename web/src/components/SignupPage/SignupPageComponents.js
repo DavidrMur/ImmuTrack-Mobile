@@ -25,8 +25,8 @@ const SignupOwner = (props) => {
 const SignupName = (props) => {
     return ( 
         <div>
-            <input type="text" placeholder="First Name" />
-            <input type="text" placeholder="Last Name" />
+            <input type="text" placeholder="First Name" onChange={(event) => props.nestedFieldFunction.signupSetFirstName(event.target.value)}/>
+            <input type="text" placeholder="Last Name" onChange={(event) => props.nestedFieldFunction.signupSetLastName(event.target.value)}/>
         </div>
     )
 }
@@ -60,9 +60,9 @@ const SignupReview = (props) => {
 const SignupCredentials = (props) => {
     return (
         <div>
-            <input type="text" placeholder="username" />
-            <input type="email" placeholder="email" />
-            <input type="password" placeholder="password" />
+            <input type="text" placeholder="username" onChange={(event) => props.nestedFieldFunction.signupSetUsername(event.target.value)}/>
+            <input type="password" placeholder="password" onChange={(event) => props.nestedFieldFunction.signupSetPassword(event.target.value)}/>
+            <input type="email" placeholder="email" onChange={(event) => props.nestedFieldFunction.signupSetEmail(event.target.value)}/>
         </div>    
     )
 }

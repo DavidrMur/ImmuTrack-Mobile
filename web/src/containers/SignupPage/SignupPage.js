@@ -11,8 +11,17 @@ class SignupPage extends Component {
     }
 
     patientSignupFunctions = {
-        signupSetName: this.props.signupSetName,
-        signupSetCredentials: this.props.signupSetCredentials,
+        signupSetName: {
+            signupSetFirstName: this.props.signupSetFirstName,
+            signupSetLastName: this.props.signupSetLastName
+        },
+
+        signupSetCredentials: {
+            signupSetUsername: this.props.signupSetUsername,
+            signupSetPassword: this.props.signupSetPassword,
+            signupSetEmail: this.props.signupSetEmail,
+        },
+
         signupSetOHIP: this.props.signupSetOHIP,
         signupSetSCN: this.props.signupSetSCN,
         signupSetOwner: this.props.signupSetOwner,
@@ -21,8 +30,18 @@ class SignupPage extends Component {
     }
     
     healthcareSignupFunctions = {
-        signupSetName: this.props.signupSetName,
-        signupSetCredentials: this.props.signupSetCredentials,
+
+        signupSetName: {
+            signupSetFirstName: this.props.signupSetFirstName,
+            signupSetLastName: this.props.signupSetLastName
+        },
+
+        signupSetCredentials: {
+            signupSetUsername: this.props.signupSetUsername,
+            signupSetPassword: this.props.signupSetPassword,
+            signupSetEmail: this.props.signupSetEmail,
+        },
+
         signupSetProfession: this.props.signupSetProfession,
         signupSetLicense: this.props.signupSetLicense,
 
@@ -60,8 +79,11 @@ const mapDispathToProps = dispatch => {
         signupPending: () => dispatch(actions.signupPending()),
 
         // General functions
-        signupSetName: (payload) => dispatch(actions.signupSetName(payload)),
-        signupSetCredentials: () => dispatch(actions.signupSetCredentials()),
+        signupSetFirstName: (payload) => dispatch(actions.signupSetFirstName(payload)),
+        signupSetLastName: (payload) => dispatch(actions.signupSetLastName(payload)),
+        signupSetUsername: (payload) => dispatch(actions.signupSetUsername(payload)),
+        signupSetPassword: (payload) => dispatch(actions.signupSetPassword(payload)),
+        signupSetEmail: (payload) => dispatch(actions.signupSetEmail(payload)),
 
         // Patient functions
         signupSetOHIP: (payload) => dispatch(actions.signupSetOHIP(payload)),

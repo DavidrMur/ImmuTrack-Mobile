@@ -48,16 +48,37 @@ export const signupFail = (payload) => {
 
 // Synchronous actions
 
-export const signupSetName = (payload) => {
+export const signupSetFirstName = (payload) => {
     return {
-        type: actionTypes.SIGNUP_SET_NAME,
+        type: actionTypes.SIGNUP_SET_FIRST_NAME,
         payload
     };
 };
 
-export const signupSetCredentials = (payload) => {
+export const signupSetLastName = (payload) => {
     return {
-        type: actionTypes.SIGNUP_SET_CREDENTIALS,
+        type: actionTypes.SIGNUP_SET_LAST_NAME,
+        payload
+    };
+};
+
+export const signupSetUsername = (payload) => {
+    return {
+        type: actionTypes.SIGNUP_SET_USERNAME,
+        payload
+    };
+};
+
+export const signupSetPassword = (payload) => {
+    return {
+        type: actionTypes.SIGNUP_SET_PASSWORD,
+        payload
+    };
+};
+
+export const signupSetEmail = (payload) => {
+    return {
+        type: actionTypes.SIGNUP_SET_EMAIL,
         payload
     };
 };

@@ -6,8 +6,11 @@ export {
     signupSuccess,
     signupFail,
 
-    signupSetName,
-    signupSetCredentials,
+    signupSetFirstName,
+    signupSetLastName,
+    signupSetUsername,
+    signupSetPassword,
+    signupSetEmail,
     
     signupSetOHIP,
     signupSetSCN,

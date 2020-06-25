@@ -23,7 +23,7 @@ class SignupPagePatient extends Component {
                 signupView = <SignupOwner fieldFunction={this.props.patientSignupFunctions.signupSetOwner}/>  
                 break; 
             case 4:
-                signupView = <SignupName fieldFunction={this.props.patientSignupFunctions.signupSetName}/>
+                signupView = <SignupName nestedFieldFunction={this.props.patientSignupFunctions.signupSetName}/>
                 break;
             case 5:
                 signupView = <SignupDOB fieldFunction={this.props.patientSignupFunctions.signupSetDOB}/>  
@@ -35,7 +35,7 @@ class SignupPagePatient extends Component {
                 signupView = <SignupReview />  
                 break;    
             case 8:
-                signupView = <div><SignupCredentials fieldFunction={this.props.patientSignupFunctions.signupSetCredentials} /><SignupGeneral /></div>
+                signupView = <div><SignupCredentials nestedFieldFunction={this.props.patientSignupFunctions.signupSetCredentials} /><SignupGeneral /></div>
                 break;       
             default:
                 break;

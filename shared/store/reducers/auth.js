@@ -8,6 +8,7 @@ const initialState = {
         signupLastName: '',
         signupUsername: '',
         signupPassword: '',
+        signupEmail: ''
     },
     patientInfo: {
         signupOHIP: '',
@@ -40,14 +41,59 @@ const signupFail = (state, action) => {
     return state;
 }
 
-const signupSetName = (state, action) => {
-    console.log('setting name');
-    return state;
+const signupSetFirstName = (state, action) => {
+    console.log('setting first name');
+    return {
+        ...state,
+        generalInfo : {
+            ...state.generalInfo,
+            signupFirstName: action.payload
+        }
+    }
 }
 
-const signupSetCredentials = (state, action) => {
-    console.log('setting credentials');
-    return state;
+const signupSetLastName = (state, action) => {
+    console.log('setting last name');
+    return {
+        ...state,
+        generalInfo : {
+            ...state.generalInfo,
+            signupLastName: action.payload
+        }
+    }
+}
+
+const signupSetUsername = (state, action) => {
+    console.log('setting Username');
+    return {
+        ...state,
+        generalInfo: {
+            ...state.generalInfo,
+            signupUsername: action.payload
+        }
+    }
+}
+
+const signupSetPassword = (state, action) => {
+    console.log('setting Password');
+    return {
+        ...state,
+        generalInfo: {
+            ...state.generalInfo,
+            signupPassword: action.payload
+        }
+    }
+}
+
+const signupSetEmail = (state, action) => {
+    console.log('setting Email');
+    return {
+        ...state,
+        generalInfo: {
+            ...state.generalInfo,
+            signupEmail: action.payload
+        }
+    }
 }
 
 const signupSetOHIP = (state, action) => {
@@ -234,12 +280,21 @@ const reducer = (state = initialState, action) => {
 
         // General
 
-        case actionTypes.SIGNUP_SET_NAME:
+        case actionTypes.SIGNUP_SET_FIRST_NAME:
             console.log('name case');
-            return signupSetName(state,action);
-        case actionTypes.SIGNUP_SET_CREDENTIALS:
-            console.log('credentials case');
-            return signupSetCredentials(state,action);      
+            return signupSetFirstName(state,action);
+        case actionTypes.SIGNUP_SET_LAST_NAME:
+            console.log('name case');
+            return signupSetLastName(state,action);
+        case actionTypes.SIGNUP_SET_USERNAME:
+            console.log('Username case');
+            return signupSetUsername(state,action); 
+        case actionTypes.SIGNUP_SET_PASSWORD:
+            console.log('Password case');
+            return signupSetPassword(state,action); 
+        case actionTypes.SIGNUP_SET_EMAIL:
+            console.log('Email case');
+            return signupSetEmail(state,action);              
 
         // Patient
 
