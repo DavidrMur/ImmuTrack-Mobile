@@ -4,15 +4,13 @@ import {  SignupName, SignupLicense, SignupProfession, SignupPrimaryWork, Signup
 class SignupPageHealthcare extends Component {
 
     render() {
-
         return (
             <div>
-               <SignupProfession />
-               <SignupLicense />
-               <SignupName />
-               <SignupPrimaryWork />
-               <SignupOtherWork />
-               <SignupCredentials />
+               <SignupProfession fieldFunction = {this.props.healthcareSignupFunctions.signupSetProfession} />
+               <SignupLicense fieldFunction = {this.props.healthcareSignupFunctions.signupSetLicense}/>
+               <SignupName nestedFieldFunction = {this.props.healthcareSignupFunctions.signupSetName} />
+               <SignupPrimaryWork nestedFieldFunction = {this.props.healthcareSignupFunctions.signupSetWork}/>
+               <SignupCredentials nestedFieldFunction = {this.props.healthcareSignupFunctions.signupSetCredentials}/>
             </div>
         )
     }

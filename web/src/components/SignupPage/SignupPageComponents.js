@@ -2,13 +2,13 @@ import React from 'react';
 
 const SignupOHIP = (props) => {
     return (
-        <input type="text" placeholder="OHIP Number" />
+        <input type="text" placeholder="OHIP Number" onChange={(event) => props.fieldFunction(event.target.value)}/>
     )
 };
 
 const SignupSCN = (props) => {
     return (
-        <input type="text" placeholder="SCN - Back of Healthcard" />
+        <input type="text" placeholder="SCN - Back of Healthcard" onChange={(event) => props.fieldFunction(event.target.value)} />
     )
 };
 
@@ -25,8 +25,8 @@ const SignupOwner = (props) => {
 const SignupName = (props) => {
     return ( 
         <div>
-            <input type="text" placeholder="First Name" />
-            <input type="text" placeholder="Last Name" />
+            <input type="text" placeholder="First Name" onChange={(event) => props.nestedFieldFunction.signupSetFirstName(event.target.value)}/>
+            <input type="text" placeholder="Last Name" onChange={(event) => props.nestedFieldFunction.signupSetLastName(event.target.value)}/>
         </div>
     )
 }
@@ -34,7 +34,7 @@ const SignupName = (props) => {
 const SignupDOB = (props) => {
     return (
         <div>
-            <input type="text" placeholder="date" />
+            <input type="text" placeholder="date" onChange={(event) => props.fieldFunction(event.target.value)} />
             {/* TODO: change this, depends on the UI module we use */}
         </div>
     )
@@ -44,7 +44,7 @@ const SignupGender = (props) => {
     return (
         <div>
             {/* TODO: change this, depends on the UI module we use */}
-            <input type="text" placeholder="If other, please specify" />
+            <input type="text" placeholder="If other, please specify"  onChange={(event) => props.fieldFunction(event.target.value)} />
         </div>
     )
 }
@@ -60,9 +60,9 @@ const SignupReview = (props) => {
 const SignupCredentials = (props) => {
     return (
         <div>
-            <input type="text" placeholder="username" />
-            <input type="email" placeholder="email" />
-            <input type="password" placeholder="password" />
+            <input type="text" placeholder="username" onChange={(event) => props.nestedFieldFunction.signupSetUsername(event.target.value)}/>
+            <input type="password" placeholder="password" onChange={(event) => props.nestedFieldFunction.signupSetPassword(event.target.value)}/>
+            <input type="email" placeholder="email" onChange={(event) => props.nestedFieldFunction.signupSetEmail(event.target.value)}/>
         </div>    
     )
 }
@@ -80,13 +80,13 @@ const SignupGeneral = (props) => {
 
 const SignupProfession = (props) => {
     return (
-        <input type="text" placeholder="DROPDOWN - profession" />
+        <input type="text" placeholder="DROPDOWN - profession" onChange={(event) => props.fieldFunction(event.target.value)} />
     )
 }
 
 const SignupLicense = (props) => {
     return (
-        <input type="text" placeholder="License Number" />
+        <input type="text" placeholder="License Number" onChange={(event) => props.fieldFunction(event.target.value)}/>
     )
 }
 
@@ -94,11 +94,11 @@ const SignupWorkLocation = (props) => {
     return (
         <div>
             <h1>{`${props.workType} Work Location`}</h1>
-            <input type="text" placeholder="Organization Name" />
-            <input type="text" placeholder="Address" />
-            <input type="text" placeholder="City" />
-            <input type="text" placeholder="Postal Code" />
-            <input type="text" placeholder="Clinic Phone Number" />
+            <input type="text" placeholder="Organization Name" onChange={(event) => props.nestedFieldFunction.signupSetWorkName(event.target.value)}/>
+            <input type="text" placeholder="Address" onChange={(event) => props.nestedFieldFunction.signupSetWorkAddress(event.target.value)}/>
+            <input type="text" placeholder="City" onChange={(event) => props.nestedFieldFunction.signupSetWorkCity(event.target.value)}/>
+            <input type="text" placeholder="Postal Code" onChange={(event) => props.nestedFieldFunction.signupSetWorkPostal(event.target.value)} />
+            <input type="text" placeholder="Clinic Phone Number" onChange={(event) => props.nestedFieldFunction.signupSetWorkPhoneNumber(event.target.value)}/>
             {/* TODO: need checkboxes - depends on ui */}
             <input type="text" placeholder="EMR Integration - NEEDS something else too?" />
         </div>
@@ -107,7 +107,7 @@ const SignupWorkLocation = (props) => {
 
 const SignupPrimaryWork = (props) => {
     return (
-        <SignupWorkLocation workType="Primary"/>
+        <SignupWorkLocation workType="Primary" nestedFieldFunction={props.nestedFieldFunction}/>
     )
 }
 
