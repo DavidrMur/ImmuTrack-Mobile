@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import * as actions from 'redux-saga-store/actions/index';
 import './LoginPage.css';
 
@@ -33,7 +34,7 @@ class LoginPage extends Component {
                 <input type="checkbox" />
                 <p className="container--option">Forgot Password?</p>
                 <p>Not a member?</p>
-                <button>Create account</button>
+                <Link className='container--option' to="/signup">Create an Account</Link>
             </div>
 
         );

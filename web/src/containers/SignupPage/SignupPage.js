@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import SignupPagePatient from '../../components/SignupPage/SignupPagePatient';
 import SignupPageHealthcare from '../../components/SignupPage/SignupPageHealthcare';
 import * as actions from 'redux-saga-store/actions/index';
@@ -59,14 +60,14 @@ class SignupPage extends Component {
         let signupView;
         if (this.state.type === 'patient') signupView = (<SignupPagePatient patientSignupFunctions={this.patientSignupFunctions}/>);
         else if (this.state.type === 'healthcare') signupView = (<SignupPageHealthcare healthcareSignupFunctions={this.healthcareSignupFunctions} />);
-        else signupView = (<></>);
+        else signupView = (<p>Please choose a signup option that is appropriate</p>);
         return (
-            <div>
+            <div >
                 {/* TODO: Make sure the fields do not mix if someone wants to switch to a different signup flow */}
-                <button onClick={() => this.setState({type: 'patient'})}>Signup for Patient</button>
-                <button onClick={() => this.setState({type: 'healthcare'})}>Signup for Healthcare Provider</button>
-                <button onClick={() => this.healthcareSignupFunctions.signupSetProfession()}>Click me sir </button>
-                <button onClick = {this.props.signupPending}>Sign Up</button>
+                <button className='container--field' onClick={() => this.setState({type: 'patient'})}>Signup for Patient</button>
+                <button className='container--field' onClick={() => this.setState({type: 'healthcare'})}>Signup for Healthcare Provider</button>
+                <button className='container--field' disabled={this.state.type === 'none'} onClick = {this.props.signupPending}>Sign Up</button>
+                <Link className='container--option' to="/login">Already have an account?</Link>
                 {signupView}
             </div>
             )
