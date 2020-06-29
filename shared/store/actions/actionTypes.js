@@ -11,6 +11,8 @@ export const SIGNUP_FAIL = "SIGNUP_FAIL";
 
 // Synchronous actions
 
+export const SIGNUP_SET_TYPE = "SIGNUP_SET_TYPE";
+
 export const SIGNUP_SET_FIRST_NAME = "SIGNUP_SET_FIRST_NAME"
 export const SIGNUP_SET_LAST_NAME = "SIGNUP_SET_LAST_NAME"
 export const SIGNUP_SET_USERNAME = "SIGNUP_SET_USERNAME";

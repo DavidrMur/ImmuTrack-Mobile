@@ -48,6 +48,13 @@ export const signupFail = (payload) => {
 
 // Synchronous actions
 
+export const signupSetType = (payload) => {
+    return {
+        type: actionTypes.SIGNUP_SET_TYPE,
+        payload
+    };
+};
+
 export const signupSetFirstName = (payload) => {
     return {
         type: actionTypes.SIGNUP_SET_FIRST_NAME,

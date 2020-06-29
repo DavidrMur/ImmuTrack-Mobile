@@ -6,6 +6,7 @@ export {
     signupSuccess,
     signupFail,
 
+    signupSetType,
     signupSetFirstName,
     signupSetLastName,
     signupSetUsername,

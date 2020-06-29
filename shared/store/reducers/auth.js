@@ -41,6 +41,14 @@ const signupFail = (state, action) => {
     return state;
 }
 
+const signupSetType = (state, action) => {
+    console.log('setting type');
+    return {
+        ...initialState,
+        type: action.payload
+    }
+}
+
 const signupSetFirstName = (state, action) => {
     console.log('setting first name');
     return {
@@ -280,6 +288,10 @@ const reducer = (state = initialState, action) => {
 
         // General
 
+        
+        case actionTypes.SIGNUP_SET_TYPE:
+            console.log('type case');
+            return signupSetType(state,action);
         case actionTypes.SIGNUP_SET_FIRST_NAME:
             console.log('name case');
             return signupSetFirstName(state,action);
