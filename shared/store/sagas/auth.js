@@ -20,8 +20,8 @@ export function* signupPending(action){
         debugger;
         console.log ('Saga response');
         let auth = yield select(getAuth);
-        auth.type = 'healthcare';
         // auth holds relevant auth information
+        console.log(auth);
         let payload = formatStateToPayload(auth);
         console.log(payload);
         let response = {data: 'bop'};

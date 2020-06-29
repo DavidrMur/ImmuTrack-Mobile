@@ -55,6 +55,11 @@ class SignupPage extends Component {
         }
     }
 
+    setSignupType = (type) => {
+        this.setState({type: type});
+        this.props.signupSetType(type);
+    }
+
 
     render(){
         let signupView;
@@ -64,8 +69,8 @@ class SignupPage extends Component {
         return (
             <div >
                 {/* TODO: Make sure the fields do not mix if someone wants to switch to a different signup flow */}
-                <button className='container--field' onClick={() => this.setState({type: 'patient'})}>Signup for Patient</button>
-                <button className='container--field' onClick={() => this.setState({type: 'healthcare'})}>Signup for Healthcare Provider</button>
+                <button className='container--field' onClick={() => this.setSignupType('patient')}>Signup for Patient</button>
+                <button className='container--field' onClick={() => this.setSignupType('healthcare')}>Signup for Healthcare Provider</button>
                 <button className='container--field' disabled={this.state.type === 'none'} onClick = {this.props.signupPending}>Sign Up</button>
                 <Link className='container--option' to="/login">Already have an account?</Link>
                 {signupView}
@@ -80,6 +85,7 @@ const mapDispathToProps = dispatch => {
         signupPending: () => dispatch(actions.signupPending()),
 
         // General functions
+        signupSetType: (payload) => dispatch(actions.signupSetType(payload)),
         signupSetFirstName: (payload) => dispatch(actions.signupSetFirstName(payload)),
         signupSetLastName: (payload) => dispatch(actions.signupSetLastName(payload)),
         signupSetUsername: (payload) => dispatch(actions.signupSetUsername(payload)),
