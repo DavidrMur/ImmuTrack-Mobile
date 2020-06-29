@@ -11,6 +11,7 @@ class SignupPageHealthcare extends Component {
                <SignupName nestedFieldFunction = {this.props.healthcareSignupFunctions.signupSetName} />
                <SignupPrimaryWork nestedFieldFunction = {this.props.healthcareSignupFunctions.signupSetWork}/>
                <SignupCredentials nestedFieldFunction = {this.props.healthcareSignupFunctions.signupSetCredentials}/>
+               <button onClick={() => this.setState({pageCount: this.state.pageCount + 1})}>Signup</button> 
             </div>
         )
     }
