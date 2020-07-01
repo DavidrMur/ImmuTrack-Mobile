@@ -21,9 +21,8 @@ class HealthcareHomePage extends Component {
     
     
     render(){
-        let patients = [{'id': '1234', 'name': 'John Doe', 'DOB': 'Dec-31-1998', 'OHIP': '123456'}];
-        if (patients) {
-            this.patientRecords = (patients.slice(0,this.state.selectionCount)).map((patient) => {
+        if (this.props.patients) {
+            this.patientRecords = (this.props.patients.slice(0,this.state.selectionCount)).map((patient) => {
                 return <PatientRecordTile
                     key={patient.id}
                     id={patient.id}
@@ -47,7 +46,7 @@ class HealthcareHomePage extends Component {
 
 const mapStateToProps = state => {
     return {
-        //patients: state.immunization.healthcare.patients
+        patients: state.immunization.healthcare.patients
     };
 };
 

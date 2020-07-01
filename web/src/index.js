@@ -9,13 +9,15 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { watchAuth } from 'redux-saga-store/sagas/index'
 import authReducer from 'redux-saga-store/reducers/auth'
+import immunizationReducer from 'redux-saga-store/reducers/immunization';
 
 const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;
 
 const sagaMiddleware = createSagaMiddleware();
 
 const rootReducer = combineReducers({
-    auth: authReducer
+    auth: authReducer,
+    immunization: immunizationReducer
 })
 
 const store = createStore(rootReducer, composeEnhancers (
