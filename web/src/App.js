@@ -1,13 +1,13 @@
 import React from 'react';
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
-import LoginPage from './containers/LoginPage';
-import SignupPage from './containers/SignupPage/SignupPage';
-import PatientImmunization from './containers/Immunization/PatientViews/PatientMain';
+import LoginPage from './containers/Auth/LoginPage/LoginPage';
+import SignupPage from './containers/Auth/SignupPage/SignupPage';
+import PatientImmunization from './containers/Immunization/PatientPages/PatientRecordPage';
 
 function App() {
 
   let routes;
-  let loggedIn = true;
+  let loggedIn = false;
   
   let newVisitRoutes = (
     <Switch>
