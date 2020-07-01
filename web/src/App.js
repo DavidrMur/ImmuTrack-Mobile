@@ -2,12 +2,12 @@ import React from 'react';
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import LoginPage from './containers/LoginPage';
 import SignupPage from './containers/SignupPage/SignupPage';
-import PatientImmunization from './containers/Immunization/PatientImmunization';
+import PatientImmunization from './containers/Immunization/PatientViews/PatientMain';
 
 function App() {
 
   let routes;
-  let loggedIn = false;
+  let loggedIn = true;
   
   let newVisitRoutes = (
     <Switch>
