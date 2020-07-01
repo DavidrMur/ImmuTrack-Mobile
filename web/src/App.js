@@ -3,11 +3,12 @@ import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import LoginPage from './containers/Auth/LoginPage/LoginPage';
 import SignupPage from './containers/Auth/SignupPage/SignupPage';
 import PatientImmunization from './containers/Immunization/PatientPages/PatientRecordPage';
+import HealthcareHomePage from './containers/Immunization/HealthcarePages/HealthcareHomePage';
 
 function App() {
 
   let routes;
-  let loggedIn = false;
+  let loggedIn = true;
   
   let newVisitRoutes = (
     <Switch>
@@ -19,7 +20,8 @@ function App() {
 
   let existingVisitorRoutes = (
     <Switch>
-        <Route path='/main' component={PatientImmunization} />
+        <Route path='/main' component={HealthcareHomePage} />
+        <Route path='/view-patient' component={PatientImmunization} />
         <Redirect to='/main'/>
     </Switch>
   )

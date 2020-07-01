@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import SignupPagePatient from '../../../components/SignupPage/SignupPagePatient';
-import SignupPageHealthcare from '../../../components/SignupPage/SignupPageHealthcare';
+import SignupPagePatient from '../../../components/Auth/SignupPage/SignupPagePatient';
+import SignupPageHealthcare from '../../../components/Auth/SignupPage/SignupPageHealthcare';
 import * as actions from 'redux-saga-store/actions';
 
 class SignupPage extends Component {
