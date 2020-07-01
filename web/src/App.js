@@ -3,6 +3,7 @@ import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import LoginPage from './containers/Auth/LoginPage/LoginPage';
 import SignupPage from './containers/Auth/SignupPage/SignupPage';
 import PatientImmunization from './containers/Immunization/PatientPages/PatientRecordPage';
+import HealthcareHomePage from './containers/Immunization/HealthcarePages/HealthcareHomePage';
 
 function App() {
 
@@ -13,13 +14,17 @@ function App() {
     <Switch>
         <Route path='/login' component={LoginPage}/>
         <Route path='/signup' component={SignupPage}/>
+        {/* TODO: remove below */}
+        <Route path='/main' component={HealthcareHomePage} />
+        <Route path='/view-patient' component={PatientImmunization} />
         <Redirect to='/login'/>
       </Switch>
   );
 
   let existingVisitorRoutes = (
     <Switch>
-        <Route path='/main' component={PatientImmunization} />
+        <Route path='/main' component={HealthcareHomePage} />
+        <Route path='/view-patient' component={PatientImmunization} />
         <Redirect to='/main'/>
     </Switch>
   )

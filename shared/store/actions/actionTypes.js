@@ -34,3 +34,15 @@ export const SIGNUP_SET_WORK_ADDRESS = "SIGNUP_SET_WORK_ADDRESS";
 export const SIGNUP_SET_WORK_CITY = "SIGNUP_SET_WORK_CITY";
 export const SIGNUP_SET_WORK_POSTAL = "SIGNUP_SET_WORK_POSTAL";
 export const SIGNUP_SET_WORK_PHONE_NUMBER = "SIGNUP_SET_WORK_PHONE_NUMBER";
+
+
+// ---------- Immunization -------------
+
+// Asynchronous Actions
+
+export const IMMU_PATIENTS_PENDING = "IMMU_PATIENTS_PENDING";
+export const IMMU_PATIENTS_SUCCESS = "IMMU_PATIENTS_SUCCESS";
+
+// Synchronous Actions
+
+export const IMMU_SET_PATIENTS = "IMMU_SET_PATIENTS";

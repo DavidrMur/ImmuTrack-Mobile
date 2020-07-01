@@ -26,3 +26,8 @@ export {
     signupSetWorkPostal,
     signupSetWorkPhoneNumber,
 } from './auth';
+
+export {
+    patientsPending,
+    patientsSuccess,
+} from './immunization';
