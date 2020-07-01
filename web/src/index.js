@@ -7,7 +7,7 @@ import createSagaMiddleware from 'redux-saga';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { watchAuth } from 'redux-saga-store/sagas/index'
+import rootSaga from 'redux-saga-store/sagas/index'
 import authReducer from 'redux-saga-store/reducers/auth'
 import immunizationReducer from 'redux-saga-store/reducers/immunization';
 
@@ -24,7 +24,7 @@ const store = createStore(rootReducer, composeEnhancers (
     applyMiddleware(sagaMiddleware)
 ));
 
-sagaMiddleware.run(watchAuth);
+sagaMiddleware.run(rootSaga);
 
 const app = (
     <Provider store={store} >

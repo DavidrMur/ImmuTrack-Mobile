@@ -8,12 +8,15 @@ import HealthcareHomePage from './containers/Immunization/HealthcarePages/Health
 function App() {
 
   let routes;
-  let loggedIn = true;
+  let loggedIn = false;
   
   let newVisitRoutes = (
     <Switch>
         <Route path='/login' component={LoginPage}/>
         <Route path='/signup' component={SignupPage}/>
+        {/* TODO: remove below */}
+        <Route path='/main' component={HealthcareHomePage} />
+        <Route path='/view-patient' component={PatientImmunization} />
         <Redirect to='/login'/>
       </Switch>
   );

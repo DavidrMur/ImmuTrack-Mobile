@@ -2,14 +2,26 @@ import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
     healthcare: {
-        patients: [
-            {'id': '1234', 'name': 'John Doe', 'DOB': 'Dec-31-1998', 'OHIP': '123456'},
-            {'id': '1235', 'name': 'Jane Doe', 'DOB': 'Dec-31-1998', 'OHIP': '654321'}],
+        patients: []
+    }
+}
+
+const patientsSuccess = (state, action) => {
+    return {
+        ...state,
+        healthcare: {
+            ...state.healthcare,
+            patients: action.payload,
+        }
     }
 }
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
+        
+        case actionTypes.IMMU_PATIENTS_SUCCESS:
+            console.log('patients case');
+            return patientsSuccess(state, action);
         default:
             return state;
     }

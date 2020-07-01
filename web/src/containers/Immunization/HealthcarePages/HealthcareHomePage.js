@@ -9,12 +9,13 @@ class HealthcareHomePage extends Component {
     constructor(props){
         super(props);
         this.state = {
-            selectionCount: 2
+            selectionCount: 10
         }
     }
 
     componentDidMount = () => {
-        //this.setStatethis.props.getPatients();
+        console.log('alo');
+        this.props.patientsPending();
     }
 
     patientRecords = (<div>loading</div>);
@@ -52,8 +53,7 @@ const mapStateToProps = state => {
 
 const mapDispathToProps = dispatch => {
     return {
-        //loginPending: (username, password) => dispatch(actions.loginPending(username, password)) 
-        //getPatients???
+        patientsPending: () => dispatch(actions.patientsPending()) 
     };
 };
 
