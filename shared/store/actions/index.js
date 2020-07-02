@@ -12,6 +12,7 @@ export {
     signupSetUsername,
     signupSetPassword,
     signupSetEmail,
+    signupSetPostal,
     
     signupSetOHIP,
     signupSetSCN,

@@ -10,7 +10,9 @@ export const formatStateToPayload = (state) => {
             owner: state.patientInfo.signupOwner,
             dob: state.patientInfo.signupDOB,
             sex: state.patientInfo.signupGender,
-            postalCode: state.patientInfo.signupPostal
+            postalCode: state.patientInfo.signupPostal,
+            educationLevel: 'highschool',
+            race: 'caucasian',
         }
     } else if (state.type === 'healthcare') {
 

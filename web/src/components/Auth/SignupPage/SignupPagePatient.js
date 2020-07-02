@@ -35,7 +35,7 @@ class SignupPagePatient extends Component {
                 signupView = <SignupReview />  
                 break;    
             case 8:
-                signupView = <div><SignupCredentials nestedFieldFunction={this.props.patientSignupFunctions.signupSetCredentials} /><SignupGeneral /></div>
+                signupView = <div><SignupCredentials nestedFieldFunction={this.props.patientSignupFunctions.signupSetCredentials} /><SignupGeneral fieldFunction={this.props.patientSignupFunctions.signupSetPostal}/></div>
                 break;       
             default:
                 break;

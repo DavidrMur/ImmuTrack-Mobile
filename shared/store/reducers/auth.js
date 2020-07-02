@@ -159,6 +159,17 @@ const signupSetGender = (state, action) => {
     }
 }
 
+const signupSetPostal = (state, action) => {
+    console.log('setting postal');
+    return {
+        ...state,
+        patientInfo: {
+            ...state.patientInfo,
+            signupPostal: action.payload
+        }
+    }
+}
+
 
 const signupSetProfession = (state, action) => {
     console.log('setting profession');
@@ -325,6 +336,9 @@ const reducer = (state = initialState, action) => {
         case actionTypes.SIGNUP_SET_GENDER:
             console.log('Gender case');
             return signupSetGender(state,action); 
+        case actionTypes.SIGNUP_SET_POSTAL:
+            console.log('postal case');
+            return signupSetPostal(state,action);    
             
         // Healthcare
 

@@ -28,6 +28,7 @@ class SignupPage extends Component {
         signupSetOwner: this.props.signupSetOwner,
         signupSetDOB: this.props.signupSetDOB,
         signupSetGender: this.props.signupSetGender,
+        signupSetPostal: this.props.signupSetPostal,
     }
     
     healthcareSignupFunctions = {
@@ -98,7 +99,7 @@ const mapDispathToProps = dispatch => {
         signupSetOwner: (payload) => dispatch(actions.signupSetOwner(payload)),
         signupSetDOB: (payload) => dispatch(actions.signupSetDOB(payload)),
         signupSetGender: (payload) => dispatch(actions.signupSetGender(payload)),
-        signupSetOHIP: (payload) => dispatch(actions.signupSetOHIP(payload)),
+        signupSetPostal: (payload) => dispatch(actions.signupSetPostal(payload)),
 
         // Healthcare functions
         signupSetProfession: (payload) => dispatch(actions.signupSetProfession(payload)),

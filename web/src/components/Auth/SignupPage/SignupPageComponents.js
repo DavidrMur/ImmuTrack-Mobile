@@ -22,8 +22,8 @@ const SignupOwner = (props) => {
     return (
         <div style={{margin: "10px"}}>
             <p >This Health Card belongs to</p>
-            <button style={{margin: "10px"}} >Me</button>
-            <button>Dependant</button>
+            <button style={{margin: "10px"}} onClick={() => props.fieldFunction('me')}>Me</button>
+            <button onClick={() => props.fieldFunction('dependant')}>Dependant</button>
         </div>
     )
 }
@@ -81,7 +81,7 @@ const SignupGeneral = (props) => {
     return (
         <div style={{margin: "10px"}}>
             <p >General Information</p>
-            <input type="text" placeholder="Postal Code" />
+            <input type="text" placeholder="Postal Code" onChange={(event) => props.fieldFunction(event.target.value)}/>
             {/* DROPDOWN - Race / Depends on UI*/}
             {/* DROPDOWN - Level of Education / Depends on UI*/}
         </div>

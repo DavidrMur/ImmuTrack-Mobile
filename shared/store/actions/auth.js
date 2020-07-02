@@ -126,6 +126,13 @@ export const signupSetGender = (payload) => {
     };
 };
 
+export const signupSetPostal = (payload) => {
+    return {
+        type: actionTypes.SIGNUP_SET_POSTAL,
+        payload
+    };
+};
+
 export const signupSetReview = (payload) => {
     return {
         type: actionTypes.SIGNUP_SET_REVIEW,
