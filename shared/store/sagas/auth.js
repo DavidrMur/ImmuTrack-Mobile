@@ -12,9 +12,9 @@ export function* loginPending(action){
         
         console.log ('Saga response');
         // need a payload without the type
-        action = {username: 'test', password:'password', profession: 'patient'};
+        action = {username: 'test3', password:'password', profession: 'nurse'};
         let response = yield axios.post("http://127.0.0.1:5000/signin", action)
-        console.log(response.data.token);
+        console.log(response);
         yield put (actions.loginSuccess(response.data))
     } catch (error) {
         console.log('Saga Error')

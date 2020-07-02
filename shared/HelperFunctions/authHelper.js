@@ -17,6 +17,7 @@ export const formatStateToPayload = (state) => {
     } else if (state.type === 'healthcare') {
 
         payload = {
+            workLocations: state.healthcareInfo.signupWorkLocations,
             profession: state.healthcareInfo.signupProfession,
             license: state.healthcareInfo.signupLicense,
             firstName: state.generalInfo.signupFirstName,
