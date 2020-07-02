@@ -3,14 +3,14 @@ export const formatStateToPayload = (state) => {
     let payload;
 
     if (state.type === 'patient') {
-
+        debugger;
         payload = {
-            scn: state.healthcareInfo.signupSCN,
-            ohip: state.healthcareInfo.signupOHIP,
-            owner: state.healthcareInfo.signupOwner,
-            dob: state.healthcareInfo.signupDOB,
-            sex: state.healthcareInfo.signupGender,
-            postalCode: state.healthcareInfo.signupPostal
+            scn: state.patientInfo.signupSCN,
+            ohip: state.patientInfo.signupOHIP,
+            owner: state.patientInfo.signupOwner,
+            dob: state.patientInfo.signupDOB,
+            sex: state.patientInfo.signupGender,
+            postalCode: state.patientInfo.signupPostal
         }
     } else if (state.type === 'healthcare') {
 

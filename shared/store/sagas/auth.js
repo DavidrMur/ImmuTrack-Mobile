@@ -7,7 +7,7 @@ export const getAuth = (state) => state.auth;
 export function* loginPending(action){
     try {
         console.log ('Saga response');
-        let response = {data: 'bop'};
+        let response = yield axios.post("http://127.0.0.1:5000/signin")
         yield put (actions.loginSuccess(response.data))
     } catch (error) {
         console.log('Saga Error')
@@ -24,7 +24,7 @@ export function* signupPending(action){
         console.log(auth);
         let payload = formatStateToPayload(auth);
         console.log(payload);
-        let response = {data: 'bop'};
+        let response = yield axios.post("http://127.0.0.1:5000/signup",payload)
         yield put (actions.loginSuccess(response.data))
     } catch (error) {
         console.log('Saga Error')
