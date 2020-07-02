@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import * as actions from 'redux-saga-store/actions/index';
 import { PatientRecordTile } from '../../../components/Immunization/HealthcarePages/HealthcarePageComponents';
 
-class HealthcareHomePage extends Component {
+class HealthcareRecordPage extends Component {
 
     constructor(props){
         super(props);
@@ -18,12 +18,12 @@ class HealthcareHomePage extends Component {
         this.props.patientsPending();
     }
 
-    patientRecords = (<div>loading</div>);
+    patientRecordTiles = (<div>loading</div>);
     
     
     render(){
         if (this.props.patients) {
-            this.patientRecords = (this.props.patients.slice(0,this.state.selectionCount)).map((patient) => {
+            this.patientRecordTiles = (this.props.patients.slice(0,this.state.selectionCount)).map((patient) => {
                 return <PatientRecordTile
                     key={patient.id}
                     id={patient.id}
@@ -37,7 +37,7 @@ class HealthcareHomePage extends Component {
 
         return(
             <div>
-               {this.patientRecords}
+               {this.patientRecordTiles}
             </div>
 
         );
@@ -58,4 +58,4 @@ const mapDispathToProps = dispatch => {
 };
 
 //export default connect(mapStateToProps,mapDispathToProps)(SummonerProfile);
-export default connect(mapStateToProps,mapDispathToProps)(HealthcareHomePage)
+export default connect(mapStateToProps,mapDispathToProps)(HealthcareRecordPage)

@@ -4,6 +4,7 @@ import LoginPage from './containers/Auth/LoginPage/LoginPage';
 import SignupPage from './containers/Auth/SignupPage/SignupPage';
 import PatientImmunization from './containers/Immunization/PatientPages/PatientRecordPage';
 import HealthcareHomePage from './containers/Immunization/HealthcarePages/HealthcareHomePage';
+import HealthcareRecordPage from './containers/Immunization/HealthcarePages/HealthcareRecordPage';
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
         <Route path='/signup' component={SignupPage}/>
         {/* TODO: remove below */}
         <Route path='/main' component={HealthcareHomePage} />
-        <Route path='/view-patient' component={PatientImmunization} />
+        <Route path='/view-patient' component={HealthcareRecordPage} />
         <Redirect to='/login'/>
       </Switch>
   );
@@ -24,7 +25,7 @@ function App() {
   let existingVisitorRoutes = (
     <Switch>
         <Route path='/main' component={HealthcareHomePage} />
-        <Route path='/view-patient' component={PatientImmunization} />
+        <Route path='/view-patient' component={HealthcareRecordPage} />
         <Redirect to='/main'/>
     </Switch>
   )

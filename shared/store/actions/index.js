@@ -28,6 +28,9 @@ export {
 } from './auth';
 
 export {
+    // TODO: rename patientListPending
     patientsPending,
     patientsSuccess,
+    patientInfoPending,
+    patientInfoSuccess
 } from './immunization';

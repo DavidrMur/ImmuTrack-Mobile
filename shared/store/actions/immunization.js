@@ -15,3 +15,19 @@ export const patientsSuccess = (payload) => {
     };
 };
 
+export const patientInfoPending = (payload) => {
+    console.log('pending');
+    return {
+        type: actionTypes.IMMU_PATIENT_INFO_PENDING,
+        payload
+    };
+};
+
+export const patientInfoSuccess = (payload) => {
+    return {
+        type: actionTypes.IMMU_PATIENT_INFO_SUCCESS,
+        payload
+    };
+};
+
+
