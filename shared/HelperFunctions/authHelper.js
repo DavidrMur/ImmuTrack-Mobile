@@ -30,7 +30,7 @@ export const formatStateToPayload = (state) => {
     payload.firstName = state.generalInfo.signupFirstName;
     payload.lastName = state.generalInfo.signupLastName;
     payload.email = state.generalInfo.signupEmail;
-    payload.username = state.generalInfo.signupUsername;
+    payload.login = state.generalInfo.signupUsername;
     payload.password = state.generalInfo.signupPassword;
 
     return payload;

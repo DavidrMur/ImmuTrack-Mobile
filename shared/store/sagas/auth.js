@@ -1,13 +1,16 @@
 import { put, select } from 'redux-saga/effects';
 import * as actions from '../actions';
 import { formatStateToPayload } from '../../HelperFunctions/authHelper';
+import axios from 'axios';
 
 export const getAuth = (state) => state.auth;
 
 export function* loginPending(action){
     try {
         console.log ('Saga response');
-        let response = yield axios.post("http://127.0.0.1:5000/signin")
+        action = {profession: 'provider', login: 'test3', password: 'password'}
+        let response = yield axios.post("http://127.0.0.1:5000/signin", action)
+        console.log(response);
         yield put (actions.loginSuccess(response.data))
     } catch (error) {
         console.log('Saga Error')
