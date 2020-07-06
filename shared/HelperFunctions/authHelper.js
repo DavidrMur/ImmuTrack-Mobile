@@ -1,4 +1,16 @@
-export const formatStateToPayload = (state) => {
+
+export const formatStateToLoginPayload = (state) => {
+    let payload = {
+        profession: state.profession,
+        login: state.username,
+        password: state.password
+    };
+
+    return payload;
+
+}
+
+export const formatStateToSignupPayload = (state) => {
     
     let payload;
 
