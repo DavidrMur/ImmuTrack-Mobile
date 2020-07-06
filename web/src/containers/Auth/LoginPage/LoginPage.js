@@ -33,6 +33,7 @@ class LoginPage extends Component {
                     <input type="submit" value="Login" className='container--button' onClick={(e) => this.onSubmit(e)}/>
                 </form>
                 <button onClick={() => this.setState({profession: 'provider'})}> Provider </button>
+                <button onClick={() => this.setState({profession: 'patient'})}> Patient </button>
                 <label>Remember Me</label>
                 <input type="checkbox" />
                 <p className="container--option">Forgot Password?</p>
