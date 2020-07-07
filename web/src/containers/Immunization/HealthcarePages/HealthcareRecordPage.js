@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import * as actions from 'redux-saga-store/actions/index';
 import { PatientRecordTile, PatientRecordVaccines, PatientRecordVaccineTitles } from '../../../components/Immunization/HealthcarePages/HealthcarePageComponents';
 
@@ -14,11 +14,12 @@ class HealthcareRecordPage extends Component {
     }
 
     patientRecords = (<div>loading</div>);
+
     
     
     render(){
         let patientVaccines;
-        if (this.props.currentPatient.vaccines) {
+        if (this.props.currentPatient && this.props.currentPatient.vaccines) {
             patientVaccines = (this.props.currentPatient.vaccines.map((vaccine) => {
                 return <PatientRecordVaccines
                     //key={patient.id}
@@ -33,11 +34,14 @@ class HealthcareRecordPage extends Component {
                     //redirectQuery={this.props.getInfo(patient.id)}
             />
             }))
+        } else {
+            patientVaccines = (<Redirect to='/main' />);
         }
 
         return(
             <div>
-               <PatientRecordTile
+                <Link to="/main">Back</Link>
+                <PatientRecordTile
                     key={this.props.currentPatient.id}
                     id={this.props.currentPatient.id}
                     name={this.props.currentPatient.name}
