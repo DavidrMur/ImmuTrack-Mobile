@@ -1,20 +1,36 @@
-export const formatStateToPayload = (state) => {
+
+export const formatStateToLoginPayload = (state) => {
+    let payload = {
+        profession: state.profession,
+        login: state.username,
+        password: state.password
+    };
+
+    return payload;
+
+}
+
+export const formatStateToSignupPayload = (state) => {
     
     let payload;
 
     if (state.type === 'patient') {
-
         payload = {
-            scn: state.healthcareInfo.signupSCN,
-            ohip: state.healthcareInfo.signupOHIP,
-            owner: state.healthcareInfo.signupOwner,
-            dob: state.healthcareInfo.signupDOB,
-            sex: state.healthcareInfo.signupGender,
-            postalCode: state.healthcareInfo.signupPostal
+            profession: 'patient',
+            scn: state.patientInfo.signupSCN,
+            ohip: state.patientInfo.signupOHIP,
+            owner: state.patientInfo.signupOwner,
+            dob: state.patientInfo.signupDOB,
+            sex: state.patientInfo.signupGender,
+            //TODO: should be postalCode, backend blocking
+            postal_code: state.patientInfo.signupPostal,
+            educationLevel: state.patientInfo.signupEduLevel,
+            race: state.patientInfo.signupRace
         }
     } else if (state.type === 'healthcare') {
 
         payload = {
+            workLocations: state.healthcareInfo.signupWorkLocations,
             profession: state.healthcareInfo.signupProfession,
             license: state.healthcareInfo.signupLicense,
             firstName: state.generalInfo.signupFirstName,
@@ -28,7 +44,7 @@ export const formatStateToPayload = (state) => {
     payload.firstName = state.generalInfo.signupFirstName;
     payload.lastName = state.generalInfo.signupLastName;
     payload.email = state.generalInfo.signupEmail;
-    payload.username = state.generalInfo.signupUsername;
+    payload.login = state.generalInfo.signupUsername;
     payload.password = state.generalInfo.signupPassword;
 
     return payload;

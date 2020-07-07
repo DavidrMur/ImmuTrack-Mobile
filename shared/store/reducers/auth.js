@@ -16,11 +16,13 @@ const initialState = {
         signupOwner: '',
         signupDOB: '',
         signupGender: '',
+        signupRace: '',
+        signupEduLevel: '',
     },
     healthcareInfo: {
         signupProfession: '',
         signupLicense: '',
-        signupWorkLocations: {},
+        signupWorkLocations: [],
     }
 
 }
@@ -159,6 +161,39 @@ const signupSetGender = (state, action) => {
     }
 }
 
+const signupSetRace = (state, action) => {
+    console.log('setting Gender');
+    return {
+        ...state,
+        patientInfo: {
+            ...state.patientInfo,
+            signupRace: action.payload
+        }
+    }
+}
+
+const signupSetEduLevel = (state, action) => {
+    console.log('setting Gender');
+    return {
+        ...state,
+        patientInfo: {
+            ...state.patientInfo,
+            signupEduLevel: action.payload
+        }
+    }
+}
+
+const signupSetPostal = (state, action) => {
+    console.log('setting postal');
+    return {
+        ...state,
+        patientInfo: {
+            ...state.patientInfo,
+            signupPostal: action.payload
+        }
+    }
+}
+
 
 const signupSetProfession = (state, action) => {
     console.log('setting profession');
@@ -193,6 +228,7 @@ const signupSetWorkName = (state, action) => {
     // Need this for every entry in case they don't start with work name
     if (typeof(workLocations[0]) !== 'object') workLocations[0] = {}
     workLocations[0].workName = action.payload;
+    workLocations[0].EMRIntegration = 'thing';
 
     return {
         ...state,
@@ -325,6 +361,15 @@ const reducer = (state = initialState, action) => {
         case actionTypes.SIGNUP_SET_GENDER:
             console.log('Gender case');
             return signupSetGender(state,action); 
+        case actionTypes.SIGNUP_SET_RACE:
+            console.log('race case');
+            return signupSetRace(state,action); 
+        case actionTypes.SIGNUP_SET_EDU_LEVEL:
+            console.log('edu case');
+            return signupSetEduLevel(state,action);         
+        case actionTypes.SIGNUP_SET_POSTAL:
+            console.log('postal case');
+            return signupSetPostal(state,action);    
             
         // Healthcare
 

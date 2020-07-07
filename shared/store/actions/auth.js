@@ -2,11 +2,12 @@ import * as actionTypes from './actionTypes';
 
 // Asynchronous actions
 
-export const loginPending = (username, password) => {
+export const loginPending = (username, password, profession) => {
     return {
         type: actionTypes.LOGIN_PENDING,
         username,
-        password
+        password,
+        profession
     };
 };
 
@@ -122,6 +123,27 @@ export const signupSetDOB = (payload) => {
 export const signupSetGender = (payload) => {
     return {
         type: actionTypes.SIGNUP_SET_GENDER,
+        payload
+    };
+};
+
+export const signupSetRace = (payload) => {
+    return {
+        type: actionTypes.SIGNUP_SET_RACE,
+        payload
+    };
+};
+
+export const signupSetEduLevel = (payload) => {
+    return {
+        type: actionTypes.SIGNUP_SET_EDU_LEVEL,
+        payload
+    };
+};
+
+export const signupSetPostal = (payload) => {
+    return {
+        type: actionTypes.SIGNUP_SET_POSTAL,
         payload
     };
 };

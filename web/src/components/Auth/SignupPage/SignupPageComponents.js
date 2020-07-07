@@ -22,8 +22,8 @@ const SignupOwner = (props) => {
     return (
         <div style={{margin: "10px"}}>
             <p >This Health Card belongs to</p>
-            <button style={{margin: "10px"}} >Me</button>
-            <button>Dependant</button>
+            <button style={{margin: "10px"}} onClick={() => props.fieldFunction('me')}>Me</button>
+            <button onClick={() => props.fieldFunction('dependant')}>Dependant</button>
         </div>
     )
 }
@@ -58,6 +58,26 @@ const SignupGender = (props) => {
     )
 }
 
+const SignupRace = (props) => {
+    return (
+        <div style={{margin: "10px"}}>
+            <p  >Please enter your Race</p>
+            {/* TODO: change this, depends on the UI module we use */}
+            <input type="text" placeholder="If other, please specify"  onChange={(event) => props.fieldFunction(event.target.value)} />
+        </div>
+    )
+}
+
+const SignupEduLevel = (props) => {
+    return (
+        <div style={{margin: "10px"}}>
+            <p  >Please enter your education level</p>
+            {/* TODO: change this, depends on the UI module we use */}
+            <input type="text" placeholder="If other, please specify"  onChange={(event) => props.fieldFunction(event.target.value)} />
+        </div>
+    )
+}
+
 const SignupReview = (props) => {
     return (
         <div>
@@ -81,7 +101,7 @@ const SignupGeneral = (props) => {
     return (
         <div style={{margin: "10px"}}>
             <p >General Information</p>
-            <input type="text" placeholder="Postal Code" />
+            <input type="text" placeholder="Postal Code" onChange={(event) => props.fieldFunction(event.target.value)}/>
             {/* DROPDOWN - Race / Depends on UI*/}
             {/* DROPDOWN - Level of Education / Depends on UI*/}
         </div>
@@ -146,6 +166,8 @@ export {
     SignupName,
     SignupDOB,
     SignupGender,
+    SignupRace,
+    SignupEduLevel,
     SignupReview,
     SignupCredentials,
     SignupGeneral,

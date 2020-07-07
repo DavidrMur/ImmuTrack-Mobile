@@ -9,6 +9,7 @@ class LoginPage extends Component {
     state = {
         username: '',
         password: '',
+        profession: ''
     }
     
     setValue = (e, key) => {
@@ -18,7 +19,8 @@ class LoginPage extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        this.props.loginPending(this.state.username, this.state.password);
+        console.log(this.state);
+        this.props.loginPending(this.state.username, this.state.password, this.state.profession);
     }
 
     render(){
@@ -30,6 +32,8 @@ class LoginPage extends Component {
                     <input type="password" placeholder="password" className='container--field' onChange={(event) => this.setValue(event, 'password')}/>
                     <input type="submit" value="Login" className='container--button' onClick={(e) => this.onSubmit(e)}/>
                 </form>
+                <button onClick={() => this.setState({profession: 'provider'})}> Provider </button>
+                <button onClick={() => this.setState({profession: 'patient'})}> Patient </button>
                 <label>Remember Me</label>
                 <input type="checkbox" />
                 <p className="container--option">Forgot Password?</p>
@@ -50,7 +54,7 @@ const mapStateToProps = state => {
 
 const mapDispathToProps = dispatch => {
     return {
-        loginPending: (username, password) => dispatch(actions.loginPending(username, password)) 
+        loginPending: (username, password, profession) => dispatch(actions.loginPending(username, password, profession))
     };
 };
 
