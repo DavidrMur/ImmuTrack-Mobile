@@ -8,7 +8,9 @@ export const PatientRecordTile = (props) => {
             <div>{props.name}</div>
             <div>{props.DOB}</div>
             <div>{props.OHIP}</div>
-            <Link to='/view-patient' onClick={props.redirectQuery}>View Record</Link>
+            <div onClick={() => props.redirectQuery(props.OHIP)}>
+            <Link to='/view-patient'>View Record</Link>
+            </div>
         </div>
     )
 };
