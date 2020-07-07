@@ -25,6 +25,7 @@ export function* signupPending(action){
         console.log ('Saga response');
         let auth = yield select(getAuth);
         // auth holds relevant auth information
+        // need a payload with race and education level
         console.log(auth);
         let payload = formatStateToSignupPayload(auth);
         console.log(payload);

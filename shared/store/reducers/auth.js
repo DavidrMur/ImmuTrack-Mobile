@@ -22,7 +22,7 @@ const initialState = {
     healthcareInfo: {
         signupProfession: '',
         signupLicense: '',
-        signupWorkLocations: {},
+        signupWorkLocations: [],
     }
 
 }
@@ -228,6 +228,7 @@ const signupSetWorkName = (state, action) => {
     // Need this for every entry in case they don't start with work name
     if (typeof(workLocations[0]) !== 'object') workLocations[0] = {}
     workLocations[0].workName = action.payload;
+    workLocations[0].EMRIntegration = 'thing';
 
     return {
         ...state,
