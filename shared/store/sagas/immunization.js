@@ -10,7 +10,33 @@ export function* patientsPending(action){
             {'id': '9357932', 'name': 'Florence Iu', 'DOB': 'Dec-31-1998', 'OHIP': '82374628'},]
         yield put (actions.patientsSuccess(response))
     } catch (error) {
+        // TODO: proper error handling
         console.log('Saga Error')
         yield put (actions.loginFail(response.data))
     }
 }
+
+export function* patientInfoPending(action){
+    try {
+        console.log ('Saga response');
+        let response = {
+            'name': 'John Doe', 'DOB': 'Dec-31-1998', 'OHIP': '545234', 
+            'vaccines': [
+                {
+                    'dateAdmin': 'July-10-2020', 'brandName': 'SHINGRIX', 'bacteria': ['Varicella', 'Herpes Zoster'],
+                    'lot': 'eeh21nwef23', 'expiryDate': '12/2030', 'administeredUnder': 'Dr. Doe', 'location': '123 Zoo'
+                },
+                {
+                    'dateAdmin': 'Jan-10-2020', 'brandName': 'PEDIACEL', 'bacteria': ['Corona', 'AIDS'],
+                    'lot': 'wi6634uh', 'expiryDate': '5/2025', 'administeredUnder': 'Dr. Dane', 'location': '200 Boo'
+                }
+            ]
+        }
+        yield put (actions.patientInfoSuccess(response))
+    } catch (error) {
+        // TODO: proper error handling
+        console.log('Saga Error')
+        yield put (actions.loginFail(response.data))
+    }
+}
+
