@@ -49,3 +49,23 @@ export const PatientRecordVaccines = (props) => {
         </div>
     )
 }
+
+export const PatientRecordVaccinesEdit = (props) => {
+    console.log(props);
+    return (
+        <div>
+            <ul className="flex-container longhand">
+                <input type="text" placeholder={props.dateAdmin} className="flex-item" />
+                <input type="text" placeholder={props.brandName} className="flex-item"/>
+                {props.bacteria && props.bacteria.map((bacteria) => {
+                    return <input type="text" placeholder={bacteria} className="flex-item"/>
+                })}
+                <input type="text" placeholder={props.lot} className="flex-item"/>
+                <input type="text" placeholder={props.expiryDate} className="flex-item"/>
+                <input type="text" placeholder={props.administeredUnder} className="flex-item"/>
+                <input type="text" placeholder={props.location} className="flex-item"/>
+            </ul>
+        </div>
+    )
+}
+

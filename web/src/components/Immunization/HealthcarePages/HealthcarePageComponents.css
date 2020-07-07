@@ -1,6 +1,6 @@
 .flex-container {
     padding: 0;
-    margin: 0;
+    margin-left: 50px;
     list-style: none;
     
     -ms-box-orient: horizontal;
@@ -15,9 +15,13 @@
   .flex-item {
     margin: 10px;
     
-    line-height: 100px;
     font-weight: bold;
     text-align: center;
+  }
+
+  .button {
+      margin-left: -50px;
+      height: 20px;
   }
 
 
