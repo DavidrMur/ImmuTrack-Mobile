@@ -127,6 +127,20 @@ export const signupSetGender = (payload) => {
     };
 };
 
+export const signupSetRace = (payload) => {
+    return {
+        type: actionTypes.SIGNUP_SET_RACE,
+        payload
+    };
+};
+
+export const signupSetEduLevel = (payload) => {
+    return {
+        type: actionTypes.SIGNUP_SET_EDU_LEVEL,
+        payload
+    };
+};
+
 export const signupSetPostal = (payload) => {
     return {
         type: actionTypes.SIGNUP_SET_POSTAL,

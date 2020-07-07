@@ -19,6 +19,8 @@ export {
     signupSetOwner,
     signupSetDOB,
     signupSetGender,
+    signupSetRace,
+    signupSetEduLevel,
     signupSetProfession,
     signupSetLicense,
     signupSetWorkName,

@@ -16,6 +16,8 @@ const initialState = {
         signupOwner: '',
         signupDOB: '',
         signupGender: '',
+        signupRace: '',
+        signupEduLevel: '',
     },
     healthcareInfo: {
         signupProfession: '',
@@ -155,6 +157,28 @@ const signupSetGender = (state, action) => {
         patientInfo: {
             ...state.patientInfo,
             signupGender: action.payload
+        }
+    }
+}
+
+const signupSetRace = (state, action) => {
+    console.log('setting Gender');
+    return {
+        ...state,
+        patientInfo: {
+            ...state.patientInfo,
+            signupRace: action.payload
+        }
+    }
+}
+
+const signupSetEduLevel = (state, action) => {
+    console.log('setting Gender');
+    return {
+        ...state,
+        patientInfo: {
+            ...state.patientInfo,
+            signupEduLevel: action.payload
         }
     }
 }
@@ -336,6 +360,12 @@ const reducer = (state = initialState, action) => {
         case actionTypes.SIGNUP_SET_GENDER:
             console.log('Gender case');
             return signupSetGender(state,action); 
+        case actionTypes.SIGNUP_SET_RACE:
+            console.log('race case');
+            return signupSetRace(state,action); 
+        case actionTypes.SIGNUP_SET_EDU_LEVEL:
+            console.log('edu case');
+            return signupSetEduLevel(state,action);         
         case actionTypes.SIGNUP_SET_POSTAL:
             console.log('postal case');
             return signupSetPostal(state,action);    

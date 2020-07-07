@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SignupOHIP, SignupSCN, SignupName, SignupOwner, SignupDOB, SignupGender, SignupReview, SignupCredentials, SignupGeneral } from './SignupPageComponents';
+import { SignupOHIP, SignupSCN, SignupName, SignupOwner, SignupDOB, SignupGender, SignupRace, SignupEduLevel, SignupReview, SignupCredentials, SignupGeneral } from './SignupPageComponents';
 
 class SignupPagePatient extends Component {
 
@@ -32,9 +32,15 @@ class SignupPagePatient extends Component {
                 signupView = <SignupGender fieldFunction={this.props.patientSignupFunctions.signupSetGender}/>  
                 break; 
             case 7:
+                signupView = <SignupRace fieldFunction={this.props.patientSignupFunctions.signupSetRace}/>  
+                break;   
+            case 8:
+                signupView = <SignupEduLevel fieldFunction={this.props.patientSignupFunctions.signupSetEduLevel}/>  
+                break;       
+            case 9:
                 signupView = <SignupReview />  
                 break;    
-            case 8:
+            case 10:
                 signupView = <div><SignupCredentials nestedFieldFunction={this.props.patientSignupFunctions.signupSetCredentials} /><SignupGeneral fieldFunction={this.props.patientSignupFunctions.signupSetPostal}/></div>
                 break;       
             default:

@@ -15,16 +15,17 @@ export const formatStateToSignupPayload = (state) => {
     let payload;
 
     if (state.type === 'patient') {
-        debugger;
         payload = {
+            profession: 'patient',
             scn: state.patientInfo.signupSCN,
             ohip: state.patientInfo.signupOHIP,
             owner: state.patientInfo.signupOwner,
             dob: state.patientInfo.signupDOB,
             sex: state.patientInfo.signupGender,
-            postalCode: state.patientInfo.signupPostal,
-            educationLevel: 'highschool',
-            race: 'caucasian',
+            //TODO: should be postalCode, backend blocking
+            postal_code: state.patientInfo.signupPostal,
+            educationLevel: state.patientInfo.signupEduLevel,
+            race: state.patientInfo.signupRace
         }
     } else if (state.type === 'healthcare') {
 

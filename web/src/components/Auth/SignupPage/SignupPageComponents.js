@@ -58,6 +58,26 @@ const SignupGender = (props) => {
     )
 }
 
+const SignupRace = (props) => {
+    return (
+        <div style={{margin: "10px"}}>
+            <p  >Please enter your Race</p>
+            {/* TODO: change this, depends on the UI module we use */}
+            <input type="text" placeholder="If other, please specify"  onChange={(event) => props.fieldFunction(event.target.value)} />
+        </div>
+    )
+}
+
+const SignupEduLevel = (props) => {
+    return (
+        <div style={{margin: "10px"}}>
+            <p  >Please enter your education level</p>
+            {/* TODO: change this, depends on the UI module we use */}
+            <input type="text" placeholder="If other, please specify"  onChange={(event) => props.fieldFunction(event.target.value)} />
+        </div>
+    )
+}
+
 const SignupReview = (props) => {
     return (
         <div>
@@ -146,6 +166,8 @@ export {
     SignupName,
     SignupDOB,
     SignupGender,
+    SignupRace,
+    SignupEduLevel,
     SignupReview,
     SignupCredentials,
     SignupGeneral,
