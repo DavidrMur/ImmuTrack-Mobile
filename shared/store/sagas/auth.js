@@ -11,7 +11,7 @@ export function* loginPending(action){
         console.log ('Saga response');
         let payload = formatStateToLoginPayload(action);
         let response = yield axios.post("http://127.0.0.1:5000/signin", payload)
-        console.log(response);
+        localStorage.setItem('jwtToken', response.data.token);
         yield put (actions.loginSuccess(response.data))
     } catch (error) {
         console.log('Saga Error')

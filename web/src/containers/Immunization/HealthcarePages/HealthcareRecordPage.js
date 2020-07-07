@@ -13,10 +13,6 @@ class HealthcareRecordPage extends Component {
         }
     }
 
-    componentDidMount = () => {
-        this.props.patientInfoPending();
-    }
-
     patientRecords = (<div>loading</div>);
     
     
@@ -68,7 +64,7 @@ const mapStateToProps = state => {
 
 const mapDispathToProps = dispatch => {
     return {
-        patientInfoPending: () => dispatch(actions.patientInfoPending()) 
+        
     };
 };
 

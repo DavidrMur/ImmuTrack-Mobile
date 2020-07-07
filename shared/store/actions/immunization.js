@@ -15,11 +15,11 @@ export const patientsSuccess = (payload) => {
     };
 };
 
-export const patientInfoPending = (payload) => {
+export const patientInfoPending = (patientOHIP) => {
     console.log('pending');
     return {
         type: actionTypes.IMMU_PATIENT_INFO_PENDING,
-        payload
+        patientOHIP
     };
 };
 

@@ -9,7 +9,7 @@ import HealthcareRecordPage from './containers/Immunization/HealthcarePages/Heal
 function App() {
 
   let routes;
-  let loggedIn = false;
+  let loggedIn = (localStorage.getItem('jwtToken') !== undefined);
   
   let newVisitRoutes = (
     <Switch>

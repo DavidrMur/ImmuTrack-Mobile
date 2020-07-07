@@ -31,7 +31,7 @@ class HealthcareRecordPage extends Component {
                     DOB={patient.DOB}
                     OHIP={patient.OHIP}
                     //function to make API request to view more information on patient
-                    //redirectQuery={this.props.getInfo(patient.id)}
+                    redirectQuery={this.props.patientInfoPending}
             />
         })}
 
@@ -53,7 +53,8 @@ const mapStateToProps = state => {
 
 const mapDispathToProps = dispatch => {
     return {
-        patientsPending: () => dispatch(actions.patientsPending()) 
+        patientsPending: () => dispatch(actions.patientsPending()),
+        patientInfoPending: (patientOHIP) => dispatch(actions.patientInfoPending(patientOHIP))
     };
 };
 
