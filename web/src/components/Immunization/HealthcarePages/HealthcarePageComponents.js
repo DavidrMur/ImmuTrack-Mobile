@@ -49,3 +49,23 @@ export const PatientRecordVaccines = (props) => {
         </div>
     )
 }
+
+export const PatientRecordVaccinesEdit = (props) => {
+    return (
+        <div>
+            <ul className="flex-container longhand">
+                <input type="text" placeholder={props.dateAdmin} className="flex-item" onChange={(event) => props.onChangeEvent(event.target.value, 'dateAdmin')} />
+                <input type="text" placeholder={props.brandName} className="flex-item" onChange={(event) => props.onChangeEvent(event.target.value, 'brandName')}/>
+                {/* TODO: make onchange event functional for bactera, currently will overwrite all*/}
+                {props.bacteria && props.bacteria.map((bacteria) => {
+                    return <input type="text" placeholder={bacteria} className="flex-item" onChange={(event) => props.onChangeEvent(event.target.value, 'bacteria')}/>
+                })}
+                <input type="text" placeholder={props.lot} className="flex-item"/>
+                <input type="text" placeholder={props.expiryDate} className="flex-item" onChange={(event) => props.onChangeEvent(event.target.value,'expiryDate')}/>
+                <input type="text" placeholder={props.administeredUnder} className="flex-item" onChange={(event) => props.onChangeEvent(event.target.value, 'administeredUnder')}/>
+                <input type="text" placeholder={props.location} className="flex-item" onChange={(event) => props.onChangeEvent(event.target.value,'location')}/>
+            </ul>
+        </div>
+    )
+}
+
