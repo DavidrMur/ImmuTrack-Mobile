@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
 import * as actions from 'redux-saga-store/actions/index';
 import { PatientRecordTile, PatientRecordVaccines, PatientRecordVaccinesEdit, PatientRecordVaccineTitles } from '../../../components/Immunization/HealthcarePages/HealthcarePageComponents';
-import PatientVaccines from '../../../components/Immunization/PatientVaccines';
+import PatientVaccines from '../PatientVaccines';
 
 class HealthcareRecordPage extends Component {
 
     constructor(props){
         super(props);
         this.state = {
-            edit: false
+            
         }
     }
 
