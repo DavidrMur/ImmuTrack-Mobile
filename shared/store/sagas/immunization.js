@@ -48,3 +48,15 @@ export function* patientInfoPending(action){
     }
 }
 
+export function* patientUpdateInfoPending(action){
+    try {
+        console.log ('Saga response');
+        console.log(action);
+        //let response = yield axios.post("http://127.0.0.1:5000/signin", localStorage.getItem('jwtToken'), action);
+        
+    } catch (error) {
+        // TODO: proper error handling
+        console.log('Saga Error')
+        yield put (actions.loginFail(response.data))
+    }
+}

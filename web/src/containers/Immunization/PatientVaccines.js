@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import * as actions from 'redux-saga-store/actions/index';
 import { PatientRecordVaccinesEdit, PatientRecordVaccines} from '../../components/Immunization/HealthcarePages/HealthcarePageComponents'
 
 class PatientVaccines extends Component {
@@ -24,12 +25,17 @@ class PatientVaccines extends Component {
         this.setState({vaccine: temp})
     }
 
+    onSubmitEvent = () => {
+        this.setState({edit: false});
+        this.props.patientUpdateInfoPending(this.state.vaccine);
+    }
+
     render(){
         return (
             <div>
                 <button onClick={() => this.setState({edit: true})}>Edit</button>
                 {this.state.edit ? 
-                <PatientRecordVaccinesEdit
+                <div><PatientRecordVaccinesEdit
                 dateAdmin={this.state.vaccine.dateAdmin}
                 brandName={this.state.vaccine.brandName}
                 bacteria={this.state.vaccine.bacteria}
@@ -39,6 +45,8 @@ class PatientVaccines extends Component {
                 location={this.state.vaccine.location}
                 onChangeEvent={this.onChangeEvent}
                 />
+                <button onClick={() => this.onSubmitEvent()}>Submit</button>
+                </div>
                 : 
                 <PatientRecordVaccines
                 //key={patient.id}
@@ -57,6 +65,11 @@ class PatientVaccines extends Component {
     }
 }
 
+const mapDispathToProps = dispatch => {
+    return {
+        patientUpdateInfoPending: (payload) => dispatch(actions.patientUpdateInfoPending(payload))
+    };
+};
 
 //export default connect(mapStateToProps,mapDispathToProps)(SummonerProfile);
-export default PatientVaccines
+export default connect(null,mapDispathToProps)(PatientVaccines)

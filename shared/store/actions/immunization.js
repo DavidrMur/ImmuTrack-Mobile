@@ -30,4 +30,10 @@ export const patientInfoSuccess = (payload) => {
     };
 };
 
+export const patientUpdateInfoPending = (payload) => {
+    return {
+        type: actionTypes.IMMU_PATIENT_UPDATE_INFO_PENDING,
+        payload
+    }
+}
 
