@@ -33,7 +33,7 @@ class PatientVaccines extends Component {
     render(){
         return (
             <div>
-                <button onClick={() => this.setState({edit: true})}>Edit</button>
+                <button onClick={() => this.setState({edit: true})} hidden={!this.props.editPermission}>Edit</button>
                 {this.state.edit ? 
                 <div><PatientRecordVaccinesEdit
                 dateAdmin={this.state.vaccine.dateAdmin}

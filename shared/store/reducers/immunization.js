@@ -3,7 +3,9 @@ import * as actionTypes from '../actions/actionTypes';
 const initialState = {
     healthcare: {
         patients: [],
-        currentPatient: {}
+    },
+    patient: {
+
     }
 }
 
@@ -20,10 +22,7 @@ const patientsSuccess = (state, action) => {
 const patientInfoSuccess = (state, action) => {
     return {
         ...state,
-        healthcare: {
-            ...state.healthcare,
-            currentPatient: action.payload,
-        }
+        patient: action.payload,
     }
 }
 
