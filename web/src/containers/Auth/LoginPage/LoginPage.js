@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as actions from 'redux-saga-store/actions/index';
+import { Button, Grid, TextField, Typography } from '@material-ui/core'
 import './LoginPage.css';
 
 class LoginPage extends Component {
@@ -25,20 +26,41 @@ class LoginPage extends Component {
 
     render(){
         return(
-            <div>
-                <form className='container' onSubmit={(e) => this.onSubmit(e)}>
-                    <h1>Member Login</h1>
-                    <input type="text" placeholder="username" className='container--field' onChange={(event) => this.setValue(event, 'username')}/>
-                    <input type="password" placeholder="password" className='container--field' onChange={(event) => this.setValue(event, 'password')}/>
-                    <input type="submit" value="Login" className='container--button' onClick={(e) => this.onSubmit(e)}/>
-                </form>
-                <button onClick={() => this.setState({profession: 'provider'})}> Provider </button>
-                <button onClick={() => this.setState({profession: 'patient'})}> Patient </button>
-                <label>Remember Me</label>
-                <input type="checkbox" />
-                <p className="container--option">Forgot Password?</p>
-                <p>Not a member?</p>
-                <Link className='container--option' to="/signup">Create an Account</Link>
+            //style={{width: '50vw', margin: 'auto'}}
+            <div style={{width: '47vw', margin: 'auto'}}>
+                <Grid container spacing={2} style={{'text-align': 'center'}}>
+                    <Grid item xs={12}>
+                        <Typography variant="h1">Member Login</Typography>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <TextField style={{width: "70%"}} required type="text" label="username" onChange={(event) => this.setValue(event, 'username')}/>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <TextField style={{width: "70%"}} required fullWidth type="password" label="password" onChange={(event) => this.setValue(event, 'password')}/>
+                    </Grid>
+                    <Grid item xs = {6}>
+                        <Button variant="outlined" onClick={() => this.setState({profession: 'provider'})}> Provider </Button>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <Button variant="outlined" onClick={() => this.setState({profession: 'patient'})}> Patient </Button>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <Typography variant="paragraph">Remember Me</Typography>
+                        <input type="checkbox" />
+                    </Grid>
+                    <Grid item xs={6}>
+                        <Typography variant="paragraph">Forgot Password?</Typography>
+                    </Grid>
+                    <Grid item xs={12} >
+                        <Button variant="outlined" onClick={(e) => this.onSubmit(e)}>Login</Button> 
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Button>
+                        <Link to="/signup">Create an Account</Link>
+                        </Button>
+                    </Grid>
+                
+                </Grid>
             </div>
 
         );
