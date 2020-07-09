@@ -23,12 +23,22 @@ const initialState = {
         signupProfession: '',
         signupLicense: '',
         signupWorkLocations: [],
+    },
+    userInfo: {
+        profession: '',
+        firstName: '',
+        lastName: '',
+        OHIP: '',
+        DOB: ''
     }
 
 }
 
 const loginSuccess = (state, action) => {
-    return state;
+    return {
+        ...state,
+        userInfo: action.payload
+    }
 }
 
 const loginFail = (state, action) => {
