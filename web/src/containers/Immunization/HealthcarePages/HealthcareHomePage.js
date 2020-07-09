@@ -14,7 +14,6 @@ class HealthcareRecordPage extends Component {
     }
 
     componentDidMount = () => {
-        console.log('alo');
         this.props.patientsPending();
     }
 

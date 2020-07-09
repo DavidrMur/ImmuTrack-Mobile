@@ -31,6 +31,7 @@ class HealthcareRecordPage extends Component {
                     expiryDate={vaccine.expiryDate}
                     administeredUnder={vaccine.administeredUnder}
                     location={vaccine.location}
+                    editPermission={true}
                     />
             </div>
             }))
@@ -62,7 +63,7 @@ class HealthcareRecordPage extends Component {
 
 const mapStateToProps = state => {
     return {
-        currentPatient: state.immunization.healthcare.currentPatient
+        currentPatient: state.immunization.patient
     };
 };
 

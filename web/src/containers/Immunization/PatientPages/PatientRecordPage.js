@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import * as actions from 'redux-saga-store/actions/index';
 import PatientVaccines from '../PatientVaccines';
+import { PatientRecordVaccineTitles } from '../../../components/Immunization/HealthcarePages/HealthcarePageComponents';
 
 class PatientImmunization extends Component {
 
+    
+    componentDidMount = () => {
+        this.props.patientInfoPending(this.props.userInfo.OHIP);
+    }
+    
     render(){
         let patientVaccines;
         if (this.props.currentPatient && this.props.currentPatient.vaccines) {
@@ -18,12 +25,17 @@ class PatientImmunization extends Component {
                     expiryDate={vaccine.expiryDate}
                     administeredUnder={vaccine.administeredUnder}
                     location={vaccine.location}
+                    editPermission={false}
                     />
             </div>
             }))
         }
         return(
-            {patientVaccines}
+            <div>
+                <PatientRecordVaccineTitles />
+                {patientVaccines}
+                <button>Download PDF</button>
+            </div>
         );
     }
 }
@@ -31,14 +43,16 @@ class PatientImmunization extends Component {
 
 const mapStateToProps = state => {
     return {
+        userInfo: state.auth.userInfo,
         currentPatient: state.immunization.patient
     };
 };
 
 const mapDispathToProps = dispatch => {
     return {
+        patientInfoPending: (patientOHIP) => dispatch(actions.patientInfoPending(patientOHIP))
     };
 };
 
 //export default connect(mapStateToProps,mapDispathToProps)(SummonerProfile);
-export default connect(mapStateToProps,null)(PatientImmunization)
+export default connect(mapStateToProps,mapDispathToProps)(PatientImmunization)
