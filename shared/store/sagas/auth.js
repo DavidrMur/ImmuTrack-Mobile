@@ -12,6 +12,13 @@ export function* loginPending(action){
         let payload = formatStateToLoginPayload(action);
         let response = yield axios.post("http://127.0.0.1:5000/signin", payload)
         localStorage.setItem('jwtToken', response.data.token);
+        response.data = {
+            profession: 'nurse',
+            firstName: 'John',
+            lastName: 'Doe',
+            OHIP: '324252352',
+            DOB: 'June-15-1995'
+        }
         yield put (actions.loginSuccess(response.data))
     } catch (error) {
         console.log('Saga Error')
