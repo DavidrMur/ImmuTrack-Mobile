@@ -14,7 +14,6 @@ class Routes extends Component {
     render() {
 
         let routes;
-        debugger;
         let loggedIn = (localStorage.getItem('jwtToken') !== undefined && localStorage.getItem('jwtToken') !== null) && this.props.userInfo.profession !== "";
     
         let newVisitRoutes = (

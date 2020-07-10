@@ -36,7 +36,7 @@ class LoginPage extends Component {
                         <TextField style={{width: "70%"}} required type="text" label="username" onChange={(event) => this.setValue(event, 'username')}/>
                     </Grid>
                     <Grid item xs={6}>
-                        <TextField style={{width: "70%"}} required fullWidth type="password" label="password" onChange={(event) => this.setValue(event, 'password')}/>
+                        <TextField style={{width: "70%"}} required type="password" label="password" onChange={(event) => this.setValue(event, 'password')}/>
                     </Grid>
                     <Grid item xs = {6}>
                         <Button variant="outlined" onClick={() => this.setState({profession: 'provider'})}> Provider </Button>
