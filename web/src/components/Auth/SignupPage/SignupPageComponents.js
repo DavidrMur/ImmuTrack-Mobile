@@ -13,8 +13,8 @@ const SignupOHIP = (props) => {
 const SignupSCN = (props) => {
     return (
         <div>
-        <Typography >Please enter your SCN Number</Typography>
-        <TextField type="text" label="SCN - Back of Healthcard" onChange={(event) => props.fieldFunction(event.target.value)} />
+        <Typography >Please enter your SCN Number (back of your healthcard)</Typography>
+        <TextField type="text" label="SCN" onChange={(event) => props.fieldFunction(event.target.value)} />
         </div>
     )
 };
@@ -23,8 +23,8 @@ const SignupOwner = (props) => {
     return (
         <div>
             <Typography >This Health Card belongs to</Typography>
-            <button onClick={() => props.fieldFunction('me')}>Me</button>
-            <button onClick={() => props.fieldFunction('dependant')}>Dependant</button>
+            <Button onClick={() => props.fieldFunction('me')}>Me</Button>
+            <Button onClick={() => props.fieldFunction('dependant')}>Dependant</Button>
         </div>
     )
 }
