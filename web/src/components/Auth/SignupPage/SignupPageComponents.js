@@ -1,48 +1,49 @@
 import React from 'react';
+import { Button, Grid, TextField, Typography, Select, MenuItem, InputLabel } from '@material-ui/core'
 
 const SignupOHIP = (props) => {
     return (
-        <div style={{margin: "10px"}} >
-        <p >Please enter your OHIP Number</p>
-        <input type="text" placeholder="OHIP Number" onChange={(event) => props.fieldFunction(event.target.value)}/>
+        <div >
+        <Typography >Please enter your OHIP Number</Typography>
+        <TextField type="text" label="OHIP Number" onChange={(event) => props.fieldFunction(event.target.value)}/>
         </div>
     )
 };
 
 const SignupSCN = (props) => {
     return (
-        <div style={{margin: "10px"}}>
-        <p >Please enter your SCN Number</p>
-        <input type="text" placeholder="SCN - Back of Healthcard" onChange={(event) => props.fieldFunction(event.target.value)} />
+        <div>
+        <Typography >Please enter your SCN Number (back of your healthcard)</Typography>
+        <TextField type="text" label="SCN" onChange={(event) => props.fieldFunction(event.target.value)} />
         </div>
     )
 };
 
 const SignupOwner = (props) => {
     return (
-        <div style={{margin: "10px"}}>
-            <p >This Health Card belongs to</p>
-            <button style={{margin: "10px"}} onClick={() => props.fieldFunction('me')}>Me</button>
-            <button onClick={() => props.fieldFunction('dependant')}>Dependant</button>
+        <div>
+            <Typography >This Health Card belongs to</Typography>
+            <Button onClick={() => props.fieldFunction('me')}>Me</Button>
+            <Button onClick={() => props.fieldFunction('dependant')}>Dependant</Button>
         </div>
     )
 }
 
 const SignupName = (props) => {
     return ( 
-        <div style={{margin: "10px"}} >
-            <p >Please enter your first and last name</p>
-            <input style={{margin: "10px"}} type="text" placeholder="First Name" onChange={(event) => props.nestedFieldFunction.signupSetFirstName(event.target.value)}/>
-            <input type="text" placeholder="Last Name" onChange={(event) => props.nestedFieldFunction.signupSetLastName(event.target.value)}/>
+        <div >
+            <Typography >Please enter your first and last name</Typography>
+            <TextField type="text" label="First Name" onChange={(event) => props.nestedFieldFunction.signupSetFirstName(event.target.value)}/>
+            <TextField type="text" label="Last Name" onChange={(event) => props.nestedFieldFunction.signupSetLastName(event.target.value)}/>
         </div>
     )
 }
 
 const SignupDOB = (props) => {
     return (
-        <div style={{margin: "10px"}}>
-            <p >Please enter your date of birth</p>
-            <input type="text" placeholder="date" onChange={(event) => props.fieldFunction(event.target.value)} />
+        <div>
+            <Typography >Please enter your date of birth</Typography>
+            <TextField type="text" label="date" onChange={(event) => props.fieldFunction(event.target.value)} />
             {/* TODO: change this, depends on the UI module we use */}
         </div>
     )
@@ -50,30 +51,30 @@ const SignupDOB = (props) => {
 
 const SignupGender = (props) => {
     return (
-        <div style={{margin: "10px"}}>
-            <p  >Please enter your gender</p>
+        <div>
+            <Typography  >Please enter your gender</Typography>
             {/* TODO: change this, depends on the UI module we use */}
-            <input type="text" placeholder="If other, please specify"  onChange={(event) => props.fieldFunction(event.target.value)} />
+            <TextField type="text" label="If other, please specify"  onChange={(event) => props.fieldFunction(event.target.value)} />
         </div>
     )
 }
 
 const SignupRace = (props) => {
     return (
-        <div style={{margin: "10px"}}>
-            <p  >Please enter your Race</p>
+        <div>
+            <Typography  >Please enter your Race</Typography>
             {/* TODO: change this, depends on the UI module we use */}
-            <input type="text" placeholder="If other, please specify"  onChange={(event) => props.fieldFunction(event.target.value)} />
+            <TextField type="text" label="If other, please specify"  onChange={(event) => props.fieldFunction(event.target.value)} />
         </div>
     )
 }
 
 const SignupEduLevel = (props) => {
     return (
-        <div style={{margin: "10px"}}>
-            <p  >Please enter your education level</p>
+        <div>
+            <Typography  >Please enter your education level</Typography>
             {/* TODO: change this, depends on the UI module we use */}
-            <input type="text" placeholder="If other, please specify"  onChange={(event) => props.fieldFunction(event.target.value)} />
+            <TextField type="text" label="If other, please specify"  onChange={(event) => props.fieldFunction(event.target.value)} />
         </div>
     )
 }
@@ -88,20 +89,20 @@ const SignupReview = (props) => {
 
 const SignupCredentials = (props) => {
     return (
-        <div style={{margin: "10px"}} >
-            <p >Please enter your desired credentials</p>
-            <input style={{margin: "10px"}} type="text" placeholder="username" onChange={(event) => props.nestedFieldFunction.signupSetUsername(event.target.value)}/>
-            <input style={{margin: "10px"}} type="password" placeholder="password" onChange={(event) => props.nestedFieldFunction.signupSetPassword(event.target.value)}/>
-            <input style={{margin: "10px"}} type="email" placeholder="email" onChange={(event) => props.nestedFieldFunction.signupSetEmail(event.target.value)}/>
+        <div >
+            <Typography >Please enter your desired credentials</Typography>
+            <TextField type="text" label="username" onChange={(event) => props.nestedFieldFunction.signupSetUsername(event.target.value)}/>
+            <TextField type="password" label="password" onChange={(event) => props.nestedFieldFunction.signupSetPassword(event.target.value)}/>
+            <TextField type="email" label="email" onChange={(event) => props.nestedFieldFunction.signupSetEmail(event.target.value)}/>
         </div>    
     )
 }
 
 const SignupGeneral = (props) => {
     return (
-        <div style={{margin: "10px"}}>
-            <p >General Information</p>
-            <input type="text" placeholder="Postal Code" onChange={(event) => props.fieldFunction(event.target.value)}/>
+        <div>
+            <Typography >General Information</Typography>
+            <TextField type="text" label="Postal Code" onChange={(event) => props.fieldFunction(event.target.value)}/>
             {/* DROPDOWN - Race / Depends on UI*/}
             {/* DROPDOWN - Level of Education / Depends on UI*/}
         </div>
@@ -110,40 +111,63 @@ const SignupGeneral = (props) => {
 
 const SignupProfession = (props) => {
     return (
-        <div style={{margin: "10px"}}>
-        <p>Please enter your profession</p>
-        <input type="text" placeholder="DROPDOWN - profession" onChange={(event) => props.fieldFunction(event.target.value)} />
+        <div>
+        <Typography variant="paragraph">Please enter your profession</Typography>
+        {/* <TextField type="text" label="DROPDOWN - profession" onChange={(event) => props.fieldFunction(event.target.value)} /> */}
+        <Select onChange={(event) => props.fieldFunction(event.target.value)}>
+          <MenuItem value={'Doctor'}>Doctor</MenuItem>
+          <MenuItem value={'Nurse'}>Nurse</MenuItem>
+          <MenuItem value={'Overlord'}>Overlord</MenuItem>
+          </Select>
         </div>
   )
 }
 
 const SignupLicense = (props) => {
     return (
-        <div style={{margin: "10px"}}>
-        <p>Please enter your profession</p>
-        <input type="text" placeholder="License Number" onChange={(event) => props.fieldFunction(event.target.value)}/>
+        <div>
+            <Grid item xs={4}>
+                <Typography variant="paragraph">Please enter your license</Typography>
+            </Grid>
+            <Grid item xs={4}>
+                <TextField type="text" label="License Number" onChange={(event) => props.fieldFunction(event.target.value)}/>
+            </Grid>
         </div>
    )
 }
 
 const SignupWorkLocation = (props) => {
     return (
-        <div style={{margin: "10px", width: "200px"}}>
-            <p>{`${props.workType} Work Location`}</p>
-            <input style={{margin: "10px"}} type="text" placeholder="Organization Name" onChange={(event) => props.nestedFieldFunction.signupSetWorkName(event.target.value)}/>
-            <input style={{margin: "10px"}} type="text" placeholder="Address" onChange={(event) => props.nestedFieldFunction.signupSetWorkAddress(event.target.value)}/>
-            <input style={{margin: "10px"}} type="text" placeholder="City" onChange={(event) => props.nestedFieldFunction.signupSetWorkCity(event.target.value)}/>
-            <input style={{margin: "10px"}} type="text" placeholder="Postal Code" onChange={(event) => props.nestedFieldFunction.signupSetWorkPostal(event.target.value)} />
-            <input style={{margin: "10px"}} type="text" placeholder="Clinic Phone Number" onChange={(event) => props.nestedFieldFunction.signupSetWorkPhoneNumber(event.target.value)}/>
+        <div>
+            <Grid container direction="column">
+            {/* <Grid item xs={6} > */}
+            <Typography variant="paragraph">{`${props.workType} Work Location`}</Typography>
+            {/* </Grid> */}
+            {/* <Grid item xs={4} > */}
+            <TextField type="text" label="Organization Name" onChange={(event) => props.nestedFieldFunction.signupSetWorkName(event.target.value)}/>
+            {/* </Grid> */}
+            {/* <Grid item xs={3} > */}
+            <TextField type="text" label="Address" onChange={(event) => props.nestedFieldFunction.signupSetWorkAddress(event.target.value)}/>
+            {/* </Grid>
+            <Grid item xs={3} > */}
+            <TextField type="text" label="City" onChange={(event) => props.nestedFieldFunction.signupSetWorkCity(event.target.value)}/>
+            {/* </Grid>
+            <Grid item xs={3} > */}
+            <TextField type="text" label="Postal Code" onChange={(event) => props.nestedFieldFunction.signupSetWorkPostal(event.target.value)} />
+            {/* </Grid>
+            <Grid item xs={3} > */}
+            <TextField type="text" label="Clinic Phone Number" onChange={(event) => props.nestedFieldFunction.signupSetWorkPhoneNumber(event.target.value)}/>
+            {/* </Grid> */}
             {/* TODO: need checkboxes - depends on ui */}
-            <input style={{margin: "10px"}} type="text" placeholder="EMR Integration - NEEDS something else too?" />
+            <TextField type="text" label="EMR Integration - NEEDS something else too?" />
+            </Grid>
         </div>
     )
 }
 
 const SignupPrimaryWork = (props) => {
     return (
-        <div style={{margin: "10px"}}>
+        <div>
         
         <SignupWorkLocation workType="Primary" nestedFieldFunction={props.nestedFieldFunction}/>
         </div>
@@ -152,8 +176,7 @@ const SignupPrimaryWork = (props) => {
 
 const SignupOtherWork = (props) => {
     return (
-        <div style={{margin: "10px"}}>
-        <p>Please enter your profession</p>
+        <div>
         <SignupWorkLocation workType="(Optional) Other"/>
         </div>
     )
