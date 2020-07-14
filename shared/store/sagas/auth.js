@@ -1,6 +1,6 @@
 import { put, select } from 'redux-saga/effects';
 import * as actions from '../actions';
-import { formatStateToLoginPayload, formatStateToSignupPayload } from '../../HelperFunctions/authHelper';
+import { formatStateToLoginPayload, formatStateToSignupPayload, formatStateToVerifyPasswordPayload } from '../../HelperFunctions/authHelper';
 import axios from 'axios';
 
 export const getAuth = (state) => state.auth;
@@ -37,6 +37,19 @@ export function* signupPending(action){
         let payload = formatStateToSignupPayload(auth);
         console.log(payload);
         let response = yield axios.post("http://127.0.0.1:5000/signup",payload)
+        yield put (actions.loginSuccess(response.data))
+    } catch (error) {
+        console.log('Saga Error')
+        console.log(error);
+    }
+}
+
+export function* verifyPasswordPending(action){
+    try {
+        debugger;
+        console.log ('Saga response');
+        let payload = formatStateToVerifyPasswordPayload(action.payload);
+        let response = yield axios.post("http://127.0.0.1:5000/verifyChangePassword",payload)
         yield put (actions.loginSuccess(response.data))
     } catch (error) {
         console.log('Saga Error')

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import LoginPage from './Auth/LoginPage/LoginPage';
 import SignupPage from './Auth/SignupPage/SignupPage';
+import ForgotPage from './Auth/ForgotPage/ForgotPage';
 import PatientImmunization from './Immunization/PatientPages/PatientRecordPage';
 import HealthcareHomePage from './Immunization/HealthcarePages/HealthcareHomePage';
 import HealthcareRecordPage from './Immunization/HealthcarePages/HealthcareRecordPage';
@@ -20,6 +21,7 @@ class Routes extends Component {
         <Switch>
             <Route path='/login' component={LoginPage}/>
             <Route path='/signup' component={SignupPage}/>
+            <Route path='/forgot' component={ForgotPage} />
             {/* TODO: remove below */}
             <Redirect to='/login'/>
             </Switch>

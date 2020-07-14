@@ -49,3 +49,27 @@ export const formatStateToSignupPayload = (state) => {
 
     return payload;
 }
+
+export const formatStateToVerifyPasswordPayload = (params) => {
+    
+    let payload;
+
+    if (params.profession === 'patient') {
+        payload = {
+            profession: 'patient',
+            OHIP: params.OHIP,
+            SCN: params.SCN
+        };
+
+    } else if(params.profession === 'provider') {
+        payload = {
+            profession: 'provider',
+            license: params.license,
+            firstName: params.firstName,
+            lastName: params.lastName
+        }
+    }
+
+    return payload;
+
+}

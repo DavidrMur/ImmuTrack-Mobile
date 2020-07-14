@@ -5,6 +5,7 @@ export {
     signupPending,
     signupSuccess,
     signupFail,
+    verifyPasswordPending,
 
     signupSetType,
     signupSetFirstName,
