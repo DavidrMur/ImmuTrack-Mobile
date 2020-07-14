@@ -57,8 +57,8 @@ export const formatStateToVerifyPasswordPayload = (params) => {
     if (params.profession === 'patient') {
         payload = {
             profession: 'patient',
-            OHIP: params.OHIP,
-            SCN: params.SCN
+            ohip: params.OHIP,
+            scn: params.SCN
         };
 
     } else if(params.profession === 'provider') {
