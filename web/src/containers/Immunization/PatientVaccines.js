@@ -6,18 +6,28 @@ import { PatientRecordVaccinesEdit, PatientRecordVaccines} from '../../component
 
 class PatientVaccines extends Component {
 
-    state = {
-        edit: false,
-        vaccine: {
-            dateAdmin: this.props.dateAdmin,
-            brandName: this.props.brandName,
-            bacteria: this.props.bacteria,
-            lot: this.props.lot,
-            expiryDate: this.props.expiryDate,
-            administeredUnder: this.props.administeredUnder,
-            location: this.props.location
-        }
-    };
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            edit: false,
+            vaccine: {
+                dateAdmin: this.props.dateAdmin,
+                brandName: this.props.brandName,
+                bacteria: this.props.bacteria,
+                lot: this.props.lot,
+                expiryDate: this.props.expiryDate,
+                administeredUnder: this.props.administeredUnder,
+                location: this.props.location
+            }
+        };
+
+    }
+
+    componentWillReceiveProps(nextProps) {
+        debugger;
+        this.setState({vaccine: nextProps.data})
+    }
 
     onChangeEvent = (value, type) => {
         let temp = {...this.state.vaccine}
