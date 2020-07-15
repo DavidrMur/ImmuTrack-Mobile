@@ -44,3 +44,10 @@ export const patientAddPending = (OHIP) => {
     }
 }
 
+export const patientAddSuccess = (payload) => {
+    return {
+        type: actionTypes.IMMU_PATIENT_ADD_SUCCESS,
+        payload
+    }
+}
+

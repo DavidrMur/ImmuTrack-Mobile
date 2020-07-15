@@ -5,7 +5,7 @@ import * as actions from 'redux-saga-store/actions/index';
 import { TextField, Button, Grid } from '@material-ui/core'
 import { PatientRecordTile } from '../../../components/Immunization/HealthcarePages/HealthcarePageComponents';
 
-class HealthcareRecordPage extends Component {
+class HealthcareHomePage extends Component {
 
     constructor(props){
         super(props);
@@ -69,4 +69,4 @@ const mapDispathToProps = dispatch => {
 };
 
 //export default connect(mapStateToProps,mapDispathToProps)(SummonerProfile);
-export default connect(mapStateToProps,mapDispathToProps)(HealthcareRecordPage)
+export default connect(mapStateToProps,mapDispathToProps)(HealthcareHomePage)

@@ -67,10 +67,15 @@ export function* patientAddPending(action){
         console.log ('Saga add response');
         console.log(action);
         //let response = yield axios.post("http://127.0.0.1:5000/signin", localStorage.getItem('jwtToken'), action);
+        let response = {
+            'id': '1248443', 'name': 'JAYNE Dane', 'DOB': 'Dec-31-1998', 'OHIP': `${action.OHIP}`
+        }
+        yield put (actions.patientAddSuccess(response));
         
     } catch (error) {
         // TODO: proper error handling
         console.log('Saga Error')
-        yield put (actions.loginFail(response.data))
+        console.log(error)
+        //yield put (actions.loginFail(response.data))
     }
 }
