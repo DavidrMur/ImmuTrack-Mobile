@@ -1,7 +1,7 @@
 import { put, select } from 'redux-saga/effects';
 import * as actions from '../actions';
 import { formatStateToLoginPayload, formatStateToSignupPayload, formatStateToVerifyPasswordPayload } from '../../HelperFunctions/authHelper';
-import axios from 'axios';
+import axios from '../../axios-config';
 
 export const getAuth = (state) => state.auth;
 
