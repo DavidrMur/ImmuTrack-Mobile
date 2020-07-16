@@ -46,6 +46,21 @@ export const signupFail = (payload) => {
     };
 };
 
+export const verifyPasswordPending = (payload) => {
+    return {
+        type: actionTypes.VERIFY_PASSWORD_PENDING,
+        payload
+    };
+};
+
+export const changePasswordPending = (payload) => {
+    return {
+        type: actionTypes.CHANGE_PASSWORD_PENDING,
+        payload
+    };
+};
+
+
 
 // Synchronous actions
 
