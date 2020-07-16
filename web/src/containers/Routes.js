@@ -26,6 +26,8 @@ class Routes extends Component {
             <Route path='/signup' component={SignupPage}/>
             <Route path='/forgot' component={ForgotPage} />
             {/* TODO: remove below */}
+            <Route path='/main' component={HealthcareHomePage} />
+            <Route path='/view-patient' component={HealthcareRecordPage} />
             <Redirect to='/login'/>
             </Switch>
         );

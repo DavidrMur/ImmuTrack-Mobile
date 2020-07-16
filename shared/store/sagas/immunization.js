@@ -1,14 +1,15 @@
 import { put, select } from 'redux-saga/effects';
 import * as actions from '../actions';
+import axios from '../../axios-config';
 
 export function* patientsPending(action){
     try {
         console.log ('Saga response');
         //let response = yield axios.post("http://127.0.0.1:5000/signin", localStorage.getItem('jwtToken'));
         let response = [
-            {'id': '1248443', 'name': 'Jim Dane', 'DOB': 'Dec-31-1998', 'OHIP': '42342354'},
-            {'id': '2834923', 'name': 'Bob Roe', 'DOB': 'Dec-31-1998', 'OHIP': '654323521'},
-            {'id': '9357932', 'name': 'Florence Iu', 'DOB': 'Dec-31-1998', 'OHIP': '82374628'},]
+            {'id': '1248443', 'firstName': 'Jim', 'lastName': 'Dane', 'DOB': 'Dec-31-1998', 'OHIP': '42342354'},
+            {'id': '2834923', 'firstName': 'Bob', 'lastName': 'Roe', 'DOB': 'Dec-31-1998', 'OHIP': '654323521'},
+            {'id': '9357932', 'firstName': 'Florence', 'lastName': 'Iu','DOB': 'Dec-31-1998', 'OHIP': '82374628'},]
         yield put (actions.patientsSuccess(response))
     } catch (error) {
         // TODO: proper error handling
@@ -19,7 +20,6 @@ export function* patientsPending(action){
 
 export function* patientInfoPending(action){
     try {
-        debugger;
         console.log ('Saga response');
         // let payload = {
         //     patientOHIP: action.OHIP,
@@ -58,5 +58,22 @@ export function* patientUpdateInfoPending(action){
         // TODO: proper error handling
         console.log('Saga Error')
         yield put (actions.loginFail(response.data))
+    }
+}
+
+export function* patientAddPending(action){
+    try {
+        console.log ('Saga add response');
+        console.log(action);
+        let response = yield axios.post("http://127.0.0.1:5000/addPatient", {ohip: action.ohip});
+        // TODO: fix inconsistency on backend
+        response.data.OHIP = response.data.ohip;
+        yield put (actions.patientAddSuccess(response.data));
+        
+    } catch (error) {
+        // TODO: proper error handling
+        console.log('Saga Error')
+        console.log(error)
+        //yield put (actions.loginFail(response.data))
     }
 }

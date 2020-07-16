@@ -45,7 +45,8 @@ class HealthcareRecordPage extends Component {
                 <PatientRecordTile
                     key={this.props.currentPatient.id}
                     id={this.props.currentPatient.id}
-                    name={this.props.currentPatient.name}
+                    firstName={this.props.currentPatient.firstName}
+                    lastName={this.props.currentPatient.lastName}
                     DOB={this.props.currentPatient.DOB}
                     OHIP={this.props.currentPatient.OHIP}
                     //function to make API request to view more information on patient

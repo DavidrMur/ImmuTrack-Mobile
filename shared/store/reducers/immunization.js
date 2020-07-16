@@ -26,6 +26,17 @@ const patientInfoSuccess = (state, action) => {
     }
 }
 
+const patientAddSuccess = (state, action) => {
+    let newPatients = [action.payload].concat(state.healthcare.patients);
+
+    return {
+        ...state,
+        healthcare: {
+            patients: newPatients
+        }
+    }
+}
+
 const reducer = (state = initialState, action) => {
     switch(action.type) {
         
@@ -35,6 +46,9 @@ const reducer = (state = initialState, action) => {
         case actionTypes.IMMU_PATIENT_INFO_SUCCESS:
             console.log('patient info case');
             return patientInfoSuccess(state, action);
+        case actionTypes.IMMU_PATIENT_ADD_SUCCESS:
+            console.log('patient add case');
+            return patientAddSuccess(state, action);    
         default:
             return state;
     }

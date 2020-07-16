@@ -39,4 +39,6 @@ export {
     patientInfoPending,
     patientInfoSuccess,
     patientUpdateInfoPending,
+    patientAddPending,
+    patientAddSuccess
 } from './immunization';
