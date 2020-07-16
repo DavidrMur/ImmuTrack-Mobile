@@ -1,5 +1,6 @@
 import { put, select } from 'redux-saga/effects';
 import * as actions from '../actions';
+import axios from '../../axios-config';
 
 export function* patientsPending(action){
     try {
@@ -63,13 +64,9 @@ export function* patientUpdateInfoPending(action){
 
 export function* patientAddPending(action){
     try {
-
         console.log ('Saga add response');
         console.log(action);
-        //let response = yield axios.post("http://127.0.0.1:5000/signin", localStorage.getItem('jwtToken'), action);
-        let response = {
-            'id': '1248443', 'name': 'JAYNE Dane', 'DOB': 'Dec-31-1998', 'OHIP': `${action.OHIP}`
-        }
+        let response = yield axios.post("http://127.0.0.1:5000/addPatient", {ohip: action.ohip});
         yield put (actions.patientAddSuccess(response));
         
     } catch (error) {

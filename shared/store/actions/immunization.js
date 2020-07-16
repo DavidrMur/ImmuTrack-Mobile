@@ -40,7 +40,7 @@ export const patientUpdateInfoPending = (payload) => {
 export const patientAddPending = (OHIP) => {
     return {
         type: actionTypes.IMMU_PATIENT_ADD_PENDING,
-        OHIP
+        ohip: OHIP // purposefully lower case to there's no issue with the api
     }
 }
 

@@ -8,6 +8,9 @@ export const SIGNUP_PENDING = "SIGNUP_PENDING";
 export const SIGNUP_SUCCESS = "SIGNUP_SUCESS";
 export const SIGNUP_FAIL = "SIGNUP_FAIL";
 
+export const VERIFY_PASSWORD_PENDING = "VERIFY_PASSWORD_PENDING";
+export const CHANGE_PASSWORD_PENDING = "CHANGE_PASSWORD_PENDING";
+
 
 // Synchronous actions
 
