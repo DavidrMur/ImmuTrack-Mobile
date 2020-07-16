@@ -15,7 +15,10 @@ class Routes extends Component {
     render() {
 
         let routes;
-        let loggedIn = (localStorage.getItem('jwtToken') !== undefined && localStorage.getItem('jwtToken') !== null) && this.props.userInfo.profession !== "";
+        let loggedIn = (localStorage.getItem('jwtToken') !== undefined 
+            && localStorage.getItem('jwtToken') !== null) 
+            && this.props.userInfo.profession !== "" &&
+            localStorage.getItem('loggedIn') === true
     
         let newVisitRoutes = (
         <Switch>

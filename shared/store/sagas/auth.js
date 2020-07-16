@@ -19,6 +19,7 @@ export function* loginPending(action){
             OHIP: '324252352',
             DOB: 'June-15-1995'
         }
+        localStorage.setItem('loggedIn', true);
         yield put (actions.loginSuccess(response.data))
     } catch (error) {
         console.log('Saga Error')
@@ -28,7 +29,6 @@ export function* loginPending(action){
 
 export function* signupPending(action){
     try {
-        debugger;
         console.log ('Saga response');
         let auth = yield select(getAuth);
         // auth holds relevant auth information
@@ -46,10 +46,22 @@ export function* signupPending(action){
 
 export function* verifyPasswordPending(action){
     try {
-        debugger;
         console.log ('Saga response');
         let payload = formatStateToVerifyPasswordPayload(action.payload);
         let response = yield axios.post("http://127.0.0.1:5000/verifyChangePassword",payload)
+        localStorage.setItem('jwtToken', response.data.token);
+        yield put (actions.loginSuccess(response.data))
+    } catch (error) {
+        console.log('Saga Error')
+        console.log(error);
+    }
+}
+
+export function* changePasswordPending(action){
+    try {
+        debugger;
+        console.log ('Saga response');
+        let response = yield axios.post("http://127.0.0.1:5000/changePassword",action.payload)
         yield put (actions.loginSuccess(response.data))
     } catch (error) {
         console.log('Saga Error')

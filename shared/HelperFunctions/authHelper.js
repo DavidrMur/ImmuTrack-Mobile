@@ -2,7 +2,7 @@
 export const formatStateToLoginPayload = (state) => {
     let payload = {
         profession: state.profession,
-        login: state.username,
+        username: state.username,
         password: state.password
     };
 
@@ -44,7 +44,7 @@ export const formatStateToSignupPayload = (state) => {
     payload.firstName = state.generalInfo.signupFirstName;
     payload.lastName = state.generalInfo.signupLastName;
     payload.email = state.generalInfo.signupEmail;
-    payload.login = state.generalInfo.signupUsername;
+    payload.username = state.generalInfo.signupUsername;
     payload.password = state.generalInfo.signupPassword;
 
     return payload;

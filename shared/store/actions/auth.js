@@ -53,6 +53,14 @@ export const verifyPasswordPending = (payload) => {
     };
 };
 
+export const changePasswordPending = (payload) => {
+    return {
+        type: actionTypes.CHANGE_PASSWORD_PENDING,
+        payload
+    };
+};
+
+
 
 // Synchronous actions
 

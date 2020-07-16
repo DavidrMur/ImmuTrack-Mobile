@@ -13,7 +13,8 @@ class ForgotPage extends Component {
         SCN: '',
         license: '',
         firstName: '',
-        lastName: ''
+        lastName: '',
+        password: ''
     }
     
     setValue = (e, key) => {
@@ -64,6 +65,20 @@ class ForgotPage extends Component {
             )
         }
 
+        let changeView = (
+            <Grid container spacing={2} style={{'text-align': 'center'}}>
+                <Grid item xs={12}>
+                    <Typography variant="paragraph">Enter your new password</Typography>
+                </Grid>
+                <Grid item xs={12}>
+                    <TextField style={{width: "70%"}} required type="password" label="newPassword" onChange={(event) => this.setValue(event, 'password')}/>
+                </Grid>
+                <Grid item xs = {12}>
+                    <Button variant="outlined" onClick={() => this.props.changePasswordPending(this.state)}>Change Password</Button>
+                </Grid>
+            </Grid>
+        )
+
         return(
             //style={{width: '50vw', margin: 'auto'}}
             <div style={{width: '47vw', margin: 'auto'}}>
@@ -77,7 +92,7 @@ class ForgotPage extends Component {
                     <Grid item xs={6}>
                         <Button variant="outlined" onClick={() => this.setState({profession: 'patient'})}> Patient </Button>
                     </Grid>
-                    {forgotView}
+                    {localStorage.getItem('jwtToken') !== null ? changeView : forgotView}
                 </Grid>
             </div>
 
@@ -94,7 +109,8 @@ const mapStateToProps = state => {
 
 const mapDispathToProps = dispatch => {
     return {
-        verifyPasswordPending: (payload) => dispatch(actions.verifyPasswordPending(payload))
+        verifyPasswordPending: (payload) => dispatch(actions.verifyPasswordPending(payload)),
+        changePasswordPending: (payload) => dispatch(actions.changePasswordPending(payload))
     };
 };
 
