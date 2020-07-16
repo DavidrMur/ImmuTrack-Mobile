@@ -5,7 +5,8 @@ import './HealthcarePageComponents.css';
 export const PatientRecordTile = (props) => {
     return (
         <div>
-            <div>{props.name}</div>
+            <div>{props.firstName}</div>
+            <div>{props.lastName}</div>
             <div>{props.DOB}</div>
             <div>{props.OHIP}</div>
             <div onClick={() => props.redirectQuery(props.OHIP)}>
