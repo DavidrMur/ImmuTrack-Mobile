@@ -4,6 +4,9 @@ import { Redirect, Link } from 'react-router-dom';
 import * as actions from 'redux-saga-store/actions/index';
 import { PatientRecordTile, PatientRecordVaccines, PatientRecordVaccinesEdit, PatientRecordVaccineTitles } from '../../../components/Immunization/HealthcarePages/HealthcarePageComponents';
 import PatientVaccines from '../PatientVaccines';
+import { Button } from '@material-ui/core'
+
+// TODO: refactor this page, the vaccines table should be a separate entity
 
 class HealthcareRecordPage extends Component {
 
@@ -11,32 +14,33 @@ class HealthcareRecordPage extends Component {
         super(props);
         this.state = {
             patientVaccines: this.props.currentPatient.vaccines,
-            editing: false
+            editing: false,
+            add: false,
+            newEntry: {}
         }
     }
 
     patientRecords = (<div>loading</div>);
     editing = false
 
-    test = () => {
-        let newVaccines = {
-            'dateAdmin': 'f', 'brandName': 'g', 'bacteria': ['e', 'g'],
-            'lot': 'f', 'expiryDate': 'e', 'administeredUnder': 'b', 'location': '1'
-        };
-
-        let newArr = [newVaccines];
-        newArr = newArr.concat(this.state.patientVaccines);
-        this.setState({patientVaccines: newArr});
-        this.editing = true;
-        console.log(this.state);
+    onNewEntryChangeEvent = (value, type) => {
+        console.log(this.state.newEntry);
+        let temp = {...this.state.newEntry}
+        temp[type] = value;
+        this.setState({newEntry: temp})
     }
+
+    onNewEntrySubmitEvent = () => {
+        this.props.patientAddEntryPending(this.state.newEntry);
+        this.setState({add:false})
+    };
     
     render(){
         let patientVaccines;
-        if (this.state.patientVaccines) {
+        if (this.props.currentPatient.vaccines) {
             this.editing = false;
             patientVaccines = null;
-            patientVaccines = (this.state.patientVaccines.map((vaccine) => {
+            patientVaccines = (this.props.currentPatient.vaccines.map((vaccine) => {
                 return <div>
                     <PatientVaccines
                     dateAdmin={vaccine.dateAdmin}
@@ -66,8 +70,22 @@ class HealthcareRecordPage extends Component {
                     //function to make API request to view more information on patient
                     //redirectQuery={this.props.getInfo(patient.id)}
                 />
-                <button onClick={() => this.test()} >Add Entry</button>
+                <button onClick={() => this.setState({add: true})} >Add Entry</button>
                 <PatientRecordVaccineTitles />
+                {this.state.add ? 
+                    <div><PatientRecordVaccinesEdit
+                        dateAdmin={'12-12-12'}
+                        brandName={'12-12-12'}
+                        bacteria={['fewfe']}
+                        lot={'12-12'}
+                        expiryDate={'12-12'}
+                        administeredUnder={'12-12'}
+                        location={'12 w'}
+                        onChangeEvent={this.onNewEntryChangeEvent} 
+                        />
+                        <Button onClick={() => this.onNewEntrySubmitEvent()}>Submit</Button>
+                        </div>
+                    : null}
                 {!this.editing ? patientVaccines : null}
             </div>
 
@@ -84,7 +102,7 @@ const mapStateToProps = state => {
 
 const mapDispathToProps = dispatch => {
     return {
-        
+        patientAddEntryPending: (payload) => dispatch(actions.patientAddEntryPending(payload))
     };
 };
 

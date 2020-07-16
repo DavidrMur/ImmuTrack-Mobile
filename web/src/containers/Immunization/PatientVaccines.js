@@ -31,7 +31,7 @@ class PatientVaccines extends Component {
 
     onChangeEvent = (value, type) => {
         let temp = {...this.state.vaccine}
-        temp[type] = value;
+        temp[type] = type === 'bacteria' ? [value] : value;
         this.setState({vaccine: temp})
     }
 
