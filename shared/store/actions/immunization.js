@@ -51,4 +51,17 @@ export const patientAddEntrySuccess = (payload) => {
     }
 }
 
+export const patientAddPending = (OHIP) => {
+    return {
+        type: actionTypes.IMMU_PATIENT_ADD_PENDING,
+        ohip: OHIP // purposefully lower case to there's no issue with the api
+    }
+}
+
+export const patientAddSuccess = (payload) => {
+    return {
+        type: actionTypes.IMMU_PATIENT_ADD_SUCCESS,
+        payload
+    }
+}
 

@@ -5,6 +5,8 @@ export {
     signupPending,
     signupSuccess,
     signupFail,
+    verifyPasswordPending,
+    changePasswordPending,
 
     signupSetType,
     signupSetFirstName,
@@ -39,4 +41,6 @@ export {
     patientUpdateInfoPending,
     patientAddEntryPending,
     patientAddEntrySuccess,
+    patientAddPending,
+    patientAddSuccess
 } from './immunization';

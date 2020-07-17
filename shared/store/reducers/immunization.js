@@ -31,13 +31,22 @@ const patientAddEntrySuccess = (state, action) => {
     let updatedVaccines = state.patient.vaccines;
     updatedVaccines = updatedVaccines.concat([action.payload]);
     
-    debugger;
     return {
         ...state,
         patient: {
             ...state.patient,
             vaccines: updatedVaccines
+        }
+    }
+}
 
+const patientAddSuccess = (state, action) => {
+    let newPatients = [action.payload].concat(state.healthcare.patients);
+
+    return {
+        ...state,
+        healthcare: {
+            patients: newPatients
         }
     }
 }
@@ -54,6 +63,9 @@ const reducer = (state = initialState, action) => {
         case actionTypes.IMMU_PATIENT_ADD_ENTRY_SUCCESS:
             console.log('patient add entry case');
             return patientAddEntrySuccess(state, action);    
+        case actionTypes.IMMU_PATIENT_ADD_SUCCESS:
+            console.log('patient add case');
+            return patientAddSuccess(state, action);    
         default:
             return state;
     }

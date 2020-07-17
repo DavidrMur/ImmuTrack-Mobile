@@ -1,11 +1,13 @@
 import { takeEvery, fork, all } from 'redux-saga/effects';
 import * as actionTypes from '../actions/actionTypes';
-import { loginPending, signupPending } from './auth';
-import { patientsPending, patientInfoPending, patientUpdateInfoPending, patientAddEntryPending } from './immunization';
+import { loginPending, signupPending, verifyPasswordPending, changePasswordPending } from './auth';
+import { patientsPending, patientInfoPending, patientUpdateInfoPending, patientAddPending, patientAddEntryPending } from './immunization';
 
 function* watchAuth(){
     yield takeEvery(actionTypes.LOGIN_PENDING, loginPending);
     yield takeEvery(actionTypes.SIGNUP_PENDING, signupPending);
+    yield takeEvery(actionTypes.VERIFY_PASSWORD_PENDING, verifyPasswordPending);
+    yield takeEvery(actionTypes.CHANGE_PASSWORD_PENDING, changePasswordPending);
 }
 
 function* watchImmunization() {
@@ -13,6 +15,7 @@ function* watchImmunization() {
     yield takeEvery(actionTypes.IMMU_PATIENT_INFO_PENDING, patientInfoPending);
     yield takeEvery(actionTypes.IMMU_PATIENT_UPDATE_INFO_PENDING, patientUpdateInfoPending);
     yield takeEvery(actionTypes.IMMU_PATIENT_ADD_ENTRY_PENDING, patientAddEntryPending);
+    yield takeEvery(actionTypes.IMMU_PATIENT_ADD_PENDING, patientAddPending);
 }
 
 export default function* rootSaga() {
