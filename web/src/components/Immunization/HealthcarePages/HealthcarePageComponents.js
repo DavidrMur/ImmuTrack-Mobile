@@ -33,7 +33,6 @@ export const PatientRecordVaccineTitles = (props) => {
 }
 
 export const PatientRecordVaccines = (props) => {
-    console.log(props);
     return (
         <div>
             <ul className="flex-container longhand">

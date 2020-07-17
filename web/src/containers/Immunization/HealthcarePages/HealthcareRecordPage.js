@@ -4,23 +4,42 @@ import { Redirect, Link } from 'react-router-dom';
 import * as actions from 'redux-saga-store/actions/index';
 import { PatientRecordTile, PatientRecordVaccines, PatientRecordVaccinesEdit, PatientRecordVaccineTitles } from '../../../components/Immunization/HealthcarePages/HealthcarePageComponents';
 import PatientVaccines from '../PatientVaccines';
+import { Button } from '@material-ui/core'
+
+// TODO: refactor this page, the vaccines table should be a separate entity
 
 class HealthcareRecordPage extends Component {
 
     constructor(props){
         super(props);
         this.state = {
-            
+            patientVaccines: this.props.currentPatient.vaccines,
+            editing: false,
+            add: false,
+            newEntry: {}
         }
     }
 
     patientRecords = (<div>loading</div>);
+    editing = false
 
-    
+    onNewEntryChangeEvent = (value, type) => {
+        console.log(this.state.newEntry);
+        let temp = {...this.state.newEntry}
+        temp[type] = value;
+        this.setState({newEntry: temp})
+    }
+
+    onNewEntrySubmitEvent = () => {
+        this.props.patientAddEntryPending(this.state.newEntry);
+        this.setState({add:false})
+    };
     
     render(){
         let patientVaccines;
-        if (this.props.currentPatient && this.props.currentPatient.vaccines) {
+        if (this.props.currentPatient.vaccines) {
+            this.editing = false;
+            patientVaccines = null;
             patientVaccines = (this.props.currentPatient.vaccines.map((vaccine) => {
                 return <div>
                     <PatientVaccines
@@ -52,9 +71,23 @@ class HealthcareRecordPage extends Component {
                     //function to make API request to view more information on patient
                     //redirectQuery={this.props.getInfo(patient.id)}
                 />
-                
+                <button onClick={() => this.setState({add: true})} >Add Entry</button>
                 <PatientRecordVaccineTitles />
-                {patientVaccines}
+                {this.state.add ? 
+                    <div><PatientRecordVaccinesEdit
+                        dateAdmin={'12-12-12'}
+                        brandName={'12-12-12'}
+                        bacteria={['fewfe']}
+                        lot={'12-12'}
+                        expiryDate={'12-12'}
+                        administeredUnder={'12-12'}
+                        location={'12 w'}
+                        onChangeEvent={this.onNewEntryChangeEvent} 
+                        />
+                        <Button onClick={() => this.onNewEntrySubmitEvent()}>Submit</Button>
+                        </div>
+                    : null}
+                {!this.editing ? patientVaccines : null}
             </div>
 
         );
@@ -70,7 +103,7 @@ const mapStateToProps = state => {
 
 const mapDispathToProps = dispatch => {
     return {
-        
+        patientAddEntryPending: (payload) => dispatch(actions.patientAddEntryPending(payload))
     };
 };
 

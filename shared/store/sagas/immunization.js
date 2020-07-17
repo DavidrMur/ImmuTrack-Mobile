@@ -61,6 +61,24 @@ export function* patientUpdateInfoPending(action){
     }
 }
 
+export function* patientAddEntryPending(action){
+    try {
+        console.log ('Saga response');
+        console.log(action);
+        //let response = yield axios.post("http://127.0.0.1:5000/signin", localStorage.getItem('jwtToken'), action);
+        let response = {
+            data: action.payload
+        }
+
+        // TODO: remove, temporary fix. Need the functionality to properly manage bacteria
+        action.payload.bacteria = [action.payload.bacteria];
+        yield put (actions.patientAddEntrySuccess(response.data))
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
 export function* patientAddPending(action){
     try {
         console.log ('Saga add response');
