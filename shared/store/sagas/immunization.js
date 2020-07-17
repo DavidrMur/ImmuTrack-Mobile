@@ -69,6 +69,9 @@ export function* patientAddEntryPending(action){
         let response = {
             data: action.payload
         }
+
+        // TODO: remove, temporary fix. Need the functionality to properly manage bacteria
+        action.payload.bacteria = [action.payload.bacteria];
         yield put (actions.patientAddEntrySuccess(response.data))
     }
     catch (error) {
