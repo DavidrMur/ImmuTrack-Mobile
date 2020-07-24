@@ -7,17 +7,11 @@ export const getAuth = (state) => state.auth;
 
 export function* loginPending(action){
     try {
+        debugger;
         console.log ('Saga response');
         let payload = formatStateToLoginPayload(action);
         let response = yield axios.post("http://127.0.0.1:5000/signin", payload)
         localStorage.setItem('jwtToken', response.data.token);
-        response.data = {
-            profession: 'nurse',
-            firstName: 'John',
-            lastName: 'Doe',
-            OHIP: '324252352',
-            DOB: 'June-15-1995'
-        }
         localStorage.setItem('loggedIn', true);
         yield put (actions.loginSuccess(response.data))
     } catch (error) {

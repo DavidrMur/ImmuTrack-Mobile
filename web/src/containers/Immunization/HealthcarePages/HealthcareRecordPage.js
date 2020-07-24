@@ -88,6 +88,7 @@ class HealthcareRecordPage extends Component {
                         </div>
                     : null}
                 {!this.editing ? patientVaccines : null}
+                <Link to="/main.html" target="_blank" download>Download PDF</Link>
             </div>
 
         );
