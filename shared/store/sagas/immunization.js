@@ -5,12 +5,8 @@ import axios from '../../axios-config';
 export function* patientsPending(action){
     try {
         console.log ('Saga response');
-        //let response = yield axios.post("http://127.0.0.1:5000/signin", localStorage.getItem('jwtToken'));
-        let response = [
-            {'id': '1248443', 'firstName': 'Jim', 'lastName': 'Dane', 'DOB': 'Dec-31-1998', 'OHIP': '42342354'},
-            {'id': '2834923', 'firstName': 'Bob', 'lastName': 'Roe', 'DOB': 'Dec-31-1998', 'OHIP': '654323521'},
-            {'id': '9357932', 'firstName': 'Florence', 'lastName': 'Iu','DOB': 'Dec-31-1998', 'OHIP': '82374628'},]
-        yield put (actions.patientsSuccess(response))
+        let response = yield axios.post("http://127.0.0.1:5000/retrievePatients");
+        yield put (actions.patientsSuccess(response.data.patients))
     } catch (error) {
         // TODO: proper error handling
         console.log('Saga Error')
