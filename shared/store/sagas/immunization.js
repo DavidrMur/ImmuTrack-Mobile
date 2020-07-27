@@ -27,11 +27,13 @@ export function* patientInfoPending(action){
             'vaccines': [
                 {
                     'dateAdmin': 'July-10-2020', 'brandName': 'SHINGRIX', 'bacteria': ['Varicella', 'Herpes Zoster'],
-                    'lot': 'eeh21nwef23', 'expiryDate': '12/2030', 'administeredUnder': 'Dr. Doe', 'location': '123 Zoo'
+                    'lot': 'eeh21nwef23', 'expiryDate': '12/2030', 'administeredUnder': 'Dr. Doe', 'location': '123 Zoo',
+                    'editable': true
                 },
                 {
                     'dateAdmin': 'Jan-10-2020', 'brandName': 'PEDIACEL', 'bacteria': ['Corona', 'AIDS'],
-                    'lot': 'wi6634uh', 'expiryDate': '5/2025', 'administeredUnder': 'Dr. Dane', 'location': '200 Boo'
+                    'lot': 'wi6634uh', 'expiryDate': '5/2025', 'administeredUnder': 'Dr. Dane', 'location': '200 Boo',
+                    'editable': false
                 }
             ]
         }

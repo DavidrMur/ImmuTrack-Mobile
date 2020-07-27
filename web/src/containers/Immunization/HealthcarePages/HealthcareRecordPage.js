@@ -50,7 +50,7 @@ class HealthcareRecordPage extends Component {
                     expiryDate={vaccine.expiryDate}
                     administeredUnder={vaccine.administeredUnder}
                     location={vaccine.location}
-                    editPermission={true}
+                    editPermission={vaccine.editable}
                     />
             </div>
             }))
