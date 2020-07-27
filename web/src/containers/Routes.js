@@ -13,13 +13,14 @@ import SecurityDisclosure from '../components/Auth/SecurityDisclosure';
 
 class Routes extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            loggedIn: ( (localStorage.getItem('jwtToken') !== undefined && localStorage.getItem('jwtToken') !== null) && this.props.userInfo.profession !== "" && localStorage.getItem('loggedIn') === true),
-            acceptDisclosure: ((localStorage.getItem('acceptDisclosure')) && (localStorage.getItem('acceptDisclosure')) !== undefined),
-        }
-    }
+    // TODO
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         loggedIn: ( (localStorage.getItem('jwtToken') !== undefined && localStorage.getItem('jwtToken') !== null) && this.props.userInfo.profession !== "" && localStorage.getItem('loggedIn') === true),
+    //         acceptDisclosure: ((localStorage.getItem('acceptDisclosure')) && (localStorage.getItem('acceptDisclosure')) !== undefined),
+    //     }
+    // }
 
     render() {
 
