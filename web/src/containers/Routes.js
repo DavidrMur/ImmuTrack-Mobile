@@ -8,9 +8,19 @@ import ForgotPage from './Auth/ForgotPage/ForgotPage';
 import PatientImmunization from './Immunization/PatientPages/PatientRecordPage';
 import HealthcareHomePage from './Immunization/HealthcarePages/HealthcareHomePage';
 import HealthcareRecordPage from './Immunization/HealthcarePages/HealthcareRecordPage';
+import SecurityDisclosure from '../components/Auth/SecurityDisclosure';
 
 
 class Routes extends Component {
+
+    // TODO
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         loggedIn: ( (localStorage.getItem('jwtToken') !== undefined && localStorage.getItem('jwtToken') !== null) && this.props.userInfo.profession !== "" && localStorage.getItem('loggedIn') === true),
+    //         acceptDisclosure: ((localStorage.getItem('acceptDisclosure')) && (localStorage.getItem('acceptDisclosure')) !== undefined),
+    //     }
+    // }
 
     render() {
 
@@ -19,17 +29,20 @@ class Routes extends Component {
             && localStorage.getItem('jwtToken') !== null) 
             && this.props.userInfo.profession !== "" &&
             localStorage.getItem('loggedIn') === true
+
+        debugger;
+        let acceptDisclosure = ((localStorage.getItem('acceptDisclosure')) && (localStorage.getItem('acceptDisclosure')) !== undefined);
     
         let newVisitRoutes = (
         <Switch>
+            { acceptDisclosure ? (<>
             <Route path='/login' component={LoginPage}/>
             <Route path='/signup' component={SignupPage}/>
             <Route path='/forgot' component={ForgotPage} />
-            {/* TODO: remove below */}
-            <Route path='/main' component={HealthcareHomePage} />
-            <Route path='/view-patient' component={HealthcareRecordPage} />
+            </>) : <SecurityDisclosure />
+            }
             <Redirect to='/login'/>
-            </Switch>
+        </Switch>
         );
     
         let existingHealthcareRoutes = (
