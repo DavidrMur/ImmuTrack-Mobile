@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Grid, TextField, Typography, Select, MenuItem, InputLabel } from '@material-ui/core'
+import entryValidation from 'helper-functions/entryValidation'
 
 const SignupOHIP = (props) => {
     return (
@@ -10,13 +11,33 @@ const SignupOHIP = (props) => {
     )
 };
 
-const SignupSCN = (props) => {
-    return (
-        <div>
-        <Typography >Please enter your SCN Number (back of your healthcard)</Typography>
-        <TextField type="text" label="SCN" onChange={(event) => props.fieldFunction(event.target.value)} />
-        </div>
-    )
+class SignupSCN extends React.Component {
+    
+    constructor(props) {
+        super(props);
+        this.state = {
+            error: false,
+        }
+    }
+
+    onBlurEvent = (e, type) => {
+        if (!entryValidation(e,type)) {
+            this.setState({error: true})
+        }
+    }
+
+    onFocusEvent = (type) => {
+        this.setState({error: false})
+    }
+    
+    render() {
+        return (
+            <div>
+            <Typography >Please enter your SCN Number (back of your healthcard)</Typography>
+            <TextField type="text" label="SCN" required error={this.state.error} helperText={this.state.error ? 'Invalid SCN' : ''} onFocus={() => this.onFocusEvent()} onBlur={(e) => this.onBlurEvent(e,'scn')} onChange={(event) => this.props.fieldFunction(event.target.value)} />
+            </div>
+        )
+}
 };
 
 const SignupOwner = (props) => {
@@ -33,7 +54,7 @@ const SignupName = (props) => {
     return ( 
         <div >
             <Typography >Please enter your first and last name</Typography>
-            <TextField type="text" label="First Name" onChange={(event) => props.nestedFieldFunction.signupSetFirstName(event.target.value)}/>
+            <TextField type="text" label="First Name" onChange={(event) => props.nestedFieldFunction.signupSetFirstName(event.target.value)} onBlur={() => console.log('name')}/>
             <TextField type="text" label="Last Name" onChange={(event) => props.nestedFieldFunction.signupSetLastName(event.target.value)}/>
         </div>
     )
@@ -43,7 +64,7 @@ const SignupDOB = (props) => {
     return (
         <div>
             <Typography >Please enter your date of birth</Typography>
-            <TextField type="text" label="date" onChange={(event) => props.fieldFunction(event.target.value)} />
+            <TextField type="date" onChange={(event) => props.fieldFunction(event.target.value)} />
             {/* TODO: change this, depends on the UI module we use */}
         </div>
     )
@@ -87,15 +108,37 @@ const SignupReview = (props) => {
     )
 }
 
-const SignupCredentials = (props) => {
-    return (
-        <div >
-            <Typography >Please enter your desired credentials</Typography>
-            <TextField type="text" label="username" onChange={(event) => props.nestedFieldFunction.signupSetUsername(event.target.value)}/>
-            <TextField type="password" label="password" onChange={(event) => props.nestedFieldFunction.signupSetPassword(event.target.value)}/>
-            <TextField type="email" label="email" onChange={(event) => props.nestedFieldFunction.signupSetEmail(event.target.value)}/>
-        </div>    
-    )
+class SignupCredentials extends React.Component {
+    
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: false,
+            password: false
+        }
+    }
+
+    onBlurEvent = (e, type) => {
+        if (!entryValidation(e,type)) {
+            this.setState({[type]: true})
+        }
+    }
+
+    onFocusEvent = (type) => {
+        this.setState({[type]: false})
+    }
+
+    render() {
+        return (
+            <div >
+                <Typography >Please enter your desired credentials</Typography>
+                <TextField type="text" label="username" required error={this.state.username} helperText={this.state.username ? 'Invalid Username' : ''} onFocus={() => this.onFocusEvent('username')} onChange={(event) => this.props.nestedFieldFunction.signupSetUsername(event.target.value)} onBlur={(e) => this.onBlurEvent(e,'username')}/>
+                <TextField type="password" label="password" required error={this.state.password} helperText={this.state.password ? 'Invalid password' : ''} onFocus={() => this.onFocusEvent('password')} onChange={(event) => this.props.nestedFieldFunction.signupSetPassword(event.target.value)} onBlur={(e) => this.onBlurEvent(e,'password')}/>
+                <TextField type="email" label="email" required onChange={(event) => this.props.nestedFieldFunction.signupSetEmail(event.target.value)}/>
+            </div>    
+        )
+    }
+
 }
 
 const SignupGeneral = (props) => {
@@ -115,9 +158,11 @@ const SignupProfession = (props) => {
         <Typography variant="paragraph">Please enter your profession</Typography>
         {/* <TextField type="text" label="DROPDOWN - profession" onChange={(event) => props.fieldFunction(event.target.value)} /> */}
         <Select onChange={(event) => props.fieldFunction(event.target.value)}>
-          <MenuItem value={'Doctor'}>Doctor</MenuItem>
+          <MenuItem value={'Physician'}>Physician</MenuItem>
           <MenuItem value={'Nurse'}>Nurse</MenuItem>
-          <MenuItem value={'Overlord'}>Overlord</MenuItem>
+          <MenuItem value={'Nurse Practitioner'}>Nurse Practitioner</MenuItem>
+          <MenuItem value={'Physician\'s Assistant'}>Physician's Assistant</MenuItem>
+          <MenuItem value={'Pharamacist'}>Pharmacist</MenuItem>
           </Select>
         </div>
   )
