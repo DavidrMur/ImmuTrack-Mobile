@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { TextField,} from '@material-ui/core';
+import { Autocomplete } from '@material-ui/lab';
+import { vaccineGroups } from 'helper-functions/constantGroups';
 import './HealthcarePageComponents.css';
 
 export const PatientRecordTile = (props) => {
@@ -51,11 +54,34 @@ export const PatientRecordVaccines = (props) => {
 }
 
 export const PatientRecordVaccinesEdit = (props) => {
+    
+    let maxDate = new Date().toISOString().slice(0, 10)
+    
     return (
         <div>
             <ul className="flex-container longhand">
-                <input type="text" placeholder={props.dateAdmin} className="flex-item" onChange={(event) => props.onChangeEvent(event.target.value, 'dateAdmin')} />
-                <input type="text" placeholder={props.brandName} className="flex-item" onChange={(event) => props.onChangeEvent(event.target.value, 'brandName')}/>
+                <TextField
+                    type="date"
+                    placeholder={props.dateAdmin}
+                    InputProps={{
+                        inputProps: {
+                            max: maxDate
+                        }
+                    }} 
+                    className="flex-item" 
+                    onChange={(event) => props.onChangeEvent(event.target.value, 'dateAdmin')} 
+                    />
+
+                <Autocomplete 
+                    options={vaccineGroups}
+                    getOptionLabel={(option) => option.vaccineBrand}
+                    style={{ width: 300 }}
+                    renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
+                    //placeholder={props.brandName} 
+                    className="flex-item" 
+                    onChange={(event, newValue) => props.onChangeEvent(newValue.title, 'brandName')}
+                    />
+
                 {/* TODO: make onchange event functional for bactera, currently will overwrite all*/}
                 {props.bacteria && props.bacteria.map((bacteria) => {
                     return <input type="text" placeholder={bacteria} className="flex-item" onChange={(event) => props.onChangeEvent(event.target.value, 'bacteria')}/>

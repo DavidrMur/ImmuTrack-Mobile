@@ -39,3 +39,32 @@ export const educationGroups = [
     'Professional degree',
     'Doctorate degree'
 ];
+
+// TODO: frontend and backend should share the same information
+export const vaccineGroups = [
+    {vaccineBrand: 'Adacel', bacteria: ['Diptheria', 'Tetanus', 'Pertussis'] },
+    {vaccineBrand: 'Adacel-Polio', bacteria: ['Diptheria', 'Tetanus', 'Pertussis', 'Polio'] },
+    {vaccineBrand: 'Engerix-B (Adult)', bacteria: [] },
+    {vaccineBrand: 'Fluzone High Dose', bacteria: ['Influenza'] },
+    {vaccineBrand: 'Fluzone Regular Dose', bacteria: ['Influenza'] },
+    {vaccineBrand: 'Imovax (IPV) Polio', bacteria: ['Polio'] },
+    {vaccineBrand: 'NeisVac-C', bacteria: ['Meningococcal Conjugate C'] },
+    {vaccineBrand: 'Priorix', bacteria: ['Measle', 'Mumps', 'Rubella'] },
+    {vaccineBrand: 'Priorix-Tetra', bacteria: ['Measle', 'Mumps', 'Rubella', 'Varicella'] },
+    {vaccineBrand: 'ProQuad', bacteria: ['Measle', 'Mumps', 'Rubella', 'Varicella'] },
+    {vaccineBrand: 'Pediacel', bacteria: ['Diptheria', 'Tetanus', 'Pertussis', 'Polio', 'Hib'] },
+    {vaccineBrand: 'Pneumovax 23', bacteria: ['Pneumococcal'] },
+    {vaccineBrand: 'Prevnar 13', bacteria: ['Prevnar 13'] },
+    {vaccineBrand: 'Recombivax', bacteria: ['Hepatitis B'] },
+    {vaccineBrand: 'RotaTeq', bacteria: ['Rotavirus'] },
+    {vaccineBrand: 'Bexsero', bacteria: ['Meningococcal B'] },
+    {vaccineBrand: 'Trumenba', bacteria: ['Meningococcal B'] },
+    {vaccineBrand: 'Shingrix', bacteria: ['Herpes Zoster'] },
+    {vaccineBrand: 'Varivax', bacteria: ['Varicella'] },
+    {vaccineBrand: 'Zostavax', bacteria: ['Herpes Zoster'] },
+    {vaccineBrand: 'Menactra', bacteria: ['Meningococcal Conjugate ACYW'] },
+    {vaccineBrand: 'TwinRix', bacteria: [] },
+    {vaccineBrand: 'Havrix', bacteria: ['Hepatitis A'] },
+    {vaccineBrand: 'VAQTA', bacteria: ['Hepatitis A'] },
+    {vaccineBrand: 'Gardasil', bacteria: ['Human Papilloma Virus'] },
+]
