@@ -312,6 +312,21 @@ const signupSetWorkPhoneNumber = (state, action) => {
     }
 }
 
+const signupSetWorkEMR = (state, action) => {
+    console.log('setting EMR');
+    let workLocations = _.cloneDeep(state.healthcareInfo.signupWorkLocations);
+    if (typeof(workLocations[0]) !== 'object') workLocations[0] = {}
+    workLocations[0].workEMR = action.payload;
+
+    return {
+        ...state,
+        healthcareInfo: {
+            ...state.healthcareInfo,
+            signupWorkLocations: workLocations
+        }
+    }
+}
+
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
@@ -403,7 +418,10 @@ const reducer = (state = initialState, action) => {
             return signupSetWorkPostal(state,action);
         case actionTypes.SIGNUP_SET_WORK_PHONE_NUMBER:
             console.log('primary work phone number case');
-            return signupSetWorkPhoneNumber(state,action);                             
+            return signupSetWorkPhoneNumber(state,action); 
+        case actionTypes.SIGNUP_SET_WORK_EMR:
+            console.log('emr case');
+            return signupSetWorkEMR(state,action);                              
         default:
             return state;        
 

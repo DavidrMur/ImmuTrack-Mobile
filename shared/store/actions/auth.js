@@ -227,3 +227,11 @@ export const signupSetWorkPhoneNumber = (payload) => {
         payload
     };
 };
+
+export const signupSetWorkEMR = (payload) => {
+    return {
+        type: actionTypes.SIGNUP_SET_WORK_EMR,
+        payload
+    };
+};
+

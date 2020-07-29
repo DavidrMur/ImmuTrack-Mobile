@@ -215,7 +215,13 @@ const SignupWorkLocation = (props) => {
             <TextField type="text" label="Clinic Phone Number" onChange={(event) => props.nestedFieldFunction.signupSetWorkPhoneNumber(event.target.value)}/>
             {/* </Grid> */}
             {/* TODO: need checkboxes - depends on ui */}
-            <TextField type="text" label="EMR Integration - NEEDS something else too?" />
+            {/* <TextField type="text" label="EMR Integration - NEEDS something else too?" onChange={(event) => props.nestedFieldFunction.signupSetWorkEMR(event.target.value)}/> */}
+            <Select onChange={(event) => props.nestedFieldFunction.signupSetWorkEMR(event.target.value)}>
+                <MenuItem value={'Red'}>Red</MenuItem>
+                <MenuItem value={'Blue'}>Blue</MenuItem>
+                <MenuItem value={'Green'}>Green</MenuItem>
+                <MenuItem value={'Yellow'}>Yellow</MenuItem>
+            </Select>
             </Grid>
         </div>
     )

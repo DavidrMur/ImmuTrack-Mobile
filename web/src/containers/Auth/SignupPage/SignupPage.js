@@ -55,7 +55,9 @@ class SignupPage extends Component {
             signupSetWorkCity: this.props.signupSetWorkCity,
             signupSetWorkPostal: this.props.signupSetWorkPostal,
             signupSetWorkPhoneNumber: this.props.signupSetWorkPhoneNumber,
-        }
+            signupSetWorkEMR: this.props.signupSetWorkEMR
+        },
+    
     }
 
     setSignupType = (type) => {
@@ -113,6 +115,7 @@ const mapDispathToProps = dispatch => {
         signupSetWorkCity: (payload) => dispatch(actions.signupSetWorkCity(payload)),
         signupSetWorkPostal: (payload) => dispatch(actions.signupSetWorkPostal(payload)),
         signupSetWorkPhoneNumber: (payload) => dispatch(actions.signupSetWorkPhoneNumber(payload)),
+        signupSetWorkEMR: (payload) => dispatch(actions.signupSetWorkEMR(payload))
 
     };
 };
