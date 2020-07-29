@@ -1,6 +1,7 @@
 import React from 'react';
-import { Button, Grid, TextField, Typography, Select, MenuItem, InputLabel } from '@material-ui/core'
-import entryValidation from 'helper-functions/entryValidation'
+import { Button, Grid, TextField, Typography, Select, MenuItem } from '@material-ui/core';
+import entryValidation from 'helper-functions/entryValidation';
+import { ethnicGroups, educationGroups } from 'helper-functions/constantGroups';
 
 const SignupOHIP = (props) => {
     return (
@@ -85,7 +86,12 @@ const SignupRace = (props) => {
         <div>
             <Typography  >Please enter your Race</Typography>
             {/* TODO: change this, depends on the UI module we use */}
-            <TextField type="text" label="If other, please specify"  onChange={(event) => props.fieldFunction(event.target.value)} />
+            {/* <TextField type="text" label="If other, please specify"  onChange={(event) => props.fieldFunction(event.target.value)} /> */}
+            <Select onChange={(event) => props.fieldFunction(event.target.value)}>
+            {(ethnicGroups.map((race) => {
+                return <MenuItem value={race}>{race}</MenuItem>
+            }))}
+            </Select>
         </div>
     )
 }
@@ -95,7 +101,12 @@ const SignupEduLevel = (props) => {
         <div>
             <Typography  >Please enter your education level</Typography>
             {/* TODO: change this, depends on the UI module we use */}
-            <TextField type="text" label="If other, please specify"  onChange={(event) => props.fieldFunction(event.target.value)} />
+            {/* <TextField type="text" label="If other, please specify"  onChange={(event) => props.fieldFunction(event.target.value)} /> */}
+            <Select onChange={(event) => props.fieldFunction(event.target.value)}>
+            {(educationGroups.map((level) => {
+                return <MenuItem value={level}>{level}</MenuItem>
+            }))}
+            </Select>
         </div>
     )
 }
@@ -204,7 +215,13 @@ const SignupWorkLocation = (props) => {
             <TextField type="text" label="Clinic Phone Number" onChange={(event) => props.nestedFieldFunction.signupSetWorkPhoneNumber(event.target.value)}/>
             {/* </Grid> */}
             {/* TODO: need checkboxes - depends on ui */}
-            <TextField type="text" label="EMR Integration - NEEDS something else too?" />
+            {/* <TextField type="text" label="EMR Integration - NEEDS something else too?" onChange={(event) => props.nestedFieldFunction.signupSetWorkEMR(event.target.value)}/> */}
+            <Select onChange={(event) => props.nestedFieldFunction.signupSetWorkEMR(event.target.value)}>
+                <MenuItem value={'Red'}>Red</MenuItem>
+                <MenuItem value={'Blue'}>Blue</MenuItem>
+                <MenuItem value={'Green'}>Green</MenuItem>
+                <MenuItem value={'Yellow'}>Yellow</MenuItem>
+            </Select>
             </Grid>
         </div>
     )

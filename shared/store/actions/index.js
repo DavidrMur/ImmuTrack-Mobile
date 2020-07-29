@@ -30,6 +30,7 @@ export {
     signupSetWorkCity,
     signupSetWorkPostal,
     signupSetWorkPhoneNumber,
+    signupSetWorkEMR
 } from './auth';
 
 export {

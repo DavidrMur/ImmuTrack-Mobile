@@ -1,0 +1,41 @@
+export const ethnicGroups = [
+    'Canadian',
+    'English',
+    'Scottish',
+    'Irish',
+    'French',
+    'German',
+    'Italian',
+    'Chinese',
+    'East Indian',
+    'Dutch (Netherlands)',
+    'Polish',
+    'North American Indian',
+    'Ukrainian',
+    'Filipino',
+    'Portuguese',
+    'British',
+    'Jamaican',
+    'Russian',
+    'Welsh',
+    'Spanish',
+    'Hungarian (Magyar)',
+    'Pakistani',
+    'Greek',
+    'American (USA)',
+    'Metis'
+];
+
+export const educationGroups = [
+    'No schooling completed',
+    'Nursery school to 8th grade',
+    'Some high school, no diploma',
+    'High school graduate, diploma or the equivalent',
+    'Some college credit, no degree',
+    'Trade/Technical/Vocational training',
+    'Associate Degree',
+    'Bachelor\'s degree',
+    'Master\'s degree',
+    'Professional degree',
+    'Doctorate degree'
+];
