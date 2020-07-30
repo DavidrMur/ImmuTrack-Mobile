@@ -34,7 +34,7 @@ class PatientRecordVaccines extends React.Component {
 
     onSubmitEvent = () => {
         this.setState({edit: false});
-        this.props.onSubmitEvent(this.updatedVaccine);
+        this.props.onSubmitEvent(this.updatedVaccine, this.props.adding);
     }
 
 
@@ -98,7 +98,7 @@ class PatientRecordVaccines extends React.Component {
 
         return (
             <div>
-                {this.state.editing ? 
+                {this.props.adding || this.state.editing ? 
                     patientRecordEdit
                 :
                     patientRecordDisplay
