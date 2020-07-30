@@ -17,9 +17,6 @@ class PatientVaccines extends Component {
 
     }
 
-    patientRecords = (<div>loading</div>);
-    editing = false
-
     componentWillReceiveProps(nextProps) {
         debugger;
         this.setState({vaccine: nextProps.data})
@@ -45,7 +42,7 @@ class PatientVaccines extends Component {
             <div>
                 <PatientRecordVaccineTitles />
                 <Button onClick={() => (this.setState({adding: true}))}>Add Entry</Button>
-                {this.state.adding ? <PatientRecordVaccines adding /> : null}
+                {this.state.adding ? <PatientRecordVaccines adding onSubmitEvent={this.onNewEntrySubmitEvent}/> : null}
                 {this.props.currentPatient.vaccines.map((vaccine) => {
                     return (<PatientRecordVaccines
                         dateAdmin={vaccine.dateAdmin}
@@ -55,7 +52,7 @@ class PatientVaccines extends Component {
                         expiryDate={vaccine.expiryDate}
                         administeredUnder={vaccine.administeredUnder}
                         location={vaccine.location}
-                        onSubmitEvent={this.props.patientUpdateInfoPending}
+                        onSubmitEvent={(payload) => this.props.patientUpdateInfoPending(payload)}
                         //
                 />)
              })}
@@ -73,7 +70,8 @@ const mapStateToProps = state => {
 
 const mapDispathToProps = dispatch => {
     return {
-        patientAddEntryPending: (payload) => dispatch(actions.patientAddEntryPending(payload))
+        patientAddEntryPending: (payload) => dispatch(actions.patientAddEntryPending(payload)),
+        patientUpdateInfoPending: (payload) => dispatch(actions.patientUpdateInfoPending(payload))
     };
 };
 
