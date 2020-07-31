@@ -11,7 +11,12 @@ import rootSaga from 'redux-saga-store/sagas/index'
 import authReducer from 'redux-saga-store/reducers/auth'
 import immunizationReducer from 'redux-saga-store/reducers/immunization';
 
-const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;
+let composeEnhancers = compose
+if (process.env.NODE_ENV === 'development' && navigator.userAgent.indexOf("Chrome") != -1) {
+    composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
+} else {
+    composeEnhancers = compose;
+}
 
 const sagaMiddleware = createSagaMiddleware();
 
