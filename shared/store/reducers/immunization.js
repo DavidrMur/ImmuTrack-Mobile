@@ -28,8 +28,10 @@ const patientInfoSuccess = (state, action) => {
 
 const patientAddEntrySuccess = (state, action) => {
 
+    debugger;
     let updatedVaccines = state.patient.vaccines;
-    updatedVaccines = updatedVaccines.concat([action.payload]);
+    if (!updatedVaccines) updatedVaccines = [action]
+    else updatedVaccines = updatedVaccines.concat([action.payload]);
     
     return {
         ...state,

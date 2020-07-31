@@ -31,7 +31,10 @@ class HealthcareRecordPage extends Component {
     }
 
     onNewEntrySubmitEvent = () => {
-        this.props.patientAddEntryPending(this.state.newEntry);
+        console.log('new entry')
+        let temp = {...this.state.newEntry}
+        temp.ohip = this.props.currentPatient.OHIP;
+        this.props.patientAddEntryPending(temp);
         this.setState({add:false})
     };
     
@@ -54,8 +57,6 @@ class HealthcareRecordPage extends Component {
                     />
             </div>
             }))
-        } else {
-            patientVaccines = (<Redirect to='/main' />);
         }
 
         return(
