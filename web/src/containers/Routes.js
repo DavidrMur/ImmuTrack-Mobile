@@ -39,14 +39,8 @@ class Routes extends Component {
             <Route path='/login' component={LoginPage}/>
             <Route path='/signup' component={SignupPage}/>
             <Route path='/forgot' component={ForgotPage} />
-<<<<<<< HEAD
             <Route path='/signout' component={SignoutPage} />
-            {/* <Route path='/main' component={HealthcareHomePage} />
-            <Route path='/view-patient' component={HealthcareRecordPage} /> */}
-=======
-            <Route path='/main' component={HealthcareHomePage} />
-            <Route path='/view-patient' component={HealthcareRecordPage} />
->>>>>>> parent of b0c4519f... auth - signout function pt 1
+            {/* <Route path='/main' component={HealthcareHomePage} /> */}
             </>) : <SecurityDisclosure />
             }
             <Redirect to='/login'/>
