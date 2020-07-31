@@ -1,11 +1,12 @@
 import React from 'react';
 import Routes from './containers/Routes'
+import { Header } from './components/Shared/Header';
 
 function App() {
 
   return (
     <div className="App">
-      <h1 style={{margin: "10px"}}>ImmuTrack</h1>
+      <Header />
       <Routes />
     </div>
   );
