@@ -5,6 +5,7 @@ import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import LoginPage from './Auth/LoginPage/LoginPage';
 import SignupPage from './Auth/SignupPage/SignupPage';
 import ForgotPage from './Auth/ForgotPage/ForgotPage';
+import SignoutPage from './Auth/SignoutPage/SignoutPage';
 import PatientImmunization from './Immunization/PatientPages/PatientRecordPage';
 import HealthcareHomePage from './Immunization/HealthcarePages/HealthcareHomePage';
 import HealthcareRecordPage from './Immunization/HealthcarePages/HealthcareRecordPage';
@@ -38,6 +39,7 @@ class Routes extends Component {
             <Route path='/login' component={LoginPage}/>
             <Route path='/signup' component={SignupPage}/>
             <Route path='/forgot' component={ForgotPage} />
+            <Route path='/signout' component={SignoutPage} />
             <Route path='/main' component={HealthcareHomePage} />
             <Route path='/view-patient' component={HealthcareRecordPage} />
             </>) : <SecurityDisclosure />
@@ -50,6 +52,7 @@ class Routes extends Component {
         <Switch>
             <Route path='/main' component={HealthcareHomePage} />
             <Route path='/view-patient' component={HealthcareRecordPage} />
+            <Route path='/signout' component={SignoutPage} />
             <Redirect to='/main'/>
         </Switch>
         )
@@ -57,6 +60,7 @@ class Routes extends Component {
         let existingPatientRoutes = (
             <Switch>
                 <Route path='/view' component={PatientImmunization} />
+                <Route path='/signout' component={SignoutPage} />
                 <Redirect to='/view'/>
             </Switch>
             )

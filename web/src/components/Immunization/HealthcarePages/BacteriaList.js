@@ -45,8 +45,32 @@ class BacteriaList extends React.Component {
         return (
             <div>
             { this.props.editing ? 
-            <BacteriaEdit /> 
-            : <BacteriaDisplay /> }
+            (<Accordion>
+                <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+                >
+                <Typography >Bacteria</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                <Checkbox />
+                <Checkbox />
+                </AccordionDetails>
+            </Accordion>) 
+            : <Accordion>
+            <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+            >
+            <Typography >Bacteria</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+            <Typography>Thing 1 </Typography>
+            <Typography>Thing 2 </Typography>
+            </AccordionDetails>
+        </Accordion> }
             </div>)
     }
 }
