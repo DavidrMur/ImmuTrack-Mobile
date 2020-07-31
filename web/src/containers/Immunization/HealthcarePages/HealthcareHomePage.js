@@ -26,8 +26,6 @@ class HealthcareHomePage extends Component {
         if (this.props.patients) {
             this.patientRecordTiles = (this.props.patients.slice(0,this.state.selectionCount)).map((patient) => {
                 return <PatientRecordTile
-                    key={patient.id}
-                    id={patient.id}
                     firstName={patient.firstName}
                     lastName={patient.lastName}
                     DOB={patient.DOB}
