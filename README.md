@@ -1,4 +1,4 @@
-# ImmuTrack-Frontend
+npm # ImmuTrack-Frontend
 Both the web and mobile are using React and Node. Make sure you have node.js installed.
 
 ## To run
