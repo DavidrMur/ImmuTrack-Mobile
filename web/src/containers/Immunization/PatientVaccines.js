@@ -53,7 +53,6 @@ class PatientVaccines extends Component {
                         administeredUnder={vaccine.administeredUnder}
                         location={vaccine.location}
                         onSubmitEvent={(payload) => this.props.patientUpdateInfoPending(payload)}
-                        //
                 />)
              })}
                 

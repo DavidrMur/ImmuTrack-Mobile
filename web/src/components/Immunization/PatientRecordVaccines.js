@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { TextField,} from '@material-ui/core';
+import { TextField, Accordion, AccordionSummary, AccordionDetails, Checkbox, Typography} from '@material-ui/core';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Autocomplete } from '@material-ui/lab';
 import { vaccineGroups } from 'helper-functions/constantGroups';
+import BacteriaList from './HealthcarePages/BacteriaList';
 
 class PatientRecordVaccines extends React.Component {
     
@@ -33,10 +35,9 @@ class PatientRecordVaccines extends React.Component {
     }
 
     onSubmitEvent = () => {
-        this.setState({edit: false});
+        this.setState({editing: false});
         this.props.onSubmitEvent(this.updatedVaccine);
     }
-
 
     render() {
         
@@ -47,14 +48,13 @@ class PatientRecordVaccines extends React.Component {
                 <ul className="flex-container longhand">
                     <li className="flex-item">{this.updatedVaccine.dateAdmin}</li>
                     <li className="flex-item">{this.updatedVaccine.brandName}</li>
-                    {this.updatedVaccine.bacteria && this.updatedVaccine.bacteria.map((bacteria) => {
-                        return <li className="flex-item">{bacteria}</li>
-                    })}
+                    
                     <li className="flex-item">{this.updatedVaccine.lot}</li>
                     <li className="flex-item">{this.updatedVaccine.expiryDate}</li>
                     <li className="flex-item">{this.updatedVaccine.administeredUnder}</li>
                     <li className="flex-item">{this.updatedVaccine.location}</li>
                 </ul>
+                <BacteriaList />
             </div>
         );
 
@@ -76,22 +76,24 @@ class PatientRecordVaccines extends React.Component {
 
                     <Autocomplete 
                         options={vaccineGroups}
-                        getOptionLabel={(option) => option.vaccineBrand}
+                        getOptionLabel={(option) => option.vaccineBrand || (vaccineGroups.find(vaccine => vaccine.vaccineBrand === option)).vaccineBrand}
                         style={{ width: 300 }}
-                        renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
-                        //placeholder={props.brandName} 
+                        renderInput={(params) => <TextField {...params} defaultValue={this.props.brandName} variant="outlined" />}
+                        getOptionSelected={(option, value) => option.vaccineBrand === value}
+                        defaultValue={this.props.brandName}
                         className="flex-item" 
-                        onChange={(event, newValue) => this.onChangeEvent(newValue.title, 'brandName')}
+                        onChange={(event, newValue) => this.onChangeEvent(newValue.vaccineBrand, 'brandName')}
                         />
 
                     {/* TODO: make onchange event functional for bactera, currently will overwrite all*/}
-                    {this.updatedVaccine.bacteria && this.updatedVaccine.bacteria.map((bacteria) => {
-                        return <input type="text" placeholder={bacteria} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value, 'bacteria')}/>
-                    })}
-                    <input type="text" placeholder={this.updatedVaccine.lot} className="flex-item"/>
-                    <input type="text" placeholder={this.updatedVaccine.expiryDate} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'expiryDate')}/>
-                    <input type="text" placeholder={this.updatedVaccine.administeredUnder} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value, 'administeredUnder')}/>
-                    <input type="text" placeholder={this.updatedVaccine.location} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'location')}/>
+                    {/* {this.updatedVaccine.bacteria && this.updatedVaccine.bacteria.map((bacteria) => {
+                        return <input type="text" defaultValue={bacteria} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value, 'bacteria')}/>
+                    })} */}
+                    <BacteriaList />
+                    <input type="text" defaultValue={this.updatedVaccine.lot} className="flex-item"/>
+                    <input type="text" defaultValue={this.updatedVaccine.expiryDate} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'expiryDate')}/>
+                    <input type="text" defaultValue={this.updatedVaccine.administeredUnder} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value, 'administeredUnder')}/>
+                    <input type="text" defaultValue={this.updatedVaccine.location} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'location')}/>
                 </ul>
         </div>
         )

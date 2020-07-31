@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { TextField,} from '@material-ui/core';
 import { Autocomplete } from '@material-ui/lab';
 import { vaccineGroups } from 'helper-functions/constantGroups';
+import { TextField, Accordion, AccordionSummary, AccordionDetails, Checkbox, Typography} from '@material-ui/core';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import './HealthcarePageComponents.css';
 
 export const PatientRecordTile = (props) => {
