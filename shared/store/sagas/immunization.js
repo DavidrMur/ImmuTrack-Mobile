@@ -21,7 +21,7 @@ export function* patientInfoPending(action){
         //     patientOHIP: action.OHIP,
         //     jwtToken: localStorage.getItem('jwtToken');
         // }
-        let response = yield axios.post("http://127.0.0.1:5000/retrievePatientRecord");
+        let response = yield axios.post("http://127.0.0.1:5000/retrievePatientRecord",action.patientOHIP);
         debugger;
         // let response = {
         //     'name': 'John Doe', 'DOB': 'Dec-31-1998', 'OHIP': '545234', 
