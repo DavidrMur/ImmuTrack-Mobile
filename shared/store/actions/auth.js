@@ -2,6 +2,12 @@ import * as actionTypes from './actionTypes';
 
 // Asynchronous actions
 
+export const signout = () => {
+    return {
+        type: actionTypes.SIGNOUT
+    }
+}
+
 export const loginPending = (username, password, profession) => {
     return {
         type: actionTypes.LOGIN_PENDING,

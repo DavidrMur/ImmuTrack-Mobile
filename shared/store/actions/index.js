@@ -1,4 +1,5 @@
 export {
+    signout,
     loginPending,
     loginSuccess,
     loginFail,

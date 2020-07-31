@@ -38,9 +38,11 @@ class HealthcareHomePage extends Component {
         })}
 
         return(
+            
             <Grid container spacing={2}>
                 <Grid item xs={1} >
                 <TextField label="patient's OHIP" onChange={(e) => this.setState({addPatientOHIP: e.target.value})}/>
+                <Button onClick={() => this.props.signout()}>Signout</Button>
                 </Grid>
                 <Grid item xs={2} >
                 <Button onClick={() => this.props.patientAddPending(this.state.addPatientOHIP)}>Add Patient</Button>
@@ -65,7 +67,8 @@ const mapDispathToProps = dispatch => {
     return {
         patientsPending: () => dispatch(actions.patientsPending()),
         patientInfoPending: (patientOHIP) => dispatch(actions.patientInfoPending(patientOHIP)),
-        patientAddPending: (patientOHIP) => dispatch(actions.patientAddPending(patientOHIP))
+        patientAddPending: (patientOHIP) => dispatch(actions.patientAddPending(patientOHIP)),
+        signout: () => dispatch(actions.signout())
     };
 };
 

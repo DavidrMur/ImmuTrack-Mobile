@@ -34,6 +34,18 @@ const initialState = {
 
 }
 
+const signout = (state, action) => {
+    
+    localStorage.removeItem("jwtToken");
+    localStorage.removeItem("loggedIn");
+    localStorage.removeItem("acceptDisclosure");
+
+    
+    return {
+        ...initialState
+    }
+}
+
 const loginSuccess = (state, action) => {
     return {
         ...state,
@@ -346,6 +358,9 @@ const reducer = (state = initialState, action) => {
             return signupFail(state,action);
 
         // Synchronous
+
+        case actionTypes.SIGNOUT:
+            return signout(state,action);
 
         // General
 
