@@ -31,7 +31,6 @@ class Routes extends Component {
             && this.props.userInfo.profession !== "" &&
             localStorage.getItem('loggedIn') === true
 
-        debugger;
         let acceptDisclosure = ((localStorage.getItem('acceptDisclosure')) && (localStorage.getItem('acceptDisclosure')) !== undefined);
     
         let newVisitRoutes = (
@@ -40,9 +39,14 @@ class Routes extends Component {
             <Route path='/login' component={LoginPage}/>
             <Route path='/signup' component={SignupPage}/>
             <Route path='/forgot' component={ForgotPage} />
+<<<<<<< HEAD
             <Route path='/signout' component={SignoutPage} />
             {/* <Route path='/main' component={HealthcareHomePage} />
             <Route path='/view-patient' component={HealthcareRecordPage} /> */}
+=======
+            <Route path='/main' component={HealthcareHomePage} />
+            <Route path='/view-patient' component={HealthcareRecordPage} />
+>>>>>>> parent of b0c4519f... auth - signout function pt 1
             </>) : <SecurityDisclosure />
             }
             <Redirect to='/login'/>

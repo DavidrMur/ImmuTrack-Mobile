@@ -14,8 +14,6 @@ export const CHANGE_PASSWORD_PENDING = "CHANGE_PASSWORD_PENDING";
 
 // Synchronous actions
 
-export const SIGNOUT = "SIGNOUT";
-
 export const SIGNUP_SET_TYPE = "SIGNUP_SET_TYPE";
 
 export const SIGNUP_SET_FIRST_NAME = "SIGNUP_SET_FIRST_NAME"
