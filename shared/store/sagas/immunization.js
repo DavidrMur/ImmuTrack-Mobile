@@ -21,22 +21,23 @@ export function* patientInfoPending(action){
         //     patientOHIP: action.OHIP,
         //     jwtToken: localStorage.getItem('jwtToken');
         // }
-        //let response = yield axios.post("http://127.0.0.1:5000/signin", localStorage.getItem('jwtToken'));
-        let response = {
-            'name': 'John Doe', 'DOB': 'Dec-31-1998', 'OHIP': '545234', 
-            'vaccines': [
-                {
-                    'dateAdmin': 'July-10-2020', 'brandName': 'SHINGRIX', 'bacteria': ['Varicella', 'Herpes Zoster'],
-                    'lot': 'eeh21nwef23', 'expiryDate': '12/2030', 'administeredUnder': 'Dr. Doe', 'location': '123 Zoo',
-                    'editable': true
-                },
-                {
-                    'dateAdmin': 'Jan-10-2020', 'brandName': 'PEDIACEL', 'bacteria': ['Corona', 'AIDS'],
-                    'lot': 'wi6634uh', 'expiryDate': '5/2025', 'administeredUnder': 'Dr. Dane', 'location': '200 Boo',
-                    'editable': false
-                }
-            ]
-        }
+        let response = yield axios.post("http://127.0.0.1:5000/retrievePatientRecord");
+        debugger;
+        // let response = {
+        //     'name': 'John Doe', 'DOB': 'Dec-31-1998', 'OHIP': '545234', 
+        //     'vaccines': [
+        //         {
+        //             'dateAdmin': 'July-10-2020', 'brandName': 'SHINGRIX', 'bacteria': ['Varicella', 'Herpes Zoster'],
+        //             'lot': 'eeh21nwef23', 'expiryDate': '12/2030', 'administeredUnder': 'Dr. Doe', 'location': '123 Zoo',
+        //             'editable': true
+        //         },
+        //         {
+        //             'dateAdmin': 'Jan-10-2020', 'brandName': 'PEDIACEL', 'bacteria': ['Corona', 'AIDS'],
+        //             'lot': 'wi6634uh', 'expiryDate': '5/2025', 'administeredUnder': 'Dr. Dane', 'location': '200 Boo',
+        //             'editable': false
+        //         }
+        //     ]
+        // }
         response.OHIP = action.patientOHIP;
         yield put (actions.patientInfoSuccess(response))
     } catch (error) {
