@@ -9,38 +9,6 @@ class BacteriaList extends React.Component {
     }
     
     render() {
-
-        let BacteriaDisplay = (
-            <Accordion>
-                <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-                >
-                <Typography >Bacteria</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                <Typography>Thing 1 </Typography>
-                <Typography>Thing 2 </Typography>
-                </AccordionDetails>
-            </Accordion>
-            );
-        
-        let BacteriaEdit = (
-            <Accordion>
-                <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-                >
-                <Typography >Bacteria</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                <Checkbox />
-                <Checkbox />
-                </AccordionDetails>
-            </Accordion>
-        );
         
         return (
             <div>
@@ -59,18 +27,18 @@ class BacteriaList extends React.Component {
                 </AccordionDetails>
             </Accordion>) 
             : <Accordion>
-            <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
-            >
-            <Typography >Bacteria</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-            <Typography>Thing 1 </Typography>
-            <Typography>Thing 2 </Typography>
-            </AccordionDetails>
-        </Accordion> }
+                <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+                >
+                <Typography >Bacteria</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                <Typography>Thing 1 </Typography>
+                <Typography>Thing 2 </Typography>
+                </AccordionDetails>
+             </Accordion> }
             </div>)
     }
 }
