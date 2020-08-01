@@ -40,7 +40,6 @@ class PatientRecordVaccines extends React.Component {
     }
 
     render() {
-        
 
         let patientRecordDisplay = (
             <div>
@@ -89,7 +88,7 @@ class PatientRecordVaccines extends React.Component {
                     {/* {this.updatedVaccine.bacteria && this.updatedVaccine.bacteria.map((bacteria) => {
                         return <input type="text" defaultValue={bacteria} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value, 'bacteria')}/>
                     })} */}
-                    <BacteriaList vaccine={this.updatedVaccine.brandName} />
+                    <BacteriaList vaccine={this.updatedVaccine.brandName} bacteria={this.props.bacteria} />
                     <input type="text" defaultValue={this.updatedVaccine.lot} className="flex-item"/>
                     <input type="text" defaultValue={this.updatedVaccine.expiryDate} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'expiryDate')}/>
                     <input type="text" defaultValue={this.updatedVaccine.administeredUnder} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value, 'administeredUnder')}/>
