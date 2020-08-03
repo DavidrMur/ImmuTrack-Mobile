@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { TextField, Accordion, AccordionSummary, AccordionDetails, Checkbox, Typography} from '@material-ui/core';
+import { vaccineGroups } from 'helper-functions/constantGroups'
 
 class BacteriaList extends React.Component {
 
@@ -22,7 +23,7 @@ class BacteriaList extends React.Component {
                 </AccordionSummary>
                 <AccordionDetails>
                 <ul>
-                    {this.props.bacteria && this.props.bacteria.map((bacteria) => {
+                {vaccineGroups && vaccineGroups[this.props.vaccine].bacteria.map((bacteria) => {
                         return <li>{bacteria}</li>
                     })}
                     </ul>
@@ -38,7 +39,7 @@ class BacteriaList extends React.Component {
                 </AccordionSummary>
                 <AccordionDetails>
                     <ul>
-                    {this.props.bacteria && this.props.bacteria.map((bacteria) => {
+                    {vaccineGroups && vaccineGroups.find(x => x.vaccineBrand === this.props.vaccine).bacteria.map((bacteria) => {
                         return <li>{bacteria}</li>
                     })}
                     </ul>
