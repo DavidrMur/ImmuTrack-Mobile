@@ -172,7 +172,7 @@ const SignupProfession = (props) => {
           <MenuItem value={'Physician'}>Physician</MenuItem>
           <MenuItem value={'Nurse'}>Nurse</MenuItem>
           <MenuItem value={'Nurse Practitioner'}>Nurse Practitioner</MenuItem>
-          <MenuItem value={'Physician\'s Assistant'}>Physician's Assistant</MenuItem>
+          <MenuItem value={"Physician\'s Assistant"}>Physician's Assistant</MenuItem>
           <MenuItem value={'Pharamacist'}>Pharmacist</MenuItem>
           </Select>
         </div>
