@@ -68,15 +68,14 @@ class SignupPage extends Component {
 
     render(){
         let signupView;
-        if (this.state.type === 'patient') signupView = (<SignupPagePatient patientSignupFunctions={this.patientSignupFunctions}/>);
-        else if (this.state.type === 'healthcare') signupView = (<SignupPageHealthcare healthcareSignupFunctions={this.healthcareSignupFunctions} />);
+        if (this.state.type === 'patient') signupView = (<SignupPagePatient patientSignupFunctions={this.patientSignupFunctions} signup={this.props.signupPending}/>);
+        else if (this.state.type === 'healthcare') signupView = (<SignupPageHealthcare healthcareSignupFunctions={this.healthcareSignupFunctions} signup={this.props.signupPending} />);
         else signupView = (<p>Please choose a signup option that is appropriate</p>);
         return (
             <div >
                 {/* TODO: Make sure the fields do not mix if someone wants to switch to a different signup flow */}
                 <button className='container--field' onClick={() => this.setSignupType('patient')}>Signup for Patient</button>
                 <button className='container--field' onClick={() => this.setSignupType('healthcare')}>Signup for Healthcare Provider</button>
-                <button className='container--field' disabled={this.state.type === 'none'} onClick = {this.props.signupPending}>Sign Up</button>
                 <Link className='container--option' to="/login">Already have an account?</Link>
                 {signupView}
             </div>
