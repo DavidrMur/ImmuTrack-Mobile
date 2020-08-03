@@ -5,7 +5,7 @@ class SignupPagePatient extends Component {
 
     state = {
         pageCount: 1,
-        maxPageCount: 8 // TODO: This is general info, maybe a constant?
+        maxPageCount: 10 // TODO: This is general info, maybe a constant?
     }
 
 
@@ -53,7 +53,7 @@ class SignupPagePatient extends Component {
                 {/* TODO: Make into a component (do we really need to?)*/}
                 <button style={{margin: "10px"}} onClick={() => this.setState({pageCount: this.state.pageCount - 1})} disabled ={this.state.pageCount === 1} >Back</button>
                 <button onClick={() => this.setState({pageCount: this.state.pageCount + 1})} hidden= {this.state.pageCount === this.state.maxPageCount}>Next</button> 
-                <button onClick={() => this.setState({pageCount: this.state.pageCount + 1})} hidden= {!(this.state.pageCount === this.state.maxPageCount)}>Signup</button> 
+                <button onClick={this.props.signup} hidden= {!(this.state.pageCount === this.state.maxPageCount)}>Signup</button> 
             </div>
         )
     }

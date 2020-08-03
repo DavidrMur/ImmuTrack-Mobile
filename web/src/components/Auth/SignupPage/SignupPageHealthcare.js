@@ -26,7 +26,7 @@ class SignupPageHealthcare extends Component {
                 <Grid item xs={6}>
                     <SignupCredentials nestedFieldFunction = {this.props.healthcareSignupFunctions.signupSetCredentials}/>
                 </Grid>
-               <Button onClick={() => this.setState({pageCount: this.state.pageCount + 1})}>Signup</Button> 
+               <Button onClick={this.props.signup}>Signup</Button> 
             </Grid>
         )
     }
