@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
+import _  from 'lodash';
 import * as actions from 'redux-saga-store/actions/index';
 import { PatientRecordVaccineTitles } from '../../components/Immunization/HealthcarePages/HealthcarePageComponents'
 import { Button } from '@material-ui/core';
@@ -36,14 +37,14 @@ class PatientVaccines extends Component {
 
     render(){
 
-        if (!this.props.currentPatient.vaccines) return <Redirect to='/main' />
+        if (!this.props.currentPatient || _.isEmpty(this.props.currentPatient)) return <Redirect to='/main' />
 
         return (
             <div>
                 <PatientRecordVaccineTitles />
                 <Button onClick={() => (this.setState({adding: true}))}>Add Entry</Button>
                 {this.state.adding ? <PatientRecordVaccines adding onSubmitEvent={this.onNewEntrySubmitEvent}/> : null}
-                {this.props.currentPatient.vaccines.map((vaccine) => {
+                {this.props.currentPatient.vaccines && this.props.currentPatient.vaccines.map((vaccine) => {
                     return (<PatientRecordVaccines
                         dateAdmin={vaccine.dateAdmin}
                         brandName={vaccine.brandName}
