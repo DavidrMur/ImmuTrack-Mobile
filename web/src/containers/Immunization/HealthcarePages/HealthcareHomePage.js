@@ -30,7 +30,6 @@ class HealthcareHomePage extends Component {
                     lastName={patient.lastName}
                     DOB={patient.DOB}
                     OHIP={patient.ohip}
-                    //function to make API request to view more information on patient
                     redirectQuery={this.props.patientInfoPending}
             />
         })}

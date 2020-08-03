@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Autocomplete } from '@material-ui/lab';
+import { vaccineGroups } from 'helper-functions/constantGroups';
+import { TextField, Accordion, AccordionSummary, AccordionDetails, Checkbox, Typography} from '@material-ui/core';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import './HealthcarePageComponents.css';
 
 export const PatientRecordTile = (props) => {
@@ -31,41 +35,3 @@ export const PatientRecordVaccineTitles = (props) => {
         </div>
     )
 }
-
-export const PatientRecordVaccines = (props) => {
-    return (
-        <div>
-            <ul className="flex-container longhand">
-                <li className="flex-item">{props.dateAdmin}</li>
-                <li className="flex-item">{props.brandName}</li>
-                {props.bacteria && props.bacteria.map((bacteria) => {
-                    return <li className="flex-item">{bacteria}</li>
-                })}
-                <li className="flex-item">{props.lot}</li>
-                <li className="flex-item">{props.expiryDate}</li>
-                <li className="flex-item">{props.administeredUnder}</li>
-                <li className="flex-item">{props.location}</li>
-            </ul>
-        </div>
-    )
-}
-
-export const PatientRecordVaccinesEdit = (props) => {
-    return (
-        <div>
-            <ul className="flex-container longhand">
-                <input type="text" placeholder={props.dateAdmin} className="flex-item" onChange={(event) => props.onChangeEvent(event.target.value, 'dateAdmin')} />
-                <input type="text" placeholder={props.brandName} className="flex-item" onChange={(event) => props.onChangeEvent(event.target.value, 'brandName')}/>
-                {/* TODO: make onchange event functional for bactera, currently will overwrite all*/}
-                {props.bacteria && props.bacteria.map((bacteria) => {
-                    return <input type="text" placeholder={bacteria} className="flex-item" onChange={(event) => props.onChangeEvent(event.target.value, 'bacteria')}/>
-                })}
-                <input type="text" placeholder={props.lot} className="flex-item"/>
-                <input type="text" placeholder={props.expiryDate} className="flex-item" onChange={(event) => props.onChangeEvent(event.target.value,'expiryDate')}/>
-                <input type="text" placeholder={props.administeredUnder} className="flex-item" onChange={(event) => props.onChangeEvent(event.target.value, 'administeredUnder')}/>
-                <input type="text" placeholder={props.location} className="flex-item" onChange={(event) => props.onChangeEvent(event.target.value,'location')}/>
-            </ul>
-        </div>
-    )
-}
-

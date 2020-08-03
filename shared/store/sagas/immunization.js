@@ -21,24 +21,25 @@ export function* patientInfoPending(action){
         //     patientOHIP: action.OHIP,
         //     jwtToken: localStorage.getItem('jwtToken');
         // }
-        let body = {ohip: action.patientOHIP }
-        let response = yield axios.post("http://127.0.0.1:5000/retrievePatientRecord",body);
+      
+        // let body = {ohip: action.patientOHIP }
+        // let response = yield axios.post("http://127.0.0.1:5000/retrievePatientRecord",body);
         debugger;
-        // let response = {
-        //     'name': 'John Doe', 'DOB': 'Dec-31-1998', 'OHIP': '545234', 
-        //     'vaccines': [
-        //         {
-        //             'dateAdmin': 'July-10-2020', 'brandName': 'SHINGRIX', 'bacteria': ['Varicella', 'Herpes Zoster'],
-        //             'lot': 'eeh21nwef23', 'expiryDate': '12/2030', 'administeredUnder': 'Dr. Doe', 'location': '123 Zoo',
-        //             'editable': true
-        //         },
-        //         {
-        //             'dateAdmin': 'Jan-10-2020', 'brandName': 'PEDIACEL', 'bacteria': ['Corona', 'AIDS'],
-        //             'lot': 'wi6634uh', 'expiryDate': '5/2025', 'administeredUnder': 'Dr. Dane', 'location': '200 Boo',
-        //             'editable': false
-        //         }
-        //     ]
-        // }
+        let response = {
+            'name': 'John Doe', 'DOB': 'Dec-31-1998', 'OHIP': '545234', 
+            'vaccines': [
+                {
+                    'dateAdmin': 'July-10-2020', 'brandName': 'Shingrix', 'bacteria': ['Varicella', 'Herpes Zoster'],
+                    'lot': 'eeh21nwef23', 'expiryDate': '12/2030', 'administeredUnder': 'Dr. Doe', 'location': '123 Zoo',
+                    'editable': true
+                },
+                {
+                    'dateAdmin': 'Jan-10-2020', 'brandName': 'Pediacel', 'bacteria': ['Corona', 'AIDS'],
+                    'lot': 'wi6634uh', 'expiryDate': '5/2025', 'administeredUnder': 'Dr. Dane', 'location': '200 Boo',
+                    'editable': false
+                }
+            ]
+        }
         response.OHIP = action.patientOHIP;
         yield put (actions.patientInfoSuccess(response))
     } catch (error) {
@@ -53,6 +54,7 @@ export function* patientUpdateInfoPending(action){
         console.log ('Saga response');
         console.log(action);
         //let response = yield axios.post("http://127.0.0.1:5000/signin", localStorage.getItem('jwtToken'), action);
+        // gonna call the api again for updated page?
         
     } catch (error) {
         // TODO: proper error handling

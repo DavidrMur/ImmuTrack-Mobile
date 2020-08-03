@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import * as actions from 'redux-saga-store/actions/index';
-import { PatientRecordVaccinesEdit, PatientRecordVaccines} from '../../components/Immunization/HealthcarePages/HealthcarePageComponents'
+import { PatientRecordVaccineTitles } from '../../components/Immunization/HealthcarePages/HealthcarePageComponents'
 import { Button } from '@material-ui/core';
+import PatientRecordVaccines from '../../components/Immunization/PatientRecordVaccines';
 
 class PatientVaccines extends Component {
 
@@ -11,16 +12,7 @@ class PatientVaccines extends Component {
         super(props);
 
         this.state = {
-            edit: false,
-            vaccine: {
-                dateAdmin: this.props.dateAdmin,
-                brandName: this.props.brandName,
-                bacteria: this.props.bacteria,
-                lot: this.props.lot,
-                expiryDate: this.props.expiryDate,
-                administeredUnder: this.props.administeredUnder,
-                location: this.props.location
-            }
+            adding: false
         };
 
     }
@@ -30,57 +22,58 @@ class PatientVaccines extends Component {
         this.setState({vaccine: nextProps.data})
     }
 
-    onChangeEvent = (value, type) => {
-        let temp = {...this.state.vaccine}
-        temp[type] = type === 'bacteria' ? [value] : value;
-        this.setState({vaccine: temp})
+    onNewEntryChangeEvent = (value, type) => {
+        console.log(this.state.newEntry);
+        let temp = {...this.state.newEntry}
+        temp[type] = value;
+        this.setState({newEntry: temp})
     }
 
-    onSubmitEvent = () => {
-        this.setState({edit: false});
-        this.props.patientUpdateInfoPending(this.state.vaccine);
-    }
+    onNewEntrySubmitEvent = () => {
+        this.props.patientAddEntryPending(this.state.newEntry);
+        this.setState({add:false})
+    };
 
     render(){
+
+        if (!this.props.currentPatient.vaccines) return <Redirect to='/main' />
+
         return (
             <div>
-                <button onClick={() => this.setState({edit: true})} hidden={!this.props.editPermission}>Edit</button>
-                {this.state.edit ? 
-                <div><PatientRecordVaccinesEdit
-                dateAdmin={this.state.vaccine.dateAdmin}
-                brandName={this.state.vaccine.brandName}
-                bacteria={this.state.vaccine.bacteria}
-                lot={this.state.vaccine.lot}
-                expiryDate={this.state.vaccine.expiryDate}
-                administeredUnder={this.state.vaccine.administeredUnder}
-                location={this.state.vaccine.location}
-                onChangeEvent={this.onChangeEvent}
-                />
-                <button onClick={() => this.onSubmitEvent()}>Submit</button>
-                </div>
-                : 
-                <PatientRecordVaccines
-                //key={patient.id}
-                dateAdmin={this.state.vaccine.dateAdmin}
-                brandName={this.state.vaccine.brandName}
-                bacteria={this.state.vaccine.bacteria}
-                lot={this.state.vaccine.lot}
-                expiryDate={this.state.vaccine.expiryDate}
-                administeredUnder={this.state.vaccine.administeredUnder}
-                location={this.state.vaccine.location}
-                //function to make API request to view more information on patient
-                //redirectQuery={this.props.getInfo(patient.id)}
-        />}
+                <PatientRecordVaccineTitles />
+                <Button onClick={() => (this.setState({adding: true}))}>Add Entry</Button>
+                {this.state.adding ? <PatientRecordVaccines adding onSubmitEvent={this.onNewEntrySubmitEvent}/> : null}
+                {this.props.currentPatient.vaccines.map((vaccine) => {
+                    return (<PatientRecordVaccines
+                        dateAdmin={vaccine.dateAdmin}
+                        brandName={vaccine.brandName}
+                        bacteria={vaccine.bacteria}
+                        lot={vaccine.lot}
+                        expiryDate={vaccine.expiryDate}
+                        administeredUnder={vaccine.administeredUnder}
+                        location={vaccine.location}
+                        userInfo={this.props.currentUser}
+                        onSubmitEvent={(payload) => this.props.patientUpdateInfoPending(payload)}
+                />)
+             })}
+                
         </div>
         );
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        currentPatient: state.immunization.patient,
+        currentUser: state.auth.userInfo
+    };
+};
+
 const mapDispathToProps = dispatch => {
     return {
+        patientAddEntryPending: (payload) => dispatch(actions.patientAddEntryPending(payload)),
         patientUpdateInfoPending: (payload) => dispatch(actions.patientUpdateInfoPending(payload))
     };
 };
 
-//export default connect(mapStateToProps,mapDispathToProps)(SummonerProfile);
-export default connect(null,mapDispathToProps)(PatientVaccines)
+export default connect(mapStateToProps,mapDispathToProps)(PatientVaccines)
