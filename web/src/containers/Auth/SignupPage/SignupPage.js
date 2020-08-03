@@ -76,7 +76,6 @@ class SignupPage extends Component {
                 {/* TODO: Make sure the fields do not mix if someone wants to switch to a different signup flow */}
                 <button className='container--field' onClick={() => this.setSignupType('patient')}>Signup for Patient</button>
                 <button className='container--field' onClick={() => this.setSignupType('healthcare')}>Signup for Healthcare Provider</button>
-                <button className='container--field' disabled={this.state.type === 'none'} onClick = {this.props.signupPending}>Sign Up</button>
                 <Link className='container--option' to="/login">Already have an account?</Link>
                 {signupView}
             </div>
