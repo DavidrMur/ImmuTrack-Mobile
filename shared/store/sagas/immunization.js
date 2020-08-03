@@ -27,18 +27,18 @@ export function* patientInfoPending(action){
         debugger;
         let response = {
             'name': 'John Doe', 'DOB': 'Dec-31-1998', 'OHIP': '545234', 
-            // 'vaccines': [
-            //     {
-            //         'dateAdmin': 'July-10-2020', 'brandName': 'Shingrix', 'bacteria': ['Varicella', 'Herpes Zoster'],
-            //         'lot': 'eeh21nwef23', 'expiryDate': '12/2030', 'administeredUnder': 'Dr. Doe', 'location': '123 Zoo',
-            //         'editable': true
-            //     },
-            //     {
-            //         'dateAdmin': 'Jan-10-2020', 'brandName': 'Pediacel', 'bacteria': ['Corona', 'AIDS'],
-            //         'lot': 'wi6634uh', 'expiryDate': '5/2025', 'administeredUnder': 'Dr. Dane', 'location': '200 Boo',
-            //         'editable': false
-            //     }
-            // ]
+            'vaccines': [
+                {
+                    'dateAdmin': 'July-10-2020', 'brandName': 'Shingrix', 'bacteria': ['Varicella', 'Herpes Zoster'],
+                    'lot': 'eeh21nwef23', 'expiryDate': '12/2030', 'administeredUnder': 'Dr. Doe', 'location': '123 Zoo',
+                    'editable': true
+                },
+                {
+                    'dateAdmin': 'Jan-10-2020', 'brandName': 'Pediacel', 'bacteria': ['Corona', 'AIDS'],
+                    'lot': 'wi6634uh', 'expiryDate': '5/2025', 'administeredUnder': 'Dr. Dane', 'location': '200 Boo',
+                    'editable': false
+                }
+            ]
         }
         response.OHIP = action.patientOHIP;
         yield put (actions.patientInfoSuccess(response))

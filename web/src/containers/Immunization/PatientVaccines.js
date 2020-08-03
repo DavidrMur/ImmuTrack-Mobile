@@ -37,7 +37,6 @@ class PatientVaccines extends Component {
 
     render(){
 
-        debugger;
         if (!this.props.currentPatient || _.isEmpty(this.props.currentPatient)) return <Redirect to='/main' />
 
         return (
