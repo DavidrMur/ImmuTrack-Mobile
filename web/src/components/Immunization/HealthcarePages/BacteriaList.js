@@ -9,8 +9,6 @@ class BacteriaList extends React.Component {
     }
     
     render() {
-        console.log(this.props);
-        
         return (
             <div> 
             { this.props.editing ? 
@@ -23,8 +21,11 @@ class BacteriaList extends React.Component {
                 <Typography >Bacteria</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                <Checkbox />
-                <Checkbox />
+                <ul>
+                    {this.props.bacteria && this.props.bacteria.map((bacteria) => {
+                        return <li>{bacteria}</li>
+                    })}
+                    </ul>
                 </AccordionDetails>
             </Accordion>) 
             : <Accordion>

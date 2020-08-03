@@ -12,6 +12,7 @@ class PatientRecordVaccines extends React.Component {
         this.state = {
             editing: false,
             maxDate: new Date().toISOString().slice(0, 10),
+            disableAdministered: false
         }
     }
 
@@ -29,7 +30,12 @@ class PatientRecordVaccines extends React.Component {
     onChangeEvent = (value, type) => {
         console.log(value);
         let temp = {...this.updatedVaccine}
-        temp[type] = type === 'bacteria' ? [value] : value;
+        temp[type] = value;
+        this.setState({disableAdministered: false})
+        if (type === 'dateAdmin' && value === this.state.maxDate) {
+            temp['administeredUnder'] = 'trump';
+            this.setState({disableAdministered: true})
+        }
         this.updatedVaccine = temp;
         console.log(this.updatedVaccine);
     }
@@ -53,7 +59,7 @@ class PatientRecordVaccines extends React.Component {
                     <li className="flex-item">{this.updatedVaccine.administeredUnder}</li>
                     <li className="flex-item">{this.updatedVaccine.location}</li>
                 </ul>
-                <BacteriaList />
+                <BacteriaList vaccine={this.updatedVaccine.brandName} bacteria={this.props.bacteria} />
             </div>
         );
 
@@ -90,9 +96,9 @@ class PatientRecordVaccines extends React.Component {
                     })} */}
                     <BacteriaList vaccine={this.updatedVaccine.brandName} bacteria={this.props.bacteria} />
                     <input type="text" defaultValue={this.updatedVaccine.lot} className="flex-item"/>
-                    <input type="text" defaultValue={this.updatedVaccine.expiryDate} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'expiryDate')}/>
-                    <input type="text" defaultValue={this.updatedVaccine.administeredUnder} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value, 'administeredUnder')}/>
-                    <input type="text" defaultValue={this.updatedVaccine.location} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'location')}/>
+                    <TextField type="date" defaultValue={this.updatedVaccine.expiryDate} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'expiryDate')}/>
+                    <TextField type="text" disabled={this.state.disableAdministered} value={this.updatedVaccine.administeredUnder} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value, 'administeredUnder')}/>
+                    <TextField type="text" defaultValue={this.updatedVaccine.location} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'location')}/>
                 </ul>
         </div>
         )
