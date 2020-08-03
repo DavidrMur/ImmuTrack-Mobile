@@ -26,10 +26,19 @@ const initialState = {
     },
     userInfo: {
         profession: '',
-        firstName: '',
-        lastName: '',
+        firstName: 'Rubert',
+        lastName: 'Scott',
         OHIP: '',
-        DOB: ''
+        DOB: '',
+        workLocations: [{
+            workName: 'Family Wellness',
+            workAddress: '123 Appleton',
+            workCity: 'Hamilton',
+            workPostal: 'L8S 2B8',
+            workPhoneNumber: '905-664-7867',
+            workEMR: 'Green'
+
+        }]
     }
 
 }

@@ -52,6 +52,7 @@ class PatientVaccines extends Component {
                         expiryDate={vaccine.expiryDate}
                         administeredUnder={vaccine.administeredUnder}
                         location={vaccine.location}
+                        userInfo={this.props.currentUser}
                         onSubmitEvent={(payload) => this.props.patientUpdateInfoPending(payload)}
                 />)
              })}
@@ -63,7 +64,8 @@ class PatientVaccines extends Component {
 
 const mapStateToProps = state => {
     return {
-        currentPatient: state.immunization.patient
+        currentPatient: state.immunization.patient,
+        currentUser: state.auth.userInfo
     };
 };
 

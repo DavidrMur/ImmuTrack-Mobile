@@ -33,7 +33,7 @@ class PatientRecordVaccines extends React.Component {
         temp[type] = value;
         this.setState({disableAdministered: false})
         if (type === 'dateAdmin' && value === this.state.maxDate) {
-            temp['administeredUnder'] = 'trump';
+            temp['administeredUnder'] = `Dr. ${this.props.userInfo.lastName}`;
             this.setState({disableAdministered: true})
         }
         this.updatedVaccine = temp;
