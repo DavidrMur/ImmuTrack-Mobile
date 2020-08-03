@@ -10,7 +10,7 @@ class LoginPage extends Component {
     state = {
         username: '',
         password: '',
-        profession: ''
+        profession: undefined
     }
     
     setValue = (e, key) => {
@@ -26,9 +26,24 @@ class LoginPage extends Component {
 
     render(){
         return(
-            //style={{width: '50vw', margin: 'auto'}}
             <div style={{width: '47vw', margin: 'auto'}}>
-                <Grid container spacing={2} style={{'text-align': 'center'}}>
+                    {!this.state.profession ? (
+                        <Grid container spacing={2} style={{'text-align': 'center'}}>
+                            <Grid item xs={12}>
+                                <Typography variant="h1">Member Login</Typography>
+                            </Grid>
+                            <Grid item xs={12}>
+                                <Typography variant="paragraph">Please select the login type which applies to you</Typography>
+                            </Grid>
+                            <Grid item xs = {6}>
+                                <Button variant="outlined" onClick={() => this.setState({profession: 'provider'})}> Provider </Button>
+                            </Grid>
+                            <Grid item xs={6}>
+                            <Button variant="outlined" onClick={() => this.setState({profession: 'patient'})}> Patient </Button>
+                            </Grid>
+                        </Grid>
+                    ) : (
+                    <Grid container spacing={2} style={{'text-align': 'center'}}>
                     <Grid item xs={12}>
                         <Typography variant="h1">Member Login</Typography>
                     </Grid>
@@ -37,12 +52,6 @@ class LoginPage extends Component {
                     </Grid>
                     <Grid item xs={6}>
                         <TextField style={{width: "70%"}} required type="password" label="password" onChange={(event) => this.setValue(event, 'password')}/>
-                    </Grid>
-                    <Grid item xs = {6}>
-                        <Button variant="outlined" onClick={() => this.setState({profession: 'provider'})}> Provider </Button>
-                    </Grid>
-                    <Grid item xs={6}>
-                        <Button variant="outlined" onClick={() => this.setState({profession: 'patient'})}> Patient </Button>
                     </Grid>
                     <Grid item xs={6}>
                         <Typography variant="paragraph">Remember Me</Typography>
@@ -60,7 +69,7 @@ class LoginPage extends Component {
                         </Button>
                     </Grid>
                 
-                </Grid>
+                </Grid>)}
             </div>
 
         );
