@@ -30,8 +30,8 @@ class PatientVaccines extends Component {
         this.setState({newEntry: temp})
     }
 
-    onNewEntrySubmitEvent = () => {
-        this.props.patientAddEntryPending(this.state.newEntry);
+    onNewEntrySubmitEvent = (payload) => {
+        this.props.patientAddEntryPending(payload);
         this.setState({add:false})
     };
 
@@ -43,7 +43,7 @@ class PatientVaccines extends Component {
             <div>
                 <PatientRecordVaccineTitles />
                 <Button onClick={() => (this.setState({adding: true}))}>Add Entry</Button>
-                {this.state.adding ? <PatientRecordVaccines adding onSubmitEvent={this.onNewEntrySubmitEvent}/> : null}
+                {this.state.adding ? <PatientRecordVaccines adding userInfo={this.props.currentUser} onSubmitEvent={this.onNewEntrySubmitEvent}/> : null}
                 {this.props.currentPatient.vaccines && this.props.currentPatient.vaccines.map((vaccine) => {
                     return (<PatientRecordVaccines
                         dateAdmin={vaccine.dateAdmin}
