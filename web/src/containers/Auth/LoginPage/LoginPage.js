@@ -76,13 +76,6 @@ class LoginPage extends Component {
     }
 }
 
-
-const mapStateToProps = state => {
-    return {
-        
-    };
-};
-
 const mapDispathToProps = dispatch => {
     return {
         loginPending: (username, password, profession) => dispatch(actions.loginPending(username, password, profession))
