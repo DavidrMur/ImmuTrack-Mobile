@@ -12,7 +12,9 @@ class PatientRecordVaccines extends React.Component {
         this.state = {
             editing: false,
             maxDate: new Date().toISOString().slice(0, 10),
-            disableAdministered: false
+            disableAdministered: false,
+            error: false,
+            added: false,
         }
     }
 
@@ -28,21 +30,37 @@ class PatientRecordVaccines extends React.Component {
     };
 
     onChangeEvent = (value, type) => {
-        console.log(value);
         let temp = {...this.updatedVaccine}
         temp[type] = value;
-        this.setState({disableAdministered: false})
         if (type === 'dateAdmin' && value === this.state.maxDate) {
             temp['administeredUnder'] = `Dr. ${this.props.userInfo.lastName}`;
             this.setState({disableAdministered: true})
-        }
+        } else if (type === 'dateAdmin') this.setState({disableAdministered: false})
         this.updatedVaccine = temp;
         console.log(this.updatedVaccine);
     }
 
     onSubmitEvent = () => {
-        this.setState({editing: false});
-        this.props.onSubmitEvent(this.updatedVaccine);
+        if (!this.validatePayload()) {
+            this.setState({editing: false});
+            this.setState({added: true});
+            this.props.onSubmitEvent(this.updatedVaccine);
+        }
+    }
+
+    validatePayload = () => {
+
+        let errorCheck = false;
+
+        if (this.updatedVaccine['dateAdmin'] === undefined || this.updatedVaccine['brandName'] === undefined ||
+            this.updatedVaccine['lot'] === undefined || this.updatedVaccine['expiryDate'] === undefined ||
+            this.updatedVaccine['administeredUnder'] === undefined || this.updatedVaccine['location'] === undefined) {
+                errorCheck = true;
+            }
+
+        this.setState({error: errorCheck})
+
+        return errorCheck;
     }
 
     render() {
@@ -65,6 +83,7 @@ class PatientRecordVaccines extends React.Component {
 
         let patientRecordEdit = (
             <div>
+                <Typography hidden={!this.state.error}>Please ensure you have filled all of the information</Typography>
                 <button onClick={() => this.onSubmitEvent()}>Submit</button>
                 <ul className="flex-container longhand">
                     <TextField
@@ -95,7 +114,7 @@ class PatientRecordVaccines extends React.Component {
                         return <input type="text" defaultValue={bacteria} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value, 'bacteria')}/>
                     })} */}
                     <BacteriaList vaccine={this.updatedVaccine.brandName} bacteria={this.props.bacteria} />
-                    <input type="text" defaultValue={this.updatedVaccine.lot} className="flex-item"/>
+                    <input type="text" defaultValue={this.updatedVaccine.lot} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'lot')}/>
                     <TextField type="date" defaultValue={this.updatedVaccine.expiryDate} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'expiryDate')}/>
                     <TextField type="text" disabled={this.state.disableAdministered} value={this.updatedVaccine.administeredUnder} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value, 'administeredUnder')}/>
                     <TextField type="text" defaultValue={this.updatedVaccine.location} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'location')}/>
@@ -105,7 +124,7 @@ class PatientRecordVaccines extends React.Component {
 
         return (
             <div>
-                {this.props.adding || this.state.editing ? 
+                {this.state.added ? null : this.props.adding || this.state.editing ? 
                     patientRecordEdit
                 :
                     patientRecordDisplay

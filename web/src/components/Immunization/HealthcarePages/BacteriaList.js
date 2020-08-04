@@ -39,7 +39,7 @@ class BacteriaList extends React.Component {
                 </AccordionSummary>
                 <AccordionDetails>
                     <ul>
-                    {vaccineGroups && vaccineGroups.find(x => x.vaccineBrand === this.props.vaccine).bacteria.map((bacteria) => {
+                    {vaccineGroups && vaccineGroups.find(x => x.vaccineBrand === this.props.vaccine) && vaccineGroups.find(x => x.vaccineBrand === this.props.vaccine).bacteria.map((bacteria) => {
                         return <li>{bacteria}</li>
                     })}
                     </ul>
