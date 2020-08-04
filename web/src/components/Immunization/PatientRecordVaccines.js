@@ -13,7 +13,8 @@ class PatientRecordVaccines extends React.Component {
             editing: false,
             maxDate: new Date().toISOString().slice(0, 10),
             disableAdministered: false,
-            error: false
+            error: false,
+            added: false,
         }
     }
 
@@ -40,23 +41,27 @@ class PatientRecordVaccines extends React.Component {
     }
 
     onSubmitEvent = () => {
-        this.validatePayload();
-        // this.setState({editing: false});
-        // this.props.onSubmitEvent(this.updatedVaccine);
+        if (!this.validatePayload()) {
+            this.setState({editing: false});
+            this.setState({added: true});
+            this.props.onSubmitEvent(this.updatedVaccine);
+        }
     }
 
     validatePayload = () => {
 
-        let errorCheck = {}
+        let errorCheck = false;
         debugger;
 
         if (this.updatedVaccine['dateAdmin'] === undefined || this.updatedVaccine['brandName'] === undefined ||
             this.updatedVaccine['lot'] === undefined || this.updatedVaccine['expiryDate'] === undefined ||
-            this.updatedVaccine['administeredUnder'] || this.updatedVaccine['location'] === undefined) {
-                errorCheck['location'] = true;
+            this.updatedVaccine['administeredUnder'] === undefined || this.updatedVaccine['location'] === undefined) {
+                errorCheck = true;
             }
 
         this.setState({error: errorCheck})
+
+        return errorCheck;
     }
 
     render() {
@@ -120,7 +125,7 @@ class PatientRecordVaccines extends React.Component {
 
         return (
             <div>
-                {this.props.adding || this.state.editing ? 
+                {this.state.added ? null : this.props.adding || this.state.editing ? 
                     patientRecordEdit
                 :
                     patientRecordDisplay
