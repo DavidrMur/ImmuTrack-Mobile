@@ -1,6 +1,6 @@
 import React from 'react';
 import Routes from './containers/Routes'
-import { Header } from './components/Shared/Header';
+import Header from './components/Shared/Header';
 
 function App() {
 

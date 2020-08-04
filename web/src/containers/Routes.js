@@ -26,24 +26,18 @@ class Routes extends Component {
     render() {
 
         let routes;
-        let loggedIn = (localStorage.getItem('jwtToken') !== undefined 
-            && localStorage.getItem('jwtToken') !== null) 
-            && this.props.userInfo.profession !== "" &&
-            localStorage.getItem('loggedIn') === true
+        debugger;
+        let loggedIn = (localStorage.getItem('jwtToken') !== undefined && localStorage.getItem('jwtToken') !== null); 
 
-        let acceptDisclosure = ((localStorage.getItem('acceptDisclosure')) && (localStorage.getItem('acceptDisclosure')) !== undefined);
+        // let acceptDisclosure = (localStorage.getItem('acceptDisclosure') && localStorage.getItem('acceptDisclosure') === true);
     
         let newVisitRoutes = (
         <Switch>
-            { acceptDisclosure ? (<>
+            <Route path='/' component={LoginPage}/>
             <Route path='/login' component={LoginPage}/>
             <Route path='/signup' component={SignupPage}/>
             <Route path='/forgot' component={ForgotPage} />
             <Route path='/signout' component={SignoutPage} />
-            <Route path='/main' component={HealthcareHomePage} />
-            <Route path='/view-patient' component={HealthcareRecordPage} />
-            </>) : <SecurityDisclosure />
-            }
             <Redirect to='/login'/>
         </Switch>
         );
@@ -68,7 +62,10 @@ class Routes extends Component {
         routes = loggedIn ? (this.props.userInfo.profession !== 'patient' ? existingHealthcareRoutes : existingPatientRoutes) : newVisitRoutes;
         
     return (
-        routes
+        <div>
+            hello
+        {routes}
+        </div>
         )
     }
 }

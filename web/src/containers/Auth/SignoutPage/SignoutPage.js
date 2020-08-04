@@ -10,7 +10,7 @@ class SignoutPage extends React.Component {
         localStorage.removeItem('loggedIn');
 
         return (
-            <Redirect to="/login" />
+            <Redirect to="/" />
         )
     }
 }
