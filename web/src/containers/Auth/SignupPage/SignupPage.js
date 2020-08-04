@@ -55,7 +55,8 @@ class SignupPage extends Component {
             signupSetWorkCity: this.props.signupSetWorkCity,
             signupSetWorkPostal: this.props.signupSetWorkPostal,
             signupSetWorkPhoneNumber: this.props.signupSetWorkPhoneNumber,
-            signupSetWorkEMR: this.props.signupSetWorkEMR
+            signupSetWorkEMR: this.props.signupSetWorkEMR,
+            signupUnsetWorkLocation: this.props.signupUnsetWorkLocation
         },
     
     }
@@ -114,7 +115,8 @@ const mapDispathToProps = dispatch => {
         signupSetWorkCity: (workCity, index) => dispatch(actions.signupSetWorkCity(workCity, index)),
         signupSetWorkPostal: (workPostal, index) => dispatch(actions.signupSetWorkPostal(workPostal, index)),
         signupSetWorkPhoneNumber: (workPhoneNumber, index) => dispatch(actions.signupSetWorkPhoneNumber(workPhoneNumber, index)),
-        signupSetWorkEMR: (workEMR, index) => dispatch(actions.signupSetWorkEMR(workEMR, index))
+        signupSetWorkEMR: (workEMR, index) => dispatch(actions.signupSetWorkEMR(workEMR, index)),
+        signupUnsetWorkLocation: (index) => dispatch(actions.signupUnsetWorkLocation(index))
 
     };
 };

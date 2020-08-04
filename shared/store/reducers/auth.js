@@ -336,6 +336,22 @@ const signupSetWorkEMR = (state, action) => {
     }
 }
 
+const signupUnsetWorkLocation = (state, action) => {
+    debugger;
+    console.log('removing work location');
+    let workLocations = _.cloneDeep(state.healthcareInfo.signupWorkLocations);
+    workLocations.splice(action.index,1);
+
+    return {
+        ...state,
+        healthcareInfo: {
+            ...state.healthcareInfo,
+            signupWorkLocations: workLocations
+        }
+    }
+
+}
+
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
@@ -430,7 +446,10 @@ const reducer = (state = initialState, action) => {
             return signupSetWorkPhoneNumber(state,action); 
         case actionTypes.SIGNUP_SET_WORK_EMR:
             console.log('emr case');
-            return signupSetWorkEMR(state,action);                              
+            return signupSetWorkEMR(state,action);   
+        case actionTypes.SIGNUP_UNSET_WORK_LOCATION:
+            console.log('unset worklocation');
+            return signupUnsetWorkLocation(state,action);                              
         default:
             return state;        
 
