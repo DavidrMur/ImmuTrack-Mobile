@@ -38,7 +38,6 @@ export const patientUpdateInfoPending = (payload) => {
 }
 
 export const patientAddEntryPending = (payload) => {
-    debugger;
     return {
         type: actionTypes.IMMU_PATIENT_ADD_ENTRY_PENDING,
         payload
