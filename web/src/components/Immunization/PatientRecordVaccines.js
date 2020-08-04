@@ -51,7 +51,6 @@ class PatientRecordVaccines extends React.Component {
     validatePayload = () => {
 
         let errorCheck = false;
-        debugger;
 
         if (this.updatedVaccine['dateAdmin'] === undefined || this.updatedVaccine['brandName'] === undefined ||
             this.updatedVaccine['lot'] === undefined || this.updatedVaccine['expiryDate'] === undefined ||
