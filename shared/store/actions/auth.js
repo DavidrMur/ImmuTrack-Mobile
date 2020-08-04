@@ -243,6 +243,7 @@ export const signupSetWorkEMR = (workEMR, index) => {
 };
 
 export const signupUnsetWorkLocation = (index) => {
+    console.log(index);
     return {
         type: actionTypes.SIGNUP_UNSET_WORK_LOCATION,
         index

@@ -222,7 +222,7 @@ const SignupWorkLocation = (props) => {
                 <MenuItem value={'Green'}>Green</MenuItem>
                 <MenuItem value={'Yellow'}>Yellow</MenuItem>
             </Select>
-            {props.workType !=="Primary" ? <Button onClick={() => props.nestedFieldFunction.signupUnsetWorkLocation(props.index)}>Remove</Button> : null}
+            {/* {props.workType !=="Primary" ? <Button onClick={() => props.nestedFieldFunction.signupUnsetWorkLocation(props.index)}>Remove</Button> : null} */}
             </Grid>
         </div>
     )

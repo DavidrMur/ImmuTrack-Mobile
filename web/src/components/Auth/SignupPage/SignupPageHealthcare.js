@@ -7,8 +7,13 @@ class SignupPageHealthcare extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            workLocationCount: 1
+            workLocationCount: 0
         }
+    }
+
+    removeWorkLocation = () => {
+        this.props.healthcareSignupFunctions.signupSetWork.signupUnsetWorkLocation(this.state.workLocationCount);
+        this.setState({workLocationCount: this.state.workLocationCount - 1})
     }
 
     render() {
@@ -27,14 +32,17 @@ class SignupPageHealthcare extends Component {
                 <Grid item xs={6}>
                     <SignupPrimaryWork nestedFieldFunction = {this.props.healthcareSignupFunctions.signupSetWork} index={0}/>
                 </Grid> 
-                {<>{Array(this.state.workLocationCount).fill(1).map((i)=>(
+                {<>{Array(this.state.workLocationCount).fill(1).map((input,i)=>(
                     <Grid item xs={6}>
-                        <SignupOtherWork nestedFieldFunction = {this.props.healthcareSignupFunctions.signupSetWork} index={1}/>
+                        <SignupOtherWork nestedFieldFunction = {this.props.healthcareSignupFunctions.signupSetWork} index={i+1}/>
                     </Grid>))}
                 </>}
-                {/* <Grid item xs={6}>
-                    <SignupOtherWork nestedFieldFunction = {this.props.healthcareSignupFunctions.signupSetWork}/>
-                </Grid> */}
+                <Grid item xs={6}>
+                    <Button onClick={() => this.setState({workLocationCount: this.state.workLocationCount + 1})}>Add Work Location</Button>
+                </Grid>
+                {this.state.workLocationCount >= 1 ? <Grid item xs={6}>
+                    <Button onClick={() => this.removeWorkLocation()}>Remove Work Location</Button>
+                </Grid> : null}
                 <Grid item xs={6}>
                     <SignupCredentials nestedFieldFunction = {this.props.healthcareSignupFunctions.signupSetCredentials}/>
                 </Grid>
