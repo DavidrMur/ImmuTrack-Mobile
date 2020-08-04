@@ -31,7 +31,7 @@ class PatientVaccines extends Component {
     }
 
     onNewEntrySubmitEvent = (payload) => {
-        this.props.patientAddEntryPending(payload);
+        this.props.patientAddEntryPending(payload, this.props.currentPatient.OHIP);
         this.setState({add:false})
     };
 
@@ -72,7 +72,7 @@ const mapStateToProps = state => {
 
 const mapDispathToProps = dispatch => {
     return {
-        patientAddEntryPending: (payload) => dispatch(actions.patientAddEntryPending(payload)),
+        patientAddEntryPending: (payload, ohip) => dispatch(actions.patientAddEntryPending(payload, ohip)),
         patientUpdateInfoPending: (payload) => dispatch(actions.patientUpdateInfoPending(payload))
     };
 };

@@ -67,10 +67,9 @@ export function* patientAddEntryPending(action){
     try {
         console.log ('Saga response');
         console.log(action);
-        //let response = yield axios.post("http://127.0.0.1:5000/signin", localStorage.getItem('jwtToken'), action);
-        let response = {
-            data: action.payload
-        }
+        let payload = {...action.payload, ohip: action.ohip}
+        payload.location = "Best Org Place, 26 Haddon";
+        let response = yield axios.post("http://127.0.0.1:5000/addPatientRecord", payload);
 
         // TODO: remove, temporary fix. Need the functionality to properly manage bacteria
         action.payload.bacteria = [action.payload.bacteria];

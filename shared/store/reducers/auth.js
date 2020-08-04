@@ -310,7 +310,7 @@ const signupSetWorkPhoneNumber = (state, action) => {
     console.log('setting primary work phone number');
     let workLocations = _.cloneDeep(state.healthcareInfo.signupWorkLocations);
     if (typeof(workLocations[action.index]) !== 'object') workLocations[action.index] = {}
-    workLocations[action.index].workPhoneNumber = action.workPhoneNumber;
+    workLocations[action.index].workPhoneNumber = action.workPhoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
 
     return {
         ...state,

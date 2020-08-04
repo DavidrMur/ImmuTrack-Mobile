@@ -37,10 +37,11 @@ export const patientUpdateInfoPending = (payload) => {
     }
 }
 
-export const patientAddEntryPending = (payload) => {
+export const patientAddEntryPending = (payload, ohip) => {
     return {
         type: actionTypes.IMMU_PATIENT_ADD_ENTRY_PENDING,
-        payload
+        payload,
+        ohip
     }
 }
 
