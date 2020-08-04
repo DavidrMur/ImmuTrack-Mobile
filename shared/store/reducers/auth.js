@@ -238,6 +238,7 @@ const signupSetLicense = (state, action) => {
 
 const signupSetWorkName = (state, action) => {
 
+    debugger;
     // TODO: work locations probably needs to be reworked in the future
     console.log('setting primary work name');
     // TODO: make this work for multiple work places (will probably need each "form" to have an index)
@@ -245,9 +246,8 @@ const signupSetWorkName = (state, action) => {
     // TODO: this lets me generate a new work place, should pull this out for other work places
     let workLocations = _.cloneDeep(state.healthcareInfo.signupWorkLocations);
     // Need this for every entry in case they don't start with work name
-    if (typeof(workLocations[0]) !== 'object') workLocations[0] = {}
-    workLocations[0].workName = action.payload;
-    workLocations[0].EMRIntegration = 'thing';
+    if (typeof(workLocations[action.index]) !== 'object') workLocations[action.index] = {}
+    workLocations[action.index].workName = action.workName;
 
     return {
         ...state,
@@ -262,8 +262,8 @@ const signupSetWorkAddress = (state, action) => {
     console.log('setting primary work address');
     let workLocations = _.cloneDeep(state.healthcareInfo.signupWorkLocations);
     // Need this for every entry in case they don't start with work name
-    if (typeof(workLocations[0]) !== 'object') workLocations[0] = {}
-    workLocations[0].workAddress = action.payload;
+    if (typeof(workLocations[action.index]) !== 'object') workLocations[action.index] = {}
+    workLocations[action.index].workAddress = action.workAddress;
 
     return {
         ...state,
@@ -278,8 +278,8 @@ const signupSetWorkCity = (state, action) => {
     console.log('setting primary work city');
     let workLocations = _.cloneDeep(state.healthcareInfo.signupWorkLocations);
     // Need this for every entry in case they don't start with work name
-    if (typeof(workLocations[0]) !== 'object') workLocations[0] = {}
-    workLocations[0].workCity = action.payload;
+    if (typeof(workLocations[action.index]) !== 'object') workLocations[action.index] = {}
+    workLocations[action.index].workCity = action.workCity;
 
     return {
         ...state,
@@ -294,8 +294,8 @@ const signupSetWorkPostal = (state, action) => {
     console.log('setting primary work postal');
     let workLocations = _.cloneDeep(state.healthcareInfo.signupWorkLocations);
     // Need this for every entry in case they don't start with work name
-    if (typeof(workLocations[0]) !== 'object') workLocations[0] = {}
-    workLocations[0].workPostal = action.payload;
+    if (typeof(workLocations[action.index]) !== 'object') workLocations[action.index] = {}
+    workLocations[action.index].workPostal = action.workPostal;
 
     return {
         ...state,
@@ -309,8 +309,8 @@ const signupSetWorkPostal = (state, action) => {
 const signupSetWorkPhoneNumber = (state, action) => {
     console.log('setting primary work phone number');
     let workLocations = _.cloneDeep(state.healthcareInfo.signupWorkLocations);
-    if (typeof(workLocations[0]) !== 'object') workLocations[0] = {}
-    workLocations[0].workPhoneNumber = action.payload;
+    if (typeof(workLocations[action.index]) !== 'object') workLocations[action.index] = {}
+    workLocations[action.index].workPhoneNumber = action.workPhoneNumber;
 
     return {
         ...state,
@@ -324,8 +324,8 @@ const signupSetWorkPhoneNumber = (state, action) => {
 const signupSetWorkEMR = (state, action) => {
     console.log('setting EMR');
     let workLocations = _.cloneDeep(state.healthcareInfo.signupWorkLocations);
-    if (typeof(workLocations[0]) !== 'object') workLocations[0] = {}
-    workLocations[0].workEMR = action.payload;
+    if (typeof(workLocations[action.index]) !== 'object') workLocations[action.index] = {}
+    workLocations[action.index].workEMR = action.workEMR;
 
     return {
         ...state,

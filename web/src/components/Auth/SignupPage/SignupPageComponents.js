@@ -200,23 +200,23 @@ const SignupWorkLocation = (props) => {
             <Typography variant="paragraph">{`${props.workType} Work Location`}</Typography>
             {/* </Grid> */}
             {/* <Grid item xs={4} > */}
-            <TextField type="text" label="Organization Name" onChange={(event) => props.nestedFieldFunction.signupSetWorkName(event.target.value)}/>
+            <TextField type="text" label="Organization Name" onChange={(event) => props.nestedFieldFunction.signupSetWorkName(event.target.value, props.index)}/>
             {/* </Grid> */}
             {/* <Grid item xs={3} > */}
-            <TextField type="text" label="Address" onChange={(event) => props.nestedFieldFunction.signupSetWorkAddress(event.target.value)}/>
+            <TextField type="text" label="Address" onChange={(event) => props.nestedFieldFunction.signupSetWorkAddress(event.target.value, props.index)}/>
             {/* </Grid>
             <Grid item xs={3} > */}
-            <TextField type="text" label="City" onChange={(event) => props.nestedFieldFunction.signupSetWorkCity(event.target.value)}/>
+            <TextField type="text" label="City" onChange={(event) => props.nestedFieldFunction.signupSetWorkCity(event.target.value, props.index)}/>
             {/* </Grid>
             <Grid item xs={3} > */}
-            <TextField type="text" label="Postal Code" onChange={(event) => props.nestedFieldFunction.signupSetWorkPostal(event.target.value)} />
+            <TextField type="text" label="Postal Code" onChange={(event) => props.nestedFieldFunction.signupSetWorkPostal(event.target.value, props.index)} />
             {/* </Grid>
             <Grid item xs={3} > */}
-            <TextField type="text" label="Clinic Phone Number" onChange={(event) => props.nestedFieldFunction.signupSetWorkPhoneNumber(event.target.value)}/>
+            <TextField type="text" label="Clinic Phone Number" onChange={(event) => props.nestedFieldFunction.signupSetWorkPhoneNumber(event.target.value, props.index)}/>
             {/* </Grid> */}
             {/* TODO: need checkboxes - depends on ui */}
-            {/* <TextField type="text" label="EMR Integration - NEEDS something else too?" onChange={(event) => props.nestedFieldFunction.signupSetWorkEMR(event.target.value)}/> */}
-            <Select onChange={(event) => props.nestedFieldFunction.signupSetWorkEMR(event.target.value)}>
+            {/* <TextField type="text" label="EMR Integration - NEEDS something else too?" onChange={(event) => props.nestedFieldFunction.signupSetWorkEMR(event.target.value, props.index)}/> */}
+            <Select onChange={(event) => props.nestedFieldFunction.signupSetWorkEMR(event.target.value, props.index)}>
                 <MenuItem value={'Red'}>Red</MenuItem>
                 <MenuItem value={'Blue'}>Blue</MenuItem>
                 <MenuItem value={'Green'}>Green</MenuItem>
@@ -231,7 +231,7 @@ const SignupPrimaryWork = (props) => {
     return (
         <div>
         
-        <SignupWorkLocation workType="Primary" nestedFieldFunction={props.nestedFieldFunction}/>
+        <SignupWorkLocation workType="Primary" nestedFieldFunction={props.nestedFieldFunction} index={props.index}/>
         </div>
     )
 }
@@ -239,7 +239,7 @@ const SignupPrimaryWork = (props) => {
 const SignupOtherWork = (props) => {
     return (
         <div>
-        <SignupWorkLocation workType="(Optional) Other"/>
+        <SignupWorkLocation workType="(Optional) Other" nestedFieldFunction={props.nestedFieldFunction} index={props.index}/>
         </div>
     )
 }

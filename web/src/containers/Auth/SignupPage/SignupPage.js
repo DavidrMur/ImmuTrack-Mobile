@@ -109,12 +109,12 @@ const mapDispathToProps = dispatch => {
         // Healthcare functions
         signupSetProfession: (payload) => dispatch(actions.signupSetProfession(payload)),
         signupSetLicense: (payload) => dispatch(actions.signupSetLicense(payload)),
-        signupSetWorkName: (payload) => dispatch(actions.signupSetWorkName(payload)),
-        signupSetWorkAddress: (payload) => dispatch(actions.signupSetWorkAddress(payload)),
-        signupSetWorkCity: (payload) => dispatch(actions.signupSetWorkCity(payload)),
-        signupSetWorkPostal: (payload) => dispatch(actions.signupSetWorkPostal(payload)),
-        signupSetWorkPhoneNumber: (payload) => dispatch(actions.signupSetWorkPhoneNumber(payload)),
-        signupSetWorkEMR: (payload) => dispatch(actions.signupSetWorkEMR(payload))
+        signupSetWorkName: (workName, index) => dispatch(actions.signupSetWorkName(workName, index)),
+        signupSetWorkAddress: (workAddress, index) => dispatch(actions.signupSetWorkAddress(workAddress, index)),
+        signupSetWorkCity: (workCity, index) => dispatch(actions.signupSetWorkCity(workCity, index)),
+        signupSetWorkPostal: (workPostal, index) => dispatch(actions.signupSetWorkPostal(workPostal, index)),
+        signupSetWorkPhoneNumber: (workPhoneNumber, index) => dispatch(actions.signupSetWorkPhoneNumber(workPhoneNumber, index)),
+        signupSetWorkEMR: (workEMR, index) => dispatch(actions.signupSetWorkEMR(workEMR, index))
 
     };
 };

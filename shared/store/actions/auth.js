@@ -193,45 +193,52 @@ export const signupSetLicense = (payload) => {
     };
 };
 
-export const signupSetWorkName = (payload) => {
+export const signupSetWorkName = (workName, index) => {
+    debugger;
     return {
         type: actionTypes.SIGNUP_SET_WORK_NAME,
-        payload
+        workName,
+        index
     };
 };
 
-export const signupSetWorkAddress = (payload) => {
+export const signupSetWorkAddress = (workAddress , index) => {
     return {
         type: actionTypes.SIGNUP_SET_WORK_ADDRESS,
-        payload
+        workAddress,
+        index
     };
 };
 
-export const signupSetWorkCity = (payload) => {
+export const signupSetWorkCity = (workCity , index) => {
     return {
         type: actionTypes.SIGNUP_SET_WORK_CITY,
-        payload
+        workCity,
+        index
     };
 };
 
-export const signupSetWorkPostal = (payload) => {
+export const signupSetWorkPostal = (workPostal , index) => {
     return {
         type: actionTypes.SIGNUP_SET_WORK_POSTAL,
-        payload
+        workPostal,
+        index
     };
 };
 
-export const signupSetWorkPhoneNumber = (payload) => {
+export const signupSetWorkPhoneNumber = (workPhoneNumber, index) => {
     return {
         type: actionTypes.SIGNUP_SET_WORK_PHONE_NUMBER,
-        payload
+        workPhoneNumber,
+        index
     };
 };
 
-export const signupSetWorkEMR = (payload) => {
+export const signupSetWorkEMR = (workEMR, index) => {
     return {
         type: actionTypes.SIGNUP_SET_WORK_EMR,
-        payload
+        workEMR,
+        index
     };
 };
 

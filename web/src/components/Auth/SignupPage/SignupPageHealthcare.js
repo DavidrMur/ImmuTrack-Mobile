@@ -4,6 +4,13 @@ import { Grid, Button } from '@material-ui/core'
 
 class SignupPageHealthcare extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            workLocationCount: 1
+        }
+    }
+
     render() {
         return (
             <Grid container spacing={4} style={{'text-align': 'center', 'width': '80vw', 'margin': 'auto'}}>
@@ -18,11 +25,16 @@ class SignupPageHealthcare extends Component {
                 </Grid>
                 <Grid item xs={6} />
                 <Grid item xs={6}>
-                    <SignupPrimaryWork nestedFieldFunction = {this.props.healthcareSignupFunctions.signupSetWork}/>
+                    <SignupPrimaryWork nestedFieldFunction = {this.props.healthcareSignupFunctions.signupSetWork} index={0}/>
                 </Grid> 
-                <Grid item xs={6}>
+                {<>{Array(this.state.workLocationCount).fill(1).map((i)=>(
+                    <Grid item xs={6}>
+                        <SignupOtherWork nestedFieldFunction = {this.props.healthcareSignupFunctions.signupSetWork} index={1}/>
+                    </Grid>))}
+                </>}
+                {/* <Grid item xs={6}>
                     <SignupOtherWork nestedFieldFunction = {this.props.healthcareSignupFunctions.signupSetWork}/>
-                </Grid>
+                </Grid> */}
                 <Grid item xs={6}>
                     <SignupCredentials nestedFieldFunction = {this.props.healthcareSignupFunctions.signupSetCredentials}/>
                 </Grid>
