@@ -114,7 +114,15 @@ const SignupEduLevel = (props) => {
 const SignupReview = (props) => {
     return (
         <div>
-            Review information
+            <Typography>First Name: {props.signupInfo.generalInfo.signupFirstName}</Typography>
+            <Typography>Last Name: {props.signupInfo.generalInfo.signupLastName}</Typography>
+            <Typography>OHIP: {props.signupInfo.patientInfo.signupOHIP}</Typography>
+            <Typography>SCN: {props.signupInfo.patientInfo.signupSCN}</Typography>
+            <Typography>Owner: {props.signupInfo.patientInfo.signupOwner}</Typography>
+            <Typography>DOB: {props.signupInfo.patientInfo.signupDOB}</Typography>
+            <Typography>Gender: {props.signupInfo.patientInfo.signupGender}</Typography>
+            <Typography>Race: {props.signupInfo.patientInfo.signupRace}</Typography>
+            <Typography>EduLevel: {props.signupInfo.patientInfo.signupEduLevel}</Typography>
         </div>
     )
 }

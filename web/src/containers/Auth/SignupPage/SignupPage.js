@@ -69,7 +69,7 @@ class SignupPage extends Component {
 
     render(){
         let signupView;
-        if (this.state.type === 'patient') signupView = (<SignupPagePatient patientSignupFunctions={this.patientSignupFunctions} signup={this.props.signupPending}/>);
+        if (this.state.type === 'patient') signupView = (<SignupPagePatient patientSignupFunctions={this.patientSignupFunctions} signup={this.props.signupPending} signupInfo={this.props.signupInfo}/>);
         else if (this.state.type === 'healthcare') signupView = (<SignupPageHealthcare healthcareSignupFunctions={this.healthcareSignupFunctions} signup={this.props.signupPending} />);
         else signupView = (<p>Please choose a signup option that is appropriate</p>);
         return (
@@ -83,6 +83,12 @@ class SignupPage extends Component {
             )
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        signupInfo: state.auth
+    };
+};
 
 const mapDispathToProps = dispatch => {
     return {
@@ -122,4 +128,4 @@ const mapDispathToProps = dispatch => {
 };
 
 //export default connect(mapStateToProps,mapDispathToProps)(SummonerProfile);
-export default connect(null,mapDispathToProps)(SignupPage)
+export default connect(mapStateToProps,mapDispathToProps)(SignupPage)
