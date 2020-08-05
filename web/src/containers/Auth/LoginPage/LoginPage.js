@@ -28,19 +28,11 @@ class LoginPage extends Component {
 
     render(){
         return(
-<<<<<<< Updated upstream
             //style={{width: '50vw', margin: 'auto'}}
             <div style={{width: '47vw', margin: 'auto'}}>
                 <Grid container spacing={2} style={{'text-align': 'center'}}>
                     <Grid item xs={12}>
                         <Typography variant="h3">Member Login</Typography>
-=======
-            <div style={{width: '47vw', margin: 'auto', justifyContent: 'center'}}>
-                    {!this.state.profession ? (
-                        <Grid container spacing={2} style={{'text-align': 'center'}}>
-                            <Grid item xs={12}>
-                                <Typography variant="h2">Member Login</Typography>
-                            </Grid>
                             <Grid item xs={12}>
                                 <Typography variant="paragraph">Please select the login type which applies to you</Typography>
                             </Grid>
@@ -55,7 +47,6 @@ class LoginPage extends Component {
                     <Grid container spacing={2} style={{'text-align': 'center'}}>
                     <Grid item xs={12}>
                         <Typography variant="h2">Member Login</Typography>
->>>>>>> Stashed changes
                     </Grid>
                     <Grid item xs={6}>
                         <TextField style={{width: "70%"}} required type="text" label="username" onChange={(event) => this.setValue(event, 'username')}/>
@@ -84,14 +75,9 @@ class LoginPage extends Component {
                         <Link to="/signup">Create an Account</Link>
                         </Button>
                     </Grid>
-<<<<<<< Updated upstream
-=======
-                </Grid>)}
-            </div>
->>>>>>> Stashed changes
-
                 </Grid>
-            </div>
+            </Grid>
+        </div>
         );
     }
 }

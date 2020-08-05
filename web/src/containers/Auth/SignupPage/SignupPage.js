@@ -67,17 +67,6 @@ class SignupPage extends Component {
 
     render(){
         let signupView;
-<<<<<<< Updated upstream
-        if (this.state.type === 'patient') signupView = (<SignupPagePatient patientSignupFunctions={this.patientSignupFunctions}/>);
-        else if (this.state.type === 'healthcare') signupView = (<SignupPageHealthcare healthcareSignupFunctions={this.healthcareSignupFunctions} />);
-        else signupView = (<Typography variant='body1'>Please choose a signup option that is appropriate</Typography>);
-        return (
-            <div >
-                {/* TODO: Make sure the fields do not mix if someone wants to switch to a different signup flow */}
-                <Button variant='default' onClick={() => this.setSignupType('patient')}>Signup for Patient</Button>
-                <Button variant='default' className='container--field' onClick={() => this.setSignupType('healthcare')}>Signup for Healthcare Provider</Button>
-                <Button variant='default' className='container--field' disabled={this.state.type === 'none'} onClick = {this.props.signupPending}>Sign Up</Button>
-=======
         if (this.state.type === 'patient') signupView = (<SignupPagePatient patientSignupFunctions={this.patientSignupFunctions} signup={this.props.signupPending} signupInfo={this.props.signupInfo}/>);
         else if (this.state.type === 'healthcare') signupView = (<SignupPageHealthcare healthcareSignupFunctions={this.healthcareSignupFunctions} signup={this.props.signupPending} />);
         else signupView = <Typography>Please choose a signup option that is appropriate</Typography>;
@@ -86,7 +75,6 @@ class SignupPage extends Component {
                 <Button variant='outlined' className='container--field' onClick={() => this.setSignupType('patient')}>Signup for Patient</Button>
                 &nbsp;
                 <Button variant='outlined' className='container--field' onClick={() => this.setSignupType('healthcare')}>Signup for Healthcare Provider</Button>
->>>>>>> Stashed changes
                 <Link className='container--option' to="/login">Already have an account?</Link>
                 {signupView}
             </div>
