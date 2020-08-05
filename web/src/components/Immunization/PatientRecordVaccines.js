@@ -31,7 +31,6 @@ class PatientRecordVaccines extends React.Component {
     };
 
     onChangeEvent = (value, type) => {
-        debugger;
         let temp = {...this.updatedVaccine}
 
         //temp[type] = value;
@@ -59,21 +58,6 @@ class PatientRecordVaccines extends React.Component {
                 temp[type] = value;   
                 break;
         }
-
-        // if (type === 'dateAdmin' && value === this.state.maxDate) {
-        //     temp['administeredUnder'] = `Dr. ${this.props.userInfo.lastName}`;
-        //     this.setState({disableAdministered: true})
-        // } else if (type === 'dateAdmin') this.setState({disableAdministered: false})
-
-        // if (type === 'brandName' && value === 'Other') {
-        //     this.setState({addOtherVaccine: true})
-        // } else if (type === 'brandName') this.setState({addOtherVaccine: false})
-        // else if (type === 'otherBrandName') temp['brandName'] = value;
-
-        // if (type === 'bacteria') {
-        //     debugger;
-        //     temp['bacteria'].append(value);
-        // }
 
         this.updatedVaccine = temp;
         console.log(this.updatedVaccine);
