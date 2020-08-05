@@ -67,4 +67,5 @@ export const vaccineGroups = [
     {vaccineBrand: 'Havrix', bacteria: ['Hepatitis A'] },
     {vaccineBrand: 'VAQTA', bacteria: ['Hepatitis A'] },
     {vaccineBrand: 'Gardasil', bacteria: ['Human Papilloma Virus'] },
+    {vaccineBrand: 'Other', bacteria: []}
 ]
