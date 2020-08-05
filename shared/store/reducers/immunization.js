@@ -20,6 +20,7 @@ const patientsSuccess = (state, action) => {
 }
 
 const patientInfoSuccess = (state, action) => {
+    debugger;
     return {
         ...state,
         patient: action.payload,
