@@ -8,11 +8,11 @@ import './HealthcarePageComponents.css';
 
 export const PatientRecordTile = (props) => {
     return (
-        <div>
-            <div>{props.firstName}</div>
-            <div>{props.lastName}</div>
-            <div>{props.DOB}</div>
-            <div>{props.OHIP}</div>
+        <div align='center'>
+            <Typography variant='h5'>{props.firstName}</Typography>
+            <Typography variant={'h6'}>{props.lastName}</Typography>
+            <Typography variant={'paragraph'}>{props.DOB}</Typography>
+            <div variant={'paragraph'}>{props.OHIP}</div>
             <div onClick={() => props.redirectQuery(props.OHIP)}>
             <Link to='/view-patient'>View Record</Link>
             </div>

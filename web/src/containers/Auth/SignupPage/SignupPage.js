@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import SignupPagePatient from '../../../components/Auth/SignupPage/SignupPagePatient';
 import SignupPageHealthcare from '../../../components/Auth/SignupPage/SignupPageHealthcare';
 import * as actions from 'redux-saga-store/actions';
+import { Button, Grid, TextField, Typography} from '@material-ui/core'
 
 class SignupPage extends Component {
 
@@ -75,8 +76,8 @@ class SignupPage extends Component {
         return (
             <div >
                 {/* TODO: Make sure the fields do not mix if someone wants to switch to a different signup flow */}
-                <button className='container--field' onClick={() => this.setSignupType('patient')}>Signup for Patient</button>
-                <button className='container--field' onClick={() => this.setSignupType('healthcare')}>Signup for Healthcare Provider</button>
+                <Button className='container--field' onClick={() => this.setSignupType('patient')}>Signup for Patient</Button>
+                <Button className='container--field' onClick={() => this.setSignupType('healthcare')}>Signup for Healthcare Provider</Button>
                 <Link className='container--option' to="/login">Already have an account?</Link>
                 {signupView}
             </div>

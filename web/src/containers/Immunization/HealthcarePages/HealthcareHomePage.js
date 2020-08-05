@@ -35,18 +35,19 @@ class HealthcareHomePage extends Component {
         })}
 
         return(
-            <Grid container spacing={2}>
-                <Grid item xs={1} >
-                <TextField label="patient's OHIP" onChange={(e) => this.setState({addPatientOHIP: e.target.value})}/>
+            <div align='center'>
+                <Grid container spacing={2}>
+                    <Grid item xs={1} >
+                    <TextField label="OHIP" onChange={(e) => this.setState({addPatientOHIP: e.target.value})}/>
+                    </Grid>
+                    <Grid item xs={2} >
+                    <Button onClick={() => this.props.patientAddPending(this.state.addPatientOHIP)}>Add Patient</Button>
+                    </Grid>
+                    <Grid item xs={12} >
+                   {this.patientRecordTiles}
+                   </Grid>
                 </Grid>
-                <Grid item xs={2} >
-                <Button onClick={() => this.props.patientAddPending(this.state.addPatientOHIP)}>Add Patient</Button>
-                </Grid>
-                <Grid item xs={12} >
-               {this.patientRecordTiles}
-               </Grid>
-            </Grid>
-
+            </div>
         );
     }
 }

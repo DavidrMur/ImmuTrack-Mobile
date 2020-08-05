@@ -30,7 +30,7 @@ class LoginPage extends Component {
                     {!this.state.profession ? (
                         <Grid container spacing={2} style={{'text-align': 'center'}}>
                             <Grid item xs={12}>
-                                <Typography variant="h1">Member Login</Typography>
+                                <Typography variant="h2">Member Login</Typography>
                             </Grid>
                             <Grid item xs={12}>
                                 <Typography variant="paragraph">Please select the login type which applies to you</Typography>
@@ -45,7 +45,7 @@ class LoginPage extends Component {
                     ) : (
                     <Grid container spacing={2} style={{'text-align': 'center'}}>
                     <Grid item xs={12}>
-                        <Typography variant="h1">Member Login</Typography>
+                        <Typography variant="h2">Member Login</Typography>
                     </Grid>
                     <Grid item xs={6}>
                         <TextField style={{width: "70%"}} required type="text" label="username" onChange={(event) => this.setValue(event, 'username')}/>
