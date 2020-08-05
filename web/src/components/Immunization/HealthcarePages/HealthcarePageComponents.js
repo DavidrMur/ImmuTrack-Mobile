@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './HealthcarePageComponents.css';
-import { List } from '@material-ui/core';
 
 export const PatientRecordTile = (props) => {
     return (
@@ -20,7 +19,7 @@ export const PatientRecordTile = (props) => {
 export const PatientRecordVaccineTitles = (props) => {
     return (
         <div>
-            <List className="flex-container longhand">
+            <ul className="flex-container longhand">
                 <li className="flex-item">Date of Admin</li>
                 <li className="flex-item">Vaccine Brand</li>
                 <li className="flex-item">Bacteria/Virus</li>
@@ -28,7 +27,7 @@ export const PatientRecordVaccineTitles = (props) => {
                 <li className="flex-item">Expiry</li>
                 <li className="flex-item">Administered By/Under</li>
                 <li className="flex-item">Location</li>
-            </List>
+            </ul>
         </div>
     )
 }

@@ -33,6 +33,7 @@ class LoginPage extends Component {
                 <Grid container spacing={2} style={{'text-align': 'center'}}>
                     <Grid item xs={12}>
                         <Typography variant="h3">Member Login</Typography>
+<<<<<<< HEAD
                             <Grid item xs={12}>
                                 <Typography variant="paragraph">Please select the login type which applies to you</Typography>
                             </Grid>
@@ -47,6 +48,8 @@ class LoginPage extends Component {
                     <Grid container spacing={2} style={{'text-align': 'center'}}>
                     <Grid item xs={12}>
                         <Typography variant="h2">Member Login</Typography>
+=======
+>>>>>>> parent of ecbf1412... background colour
                     </Grid>
                     <Grid item xs={6}>
                         <TextField style={{width: "70%"}} required type="text" label="username" onChange={(event) => this.setValue(event, 'username')}/>
@@ -75,6 +78,10 @@ class LoginPage extends Component {
                         <Link to="/signup">Create an Account</Link>
                         </Button>
                     </Grid>
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of ecbf1412... background colour
                 </Grid>
             </Grid>
         </div>

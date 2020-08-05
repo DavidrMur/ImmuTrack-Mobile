@@ -8,7 +8,7 @@
 
 .container--field {
     margin: 10px;
-    flex: 1;
+    flex: 1
 }
 
 .container--option {
@@ -18,7 +18,12 @@
     display: inline-flex;
 }
 
+<<<<<<< HEAD
 body {
     background-image: linear-gradient(rgb(60, 153, 220), rgb(213, 243, 254));
     background-repeat: no-repeat;
+=======
+.body{
+    background: linear-gradient(deepskyblue, white);
+>>>>>>> parent of ecbf1412... background colour
 }
