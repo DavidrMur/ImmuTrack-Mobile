@@ -26,6 +26,7 @@ class PatientRecordVaccines extends React.Component {
         expiryDate: this.props.expiryDate,
         administeredUnder: this.props.administeredUnder,
         location: this.props.location,
+        entryId: this.props.entryId
 
     };
 

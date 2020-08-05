@@ -54,7 +54,8 @@ class PatientVaccines extends Component {
                         administeredUnder={vaccine.administeredUnder}
                         location={vaccine.location}
                         userInfo={this.props.currentUser}
-                        onSubmitEvent={(payload) => this.props.patientUpdateInfoPending(payload)}
+                        entryId={vaccine.entryId}
+                        onSubmitEvent={(payload ) => this.props.patientUpdateInfoPending(payload)}
                 />)
              })}
                 
