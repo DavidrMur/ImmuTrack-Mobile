@@ -54,8 +54,9 @@ export function* patientUpdateInfoPending(action){
     try {
         console.log ('Saga response');
         console.log(action);
-        //let response = yield axios.post("http://127.0.0.1:5000/signin", localStorage.getItem('jwtToken'), action);
+        let response = yield axios.post("http://127.0.0.1:5000/editPatientRecord", action.payload);
         // gonna call the api again for updated page?
+        //yield put (actions.patientAddEntrySuccess(action.payload))
         
     } catch (error) {
         // TODO: proper error handling
