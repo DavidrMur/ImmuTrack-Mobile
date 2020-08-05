@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import * as actions from 'redux-saga-store/actions/index';
 import { Button, Grid, TextField, Typography } from '@material-ui/core'
 import './LoginPage.css';
+import AccountCircle from '@material-ui/core'
+
 
 class LoginPage extends Component {
 
@@ -30,7 +32,7 @@ class LoginPage extends Component {
             <div style={{width: '47vw', margin: 'auto'}}>
                 <Grid container spacing={2} style={{'text-align': 'center'}}>
                     <Grid item xs={12}>
-                        <Typography variant="h1">Member Login</Typography>
+                        <Typography variant="h3">Member Login</Typography>
                     </Grid>
                     <Grid item xs={6}>
                         <TextField style={{width: "70%"}} required type="text" label="username" onChange={(event) => this.setValue(event, 'username')}/>
@@ -52,17 +54,16 @@ class LoginPage extends Component {
                         <Typography variant="paragraph">Forgot Password?</Typography>
                     </Grid>
                     <Grid item xs={12} >
-                        <Button variant="outlined" onClick={(e) => this.onSubmit(e)}>Login</Button> 
+                        <Button variant="outlined" onClick={(e) => this.onSubmit(e)}>Login</Button>
                     </Grid>
                     <Grid item xs={12}>
-                        <Button>
+                        <Button variant={"outlined"}>
                         <Link to="/signup">Create an Account</Link>
                         </Button>
                     </Grid>
-                
+
                 </Grid>
             </div>
-
         );
     }
 }

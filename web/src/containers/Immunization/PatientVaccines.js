@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import * as actions from 'redux-saga-store/actions/index';
 import { PatientRecordVaccinesEdit, PatientRecordVaccines} from '../../components/Immunization/HealthcarePages/HealthcarePageComponents'
 
+
 class PatientVaccines extends Component {
 
     state = {
