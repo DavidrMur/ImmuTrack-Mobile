@@ -41,6 +41,7 @@ export function* patientInfoPending(action){
             ]
         }
         response.OHIP = action.patientOHIP;
+        response.name = response.firstName + response.lastName;
         yield put (actions.patientInfoSuccess(response))
     } catch (error) {
         // TODO: proper error handling
