@@ -18,3 +18,7 @@
     display: inline-flex;
 }
 
+body {
+    background-image: linear-gradient(cadetblue, white);
+    background-repeat: no-repeat;
+}
