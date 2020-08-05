@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import * as actions from 'redux-saga-store/actions/index';
 import PatientVaccines from '../PatientVaccines';
 import { PatientRecordVaccineTitles } from '../../../components/Immunization/HealthcarePages/HealthcarePageComponents';
+import { Button, Grid, TextField, Typography } from '@material-ui/core';
 
 class PatientImmunization extends Component {
 
@@ -34,7 +35,7 @@ class PatientImmunization extends Component {
             <div>
                 <PatientRecordVaccineTitles />
                 {patientVaccines}
-                <button>Download PDF</button>
+                <Button variant='outlined'>Download PDF</Button>
             </div>
         );
     }
