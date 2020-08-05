@@ -24,7 +24,6 @@ export function* patientInfoPending(action){
       
         let body = {ohip: action.patientOHIP }
         let response = yield axios.post("http://127.0.0.1:5000/retrievePatientRecord",body);
-        response.OHIP = action.patientOHIP;
         debugger;
         // let response = {
         //     'name': 'John Doe', 'DOB': 'Dec-31-1998', 'OHIP': '545234', 
@@ -41,8 +40,9 @@ export function* patientInfoPending(action){
         //         }
         //     ]
         // }
-        response.OHIP = action.patientOHIP;
-        yield put (actions.patientInfoSuccess(response))
+        response.data.OHIP = action.patientOHIP;
+        response.data.name = response.data.firstName + response.data.lastName;
+        yield put (actions.patientInfoSuccess(response.data))
     } catch (error) {
         // TODO: proper error handling
         console.log('Saga Error')

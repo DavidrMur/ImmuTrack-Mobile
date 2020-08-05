@@ -44,7 +44,7 @@ class PatientVaccines extends Component {
                 <PatientRecordVaccineTitles />
                 <Button onClick={() => (this.setState({adding: true}))}>Add Entry</Button>
                 {this.state.adding ? <PatientRecordVaccines adding userInfo={this.props.currentUser} onSubmitEvent={this.onNewEntrySubmitEvent}/> : null}
-                {this.props.currentPatient.vaccines && this.props.currentPatient.vaccines.map((vaccine) => {
+                {this.props.currentPatient.patientRecords && this.props.currentPatient.patientRecords.map((vaccine) => {
                     return (<PatientRecordVaccines
                         dateAdmin={vaccine.dateAdmin}
                         brandName={vaccine.brandName}
