@@ -19,7 +19,7 @@ export function* patientInfoPending(action){
         console.log ('Saga response');
         // let payload = {
         //     patientOHIP: action.OHIP,
-        //     jwtToken: localStorage.getItem('jwtToken');
+        //     jwtToken: localStorage.getItem('jwtToken')
         // }
       
         let body = {ohip: action.patientOHIP }
