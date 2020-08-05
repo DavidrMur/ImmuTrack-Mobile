@@ -38,7 +38,7 @@ class SignupPagePatient extends Component {
                 signupView = <SignupEduLevel fieldFunction={this.props.patientSignupFunctions.signupSetEduLevel}/>  
                 break;       
             case 9:
-                signupView = <SignupReview />  
+                signupView = <SignupReview signupInfo={this.props.signupInfo} />  
                 break;    
             case 10:
                 signupView = <div><SignupCredentials nestedFieldFunction={this.props.patientSignupFunctions.signupSetCredentials} /><SignupGeneral fieldFunction={this.props.patientSignupFunctions.signupSetPostal}/></div>
