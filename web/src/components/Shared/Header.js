@@ -8,10 +8,10 @@ class Header extends React.Component {
         return (
             <div>
                 <h1 style={{margin: "10px"}}>ImmuTrack</h1>
-                {this.props.token ? 
+                {this.props.loggedIn ? 
                 <>
                 <Link to='/'>Main</Link>
-                <Link to='/signout'>Sign Out</Link>
+                <button onClick={() => this.props.onSignout()}>Sign Out</button>
                 </>
                 :
                 <>

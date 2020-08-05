@@ -10,6 +10,7 @@ import PatientImmunization from './Immunization/PatientPages/PatientRecordPage';
 import HealthcareHomePage from './Immunization/HealthcarePages/HealthcareHomePage';
 import HealthcareRecordPage from './Immunization/HealthcarePages/HealthcareRecordPage';
 import SecurityDisclosure from '../components/Auth/SecurityDisclosure';
+import Header from '../components/Shared/Header';
 
 
 class Routes extends Component {
@@ -23,21 +24,31 @@ class Routes extends Component {
     //     }
     // }
 
+    onSignout = () => {
+        localStorage.removeItem('jwtToken');
+        localStorage.removeItem('acceptDisclosure');
+        localStorage.removeItem('loggedIn');
+
+        this.loggedIn  = (localStorage.getItem('jwtToken') !== undefined && localStorage.getItem('jwtToken') !== null); 
+        window.location.reload(false);
+    }
+
+    loggedin;
+
     render() {
 
         let routes;
         debugger;
-        let loggedIn = (localStorage.getItem('jwtToken') !== undefined && localStorage.getItem('jwtToken') !== null); 
+        this.loggedIn = (localStorage.getItem('jwtToken') !== undefined && localStorage.getItem('jwtToken') !== null); 
 
         // let acceptDisclosure = (localStorage.getItem('acceptDisclosure') && localStorage.getItem('acceptDisclosure') === true);
     
         let newVisitRoutes = (
         <Switch>
-            <Route path='/' component={LoginPage}/>
+            {/* <Route path='/' component={LoginPage}/> */}
             <Route path='/login' component={LoginPage}/>
             <Route path='/signup' component={SignupPage}/>
             <Route path='/forgot' component={ForgotPage} />
-            <Route path='/signout' component={SignoutPage} />
             <Redirect to='/login'/>
         </Switch>
         );
@@ -46,7 +57,6 @@ class Routes extends Component {
         <Switch>
             <Route path='/main' component={HealthcareHomePage} />
             <Route path='/view-patient' component={HealthcareRecordPage} />
-            <Route path='/signout' component={SignoutPage} />
             <Redirect to='/main'/>
         </Switch>
         )
@@ -54,17 +64,17 @@ class Routes extends Component {
         let existingPatientRoutes = (
             <Switch>
                 <Route path='/view' component={PatientImmunization} />
-                <Route path='/signout' component={SignoutPage} />
+
                 <Redirect to='/view'/>
             </Switch>
             )
     
-        routes = loggedIn ? (this.props.userInfo.profession !== 'patient' ? existingHealthcareRoutes : existingPatientRoutes) : newVisitRoutes;
+        routes = this.loggedIn ? (this.props.userInfo.profession !== 'patient' ? existingHealthcareRoutes : existingPatientRoutes) : newVisitRoutes;
         
     return (
         <div>
-            hello
-        {routes}
+            <Header loggedIn={this.loggedIn} onSignout={this.onSignout}/>
+            {routes}
         </div>
         )
     }
