@@ -20,11 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cab8b85-8baf-4a8f-b4a9-2193137b543b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Immunization/HealthcarePages/HealthcarePageComponents.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Immunization/HealthcarePages/HealthcarePageComponents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Immunization/PatientRecordVaccines.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Immunization/PatientRecordVaccines.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareHomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/containers/Immunization/PatientVaccines.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/containers/Immunization/PatientVaccines.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/store/sagas/immunization.js" beforeDir="false" afterPath="$PROJECT_DIR$/shared/store/sagas/immunization.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +57,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1596740974409</updated>
-      <workItem from="1596740995890" duration="5380000" />
+      <workItem from="1596740995890" duration="5568000" />
     </task>
     <servers />
   </component>
@@ -81,17 +77,17 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="389" y="241" key="MultipleFileMergeDialog" timestamp="1596663321352">
+    <state x="389" y="241" key="MultipleFileMergeDialog" timestamp="1596748708619">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="389" y="241" key="MultipleFileMergeDialog/0.0.1500.960@0.0.1500.960" timestamp="1596663321352" />
+    <state x="389" y="241" key="MultipleFileMergeDialog/0.0.1500.960@0.0.1500.960" timestamp="1596748708619" />
     <state x="252" y="125" key="SettingsEditor" timestamp="1596744209155">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="252" y="125" key="SettingsEditor/0.0.1500.960@0.0.1500.960" timestamp="1596744209155" />
-    <state x="558" y="394" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596663336889">
+    <state x="558" y="394" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596748703161">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="558" y="394" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1500.960@0.0.1500.960" timestamp="1596663336889" />
+    <state x="558" y="394" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1500.960@0.0.1500.960" timestamp="1596748703161" />
   </component>
 </project>
