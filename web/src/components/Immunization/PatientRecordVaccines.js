@@ -39,14 +39,21 @@ class PatientRecordVaccines extends React.Component {
             case 'dateAdmin':
                 if (value === this.state.maxDate) {
                     temp['administeredUnder'] = `Dr. ${this.props.userInfo.lastName}`;
+                    temp['dateAdmin'] = value;
                     this.setState({disableAdministered: true})
-                } else this.setState({disableAdministered: false})
+                } else {
+                    this.setState({disableAdministered: false})
+                    temp['dateAdmin'] = value;
+                }
                 break;
             case 'brandName':
                 if (value === 'Other') {
-                    this.setState({addOtherVaccine: true})  
+                    this.setState({addOtherVaccine: true});
                     temp['bacteria'] = [];  
-                } else this.setState({addOtherVaccine: false})
+                } else {
+                    this.setState({addOtherVaccine: false});
+                    temp['brandName'] = value || undefined;
+                }
                 break;
             case 'otherBrandName':
                 temp['brandName'] = value;
@@ -129,7 +136,7 @@ class PatientRecordVaccines extends React.Component {
                         getOptionSelected={(option, value) => option.vaccineBrand === value}
                         defaultValue={this.props.brandName}
                         className="flex-item" 
-                        onChange={(event, newValue) => this.onChangeEvent(newValue.vaccineBrand, 'brandName')}
+                        onChange={(event, newValue) => this.onChangeEvent(newValue && newValue.vaccineBrand, 'brandName')}
                         />
                         {/* TODO: styling, should be above or under not side by side */}
                         {this.state.addOtherVaccine ? <TextField onChange={(event) => this.onChangeEvent(event.target.value,'otherBrandName')} helperText={'Enter the vaccine vaccine brand'} /> : null}
