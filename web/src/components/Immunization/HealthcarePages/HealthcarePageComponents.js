@@ -35,6 +35,23 @@ export const PatientRecordTile = (props) => {
     )
 };
 
+export const PatientDisplayTile = (props) => {
+    return (
+        <div align={'center'}>
+        <MDBContainer>
+            <MDBCard border='default' className="card-body" style={{ width: "15rem", marginTop: "1rem" }}>
+                <MDBCardTitle>{props.lastName}</MDBCardTitle>
+                <MDBCardText>
+                    <Typography variant='paragraph'>{props.lastName}</Typography>
+                    <Typography variant={'paragraph'}>{props.DOB}</Typography>
+                    <div variant={'paragraph'}>{props.OHIP}</div>
+                </MDBCardText>
+            </MDBCard>
+        </MDBContainer>
+        </div>
+    )
+};
+
 export const PatientRecordVaccineTitles = (props) => {
     return (
         <div></div>

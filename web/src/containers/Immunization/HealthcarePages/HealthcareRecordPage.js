@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
 import * as actions from 'redux-saga-store/actions/index';
-import { PatientRecordTile, PatientRecordVaccines, PatientRecordVaccinesEdit, PatientRecordVaccineTitles } from '../../../components/Immunization/HealthcarePages/HealthcarePageComponents';
+import {
+    PatientDisplayTile,
+    PatientRecordTile,
+    PatientRecordVaccines,
+    PatientRecordVaccinesEdit,
+    PatientRecordVaccineTitles
+} from '../../../components/Immunization/HealthcarePages/HealthcarePageComponents';
 import { Button, Typography } from '@material-ui/core'
 import PatientVaccines from '../PatientVaccines';
 
@@ -25,12 +31,14 @@ class HealthcareRecordPage extends Component {
     render(){
         return(
             <div>
-                <Link to="/main">Back</Link>
-                <PatientRecordTile
+                <Button variant={'default'}>
+                    <Link to="/main">Back</Link>
+                </Button>
+                <PatientDisplayTile
                     key={this.props.currentPatient.id}
                     id={this.props.currentPatient.id}
-                    firstName={this.props.currentPatient.firstName}
-                    lastName={this.props.currentPatient.lastName}
+                    firstName={'John'}
+                    lastName={'Doe'}
                     DOB={this.props.currentPatient.DOB}
                     OHIP={this.props.currentPatient.OHIP}
                 />
