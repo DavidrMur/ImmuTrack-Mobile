@@ -107,7 +107,6 @@ class PatientRecordVaccines extends React.Component {
         let patientRecordDisplay = (
             <div>
                 <Button variant={'outlined'} onClick={() => this.setState({editing: true})} >Edit</Button>
-                <BacteriaList vaccine={this.updatedVaccine.brandName} bacteria={this.props.bacteria} />
                 <TableContainer component={Paper}>
                     <Table aria-label="simple table">
                         <TableHead>
@@ -132,6 +131,7 @@ class PatientRecordVaccines extends React.Component {
                         </TableBody>
                     </Table>
                 </TableContainer>
+                <BacteriaList vaccine={this.updatedVaccine.brandName} bacteria={this.props.bacteria} />
             </div>
 
         );

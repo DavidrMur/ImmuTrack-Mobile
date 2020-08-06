@@ -36,25 +36,6 @@ export const PatientRecordTile = (props) => {
 
 export const PatientRecordVaccineTitles = (props) => {
     return (
-        <div>
-            <TableContainer component={Paper}>
-                <Table aria-label="simple table">
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>Date of Admin</TableCell>
-                            <TableCell align="right">Vaccine Brand</TableCell>
-                            <TableCell align="right">Lot#</TableCell>
-                            <TableCell align="right">Expiry</TableCell>
-                            <TableCell align="right">Administered by</TableCell>
-                            <TableCell align="right">Location</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        <TableRow>
-                        </TableRow>
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </div>
+        <div></div>
     )
 }
