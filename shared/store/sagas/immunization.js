@@ -5,7 +5,9 @@ import axios from '../../axios-config';
 export function* patientsPending(action){
     try {
         console.log ('Saga response');
+        debugger;
         let response = yield axios.post("http://127.0.0.1:5000/retrievePatients");
+        let temp = yield axios.post("http://127.0.0.1:5000/retrieveVaccines");
         yield put (actions.patientsSuccess(response.data.patients))
     } catch (error) {
         // TODO: proper error handling
