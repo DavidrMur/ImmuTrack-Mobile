@@ -35,7 +35,7 @@ class HealthcareRecordPage extends Component {
                     OHIP={this.props.currentPatient.OHIP}
                 />
                 <PatientVaccines />
-                <Link to="/main.html" target="_blank" download>Download PDF</Link>
+                <Button variant={'outlined'}>Download PDF</Button>
             </div>
 
         );

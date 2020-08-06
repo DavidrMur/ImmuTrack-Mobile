@@ -1,22 +1,31 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { Button, Grid, TextField, Typography } from '@material-ui/core'
 
 class Header extends React.Component {
     
     render() {
         return (
             <div>
-                <h1 style={{margin: "10px"}}>ImmuTrack</h1>
+                <Typography variant={'h3'} style={{margin: "10px"}}>ImmuTrack</Typography>
                 {this.props.loggedIn ? 
                 <>
                 <Link to='/'>Main</Link>
-                <button onClick={() => this.props.onSignout()}>Sign Out</button>
+                <Button variant={'outlined'} onClick={() => this.props.onSignout()}>Sign Out</Button>
                 </>
                 :
                 <>
-                <Link to='/login'>Login</Link>
-                <Link to='/signup'>Sign Up</Link>
+                <Link to='/login'>
+                    <Button variant={'default'}>
+                        <Typography variant={'paragraph'}>Login</Typography>
+                    </Button>
+                </Link>
+                <Link to='/signup'>
+                    <Button variant={'default'}>
+                        <Typography variant={'paragraph'}>Signup</Typography>
+                    </Button>
+                </Link>
                 </>
                 }
             </div>

@@ -20,7 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cab8b85-8baf-4a8f-b4a9-2193137b543b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/ImmuTrack-Frontend.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Immunization/HealthcarePages/HealthcarePageComponents.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Immunization/HealthcarePages/HealthcarePageComponents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Shared/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Shared/Header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/containers/Auth/LoginPage/LoginPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/containers/Auth/LoginPage/LoginPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareHomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareRecordPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareRecordPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,15 +43,39 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectId" id="1fjogRb3CVn8SCcM2vwAY75LmZY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7cab8b85-8baf-4a8f-b4a9-2193137b543b" name="Default Changelist" comment="" />
+      <created>1596740974409</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596740974409</updated>
+      <workItem from="1596740995890" duration="1520000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -57,6 +94,10 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="389" y="241" key="MultipleFileMergeDialog/0.0.1500.960@0.0.1500.960" timestamp="1596663321352" />
+    <state x="252" y="125" key="SettingsEditor" timestamp="1596744209155">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="252" y="125" key="SettingsEditor/0.0.1500.960@0.0.1500.960" timestamp="1596744209155" />
     <state x="558" y="394" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596663336889">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
