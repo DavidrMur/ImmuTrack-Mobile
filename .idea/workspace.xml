@@ -20,20 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cab8b85-8baf-4a8f-b4a9-2193137b543b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/ImmuTrack-Frontend.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/components/Immunization/HealthcarePages/HealthcarePageComponents.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Immunization/HealthcarePages/HealthcarePageComponents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Shared/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Shared/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/containers/Auth/LoginPage/LoginPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/containers/Auth/LoginPage/LoginPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Immunization/PatientRecordVaccines.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Immunization/PatientRecordVaccines.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareHomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareRecordPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareRecordPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/containers/Immunization/PatientVaccines.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/containers/Immunization/PatientVaccines.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +61,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1596740974409</updated>
-      <workItem from="1596740995890" duration="1520000" />
+      <workItem from="1596740995890" duration="5380000" />
     </task>
     <servers />
   </component>

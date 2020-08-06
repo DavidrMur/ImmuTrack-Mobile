@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as actions from 'redux-saga-store/actions/index';
-import { TextField, Button, Grid, Card, CardContent } from '@material-ui/core'
+import { TextField, Button, Grid, Card, CardContent, Typography } from '@material-ui/core'
 import { PatientRecordTile } from '../../../components/Immunization/HealthcarePages/HealthcarePageComponents';
 
 class HealthcareHomePage extends Component {
@@ -19,7 +19,7 @@ class HealthcareHomePage extends Component {
         this.props.patientsPending();
     }
 
-    patientRecordTiles = (<div>loading</div>);
+    patientRecordTiles = (<Typography variant={'paragraph'}>loading</Typography>);
     
     
     render(){
