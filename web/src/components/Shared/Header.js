@@ -11,10 +11,10 @@ class Header extends React.Component {
                 <Typography variant={'h3'} style={{margin: "10px"}}>ImmuTrack</Typography>
                 {this.props.loggedIn ? 
                 <>
-                    <Button variant={'outlined'}>
+                    <Button variant={'default'}>
                         <Link to='/'>Main</Link>
                     </Button>
-                <Button variant={'outlined'} onClick={() => this.props.onSignout()}>Sign Out</Button>
+                <Button variant={'default'} onClick={() => this.props.onSignout()}>Sign Out</Button>
                 </>
                 :
                 <>

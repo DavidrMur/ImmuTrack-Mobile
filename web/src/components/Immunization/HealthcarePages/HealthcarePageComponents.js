@@ -17,7 +17,7 @@ import TableBody from "@material-ui/core/TableBody";
 export const PatientRecordTile = (props) => {
     return (
         <MDBContainer>
-            <MDBCard border='default' className="card-body" style={{ width: "22rem", marginTop: "1rem" }}>
+            <MDBCard border='default' className="card-body" style={{ width: "15rem", marginTop: "1rem" }}>
                 <MDBCardTitle>{props.lastName}</MDBCardTitle>
                 <MDBCardText>
                     <Typography variant='h5'>{props.firstName}</Typography>
@@ -31,6 +31,7 @@ export const PatientRecordTile = (props) => {
                 </MDBCardText>
             </MDBCard>
         </MDBContainer>
+
     )
 };
 

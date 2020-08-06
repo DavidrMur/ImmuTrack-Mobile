@@ -25,13 +25,15 @@ class HealthcareHomePage extends Component {
     render(){
         if (this.props.patients) {
             this.patientRecordTiles = (this.props.patients.slice(0,this.state.selectionCount)).map((patient) => {
-                return <PatientRecordTile
+                return (
+                    <Grid item xs={3} >
+                        <PatientRecordTile
                     firstName={patient.firstName}
                     lastName={patient.lastName}
                     DOB={patient.DOB}
                     OHIP={patient.ohip}
                     redirectQuery={this.props.patientInfoPending}
-            />
+                        /> </Grid>)
         })}
 
         return(
@@ -43,9 +45,10 @@ class HealthcareHomePage extends Component {
                     <Grid item xs={2} >
                     <Button onClick={() => this.props.patientAddPending(this.state.addPatientOHIP)}>Add Patient</Button>
                     </Grid>
-                    <Grid item xs={12} >
-                        {this.patientRecordTiles}
-                   </Grid>
+                </Grid>
+
+                <Grid container spacing={2}>
+                {this.patientRecordTiles}
                 </Grid>
             </div>
         );
