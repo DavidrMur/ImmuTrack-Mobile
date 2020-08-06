@@ -5,9 +5,7 @@ import axios from '../../axios-config';
 export function* patientsPending(action){
     try {
         console.log ('Saga response');
-        debugger;
         let response = yield axios.post("http://127.0.0.1:5000/retrievePatients");
-        let temp = yield axios.post("http://127.0.0.1:5000/retrieveVaccines");
         yield put (actions.patientsSuccess(response.data.patients))
     } catch (error) {
         // TODO: proper error handling
@@ -26,7 +24,6 @@ export function* patientInfoPending(action){
       
         let body = {ohip: action.patientOHIP }
         let response = yield axios.post("http://127.0.0.1:5000/retrievePatientRecord",body);
-        debugger;
         // let response = {
         //     'name': 'John Doe', 'DOB': 'Dec-31-1998', 'OHIP': '545234', 
         //     'vaccines': [
@@ -98,5 +95,17 @@ export function* patientAddPending(action){
         console.log('Saga Error')
         console.log(error)
         //yield put (actions.loginFail(response.data))
+    }
+}
+
+export function* retrieveVaccinesPending(action){
+    try {
+        debugger;
+        console.log('saga response');
+        let response = yield axios.post("http://127.0.0.1:5000/retrieveVaccines");
+        yield put(actions.retrieveVaccinesSuccess(response.data.vaccines));
+
+    } catch (error) {
+
     }
 }

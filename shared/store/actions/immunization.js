@@ -66,3 +66,16 @@ export const patientAddSuccess = (payload) => {
     }
 }
 
+export const retrieveVaccinesPending = (payload) => {
+    return {
+        type: actionTypes.IMMU_RETRIEVE_VACCINES_PENDING,
+        payload
+    }
+}
+
+export const retrieveVaccinesSuccess = (payload) => {
+    return {
+        type: actionTypes.IMMU_RETRIEVE_VACCINES_SUCCESS,
+        payload
+    }
+}
