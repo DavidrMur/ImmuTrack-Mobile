@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
-import { TextField, Accordion, AccordionSummary, AccordionDetails, Checkbox, Typography} from '@material-ui/core';
+import { TextField, Accordion, AccordionSummary, AccordionDetails, Checkbox, Typography, Button} from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Autocomplete } from '@material-ui/lab';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import { withStyles, makeStyles } from '@material-ui/core/styles';
 import { vaccineGroups } from 'helper-functions/constantGroups';
 import BacteriaList from './HealthcarePages/BacteriaList';
+
 
 class PatientRecordVaccines extends React.Component {
     
@@ -97,24 +106,40 @@ class PatientRecordVaccines extends React.Component {
 
         let patientRecordDisplay = (
             <div>
-                <button onClick={() => this.setState({editing: true})} >Edit</button>
-                <ul className="flex-container longhand">
-                    <li className="flex-item">{this.updatedVaccine.dateAdmin}</li>
-                    <li className="flex-item">{this.updatedVaccine.brandName}</li>
-                    
-                    <li className="flex-item">{this.updatedVaccine.lot}</li>
-                    <li className="flex-item">{this.updatedVaccine.expiryDate}</li>
-                    <li className="flex-item">{this.updatedVaccine.administeredUnder}</li>
-                    <li className="flex-item">{this.updatedVaccine.location}</li>
-                </ul>
+                <Button variant={'outlined'} onClick={() => this.setState({editing: true})} >Edit</Button>
                 <BacteriaList vaccine={this.updatedVaccine.brandName} bacteria={this.props.bacteria} />
+                <TableContainer component={Paper}>
+                    <Table aria-label="simple table">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>Date of Admin</TableCell>
+                                <TableCell align="right">Vaccine Brand</TableCell>
+                                <TableCell align="right">Lot#</TableCell>
+                                <TableCell align="right">Expiry</TableCell>
+                                <TableCell align="right">Administered by</TableCell>
+                                <TableCell align="right">Location</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                                <TableRow>
+                                    <TableCell align="left">{this.updatedVaccine.dateAdmin}</TableCell>
+                                    <TableCell align="right">{this.updatedVaccine.brandName}</TableCell>
+                                    <TableCell align="right">{this.updatedVaccine.lot}</TableCell>
+                                    <TableCell align="right">{this.updatedVaccine.expiryDate}</TableCell>
+                                    <TableCell align="right">{this.updatedVaccine.administeredUnder}</TableCell>
+                                    <TableCell align="right">{this.updatedVaccine.location}</TableCell>
+                                </TableRow>
+                        </TableBody>
+                    </Table>
+                </TableContainer>
             </div>
+
         );
 
         let patientRecordEdit = (
             <div>
                 <Typography hidden={!this.state.error}>Please ensure you have filled all of the information</Typography>
-                <button onClick={() => this.onSubmitEvent()}>Submit</button>
+                <Button variant={'outlined'} onClick={() => this.onSubmitEvent()}>Submit</Button>
                 <ul className="flex-container longhand">
                     <TextField
                         type="date"
@@ -125,7 +150,7 @@ class PatientRecordVaccines extends React.Component {
                             }
                         }} 
                         defaultValue={this.updatedVaccine.dateAdmin }
-                        className="flex-item" 
+                        className="flex-item"
                         onChange={(event) => this.onChangeEvent(event.target.value, 'dateAdmin')} 
                         />
 
@@ -143,10 +168,10 @@ class PatientRecordVaccines extends React.Component {
                         {this.state.addOtherVaccine ? <TextField onChange={(event) => this.onChangeEvent(event.target.value,'otherBrandName')} helperText={'Enter the vaccine vaccine brand'} /> : null}
 
                     <BacteriaList vaccine={this.updatedVaccine.brandName} bacteria={this.updatedVaccine.bacteria} otherVaccine={this.state.addOtherVaccine} onAddBacteria={(this.onChangeEvent)}/>
-                    <input type="text" defaultValue={this.updatedVaccine.lot} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'lot')}/>
-                    <TextField type="date" value={this.updatedVaccine.expiryDate} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'expiryDate')}/>
-                    { this.state.disableAdministered ? <TextField type="text" disabled={this.state.disableAdministered} value={this.updatedVaccine.administeredUnder} className="flex-item" /> : <TextField type="text" defaultValue={this.updatedVaccine.administeredUnder} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value, 'administeredUnder')}/> }
-                    <TextField type="text" defaultValue={this.updatedVaccine.location} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'location')}/>
+                    <TextField type={'text'} label={'Lot#'} defaultValue={this.updatedVaccine.lot} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'lot')}/>
+                    <TextField type="date" defaultValue={this.updatedVaccine.expiryDate} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'expiryDate')}/>
+                    <TextField type="text" disabled={this.state.disableAdministered} value={this.updatedVaccine.administeredUnder} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value, 'administeredUnder')}/>
+                    <TextField style={{width: "70%"}} required type="text" label="Location" defaultValue={this.updatedVaccine.location} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'location')}/>
                 </ul>
         </div>
         )
