@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
 import * as actions from 'redux-saga-store/actions/index';
 import { PatientRecordTile, PatientRecordVaccines, PatientRecordVaccinesEdit, PatientRecordVaccineTitles } from '../../../components/Immunization/HealthcarePages/HealthcarePageComponents';
-import { Button } from '@material-ui/core'
+import { Button, Typography } from '@material-ui/core'
 import PatientVaccines from '../PatientVaccines';
 
 // TODO: refactor this page, the vaccines table should be a separate entity
@@ -20,7 +20,7 @@ class HealthcareRecordPage extends Component {
         }
     }
 
-    patientRecords = (<div>loading</div>);
+    patientRecords = (<Typography variant={'paragraph'}>loading</Typography>);
     
     render(){
         return(
