@@ -53,6 +53,8 @@ export function* patientUpdateInfoPending(action){
     try {
         console.log ('Saga response');
         console.log(action);
+        let temp = {vaccine: 'Buttery Bongs', bacteria: ['ur mum', 'get rekt']};
+        let temp2 = yield axios.post("http://127.0.0.1:5000/addVaccine", temp);
         let response = yield axios.post("http://127.0.0.1:5000/editPatientRecord", action.payload);
         // gonna call the api again for updated page?
         //yield put (actions.patientAddEntrySuccess(action.payload))
