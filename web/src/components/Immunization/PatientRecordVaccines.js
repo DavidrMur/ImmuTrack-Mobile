@@ -130,14 +130,14 @@ class PatientRecordVaccines extends React.Component {
                         />
 
                     <Autocomplete 
-                        options={vaccineGroups}
-                        getOptionLabel={(option) => option.vaccineBrand || (vaccineGroups.find(vaccine => vaccine.vaccineBrand === option)).vaccineBrand}
+                        options={this.props.vaccines}
+                        getOptionLabel={(option) => option.vaccine || (this.props.vaccines.find(vaccine => vaccine.vaccine === option)).vaccine}
                         style={{ width: 300 }}
                         renderInput={(params) => <TextField {...params} defaultValue={this.props.brandName} variant="outlined" />}
-                        getOptionSelected={(option, value) => option.vaccineBrand === value}
+                        getOptionSelected={(option, value) => option.vaccine === value}
                         defaultValue={this.props.brandName}
                         className="flex-item" 
-                        onChange={(event, newValue) => this.onChangeEvent(newValue && newValue.vaccineBrand, 'brandName')}
+                        onChange={(event, newValue) => this.onChangeEvent(newValue && newValue.vaccine, 'brandName')}
                         />
                         {/* TODO: styling, should be above or under not side by side */}
                         {this.state.addOtherVaccine ? <TextField onChange={(event) => this.onChangeEvent(event.target.value,'otherBrandName')} helperText={'Enter the vaccine vaccine brand'} /> : null}

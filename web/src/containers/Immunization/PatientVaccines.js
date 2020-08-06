@@ -43,7 +43,7 @@ class PatientVaccines extends Component {
             <div>
                 <PatientRecordVaccineTitles />
                 <Button onClick={() => (this.setState({adding: true}))}>Add Entry</Button>
-                {this.state.adding ? <PatientRecordVaccines adding userInfo={this.props.currentUser} onSubmitEvent={this.onNewEntrySubmitEvent}/> : null}
+                {this.state.adding ? <PatientRecordVaccines adding vaccines={this.props.vaccines} userInfo={this.props.currentUser} onSubmitEvent={this.onNewEntrySubmitEvent}/> : null}
                 {this.props.currentPatient.patientRecords && this.props.currentPatient.patientRecords.map((vaccine) => {
                     return (<PatientRecordVaccines
                         dateAdmin={vaccine.dateAdmin}
@@ -55,6 +55,7 @@ class PatientVaccines extends Component {
                         location={vaccine.location}
                         userInfo={this.props.currentUser}
                         entryId={vaccine.entryId}
+                        vaccines={this.props.vaccines}
                         onSubmitEvent={(payload ) => this.props.patientUpdateInfoPending({...payload, ohip: this.props.currentPatient.OHIP})}
                 />)
              })}
@@ -67,7 +68,8 @@ class PatientVaccines extends Component {
 const mapStateToProps = state => {
     return {
         currentPatient: state.immunization.patient,
-        currentUser: state.auth.userInfo
+        currentUser: state.auth.userInfo,
+        vaccines: state.immunization.vaccines
     };
 };
 

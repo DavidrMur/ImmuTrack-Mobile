@@ -74,6 +74,7 @@ export const retrieveVaccinesPending = (payload) => {
 }
 
 export const retrieveVaccinesSuccess = (payload) => {
+    payload.push({vaccine: 'Other', bacteria: []});
     return {
         type: actionTypes.IMMU_RETRIEVE_VACCINES_SUCCESS,
         payload
