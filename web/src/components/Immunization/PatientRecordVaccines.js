@@ -124,6 +124,7 @@ class PatientRecordVaccines extends React.Component {
                                 max: this.state.maxDate
                             }
                         }} 
+                        defaultValue={this.updatedVaccine.dateAdmin }
                         className="flex-item" 
                         onChange={(event) => this.onChangeEvent(event.target.value, 'dateAdmin')} 
                         />
@@ -143,8 +144,8 @@ class PatientRecordVaccines extends React.Component {
 
                     <BacteriaList vaccine={this.updatedVaccine.brandName} bacteria={this.updatedVaccine.bacteria} otherVaccine={this.state.addOtherVaccine} onAddBacteria={(this.onChangeEvent)}/>
                     <input type="text" defaultValue={this.updatedVaccine.lot} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'lot')}/>
-                    <TextField type="date" defaultValue={this.updatedVaccine.expiryDate} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'expiryDate')}/>
-                    <TextField type="text" disabled={this.state.disableAdministered} value={this.updatedVaccine.administeredUnder} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value, 'administeredUnder')}/>
+                    <TextField type="date" value={this.updatedVaccine.expiryDate} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'expiryDate')}/>
+                    { this.state.disableAdministered ? <TextField type="text" disabled={this.state.disableAdministered} value={this.updatedVaccine.administeredUnder} className="flex-item" /> : <TextField type="text" defaultValue={this.updatedVaccine.administeredUnder} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value, 'administeredUnder')}/> }
                     <TextField type="text" defaultValue={this.updatedVaccine.location} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'location')}/>
                 </ul>
         </div>

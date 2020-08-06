@@ -29,12 +29,12 @@ export function* patientInfoPending(action){
             'name': 'John Doe', 'DOB': 'Dec-31-1998', 'OHIP': '545234', 
             'vaccines': [
                 {
-                    'dateAdmin': 'July-10-2020', 'brandName': 'Shingrix', 'bacteria': ['Varicella', 'Herpes Zoster'],
+                    'dateAdmin': '2020-07-18', 'brandName': 'Shingrix', 'bacteria': ['Varicella', 'Herpes Zoster'],
                     'lot': 'eeh21nwef23', 'expiryDate': '12/2030', 'administeredUnder': 'Dr. Doe', 'location': '123 Zoo',
                     'editable': true
                 },
                 {
-                    'dateAdmin': 'Jan-10-2020', 'brandName': 'Pediacel', 'bacteria': ['Corona', 'AIDS'],
+                    'dateAdmin': '2020-10-11', 'brandName': 'Pediacel', 'bacteria': ['Corona', 'AIDS'],
                     'lot': 'wi6634uh', 'expiryDate': '5/2025', 'administeredUnder': 'Dr. Dane', 'location': '200 Boo',
                     'editable': false
                 }
