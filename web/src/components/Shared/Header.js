@@ -21,16 +21,18 @@ class Header extends React.Component {
                             </>
                             :
                             <>
-                                <Link to='/login'>
-                                    <Button variant={'default'}>
-                                        <Typography variant={'paragraph'}>Login</Typography>
+                            <div style={{width:"100%"}}>
+                                <Link to='/login' style={{float: "right", textDecoration:"none"}}>
+                                    <Button variant={'default'}  >
+                                        <Typography variant={'paragraph'}style={{color:"white"}}>Login</Typography>
                                     </Button>
                                 </Link>
-                                <Link to='/signup'>
+                                <Link to='/signup' style={{float: "right", textDecoration:"none"}}>
                                     <Button variant={'default'}>
-                                        <Typography variant={'paragraph'}>Signup</Typography>
+                                        <Typography variant={'paragraph'} style={{color:"white"}}>Signup</Typography>
                                     </Button>
                                 </Link>
+                            </div>
                             </>
                         }
                     </Toolbar>
