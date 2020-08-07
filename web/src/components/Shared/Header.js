@@ -1,24 +1,40 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { Button, Grid, TextField, Typography, AppBar, Toolbar, IconButton } from '@material-ui/core'
+import './Header.css'
 
 class Header extends React.Component {
     
     render() {
         return (
             <div>
-                <h1 style={{margin: "10px"}}>ImmuTrack</h1>
-                {this.props.loggedIn ? 
-                <>
-                <Link to='/'>Main</Link>
-                <button onClick={() => this.props.onSignout()}>Sign Out</button>
-                </>
-                :
-                <>
-                <Link to='/login'>Login</Link>
-                <Link to='/signup'>Sign Up</Link>
-                </>
-                }
+                <AppBar position={'static'}>
+                    <Toolbar>
+                        <Typography variant={'h3'} style={{margin: "10px"}}>ImmuTrack</Typography>
+                        {this.props.loggedIn ?
+                            <>
+                                <Button variant={'default'}>
+                                    <Link to='/'>Main</Link>
+                                </Button>
+                                <Button variant={'default'} onClick={() => this.props.onSignout()}>Sign Out</Button>
+                            </>
+                            :
+                            <>
+                                <Link to='/login'>
+                                    <Button variant={'default'}>
+                                        <Typography variant={'paragraph'}>Login</Typography>
+                                    </Button>
+                                </Link>
+                                <Link to='/signup'>
+                                    <Button variant={'default'}>
+                                        <Typography variant={'paragraph'}>Signup</Typography>
+                                    </Button>
+                                </Link>
+                            </>
+                        }
+                    </Toolbar>
+                </AppBar>
             </div>
         )
     }

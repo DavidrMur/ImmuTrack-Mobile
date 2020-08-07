@@ -41,3 +41,13 @@ h1 {
     flex-flow: wrap row;
     
   }
+
+  .card-body{
+      border: 1px;
+      border-style: solid;
+      border-color: black;
+      padding: 15px;
+      border-radius: 5px;
+      background-color: white;
+
+  }

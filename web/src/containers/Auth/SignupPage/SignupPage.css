@@ -18,3 +18,21 @@
     width: 100px;
     display: inline-flex;
 }
+
+body > #root > div {
+    height: 100vh;
+}
+
+.app {
+    height: 100vh;
+}
+
+html {
+    background-image: linear-gradient(royalblue, white);
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+
+}
