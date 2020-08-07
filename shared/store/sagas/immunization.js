@@ -16,6 +16,7 @@ export function* patientsPending(action){
 
 export function* patientInfoPending(action){
     try {
+        debugger;
         console.log ('Saga response');
         // let payload = {
         //     patientOHIP: action.OHIP,

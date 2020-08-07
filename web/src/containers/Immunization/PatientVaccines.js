@@ -36,7 +36,8 @@ class PatientVaccines extends Component {
 
     render(){
 
-        if (!this.props.currentPatient || _.isEmpty(this.props.currentPatient)) return <Redirect to='/main' />
+        if (_.isEmpty(this.props.vaccines)) return <Redirect to="/main" />
+        if (!this.props.currentPatient || _.isEmpty(this.props.currentPatient)) return (<div>loading</div>)
 
         return (
             <div>
