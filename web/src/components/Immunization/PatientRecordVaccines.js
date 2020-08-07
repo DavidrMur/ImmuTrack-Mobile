@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TextField, Accordion, AccordionSummary, AccordionDetails, Checkbox, Typography, Button} from '@material-ui/core';
+import { TextField, Accordion, AccordionSummary, AccordionDetails, Checkbox, Typography, Select, MenuItem, Button } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Autocomplete } from '@material-ui/lab';
 import Table from '@material-ui/core/Table';
@@ -36,6 +36,8 @@ class PatientRecordVaccines extends React.Component {
         expiryDate: this.props.expiryDate,
         administeredUnder: this.props.administeredUnder,
         location: this.props.location,
+        entryId: this.props.entryId,
+        otherVaccine: false
 
     };
 
@@ -59,6 +61,7 @@ class PatientRecordVaccines extends React.Component {
                 if (value === 'Other') {
                     this.setState({addOtherVaccine: true});
                     temp['bacteria'] = [];  
+                    temp['otherVaccine'] = true;
                 } else {
                     this.setState({addOtherVaccine: false});
                     temp['brandName'] = value || undefined;
@@ -155,23 +158,29 @@ class PatientRecordVaccines extends React.Component {
                         />
 
                     <Autocomplete 
-                        options={vaccineGroups}
-                        getOptionLabel={(option) => option.vaccineBrand || (vaccineGroups.find(vaccine => vaccine.vaccineBrand === option)).vaccineBrand}
+                        options={this.props.vaccines}
+                        getOptionLabel={(option) => option.vaccine || (this.props.vaccines.find(vaccine => vaccine.vaccine === option)).vaccine}
                         style={{ width: 300 }}
                         renderInput={(params) => <TextField {...params} defaultValue={this.props.brandName} variant="outlined" />}
-                        getOptionSelected={(option, value) => option.vaccineBrand === value}
+                        getOptionSelected={(option, value) => option.vaccine === value}
                         defaultValue={this.props.brandName}
                         className="flex-item" 
-                        onChange={(event, newValue) => this.onChangeEvent(newValue && newValue.vaccineBrand, 'brandName')}
+                        onChange={(event, newValue) => this.onChangeEvent(newValue && newValue.vaccine, 'brandName')}
                         />
                         {/* TODO: styling, should be above or under not side by side */}
                         {this.state.addOtherVaccine ? <TextField onChange={(event) => this.onChangeEvent(event.target.value,'otherBrandName')} helperText={'Enter the vaccine vaccine brand'} /> : null}
-
-                    <BacteriaList vaccine={this.updatedVaccine.brandName} bacteria={this.updatedVaccine.bacteria} otherVaccine={this.state.addOtherVaccine} onAddBacteria={(this.onChangeEvent)}/>
+                    <BacteriaList vaccine={this.updatedVaccine.brandName} bacteria={this.updatedVaccine.bacteria} otherVaccine={this.state.addOtherVaccine} onAddBacteria={(this.onChangeEvent)} vaccineGroups={this.props.vaccines} />
                     <TextField type={'text'} label={'Lot#'} defaultValue={this.updatedVaccine.lot} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'lot')}/>
                     <TextField type="date" defaultValue={this.updatedVaccine.expiryDate} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'expiryDate')}/>
                     <TextField type="text" disabled={this.state.disableAdministered} value={this.updatedVaccine.administeredUnder} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value, 'administeredUnder')}/>
-                    <TextField style={{width: "70%"}} required type="text" label="Location" defaultValue={this.updatedVaccine.location} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'location')}/>
+                    <Autocomplete 
+                        options={this.props.userInfo.workLocations}
+                        getOptionLabel={(option) => `${option.workName}, ${option.workAddress}` }
+                        style={{ width: 300 }}
+                        renderInput={(params) => <TextField {...params} defaultValue={this.props.location} variant="outlined" />}
+                        //defaultValue={this.props.location }
+                        onChange={(event, newValue) => this.onChangeEvent(newValue && `${newValue.workName}, ${newValue.workAddress}`, 'location')}
+                        />
                 </ul>
         </div>
         )

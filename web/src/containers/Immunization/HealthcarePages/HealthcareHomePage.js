@@ -17,6 +17,7 @@ class HealthcareHomePage extends Component {
 
     componentDidMount = () => {
         this.props.patientsPending();
+        this.props.retrieveVaccinesPending();
     }
 
     patientRecordTiles = (<div>loading</div>);
@@ -66,7 +67,8 @@ const mapDispathToProps = dispatch => {
     return {
         patientsPending: () => dispatch(actions.patientsPending()),
         patientInfoPending: (patientOHIP) => dispatch(actions.patientInfoPending(patientOHIP)),
-        patientAddPending: (patientOHIP) => dispatch(actions.patientAddPending(patientOHIP))
+        patientAddPending: (patientOHIP) => dispatch(actions.patientAddPending(patientOHIP)),
+        retrieveVaccinesPending: () => dispatch(actions.retrieveVaccinesPending())
     };
 };
 

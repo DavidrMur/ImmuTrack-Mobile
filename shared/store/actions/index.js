@@ -44,5 +44,7 @@ export {
     patientAddEntryPending,
     patientAddEntrySuccess,
     patientAddPending,
-    patientAddSuccess
+    patientAddSuccess,
+    retrieveVaccinesPending,
+    retrieveVaccinesSuccess
 } from './immunization';

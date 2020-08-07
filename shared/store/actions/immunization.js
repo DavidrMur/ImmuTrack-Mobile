@@ -37,10 +37,11 @@ export const patientUpdateInfoPending = (payload) => {
     }
 }
 
-export const patientAddEntryPending = (payload) => {
+export const patientAddEntryPending = (payload, ohip) => {
     return {
         type: actionTypes.IMMU_PATIENT_ADD_ENTRY_PENDING,
-        payload
+        payload,
+        ohip
     }
 }
 
@@ -65,3 +66,17 @@ export const patientAddSuccess = (payload) => {
     }
 }
 
+export const retrieveVaccinesPending = (payload) => {
+    return {
+        type: actionTypes.IMMU_RETRIEVE_VACCINES_PENDING,
+        payload
+    }
+}
+
+export const retrieveVaccinesSuccess = (payload) => {
+    payload.push({vaccine: 'Other', bacteria: []});
+    return {
+        type: actionTypes.IMMU_RETRIEVE_VACCINES_SUCCESS,
+        payload
+    }
+}

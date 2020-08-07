@@ -6,7 +6,8 @@ const initialState = {
     },
     patient: {
 
-    }
+    },
+    vaccines: {}
 }
 
 const patientsSuccess = (state, action) => {
@@ -20,6 +21,7 @@ const patientsSuccess = (state, action) => {
 }
 
 const patientInfoSuccess = (state, action) => {
+    debugger;
     return {
         ...state,
         patient: action.payload,
@@ -53,6 +55,14 @@ const patientAddSuccess = (state, action) => {
     }
 }
 
+const retrieveVaccinesSuccess = (state, action) => {
+    debugger;
+    return {
+        ...state,
+        vaccines: action.payload
+    }
+}
+
 const reducer = (state = initialState, action) => {
     switch(action.type) {
         
@@ -67,7 +77,10 @@ const reducer = (state = initialState, action) => {
             return patientAddEntrySuccess(state, action);    
         case actionTypes.IMMU_PATIENT_ADD_SUCCESS:
             console.log('patient add case');
-            return patientAddSuccess(state, action);    
+            return patientAddSuccess(state, action);   
+        case actionTypes.IMMU_RETRIEVE_VACCINES_SUCCESS:
+            console.log('retrieve vaccines case');     
+            return retrieveVaccinesSuccess(state, action);   
         default:
             return state;
     }
