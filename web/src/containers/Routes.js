@@ -37,7 +37,6 @@ class Routes extends Component {
     render() {
 
         let routes;
-        debugger;
         this.loggedIn = (localStorage.getItem('jwtToken') !== undefined && localStorage.getItem('jwtToken') !== null); 
 
         // let acceptDisclosure = (localStorage.getItem('acceptDisclosure') && localStorage.getItem('acceptDisclosure') === true);

@@ -21,7 +21,6 @@ const patientsSuccess = (state, action) => {
 }
 
 const patientInfoSuccess = (state, action) => {
-    debugger;
     return {
         ...state,
         patient: action.payload,
@@ -30,7 +29,6 @@ const patientInfoSuccess = (state, action) => {
 
 const patientAddEntrySuccess = (state, action) => {
 
-    debugger;
     let updatedVaccines = state.patient.vaccines;
     if (!updatedVaccines) updatedVaccines = [action]
     else updatedVaccines = updatedVaccines.concat([action.payload]);
@@ -56,7 +54,6 @@ const patientAddSuccess = (state, action) => {
 }
 
 const retrieveVaccinesSuccess = (state, action) => {
-    debugger;
     return {
         ...state,
         vaccines: action.payload

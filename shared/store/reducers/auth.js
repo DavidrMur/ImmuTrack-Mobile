@@ -238,7 +238,6 @@ const signupSetLicense = (state, action) => {
 
 const signupSetWorkName = (state, action) => {
 
-    debugger;
     // TODO: work locations probably needs to be reworked in the future
     console.log('setting primary work name');
     // TODO: make this work for multiple work places (will probably need each "form" to have an index)
@@ -337,7 +336,6 @@ const signupSetWorkEMR = (state, action) => {
 }
 
 const signupUnsetWorkLocation = (state, action) => {
-    debugger;
     console.log('removing work location');
     let workLocations = _.cloneDeep(state.healthcareInfo.signupWorkLocations);
     workLocations.splice(action.index,1);

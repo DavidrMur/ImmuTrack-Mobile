@@ -1,5 +1,4 @@
 const entryValidation = (e, type) => {
-    debugger;
 
     switch(type){
         case 'username':
