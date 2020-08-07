@@ -61,7 +61,7 @@ class LoginPage extends Component {
                         <Typography variant="paragraph">Forgot Password?</Typography>
                     </Grid>
                     <Grid item xs={12} >
-                        <Button variant="outlined" onClick={(e) => this.onSubmit(e)}>Login</Button> 
+                        <Button variant="contained" onClick={(e) => this.onSubmit(e)}>Login</Button>
                     </Grid>
                     <Grid item xs={12}>
                         <Button>
