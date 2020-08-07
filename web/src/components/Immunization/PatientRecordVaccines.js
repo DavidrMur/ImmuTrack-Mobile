@@ -134,7 +134,7 @@ class PatientRecordVaccines extends React.Component {
                         </TableBody>
                     </Table>
                 </TableContainer>
-                <BacteriaList vaccine={this.updatedVaccine.brandName} bacteria={this.props.bacteria} />
+                <BacteriaList vaccine={this.updatedVaccine.brandName} bacteria={this.props.bacteria} vaccineGroups={this.props.vaccines} />
             </div>
 
         );
