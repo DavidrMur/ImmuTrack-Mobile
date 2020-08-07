@@ -16,7 +16,6 @@ export function* patientsPending(action){
 
 export function* patientInfoPending(action){
     try {
-        debugger;
         console.log ('Saga response');
         // let payload = {
         //     patientOHIP: action.OHIP,
@@ -103,7 +102,6 @@ export function* patientAddPending(action){
 
 export function* retrieveVaccinesPending(action){
     try {
-        debugger;
         console.log('saga response');
         let response = yield axios.post("http://127.0.0.1:5000/retrieveVaccines");
         yield put(actions.retrieveVaccinesSuccess(response.data.vaccines));

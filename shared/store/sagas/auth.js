@@ -7,7 +7,6 @@ export const getAuth = (state) => state.auth;
 
 export function* loginPending(action){
     try {
-        debugger;
         console.log ('Saga response');
         let payload = formatStateToLoginPayload(action);
         let response = yield axios.post("http://127.0.0.1:5000/signin", payload)
@@ -52,7 +51,6 @@ export function* verifyPasswordPending(action){
 
 export function* changePasswordPending(action){
     try {
-        debugger;
         console.log ('Saga response');
         let response = yield axios.post("http://127.0.0.1:5000/changePassword",action.payload)
         yield put (actions.loginSuccess(response.data))

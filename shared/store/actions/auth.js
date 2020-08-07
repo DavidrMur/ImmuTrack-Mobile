@@ -194,7 +194,6 @@ export const signupSetLicense = (payload) => {
 };
 
 export const signupSetWorkName = (workName, index) => {
-    debugger;
     return {
         type: actionTypes.SIGNUP_SET_WORK_NAME,
         workName,

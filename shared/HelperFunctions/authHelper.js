@@ -28,7 +28,6 @@ export const formatStateToSignupPayload = (state) => {
             race: state.patientInfo.signupRace
         }
     } else if (state.type === 'healthcare') {
-        debugger;
         payload = {
             workLocations: state.healthcareInfo.signupWorkLocations,
             profession: state.healthcareInfo.signupProfession,
