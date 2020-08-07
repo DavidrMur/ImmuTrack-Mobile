@@ -19,7 +19,6 @@ class PatientVaccines extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        debugger;
         this.setState({vaccine: nextProps.data})
     }
 
