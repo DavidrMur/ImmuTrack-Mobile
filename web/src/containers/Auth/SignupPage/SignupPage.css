@@ -18,3 +18,11 @@
     width: 100px;
     display: inline-flex;
 }
+
+body > #root > div {
+    height: 100vh;
+}
+
+.app {
+    height: 100vh;
+}

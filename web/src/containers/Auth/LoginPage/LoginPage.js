@@ -26,7 +26,7 @@ class LoginPage extends Component {
 
     render(){
         return(
-            <div style={{width: '47vw', margin: 'auto'}}>
+            <div style={{width: '47vw', margin: 'auto', position: 'relative', top:'30px' }}>
                     {!this.state.profession ? (
                         <Grid container spacing={2} style={{'text-align': 'center'}}>
                             <Grid item xs={12}>

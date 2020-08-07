@@ -21,7 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="7cab8b85-8baf-4a8f-b4a9-2193137b543b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Auth/SignupPage/SignupPagePatient.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Auth/SignupPage/SignupPagePatient.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Shared/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Shared/Header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Shared/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Shared/Header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/containers/Auth/LoginPage/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/containers/Auth/LoginPage/LoginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/containers/Auth/SignupPage/SignupPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/containers/Auth/SignupPage/SignupPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareRecordPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareRecordPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

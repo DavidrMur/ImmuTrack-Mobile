@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { SignupOHIP, SignupSCN, SignupName, SignupOwner, SignupDOB, SignupGender, SignupRace, SignupEduLevel, SignupReview, SignupCredentials, SignupGeneral } from './SignupPageComponents';
+import { Button, Grid, TextField, Typography, Select, MenuItem } from '@material-ui/core';
 
 class SignupPagePatient extends Component {
 
@@ -51,9 +52,9 @@ class SignupPagePatient extends Component {
             <div>
                 {signupView}
                 {/* TODO: Make into a component (do we really need to?)*/}
-                <button style={{margin: "10px"}} onClick={() => this.setState({pageCount: this.state.pageCount - 1})} disabled ={this.state.pageCount === 1} >Back</button>
-                <button onClick={() => this.setState({pageCount: this.state.pageCount + 1})} hidden= {this.state.pageCount === this.state.maxPageCount}>Next</button> 
-                <button onClick={this.props.signup} hidden= {!(this.state.pageCount === this.state.maxPageCount)}>Signup</button> 
+                <Button style={{margin: "10px"}} onClick={() => this.setState({pageCount: this.state.pageCount - 1})} disabled ={this.state.pageCount === 1} >Back</Button>
+                <Button onClick={() => this.setState({pageCount: this.state.pageCount + 1})} hidden= {this.state.pageCount === this.state.maxPageCount}>Next</Button>
+                <Button onClick={this.props.signup} hidden= {!(this.state.pageCount === this.state.maxPageCount)}>Signup</Button>
             </div>
         )
     }

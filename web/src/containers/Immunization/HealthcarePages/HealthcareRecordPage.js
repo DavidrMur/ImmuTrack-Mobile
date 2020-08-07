@@ -31,9 +31,6 @@ class HealthcareRecordPage extends Component {
     render(){
         return(
             <div>
-                <Button variant={'default'}>
-                    <Link to="/main">Back</Link>
-                </Button>
                 <PatientDisplayTile
                     key={this.props.currentPatient.id}
                     id={this.props.currentPatient.id}
