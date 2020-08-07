@@ -22,26 +22,26 @@ export function* patientInfoPending(action){
         //     jwtToken: localStorage.getItem('jwtToken')
         // }
       
-        let body = {ohip: action.patientOHIP }
-        let response = yield axios.post("http://127.0.0.1:5000/retrievePatientRecord",body);
-        // let response = {
-        //     'name': 'John Doe', 'DOB': 'Dec-31-1998', 'OHIP': '545234', 
-        //     'vaccines': [
-        //         {
-        //             'dateAdmin': 'July-10-2020', 'brandName': 'Shingrix', 'bacteria': ['Varicella', 'Herpes Zoster'],
-        //             'lot': 'eeh21nwef23', 'expiryDate': '12/2030', 'administeredUnder': 'Dr. Doe', 'location': '123 Zoo',
-        //             'editable': true
-        //         },
-        //         {
-        //             'dateAdmin': 'Jan-10-2020', 'brandName': 'Pediacel', 'bacteria': ['Corona', 'AIDS'],
-        //             'lot': 'wi6634uh', 'expiryDate': '5/2025', 'administeredUnder': 'Dr. Dane', 'location': '200 Boo',
-        //             'editable': false
-        //         }
-        //     ]
-        // }
-        response.data.OHIP = action.patientOHIP;
-        response.data.name = response.data.firstName + response.data.lastName;
-        yield put (actions.patientInfoSuccess(response.data))
+        // let body = {ohip: action.patientOHIP }
+        // let response = yield axios.post("http://127.0.0.1:5000/retrievePatientRecord",body);
+        let response = {
+            'name': 'John Doe', 'DOB': 'Dec-31-1998', 'OHIP': '545234', 
+            'vaccines': [
+                {
+                    'dateAdmin': 'July-10-2020', 'brandName': 'Shingrix', 'bacteria': ['Varicella', 'Herpes Zoster'],
+                    'lot': 'eeh21nwef23', 'expiryDate': '12/2030', 'administeredUnder': 'Dr. Doe', 'location': '123 Zoo',
+                    'editable': true
+                },
+                {
+                    'dateAdmin': 'Jan-10-2020', 'brandName': 'Pediacel', 'bacteria': ['Corona', 'AIDS'],
+                    'lot': 'wi6634uh', 'expiryDate': '5/2025', 'administeredUnder': 'Dr. Dane', 'location': '200 Boo',
+                    'editable': false
+                }
+            ]
+        }
+        // response.data.OHIP = action.patientOHIP;
+        // response.data.name = response.data.firstName + response.data.lastName;
+        yield put (actions.patientInfoSuccess(response))
     } catch (error) {
         // TODO: proper error handling
         console.log('Saga Error')
@@ -54,7 +54,7 @@ export function* patientUpdateInfoPending(action){
         console.log ('Saga response');
         console.log(action);
         let temp = {vaccine: 'Buttery Bongs', bacteria: ['ur mum', 'get rekt']};
-        let temp2 = yield axios.post("http://127.0.0.1:5000/addVaccine", temp);
+        if (action.payload.otherVaccine) yield axios.post("http://127.0.0.1:5000/addVaccine", );
         let response = yield axios.post("http://127.0.0.1:5000/editPatientRecord", action.payload);
         // gonna call the api again for updated page?
         //yield put (actions.patientAddEntrySuccess(action.payload))

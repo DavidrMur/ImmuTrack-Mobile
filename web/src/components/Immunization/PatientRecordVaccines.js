@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TextField, Accordion, AccordionSummary, AccordionDetails, Checkbox, Typography} from '@material-ui/core';
+import { TextField, Accordion, AccordionSummary, AccordionDetails, Checkbox, Typography, Select, MenuItem } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Autocomplete } from '@material-ui/lab';
 import { vaccineGroups } from 'helper-functions/constantGroups';
@@ -27,7 +27,8 @@ class PatientRecordVaccines extends React.Component {
         expiryDate: this.props.expiryDate,
         administeredUnder: this.props.administeredUnder,
         location: this.props.location,
-        entryId: this.props.entryId
+        entryId: this.props.entryId,
+        otherVaccine: false
 
     };
 
@@ -51,6 +52,7 @@ class PatientRecordVaccines extends React.Component {
                 if (value === 'Other') {
                     this.setState({addOtherVaccine: true});
                     temp['bacteria'] = [];  
+                    temp['otherVaccine'] = true;
                 } else {
                     this.setState({addOtherVaccine: false});
                     temp['brandName'] = value || undefined;
@@ -146,7 +148,14 @@ class PatientRecordVaccines extends React.Component {
                     <input type="text" defaultValue={this.updatedVaccine.lot} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'lot')}/>
                     <TextField type="date" defaultValue={this.updatedVaccine.expiryDate} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'expiryDate')}/>
                     <TextField type="text" disabled={this.state.disableAdministered} value={this.updatedVaccine.administeredUnder} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value, 'administeredUnder')}/>
-                    <TextField type="text" defaultValue={this.updatedVaccine.location} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'location')}/>
+                    <Autocomplete 
+                        options={this.props.userInfo.workLocations}
+                        getOptionLabel={(option) => `${option.workName}, ${option.workAddress}` }
+                        style={{ width: 300 }}
+                        renderInput={(params) => <TextField {...params} defaultValue={this.props.location} variant="outlined" />}
+                        //defaultValue={this.props.location }
+                        onChange={(event, newValue) => this.onChangeEvent(newValue && `${newValue.workName}, ${newValue.workAddress}`, 'location')}
+                        />
                 </ul>
         </div>
         )
