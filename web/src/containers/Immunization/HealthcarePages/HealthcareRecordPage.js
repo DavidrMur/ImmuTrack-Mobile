@@ -19,7 +19,7 @@ class HealthcareRecordPage extends Component {
     constructor(props){
         super(props);
         this.state = {
-            patientVaccines: this.props.currentPatient.vaccines,
+            patientVaccines: this.props.currentPatient.patientRecords,
             editing: false,
             add: false,
             newEntry: {}

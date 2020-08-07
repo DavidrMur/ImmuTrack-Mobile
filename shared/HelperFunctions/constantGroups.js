@@ -69,3 +69,27 @@ export const vaccineGroups = [
     {vaccineBrand: 'Gardasil', bacteria: ['Human Papilloma Virus'] },
     {vaccineBrand: 'Other', bacteria: []}
 ]
+
+export const bacteriaGroups = [
+    'Diptheria',
+    'Tetanus',
+    'Pertussis',
+    'Polio',
+    'Hib',
+    'Pneumococcal',
+    'Rotavirus',
+    'Measle',
+    'Mumps',
+    'Rubella',
+    'Varicella',
+    'Meningococcal Conjugate C',
+    'Influenza',
+    'Human Papilloma Virus',
+    'Meningococcal Conjugate ACYW',
+    'Hepatitis B',
+    'Herpes Zoster',
+    'Hepatitis A',
+    'Meningococcal B',
+    'Rabies'
+
+]
