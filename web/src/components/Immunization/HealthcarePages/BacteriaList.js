@@ -25,7 +25,6 @@ class BacteriaList extends React.Component {
     }
     
     render() {
-        debugger;
         return (
             <div> 
             { this.props.otherVaccine ?
