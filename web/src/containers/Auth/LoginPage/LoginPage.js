@@ -45,7 +45,7 @@ class LoginPage extends Component {
                     ) : (
                     <Grid container spacing={2} style={{'text-align': 'center'}}>
                     <Grid item xs={12}>
-                        <Typography variant="h2">Member Login</Typography>
+                        <Typography variant="h2">Login</Typography>
                     </Grid>
                     <Grid item xs={6}>
                         <TextField style={{width: "70%"}} required type="text" label="username" onChange={(event) => this.setValue(event, 'username')}/>
