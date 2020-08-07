@@ -234,10 +234,10 @@ export const signupSetWorkPhoneNumber = (workPhoneNumber, index) => {
     };
 };
 
-export const signupSetWorkEMR = (workEMR, index) => {
+export const signupSetWorkEMR = (EMRIntegration, index) => {
     return {
         type: actionTypes.SIGNUP_SET_WORK_EMR,
-        workEMR,
+        EMRIntegration,
         index
     };
 };

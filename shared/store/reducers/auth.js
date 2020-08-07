@@ -36,7 +36,7 @@ const initialState = {
             workCity: 'Hamilton',
             workPostal: 'L8S 2B8',
             workPhoneNumber: '905-664-7867',
-            workEMR: 'Green'
+            EMRIntegration: 'Green'
 
         }]
     }
@@ -325,7 +325,7 @@ const signupSetWorkEMR = (state, action) => {
     console.log('setting EMR');
     let workLocations = _.cloneDeep(state.healthcareInfo.signupWorkLocations);
     if (typeof(workLocations[action.index]) !== 'object') workLocations[action.index] = {}
-    workLocations[action.index].workEMR = action.workEMR;
+    workLocations[action.index].EMRIntegration = action.EMRIntegration;
 
     return {
         ...state,
