@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { TextField, Accordion, AccordionSummary, AccordionDetails, Checkbox, Typography} from '@material-ui/core';
-//import { vaccineGroups } from 'helper-functions/constantGroups'
+import { TextField, Accordion, AccordionSummary, AccordionDetails, Checkbox, Typography } from '@material-ui/core';
+import { Autocomplete } from '@material-ui/lab';
+import { bacteriaGroups, vaccineGroups } from 'helper-functions/constantGroups'
 
 class BacteriaList extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            bacteria: ''
+            bacteria: '',
         }
     }
 
@@ -34,7 +35,14 @@ class BacteriaList extends React.Component {
                 id="panel1a-header"
                 >
                 <form onSubmit={(event) => this.onSubmit(event)}>
-                <TextField value={this.state.bacteria} onChange={(event) => this.onChange(event)}/>
+                <Autocomplete 
+                        options={bacteriaGroups}
+                        value={this.state.bacteria}
+                        getOptionLabel={(option) => option }
+                        style={{ width: 300 }}
+                        renderInput={(params) => <TextField {...params} defaultValue={this.props.brandName} variant="outlined" />}
+                        onChange={(event, newValue) => this.setState({bacteria: newValue})}
+                        />
                 </form>
                 </AccordionSummary>
                 <AccordionDetails>
@@ -45,7 +53,7 @@ class BacteriaList extends React.Component {
                     </ul>
                 </AccordionDetails>
              </Accordion>
-             : this.props.editing ? 
+             : this.props.editing ? null
             (<Accordion>
                 <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
@@ -56,7 +64,7 @@ class BacteriaList extends React.Component {
                 </AccordionSummary>
                 <AccordionDetails>
                 <ul>
-                {this.props.vaccineGroups && this.props.vaccineGroups[this.props.vaccine].bacteria.map((bacteria) => {
+                {vaccineGroups && vaccineGroups[this.props.vaccine].bacteria.map((bacteria) => {
                         return <li>{bacteria}</li>
                     })}
                     </ul>
@@ -72,7 +80,7 @@ class BacteriaList extends React.Component {
                 </AccordionSummary>
                 <AccordionDetails>
                     <ul>
-                    {this.props.vaccineGroups && this.props.vaccineGroups.find(x => x.vaccine === this.props.vaccine) && this.props.vaccineGroups.find(x => x.vaccine === this.props.vaccine).bacteria.map((bacteria) => {
+                    {vaccineGroups && vaccineGroups.find(x => x.vaccineBrand === this.props.vaccine) && vaccineGroups.find(x => x.vaccineBrand === this.props.vaccine).bacteria.map((bacteria) => {
                         return <li>{bacteria}</li>
                     })}
                     </ul>
