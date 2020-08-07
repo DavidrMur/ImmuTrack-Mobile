@@ -38,7 +38,7 @@ class HealthcareHomePage extends Component {
         })}
 
         return(
-            <div  align='center'>
+            <div className={classes.background} align='center'>
                 <Grid container spacing={2}>
                     <Grid item xs={1} >
                     <TextField label="OHIP" onChange={(e) => this.setState({addPatientOHIP: e.target.value})}/>
