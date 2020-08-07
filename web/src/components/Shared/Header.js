@@ -2,6 +2,7 @@ import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Button, Grid, TextField, Typography } from '@material-ui/core'
+import './Header.css'
 
 class Header extends React.Component {
     

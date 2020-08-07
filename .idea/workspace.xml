@@ -20,9 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cab8b85-8baf-4a8f-b4a9-2193137b543b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/web/src/components/Shared/Header.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Immunization/HealthcarePages/HealthcarePageComponents.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Immunization/HealthcarePages/HealthcarePageComponents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareRecordPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareRecordPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Shared/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Shared/Header.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,10 +84,10 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="389" y="241" key="MultipleFileMergeDialog/0.0.1500.960@0.0.1500.960" timestamp="1596748708619" />
-    <state x="252" y="125" key="SettingsEditor" timestamp="1596744209155">
+    <state x="252" y="125" key="SettingsEditor" timestamp="1596758391590">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="252" y="125" key="SettingsEditor/0.0.1500.960@0.0.1500.960" timestamp="1596744209155" />
+    <state x="252" y="125" key="SettingsEditor/0.0.1500.960@0.0.1500.960" timestamp="1596758391590" />
     <state x="558" y="394" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596748703161">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
