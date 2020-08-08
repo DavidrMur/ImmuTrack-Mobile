@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import * as actions from 'redux-saga-store/actions/index';
 import { TextField, Button, Grid, Card, CardContent } from '@material-ui/core'
 import { PatientRecordTile } from '../../../components/Immunization/HealthcarePages/HealthcarePageComponents';
-import classes from './HealthcareHomePage.module.css';
+import './HealthcareHomePage.css'
+
 class HealthcareHomePage extends Component {
 
     constructor(props){
@@ -38,7 +39,7 @@ class HealthcareHomePage extends Component {
         })}
 
         return(
-            <div className={classes.background} align='center'>
+            <div className={'background'} align='center'>
                 <Grid container spacing={2}>
                     <Grid item xs={1} >
                     <TextField label="OHIP" onChange={(e) => this.setState({addPatientOHIP: e.target.value})}/>

@@ -5,3 +5,9 @@
 .MuiButton-text{
     justify-content: center;
 }
+
+.MuiAppBar-colorPrimary {
+    color: #fff;
+    background-image: linear-gradient(135deg, #172a74, #21a9af);
+}
+

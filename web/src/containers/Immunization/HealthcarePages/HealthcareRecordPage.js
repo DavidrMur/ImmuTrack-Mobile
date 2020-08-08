@@ -11,6 +11,7 @@ import {
 } from '../../../components/Immunization/HealthcarePages/HealthcarePageComponents';
 import { Button, Typography } from '@material-ui/core'
 import PatientVaccines from '../PatientVaccines';
+import './HealthcareRecordPage.css'
 
 // TODO: refactor this page, the vaccines table should be a separate entity
 
@@ -30,7 +31,7 @@ class HealthcareRecordPage extends Component {
     
     render(){
         return(
-            <div>
+            <div className={'background'}>
                 <PatientDisplayTile
                     key={this.props.currentPatient.id}
                     id={this.props.currentPatient.id}

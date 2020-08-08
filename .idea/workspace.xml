@@ -20,11 +20,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cab8b85-8baf-4a8f-b4a9-2193137b543b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareHomePage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareRecordPage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Immunization/PatientRecordVaccines.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Immunization/PatientRecordVaccines.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Immunization/HealthcarePages/BacteriaList.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Immunization/HealthcarePages/BacteriaList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/components/Shared/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Shared/Header.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/containers/Auth/LoginPage/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/containers/Auth/LoginPage/LoginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/containers/Auth/SignupPage/SignupPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/containers/Auth/SignupPage/SignupPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/containers/Auth/SignupPage/SignupPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/containers/Auth/SignupPage/SignupPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareHomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareRecordPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareRecordPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +44,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JupyterTrust" id="dbfb6b90-d7ec-42c3-8ec5-94c20bfdb3d5" />
   <component name="ProjectId" id="1fjogRb3CVn8SCcM2vwAY75LmZY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -51,6 +62,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -62,12 +74,14 @@
       <option name="presentableId" value="Default" />
       <updated>1596740974409</updated>
       <workItem from="1596740995890" duration="5568000" />
-      <workItem from="1596819633093" duration="4299000" />
+      <workItem from="1596819633093" duration="7723000" />
+      <workItem from="1596829845076" duration="3318000" />
+      <workItem from="1596892303138" duration="1406000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -82,6 +96,34 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="206" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596831412118">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="206" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960@0.0.1500.960" timestamp="1596831412118" />
+    <state x="431" y="216" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1596829492497">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="431" y="216" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1500.960@0.0.1500.960" timestamp="1596829492497" />
+    <state width="1458" height="256" key="GridCell.Tab.0.bottom" timestamp="1596847205295">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="1458" height="256" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1596847205295" />
+    <state width="1458" height="256" key="GridCell.Tab.0.center" timestamp="1596847205295">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="1458" height="256" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1596847205295" />
+    <state width="1458" height="256" key="GridCell.Tab.0.left" timestamp="1596847205295">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="1458" height="256" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1596847205295" />
+    <state width="1458" height="256" key="GridCell.Tab.0.right" timestamp="1596847205295">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="1458" height="256" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1596847205295" />
+    <state x="143" y="78" key="MergeDialog" timestamp="1596830758470">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="143" y="78" key="MergeDialog/0.0.1500.960@0.0.1500.960" timestamp="1596830758470" />
     <state x="389" y="241" key="MultipleFileMergeDialog" timestamp="1596748708619">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
@@ -90,9 +132,9 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="252" y="125" key="SettingsEditor/0.0.1500.960@0.0.1500.960" timestamp="1596758391590" />
-    <state x="558" y="394" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596748703161">
+    <state x="558" y="394" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596892361978">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="558" y="394" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1500.960@0.0.1500.960" timestamp="1596748703161" />
+    <state x="558" y="394" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1500.960@0.0.1500.960" timestamp="1596892361978" />
   </component>
 </project>
