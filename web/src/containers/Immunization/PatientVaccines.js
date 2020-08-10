@@ -4,7 +4,8 @@ import { Link, Redirect } from 'react-router-dom';
 import _  from 'lodash';
 import * as actions from 'redux-saga-store/actions/index';
 import { PatientRecordVaccineTitles } from '../../components/Immunization/HealthcarePages/HealthcarePageComponents'
-import { Button } from '@material-ui/core';
+import { Button, CircularProgress } from '@material-ui/core';
+import { Skeleton } from '@material-ui/lab';
 import PatientRecordVaccines from '../../components/Immunization/PatientRecordVaccines';
 
 class PatientVaccines extends Component {
@@ -37,7 +38,8 @@ class PatientVaccines extends Component {
     render(){
 
         if (_.isEmpty(this.props.vaccines)) return <Redirect to="/main" />
-        if (!this.props.currentPatient || _.isEmpty(this.props.currentPatient)) return (<div>loading</div>)
+        if (!this.props.currentPatient || _.isEmpty(this.props.currentPatient)) return (<CircularProgress style={{margin: 'auto', 'margin-top': '50px', display: 'block'}}/>
+            )
 
         return (
             <div>
