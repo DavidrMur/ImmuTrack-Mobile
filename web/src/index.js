@@ -13,11 +13,11 @@ import immunizationReducer from 'redux-saga-store/reducers/immunization';
 
 let composeEnhancers = compose
 
-if (process.env.NODE_ENV === 'development' && navigator.userAgent.indexOf("Chrome") != -1) {
-    composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
-} else {
-    composeEnhancers = compose;
-}
+// if (process.env.NODE_ENV === 'development' && navigator.userAgent.indexOf("Chrome") != -1) {
+//     composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
+// } else {
+//     composeEnhancers = compose;
+// }
 
 
 const sagaMiddleware = createSagaMiddleware();
