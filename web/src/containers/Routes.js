@@ -33,7 +33,6 @@ class Routes extends Component {
     }
 
     checkToken = (date, now) => {
-        debugger;
         if (now - date >= 7200000) this.onSignout();
     }
 
