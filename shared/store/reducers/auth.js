@@ -24,44 +24,15 @@ const initialState = {
         signupLicense: '',
         signupWorkLocations: [],
     },
-    userInfo: {
-        profession: '',
-        firstName: 'Rubert',
-        lastName: 'Scott',
-        OHIP: '',
-        DOB: '',
-        workLocations: [{
-            workName: 'Family Wellness',
-            workAddress: '123 Appleton',
-            workCity: 'Hamilton',
-            workPostal: 'L8S 2B8',
-            workPhoneNumber: '905-664-7867',
-            EMRIntegration: 'Green'
-
-        },
-        {
-            workName: 'Better Health',
-            workAddress: '27 Westbrooke',
-            workCity: 'Toronto',
-            workPostal: 'L2B 8S2',
-            workPhoneNumber: '905-789-3857',
-            EMRIntegration: 'Blue'
-
-        }    
-    ]
-    }
+    userInfo: {}
 
 }
 
 const loginSuccess = (state, action) => {
-    // return {
-    //     ...state,
-    //     userInfo: {
-    //         ...state.userInfo,
-    //         workLocations: action.payload
-    //     }
-    // }
-    return state;
+    return {
+        ...state,
+        userInfo: action.payload
+    }
 }
 
 const loginFail = (state, action) => {
