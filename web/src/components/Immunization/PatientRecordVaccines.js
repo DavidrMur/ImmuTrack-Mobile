@@ -109,7 +109,7 @@ class PatientRecordVaccines extends React.Component {
 
         let patientRecordDisplay = (
             <div>
-                <Button variant={'contained'} onClick={() => this.setState({editing: true})} >Edit</Button>
+                <Button variant={'contained'} disabled={!this.props.editable}onClick={() => this.setState({editing: true})} >Edit</Button>
                 <TableContainer style={{margin:'5px', width:'98%', justifyContent:'center'}} component={Paper}>
                     <Table aria-label="simple table">
                         <TableHead>
@@ -187,7 +187,7 @@ class PatientRecordVaccines extends React.Component {
 
         return (
             <div>
-                {this.state.added ? null : this.props.adding || this.state.editing ? 
+                {this.props.adding || this.state.editing ? 
                     patientRecordEdit
                 :
                     patientRecordDisplay
