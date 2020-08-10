@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as actions from 'redux-saga-store/actions/index';
 import { Button, Grid, TextField, Typography } from '@material-ui/core'
+import SecurityDisclosure from '../../../components/Auth/SecurityDisclosure';
 import './LoginPage.css';
 
 class LoginPage extends Component {
@@ -10,7 +11,8 @@ class LoginPage extends Component {
     state = {
         username: '',
         password: '',
-        profession: undefined
+        profession: undefined,
+        acceptDisclosure: false
     }
     
     setValue = (e, key) => {
@@ -24,10 +26,15 @@ class LoginPage extends Component {
         this.props.loginPending(this.state.username, this.state.password, this.state.profession);
     }
 
+    onSecurityAccept = () => {
+        this.setState({acceptDisclosure: true})
+    }
+
     render(){
         return(
             <div style={{width: '47vw', margin: 'auto', position: 'relative', top:'30px' }}>
-                    {!this.state.profession ? (
+                    { !this.state.acceptDisclosure ? <SecurityDisclosure onSubmit={this.onSecurityAccept} /> :
+                    !this.state.profession ? (
                         <Grid container spacing={2} style={{'text-align': 'center'}}>
                             <Grid item xs={12}>
                                 <Typography variant="h2">Member Login</Typography>
