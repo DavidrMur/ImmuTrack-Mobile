@@ -8,7 +8,6 @@ import ForgotPage from './Auth/ForgotPage/ForgotPage';
 import PatientImmunization from './Immunization/PatientPages/PatientRecordPage';
 import HealthcareHomePage from './Immunization/HealthcarePages/HealthcareHomePage';
 import HealthcareRecordPage from './Immunization/HealthcarePages/HealthcareRecordPage';
-import SecurityDisclosure from '../components/Auth/SecurityDisclosure';
 import Header from '../components/Shared/Header';
 
 
