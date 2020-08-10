@@ -43,6 +43,8 @@ export const SIGNUP_SET_WORK_PHONE_NUMBER = "SIGNUP_SET_WORK_PHONE_NUMBER";
 export const SIGNUP_SET_WORK_EMR = "SIGNUP_SET_WORK_EMR";
 export const SIGNUP_UNSET_WORK_LOCATION = "SIGNUP_UNSET_WORK_LOCATION";
 
+export const SET_WORK_LOCATIONS = "SET_WORK_LOCATIONS"
+
 
 // ---------- Immunization -------------
 

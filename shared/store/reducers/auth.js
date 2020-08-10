@@ -38,16 +38,30 @@ const initialState = {
             workPhoneNumber: '905-664-7867',
             EMRIntegration: 'Green'
 
-        }]
+        },
+        {
+            workName: 'Better Health',
+            workAddress: '27 Westbrooke',
+            workCity: 'Toronto',
+            workPostal: 'L2B 8S2',
+            workPhoneNumber: '905-789-3857',
+            EMRIntegration: 'Blue'
+
+        }    
+    ]
     }
 
 }
 
 const loginSuccess = (state, action) => {
-    return {
-        ...state,
-        userInfo: action.payload
-    }
+    // return {
+    //     ...state,
+    //     userInfo: {
+    //         ...state.userInfo,
+    //         workLocations: action.payload
+    //     }
+    // }
+    return state;
 }
 
 const loginFail = (state, action) => {
