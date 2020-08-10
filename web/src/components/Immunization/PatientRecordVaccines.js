@@ -187,7 +187,7 @@ class PatientRecordVaccines extends React.Component {
 
         return (
             <div>
-                {false ? null : this.props.adding || this.state.editing ? 
+                {this.props.adding || this.state.editing ? 
                     patientRecordEdit
                 :
                     patientRecordDisplay
