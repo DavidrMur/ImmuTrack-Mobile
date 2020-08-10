@@ -32,11 +32,17 @@ class Routes extends Component {
         window.location.reload(false);
     }
 
+    checkToken = (date, now) => {
+        if (now - date >= 7200000) this.onSignout();
+    }
+
     loggedin;
 
     render() {
 
         let routes;
+        let object = JSON.parse(localStorage.getItem("jwtToken")), dateString = object && object.timestamp, now = new Date().getTime().toString();
+        object && this.checkToken(dateString, now);
         this.loggedIn = (localStorage.getItem('jwtToken') !== undefined && localStorage.getItem('jwtToken') !== null); 
 
         // let acceptDisclosure = (localStorage.getItem('acceptDisclosure') && localStorage.getItem('acceptDisclosure') === true);

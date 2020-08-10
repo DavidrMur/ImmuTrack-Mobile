@@ -10,7 +10,8 @@ export function* loginPending(action){
         console.log ('Saga response');
         let payload = formatStateToLoginPayload(action);
         let response = yield axios.post("http://127.0.0.1:5000/signin", payload)
-        localStorage.setItem('jwtToken', response.data.token);
+        var object = {value: "value", timestamp: new Date().getTime()}
+        localStorage.setItem('jwtToken', JSON.stringify(object));
         localStorage.setItem('loggedIn', true);
         response.data = {
             profession: 'Nurse',
