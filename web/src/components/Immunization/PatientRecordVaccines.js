@@ -53,8 +53,6 @@ class PatientRecordVaccines extends React.Component {
     onChangeEvent = (value, type) => {
         let temp = {...this.updatedVaccine}
 
-        //temp[type] = value;
-
         switch (type) {
             case 'dateAdmin':
                 if (value === this.state.maxDate) {
@@ -122,11 +120,6 @@ class PatientRecordVaccines extends React.Component {
     }
 
     render() {
-
-        //let temp = this.state.vaccinesWithOther.concat({vaccine: 'Other', bacteria: []});
-        //temp.push({vaccine: 'Other', bacteria: []});
-        //this.setState({vaccinesWithOther: temp});
-    
 
         let patientRecordDisplay = (
             <div>
