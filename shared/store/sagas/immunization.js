@@ -4,6 +4,7 @@ import axios from '../../axios-config';
 
 export function* patientsPending(action){
     try {
+        debugger;
         console.log ('Saga response');
         let response = yield axios.post("http://127.0.0.1:5000/retrievePatients");
         yield put (actions.patientsSuccess(response.data.patients))
