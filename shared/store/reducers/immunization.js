@@ -29,7 +29,7 @@ const patientInfoSuccess = (state, action) => {
 
 const patientAddEntrySuccess = (state, action) => {
 
-    let updatedVaccines = state.patient.vaccines;
+    let updatedVaccines = state.patient.patientRecords;
     if (!updatedVaccines) updatedVaccines = [action]
     else updatedVaccines = updatedVaccines.concat([action.payload]);
     
@@ -37,7 +37,7 @@ const patientAddEntrySuccess = (state, action) => {
         ...state,
         patient: {
             ...state.patient,
-            vaccines: updatedVaccines
+            patientRecords: updatedVaccines
         }
     }
 }

@@ -57,7 +57,7 @@ export function* patientUpdateInfoPending(action){
         if (action.payload.otherVaccine) yield axios.post("http://127.0.0.1:5000/addVaccine", {vaccine: action.payload.brandName, bacteria: action.payload.bacteria});
         let response = yield axios.post("http://127.0.0.1:5000/editPatientRecord", action.payload);
         // gonna call the api again for updated page?
-        //yield put (actions.patientAddEntrySuccess(action.payload))
+        yield put (actions.patientAddEntrySuccess(action.payload))
         
     } catch (error) {
         // TODO: proper error handling
@@ -76,7 +76,7 @@ export function* patientAddEntryPending(action){
 
         // TODO: remove, temporary fix. Need the functionality to properly manage bacteria
         action.payload.bacteria = [action.payload.bacteria];
-        yield put (actions.patientAddEntrySuccess(response.data))
+        yield put (actions.patientAddEntrySuccess(action.payload))
     }
     catch (error) {
         console.log(error);
