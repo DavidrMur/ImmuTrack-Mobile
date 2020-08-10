@@ -22,10 +22,19 @@ class PatientRecordVaccines extends React.Component {
             editing: false,
             maxDate: new Date().toISOString().slice(0, 10),
             disableAdministered: false,
+            disableOther: false,
             error: false,
             added: false,
-            addOtherVaccine: false
+            addOtherVaccine: false,
+            vaccinesWithoutOther: this.props.vaccines,
+            vaccinesWithOther: this.props.vaccines.concat({vaccine: 'Other', bacteria: []})
         }
+    }
+
+    componentDidMount = () => {
+        // let temp = this.state.vaccinesWithOther;
+        // temp.push({vaccine: 'Other', bacteria: []});
+        // this.setState({vaccinesWithOther: temp});
     }
 
     updatedVaccine = {
@@ -51,14 +60,21 @@ class PatientRecordVaccines extends React.Component {
                 if (value === this.state.maxDate) {
                     temp['administeredUnder'] = `Dr. ${this.props.userInfo.lastName}`;
                     temp['dateAdmin'] = value;
+                    if (temp['otherVaccine']) {
+                        temp['otherVaccine'] = false;
+                        temp['brandName'] = this.props.brandName;
+                        this.setState({addOtherVaccine: false})
+                    }
                     this.setState({disableAdministered: true})
+                    this.setState({disableOther: true})
                 } else {
                     this.setState({disableAdministered: false})
+                    this.setState({disableOther: false})
                     temp['dateAdmin'] = value;
                 }
                 break;
             case 'brandName':
-                if (value === 'Other') {
+                if (value === 'Other') { 
                     this.setState({addOtherVaccine: true});
                     temp['bacteria'] = [];  
                     temp['otherVaccine'] = true;
@@ -106,6 +122,11 @@ class PatientRecordVaccines extends React.Component {
     }
 
     render() {
+
+        //let temp = this.state.vaccinesWithOther.concat({vaccine: 'Other', bacteria: []});
+        //temp.push({vaccine: 'Other', bacteria: []});
+        //this.setState({vaccinesWithOther: temp});
+    
 
         let patientRecordDisplay = (
             <div>
@@ -156,17 +177,27 @@ class PatientRecordVaccines extends React.Component {
                         className="flex-item"
                         onChange={(event) => this.onChangeEvent(event.target.value, 'dateAdmin')} 
                         />
-
+                    { this.state.disableOther ?
                     <Autocomplete 
-                        options={this.props.vaccines}
-                        getOptionLabel={(option) => option.vaccine || (this.props.vaccines.find(vaccine => vaccine.vaccine === option)).vaccine}
+                        options={ this.state.vaccinesWithoutOther}
+                        getOptionLabel={(option) => option.vaccine || (this.state.vaccinesWithoutOther.find(vaccine => vaccine.vaccine === option)).vaccine}
                         style={{ width: 300 }}
-                        renderInput={(params) => <TextField {...params} defaultValue={this.props.brandName} variant="outlined" />}
+                        renderInput={(params) => <TextField {...params}defaultValue={this.updatedVaccine['brandName'] || this.props.brandName} variant="outlined" />}
                         getOptionSelected={(option, value) => option.vaccine === value}
-                        defaultValue={this.props.brandName}
+                        defaultValue={this.updatedVaccine['brandName']}
                         className="flex-item" 
                         onChange={(event, newValue) => this.onChangeEvent(newValue && newValue.vaccine, 'brandName')}
                         />
+                    : <><Autocomplete 
+                        options={ this.state.vaccinesWithOther}
+                        getOptionLabel={(option) => option.vaccine || (this.state.vaccinesWithOther.find(vaccine => vaccine.vaccine === option)).vaccine}
+                        style={{ width: 300 }}
+                        renderInput={(params) => <TextField {...params} defaultValue={this.updatedVaccine['brandName'] || this.props.brandName} variant="outlined" />}
+                        getOptionSelected={(option, value) => option.vaccine === value}
+                        defaultValue={this.updatedVaccine['brandName']}
+                        className="flex-item" 
+                        onChange={(event, newValue) => this.onChangeEvent(newValue && newValue.vaccine, 'brandName')}
+                        /></> }
                         {/* TODO: styling, should be above or under not side by side */}
                         {this.state.addOtherVaccine ? <TextField onChange={(event) => this.onChangeEvent(event.target.value,'otherBrandName')} helperText={'Enter the vaccine vaccine brand'} /> : null}
                     <BacteriaList vaccine={this.updatedVaccine.brandName} bacteria={this.updatedVaccine.bacteria} otherVaccine={this.state.addOtherVaccine} onAddBacteria={(this.onChangeEvent)} vaccineGroups={this.props.vaccines} />
