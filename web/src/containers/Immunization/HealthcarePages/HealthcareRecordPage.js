@@ -35,8 +35,8 @@ class HealthcareRecordPage extends Component {
                 <PatientDisplayTile
                     key={this.props.currentPatient.id}
                     id={this.props.currentPatient.id}
-                    firstName={'John'}
-                    lastName={'Doe'}
+                    firstName={this.props.currentPatient.firstName}
+                    lastName={this.props.currentPatient.lastName}
                     DOB={this.props.currentPatient.DOB}
                     OHIP={this.props.currentPatient.OHIP}
                 />

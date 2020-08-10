@@ -70,7 +70,7 @@ class Routes extends Component {
         routes = this.loggedIn ? (this.props.userInfo.profession !== 'patient' ? existingHealthcareRoutes : existingPatientRoutes) : newVisitRoutes;
         
     return (
-        <div>
+        <div >
             <Header loggedIn={this.loggedIn} onSignout={this.onSignout}/>
             {routes}
         </div>
