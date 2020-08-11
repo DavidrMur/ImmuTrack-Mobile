@@ -2,13 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
 import * as actions from 'redux-saga-store/actions/index';
-import {
-    PatientDisplayTile,
-    PatientRecordTile,
-    PatientRecordVaccines,
-    PatientRecordVaccinesEdit,
-    PatientRecordVaccineTitles
-} from '../../../components/Immunization/HealthcarePages/HealthcarePageComponents';
+import { PatientDisplayTile } from '../../../components/Immunization/HealthcarePages/HealthcarePageComponents';
 import { Button, Typography } from '@material-ui/core'
 import PatientVaccines from '../PatientVaccines';
 import './HealthcareRecordPage.css'
