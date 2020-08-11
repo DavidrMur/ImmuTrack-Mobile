@@ -74,7 +74,7 @@ class BacteriaList extends React.Component {
                 </AccordionDetails>
             </Accordion> :
              // display
-            <ul style={{display: 'inline-block'}}>
+            <ul style={{display: 'inline-block', 'text-align': 'left'}}>
                 {this.props.vaccineGroups && this.props.vaccineGroups.find(x => x.vaccine === this.props.vaccine) && this.props.vaccineGroups.find(x => x.vaccine === this.props.vaccine).bacteria.map((bacteria) => {
                         return <li>{bacteria}</li>
                     })}
