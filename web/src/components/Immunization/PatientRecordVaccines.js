@@ -130,6 +130,7 @@ class PatientRecordVaccines extends React.Component {
                             <TableRow>
                                 <TableCell>Date of Admin</TableCell>
                                 <TableCell align="right">Vaccine Brand</TableCell>
+                                <TableCell align="right">Pathogen(s)</TableCell>
                                 <TableCell align="right">Lot#</TableCell>
                                 <TableCell align="right">Expiry</TableCell>
                                 <TableCell align="right">Administered by</TableCell>
@@ -140,6 +141,9 @@ class PatientRecordVaccines extends React.Component {
                                 <TableRow>
                                     <TableCell align="left">{this.updatedVaccine.dateAdmin}</TableCell>
                                     <TableCell align="right">{this.updatedVaccine.brandName}</TableCell>
+                                    <TableCell align="right">
+                                        <BacteriaList vaccine={this.updatedVaccine.brandName} bacteria={this.props.bacteria} vaccineGroups={this.props.vaccines} />
+                                    </TableCell>
                                     <TableCell align="right">{this.updatedVaccine.lot}</TableCell>
                                     <TableCell align="right">{this.updatedVaccine.expiryDate}</TableCell>
                                     <TableCell align="right">{this.updatedVaccine.administeredUnder}</TableCell>
@@ -148,7 +152,6 @@ class PatientRecordVaccines extends React.Component {
                         </TableBody>
                     </Table>
                 </TableContainer>
-                <BacteriaList vaccine={this.updatedVaccine.brandName} bacteria={this.props.bacteria} vaccineGroups={this.props.vaccines} />
             </div>
 
         );
@@ -193,7 +196,7 @@ class PatientRecordVaccines extends React.Component {
                         /></> }
                         {/* TODO: styling, should be above or under not side by side */}
                         {this.state.addOtherVaccine ? <TextField onChange={(event) => this.onChangeEvent(event.target.value,'otherBrandName')} helperText={'Enter the vaccine vaccine brand'} /> : null}
-                    <BacteriaList vaccine={this.updatedVaccine.brandName} bacteria={this.updatedVaccine.bacteria} otherVaccine={this.state.addOtherVaccine} onAddBacteria={(this.onChangeEvent)} vaccineGroups={this.props.vaccines} />
+                    <BacteriaList editing vaccine={this.updatedVaccine.brandName} bacteria={this.updatedVaccine.bacteria} otherVaccine={this.state.addOtherVaccine} onAddBacteria={(this.onChangeEvent)} vaccineGroups={this.props.vaccines} />
                     <TextField type={'text'} label={'Lot#'} defaultValue={this.updatedVaccine.lot} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'lot')}/>
                     <TextField type="date" defaultValue={this.updatedVaccine.expiryDate} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value,'expiryDate')}/>
                     <TextField type="text" disabled={this.state.disableAdministered} value={this.updatedVaccine.administeredUnder} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value, 'administeredUnder')}/>
