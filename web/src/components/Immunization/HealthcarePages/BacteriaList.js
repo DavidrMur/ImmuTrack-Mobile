@@ -28,6 +28,7 @@ class BacteriaList extends React.Component {
         return (
             <div>
             { this.props.otherVaccine ?
+            // adding
             <Accordion>
                 <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
@@ -54,30 +55,15 @@ class BacteriaList extends React.Component {
                     </ul>
                 </AccordionDetails>
              </Accordion>
-             : this.props.editing ? null
-            (<Accordion>
+             : this.props.editing ?
+                // editing
+            <Accordion>
                 <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
                 >
-                <Typography >Pathogen(s)</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                <ul>
-                {this.props.vaccineGroups && this.props.vaccineGroups.find(x => x.vaccine === this.props.vaccine) && this.props.vaccineGroups.find(x => x.vaccine === this.props.vaccine).bacteria.map((bacteria) => {
-                        return <li>{bacteria}</li>
-                    })}
-                    </ul>
-                </AccordionDetails>
-            </Accordion>) 
-            : <Accordion>
-                <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-                >
-                <Typography >Pathogen(s)</Typography>
+                    <Typography >Pathogen(s)</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <ul>
@@ -86,7 +72,14 @@ class BacteriaList extends React.Component {
                     })}
                     </ul>
                 </AccordionDetails>
-             </Accordion> }
+            </Accordion> :
+             // display
+            <ul style={{display: 'inline-block'}}>
+                {this.props.vaccineGroups && this.props.vaccineGroups.find(x => x.vaccine === this.props.vaccine) && this.props.vaccineGroups.find(x => x.vaccine === this.props.vaccine).bacteria.map((bacteria) => {
+                        return <li>{bacteria}</li>
+                    })}
+            </ul> 
+            }
             </div>)
     }
 }
