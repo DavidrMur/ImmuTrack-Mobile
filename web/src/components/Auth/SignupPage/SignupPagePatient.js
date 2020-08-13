@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router';
 import { SignupOHIP, SignupSCN, SignupName, SignupOwner, SignupDOB, SignupGender, SignupRace, SignupEduLevel, SignupReview, SignupCredentials, SignupGeneral } from './SignupPageComponents';
 import { Button, Grid, TextField, Typography, Select, MenuItem } from '@material-ui/core';
 
@@ -6,9 +7,19 @@ class SignupPagePatient extends Component {
 
     state = {
         pageCount: 1,
-        maxPageCount: 10 // TODO: This is general info, maybe a constant?
+        maxPageCount: 10, // TODO: This is general info, maybe a constant?
+        redirect: false
     }
 
+    queueRedirect = () => {
+        setTimeout(() => (window.location.replace("http://localhost:3000/login")), 5000);
+    }
+
+    onSignup = () => {
+        //this.props.signup();
+        this.setState({redirect: true});
+        this.queueRedirect();
+    }
 
     render() {
 
@@ -50,11 +61,16 @@ class SignupPagePatient extends Component {
 
         return (
             <div>
+                {this.state.redirect ? 
+                    <Typography>Your signup was successful! You will be redirected to the login page where you can login using your new account</Typography>
+                :
+            <div>
                 {signupView}
                 {/* TODO: Make into a component (do we really need to?)*/}
                 <Button style={{margin: "10px"}} onClick={() => this.setState({pageCount: this.state.pageCount - 1})} disabled ={this.state.pageCount === 1} >Back</Button>
-                <Button onClick={() => this.setState({pageCount: this.state.pageCount + 1})} hidden= {this.state.pageCount === this.state.maxPageCount}>Next</Button>
-                <Button onClick={this.props.signup} hidden= {!(this.state.pageCount === this.state.maxPageCount)}>Signup</Button>
+                {this.state.pageCount === this.state.maxPageCount ? <Button onClick={this.onSignup}>Signup</Button> : <Button onClick={() => this.setState({pageCount: this.state.pageCount + 1})}>Next</Button> }
+            </div>
+            }
             </div>
         )
     }
