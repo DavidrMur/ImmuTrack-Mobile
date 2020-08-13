@@ -45,12 +45,14 @@ const patientAddEntrySuccess = (state, action) => {
 const patientRemoveEntrySuccess = (state, action) => {
 
     let updatedVaccines = state.patient.patientRecords;
+    let temp = updatedVaccines.filter(record => record.entryId !== action.payload);
+    console.log(temp);
     
     return {
         ...state,
         patient: {
             ...state.patient,
-            patientRecords: updatedVaccines.filter(record => record.entryId !== action.payload)
+            patientRecords: temp
         }
     }
 }
