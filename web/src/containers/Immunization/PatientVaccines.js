@@ -4,7 +4,10 @@ import { Redirect } from 'react-router-dom';
 import _  from 'lodash';
 import * as actions from 'redux-saga-store/actions/index';
 import { PatientRecordVaccineTitles } from '../../components/Immunization/HealthcarePages/HealthcarePageComponents'
-import { Button, CircularProgress } from '@material-ui/core';
+import { Button, CircularProgress, Typography } from '@material-ui/core';
+//import { ArrowDownwardIcon, ArrowUpwardIcon} from '@material-ui/icons';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import PatientRecordVaccines from '../../components/Immunization/PatientRecordVaccines';
 
 class PatientVaccines extends Component {
@@ -13,13 +16,20 @@ class PatientVaccines extends Component {
         super(props);
 
         this.state = {
-            adding: false
+            adding: false,
+            patientRecords: [],
+            sortBy: undefined,
+            sorting: {
+                brandName: true,
+                dateAdmin: true
+            }
         };
 
     }
 
     componentWillReceiveProps(nextProps) {
         this.setState({vaccine: nextProps.data})
+        this.setState({patientRecords: nextProps.currentPatient.patientRecords})
     }
 
     onNewEntryChangeEvent = (value, type) => {
@@ -38,6 +48,35 @@ class PatientVaccines extends Component {
         this.setState({adding: false});
     }
 
+    onSortBy = (type) => {
+
+        if (this.state.sortBy === type) {
+            let temp = this.state.sorting;
+            temp[type] = !temp[type];
+            this.setState({sorting: temp});
+            return this.setState({patientRecords: this.state.patientRecords.reverse()})
+        }
+        else {
+            this.setState({sortBy: type})
+            this.setState({sorting: {brandName: true, dateAdmin: true}});
+        }
+
+        switch(type) {
+            case 'brandName':
+                this.setState({patientRecords: _.orderBy(this.props.currentPatient.patientRecords, ['brandName'], ['asc'])})
+                break;
+            case 'dateAdmin':
+                this.setState({patientRecords: _.orderBy(this.props.currentPatient.patientRecords, ['dateAdmin'], ['asc'])})
+                break;
+            case 'reset':
+                this.setState({patientRecords: this.props.currentPatient.patientRecords})
+                break;
+            default:
+                break;    
+        }
+    }
+
+
     render(){
 
         if (_.isEmpty(this.props.vaccines)) return <Redirect to="/main" />
@@ -47,8 +86,14 @@ class PatientVaccines extends Component {
         return (
             <div>
                 <PatientRecordVaccineTitles />
+                <div style={{'margin-bottom': '20px'}}>
+                    <Typography variant='h5'>Sort by:</Typography>
+                    <Button onClick={() => this.onSortBy('brandName')} endIcon={this.state.sorting.brandName ? <ArrowUpwardIcon>Vaccine</ArrowUpwardIcon> : <ArrowDownwardIcon>Vaccine</ArrowDownwardIcon>}>Vaccine</Button>
+                    <Button onClick={() => this.onSortBy('dateAdmin')} endIcon={this.state.sorting.dateAdmin ? <ArrowUpwardIcon>Date of Administration</ArrowUpwardIcon> : <ArrowDownwardIcon>Date of Administration</ArrowDownwardIcon>}>Date of Administration</Button>
+                    <Button onClick={() => this.onSortBy('reset')}>Reset</Button>
+                </div>
                 {this.state.adding ? <PatientRecordVaccines adding vaccines={this.props.vaccines} userInfo={this.props.currentUser} onSubmitEvent={this.onNewEntrySubmitEvent} onCancel={this.onCancel} /> : !this.props.displayOnly ? <Button onClick={() => (this.setState({adding: true}))} >Add Entry</Button> : null}
-                {this.props.currentPatient.patientRecords && this.props.currentPatient.patientRecords.map((vaccine) => {
+                {this.state.patientRecords && this.state.patientRecords.map((vaccine) => {
                     return (<PatientRecordVaccines
                         dateAdmin={vaccine.dateAdmin}
                         brandName={vaccine.brandName}
