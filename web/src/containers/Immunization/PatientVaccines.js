@@ -5,7 +5,6 @@ import _  from 'lodash';
 import * as actions from 'redux-saga-store/actions/index';
 import { PatientRecordVaccineTitles } from '../../components/Immunization/HealthcarePages/HealthcarePageComponents'
 import { Button, CircularProgress, Typography } from '@material-ui/core';
-//import { ArrowDownwardIcon, ArrowUpwardIcon} from '@material-ui/icons';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import PatientRecordVaccines from '../../components/Immunization/PatientRecordVaccines';
