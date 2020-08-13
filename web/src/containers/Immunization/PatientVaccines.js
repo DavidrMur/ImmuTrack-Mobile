@@ -61,7 +61,7 @@ class PatientVaccines extends Component {
                         userInfo={this.props.currentUser}
                         entryId={vaccine.entryId}
                         vaccines={this.props.vaccines}
-                        editable={vaccine.editable}
+                        editable={vaccine.editable && vaccine.administeredUnder === `Dr. ${this.props.currentUser.lastName}`}
                         displayOnly={this.props.displayOnly}
                         removeEntry={(entryId) => this.props.patientRemoveEntryPending(entryId, this.props.currentPatient.OHIP)}
                         onSubmitEvent={(payload ) => this.props.patientUpdateInfoPending({...payload, ohip: this.props.currentPatient.OHIP})}
