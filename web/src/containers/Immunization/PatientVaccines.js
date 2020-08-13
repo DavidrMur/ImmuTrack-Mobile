@@ -35,6 +35,10 @@ class PatientVaccines extends Component {
         this.setState({adding:false})
     };
 
+    onCancel = () => {
+        this.setState({adding: false});
+    }
+
     render(){
 
         if (_.isEmpty(this.props.vaccines)) return <Redirect to="/main" />
@@ -44,7 +48,7 @@ class PatientVaccines extends Component {
         return (
             <div>
                 <PatientRecordVaccineTitles />
-                {this.state.adding ? <PatientRecordVaccines adding vaccines={this.props.vaccines} userInfo={this.props.currentUser} onSubmitEvent={this.onNewEntrySubmitEvent}/> : !this.props.displayOnly ? <Button onClick={() => (this.setState({adding: true}))} >Add Entry</Button> : null}
+                {this.state.adding ? <PatientRecordVaccines adding vaccines={this.props.vaccines} userInfo={this.props.currentUser} onSubmitEvent={this.onNewEntrySubmitEvent} onCancel={this.onCancel} /> : !this.props.displayOnly ? <Button onClick={() => (this.setState({adding: true}))} >Add Entry</Button> : null}
                 {this.props.currentPatient.patientRecords && this.props.currentPatient.patientRecords.map((vaccine) => {
                     return (<PatientRecordVaccines
                         dateAdmin={vaccine.dateAdmin}
