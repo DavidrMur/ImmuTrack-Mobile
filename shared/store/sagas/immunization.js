@@ -21,7 +21,7 @@ export function* patientInfoPending(action){
         //     patientOHIP: action.OHIP,
         //     jwtToken: localStorage.getItem('jwtToken')
         // }
-      
+        debugger;
         let body = {ohip: action.patientOHIP }
         let response = yield axios.post("http://127.0.0.1:5000/retrievePatientRecord",body);
         // let response = {
@@ -76,7 +76,7 @@ export function* patientAddEntryPending(action){
 
         // TODO: remove, temporary fix. Need the functionality to properly manage bacteria
         action.payload.bacteria = [action.payload.bacteria];
-        yield put (actions.patientAddEntrySuccess(action.payload))
+        yield put (actions.patientInfoPending(action.ohip));
     }
     catch (error) {
         console.log(error);
