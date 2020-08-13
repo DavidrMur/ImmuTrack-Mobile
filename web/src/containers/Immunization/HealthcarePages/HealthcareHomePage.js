@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import * as actions from 'redux-saga-store/actions/index';
-import { TextField, Button, Grid, Card, CardContent } from '@material-ui/core'
+import { TextField, Button, Grid } from '@material-ui/core'
 import { PatientRecordTile } from '../../../components/Immunization/HealthcarePages/HealthcarePageComponents';
 import './HealthcareHomePage.css'
 

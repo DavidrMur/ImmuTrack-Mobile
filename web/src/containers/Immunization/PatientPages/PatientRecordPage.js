@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import _  from 'lodash';
 import * as actions from 'redux-saga-store/actions/index';
 import PatientVaccines from '../PatientVaccines';
 import { PatientDisplayTile } from '../../../components/Immunization/HealthcarePages/HealthcarePageComponents';
-import { Button, Grid, TextField, Typography } from '@material-ui/core'
+import { Button } from '@material-ui/core'
 
 class PatientRecordPage extends Component {
 

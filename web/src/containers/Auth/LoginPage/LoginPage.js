@@ -35,12 +35,12 @@ class LoginPage extends Component {
             <div style={{width: '47vw', margin: 'auto', position: 'relative', top:'30px' }}>
                     { !this.state.acceptDisclosure ? <SecurityDisclosure onSubmit={this.onSecurityAccept} /> :
                     !this.state.profession ? (
-                        <Grid container spacing={2} style={{'text-align': 'center'}}>
+                        <Grid container spacing={2} style={{'textAlign': 'center'}}>
                             <Grid item xs={12}>
                                 <Typography variant="h2">Member Login</Typography>
                             </Grid>
                             <Grid item xs={12}>
-                                <Typography variant="paragraph">Please select the login type which applies to you</Typography>
+                                <Typography variant="body1">Please select the login type which applies to you</Typography>
                             </Grid>
                             <Grid item xs = {6}>
                                 <Button variant="outlined" onClick={() => this.setState({profession: 'provider'})}> Provider </Button>
@@ -50,7 +50,7 @@ class LoginPage extends Component {
                             </Grid>
                         </Grid>
                     ) : (
-                    <Grid container spacing={2} style={{'text-align': 'center'}}>
+                    <Grid container spacing={2} style={{'textAlign': 'center'}}>
                     <Grid item xs={12}>
                         <Typography variant="h2">Login</Typography>
                     </Grid>
@@ -61,11 +61,11 @@ class LoginPage extends Component {
                         <TextField style={{width: "70%"}} required type="password" label="password" onChange={(event) => this.setValue(event, 'password')}/>
                     </Grid>
                     <Grid item xs={6}>
-                        <Typography variant="paragraph">Remember Me</Typography>
+                        <Typography variant="body1">Remember Me</Typography>
                         <input type="checkbox" />
                     </Grid>
                     <Grid item xs={6}>
-                        <Typography variant="paragraph">Forgot Password?</Typography>
+                        <Typography variant="body1">Forgot Password?</Typography>
                     </Grid>
                     <Grid item xs={12} >
                         <Button variant="contained" onClick={(e) => this.onSubmit(e)}>Login</Button>

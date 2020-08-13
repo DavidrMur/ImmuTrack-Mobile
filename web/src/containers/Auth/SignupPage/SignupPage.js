@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import SignupPagePatient from '../../../components/Auth/SignupPage/SignupPagePatient';
 import SignupPageHealthcare from '../../../components/Auth/SignupPage/SignupPageHealthcare';
 import * as actions from 'redux-saga-store/actions';
-import { Button, Grid, TextField, Typography} from '@material-ui/core'
+import { Button } from '@material-ui/core'
 
 class SignupPage extends Component {
 

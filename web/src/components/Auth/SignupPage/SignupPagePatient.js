@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router';
 import { SignupOHIP, SignupSCN, SignupName, SignupOwner, SignupDOB, SignupGender, SignupRace, SignupEduLevel, SignupReview, SignupCredentials, SignupGeneral } from './SignupPageComponents';
-import { Button, Grid, TextField, Typography, Select, MenuItem } from '@material-ui/core';
+import { Button, Typography} from '@material-ui/core';
 
 class SignupPagePatient extends Component {
 

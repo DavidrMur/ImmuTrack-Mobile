@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { TextField, Accordion, AccordionSummary, AccordionDetails, Checkbox, Typography } from '@material-ui/core';
+import { TextField, Accordion, AccordionSummary, AccordionDetails, Typography } from '@material-ui/core';
 import { Autocomplete } from '@material-ui/lab';
-import { bacteriaGroups, vaccineGroups } from 'helper-functions/constantGroups'
+import { bacteriaGroups } from 'helper-functions/constantGroups'
 
 class BacteriaList extends React.Component {
 

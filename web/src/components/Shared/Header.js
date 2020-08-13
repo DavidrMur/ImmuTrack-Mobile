@@ -1,7 +1,7 @@
-import React, { Component} from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Button, Grid, TextField, Typography, AppBar, Toolbar, IconButton } from '@material-ui/core'
+import { Button, Typography, AppBar, Toolbar } from '@material-ui/core'
 import './Header.css'
 
 class Header extends React.Component {
@@ -14,7 +14,7 @@ class Header extends React.Component {
                         <Typography variant={'h3'} style={{margin: "10px"}}>ImmuTrack</Typography>
                         {this.props.loggedIn ?
                             <>
-                                <Button variant={'default'}>
+                                <Button>
                                     <Link to='/'>Main</Link>
                                 </Button>
                                 <Button variant={'default'} onClick={() => this.props.onSignout()}>Sign Out</Button>
@@ -23,13 +23,13 @@ class Header extends React.Component {
                             <>
                             <div style={{width:"100%"}}>
                                 <Link to='/login' style={{float: "right", textDecoration:"none"}}>
-                                    <Button variant={'default'}  >
-                                        <Typography variant={'paragraph'}style={{color:"white"}}>Login</Typography>
+                                    <Button >
+                                        <Typography style={{color:"white"}}>Login</Typography>
                                     </Button>
                                 </Link>
                                 <Link to='/signup' style={{float: "right", textDecoration:"none"}}>
-                                    <Button variant={'default'}>
-                                        <Typography variant={'paragraph'} style={{color:"white"}}>Signup</Typography>
+                                    <Button>
+                                        <Typography style={{color:"white"}}>Signup</Typography>
                                     </Button>
                                 </Link>
                             </div>
