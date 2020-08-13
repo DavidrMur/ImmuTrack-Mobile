@@ -74,6 +74,7 @@ class LoginPage extends Component {
                         <Button>
                         <Link to="/signup">Create an Account</Link>
                         </Button>
+                        <Button onClick={() => this.setState({profession: undefined})}>Back</Button>
                     </Grid>
                 
                 </Grid>)}
