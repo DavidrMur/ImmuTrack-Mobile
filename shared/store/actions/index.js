@@ -43,6 +43,8 @@ export {
     patientUpdateInfoPending,
     patientAddEntryPending,
     patientAddEntrySuccess,
+    patientRemoveEntryPending,
+    patientRemoveEntrySuccess,
     patientAddPending,
     patientAddSuccess,
     retrieveVaccinesPending,
