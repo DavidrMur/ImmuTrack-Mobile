@@ -5,7 +5,7 @@ class SecurityDisclosure extends Component {
     
     render() {
         return (
-            <Grid container spacing={12} style={{'text-align': 'left', 'margin': 'auto', 'width': '80vw'}}>
+            <Grid container spacing={10} style={{'textAlign': 'left', 'margin': 'auto', 'width': '90vw'}}>
                 <Grid item xs={8} >
                     <Typography variant="h2">Acceptable Use Policy</Typography>
                     <Typography variant="h4">CONSENT TO DISCLOSE YOUR PERSONAL HEALTH INFORMATION</Typography>
@@ -22,6 +22,7 @@ class SecurityDisclosure extends Component {
                     <Typography variant="body1">You are respoonsible for the security of the device, browser, and network that you are using to access this website. You 
                         will use reasonable care to safeguard your Ontario Immunization username and password to access the website. You will not reveal your Ontario
                         Immunization username or password to anyone.
+                        <br />
                         <br />
                         By selecting the "I Accept" button you are acknowledging that you have read, understood and will comply with the information presented above in the
                         Terms of Use.

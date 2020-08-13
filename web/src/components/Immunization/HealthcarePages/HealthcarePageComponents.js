@@ -1,18 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Autocomplete } from '@material-ui/lab';
-import { vaccineGroups } from 'helper-functions/constantGroups';
-import { TextField, Accordion, AccordionSummary, AccordionDetails, Checkbox, Typography, Button} from '@material-ui/core';
-import { MDBCard, MDBCardTitle, MDBCardText, MDBContainer, MDBCardHeader } from "mdbreact";
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { Typography, Button} from '@material-ui/core';
+import { MDBCard, MDBCardTitle, MDBCardText, MDBContainer } from "mdbreact";
 import './HealthcarePageComponents.css';
-import TableContainer from "@material-ui/core/TableContainer";
-import Paper from "@material-ui/core/Paper";
-import Table from "@material-ui/core/Table";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import TableCell from "@material-ui/core/TableCell";
-import TableBody from "@material-ui/core/TableBody";
 
 export const PatientRecordTile = (props) => {
     return (

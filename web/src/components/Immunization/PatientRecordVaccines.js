@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import { TextField, Accordion, AccordionSummary, AccordionDetails, Checkbox, Typography, Select, MenuItem, Button } from '@material-ui/core';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import React from 'react';
+import { TextField, Typography, Button } from '@material-ui/core';
 import { Autocomplete } from '@material-ui/lab';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -9,8 +8,6 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
-import { vaccineGroups } from 'helper-functions/constantGroups';
 import BacteriaList from './HealthcarePages/BacteriaList';
 import DeleteRecord from './HealthcarePages/DeleteRecord';
 

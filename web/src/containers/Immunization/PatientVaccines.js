@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import _  from 'lodash';
 import * as actions from 'redux-saga-store/actions/index';
 import { PatientRecordVaccineTitles } from '../../components/Immunization/HealthcarePages/HealthcarePageComponents'
 import { Button, CircularProgress } from '@material-ui/core';
-import { Skeleton } from '@material-ui/lab';
 import PatientRecordVaccines from '../../components/Immunization/PatientRecordVaccines';
 
 class PatientVaccines extends Component {

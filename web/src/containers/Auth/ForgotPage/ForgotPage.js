@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import * as actions from 'redux-saga-store/actions/index';
 import { Button, Grid, TextField, Typography } from '@material-ui/core'
 
@@ -99,13 +98,6 @@ class ForgotPage extends Component {
         );
     }
 }
-
-
-const mapStateToProps = state => {
-    return {
-        
-    };
-};
 
 const mapDispathToProps = dispatch => {
     return {
