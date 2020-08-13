@@ -59,6 +59,7 @@ class PatientVaccines extends Component {
                         location={vaccine.location}
                         userInfo={this.props.currentUser}
                         entryId={vaccine.entryId}
+                        key={vaccine.entryId}
                         vaccines={this.props.vaccines}
                         editable={vaccine.editable && vaccine.administeredUnder === `Dr. ${this.props.currentUser.lastName}`}
                         displayOnly={this.props.displayOnly}
