@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Dialog, DialogActions, DialogTitle, DialogContent, DialogContentText } from '@material-ui/core'
+import './HealthcarePageComponents.css';
 
 class DeleteRecord extends React.Component {
 
@@ -32,17 +33,17 @@ class DeleteRecord extends React.Component {
                     </DialogContent>
                     <DialogActions>
                     <Button onClick={this.onCancel} color="primary">
-                        Disagree
+                        Cancel
                     </Button>
                     <Button onClick={this.onRemove} color="primary" autoFocus>
-                        Agree
+                        Remove
                     </Button>
                     </DialogActions>
                 </Dialog> 
                 : 
                 null
             }
-            <Button variant="contained" onClick={() => this.setState({open: true})}>Remove</Button>
+            <Button className={'flex-item'} variant="outlined" onClick={() => this.setState({open: true})}>Remove</Button>
             </div>
         )
     }

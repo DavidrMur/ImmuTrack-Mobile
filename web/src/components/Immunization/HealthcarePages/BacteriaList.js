@@ -40,7 +40,7 @@ class BacteriaList extends React.Component {
                         options={bacteriaGroups}
                         value={this.state.bacteria}
                         getOptionLabel={(option) => option }
-                        style={{ width: 300 }}
+                        style={{ width: '200px' }}
                         freeSolo
                         renderInput={(params) => <TextField {...params} defaultValue={this.props.brandName} variant="outlined" />}
                         onChange={(event, newValue) => this.setState({bacteria: newValue})}
@@ -63,7 +63,7 @@ class BacteriaList extends React.Component {
                 aria-controls="panel1a-content"
                 id="panel1a-header"
                 >
-                    <Typography >Pathogen(s)</Typography>
+                    <Typography variant="body1">Pathogen(s)</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <ul>

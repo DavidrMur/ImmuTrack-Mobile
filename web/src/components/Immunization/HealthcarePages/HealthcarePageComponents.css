@@ -1,8 +1,4 @@
 .flex-container {
-    padding: 0;
-    margin-left: 50px;
-    list-style: none;
-    
     -ms-box-orient: horizontal;
     display: -webkit-box;
     display: -moz-box;
@@ -13,10 +9,7 @@
   }
 
   .flex-item {
-    margin: 10px;
-    
-    font-weight: bold;
-    text-align: center;
+    margin: 10px !important;
   }
 
   .button {
@@ -51,3 +44,4 @@ h1 {
       background-color: white;
 
   }
+
