@@ -52,6 +52,21 @@ export const patientAddEntrySuccess = (payload) => {
     }
 }
 
+export const patientRemoveEntryPending = (entryId, ohip) => {
+    return {
+        type: actionTypes.IMMU_PATIENT_REMOVE_ENTRY_PENDING,
+        entryId,
+        ohip
+    }
+}
+
+export const patientRemoveEntrySuccess = (payload) => {
+    return {
+        type: actionTypes.IMMU_PATIENT_REMOVE_ENTRY_SUCCESS,
+        payload
+    }
+}
+
 export const patientAddPending = (OHIP) => {
     return {
         type: actionTypes.IMMU_PATIENT_ADD_PENDING,

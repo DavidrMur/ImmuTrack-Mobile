@@ -59,6 +59,7 @@ class PatientVaccines extends Component {
                         vaccines={this.props.vaccines}
                         editable={vaccine.editable}
                         displayOnly={this.props.displayOnly}
+                        removeEntry={(entryId) => this.props.patientRemoveEntryPending(entryId, this.props.currentPatient.OHIP)}
                         onSubmitEvent={(payload ) => this.props.patientUpdateInfoPending({...payload, ohip: this.props.currentPatient.OHIP})}
                 />)
              })}
@@ -79,6 +80,7 @@ const mapStateToProps = state => {
 const mapDispathToProps = dispatch => {
     return {
         patientAddEntryPending: (payload, ohip) => dispatch(actions.patientAddEntryPending(payload, ohip)),
+        patientRemoveEntryPending: (entryId, ohip) => dispatch(actions.patientRemoveEntryPending(entryId, ohip)),
         patientUpdateInfoPending: (payload) => dispatch(actions.patientUpdateInfoPending(payload))
     };
 };

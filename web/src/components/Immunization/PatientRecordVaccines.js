@@ -12,6 +12,7 @@ import Paper from '@material-ui/core/Paper';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import { vaccineGroups } from 'helper-functions/constantGroups';
 import BacteriaList from './HealthcarePages/BacteriaList';
+import DeleteRecord from './HealthcarePages/DeleteRecord';
 
 
 class PatientRecordVaccines extends React.Component {
@@ -123,7 +124,12 @@ class PatientRecordVaccines extends React.Component {
 
         let patientRecordDisplay = (
             <div>
-                {this.props.displayOnly ? null : <Button variant={'contained'} disabled={!this.props.editable}onClick={() => this.setState({editing: true})} >Edit</Button>}
+                {this.props.displayOnly ? null : 
+                    <div>
+                        <Button variant={'contained'} onClick={() => this.setState({editing: true})} disabled={!this.props.editable} >Edit</Button>
+                        <DeleteRecord removeEntry={() => this.props.removeEntry(this.props.entryId)} />
+                    </div>
+                }
                 <TableContainer style={{margin:'5px', width:'98%', justifyContent:'center'}} component={Paper}>
                     <Table aria-label="simple table">
                         <TableHead>

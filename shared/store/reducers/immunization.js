@@ -42,6 +42,19 @@ const patientAddEntrySuccess = (state, action) => {
     }
 }
 
+const patientRemoveEntrySuccess = (state, action) => {
+
+    let updatedVaccines = state.patient.patientRecords;
+    
+    return {
+        ...state,
+        patient: {
+            ...state.patient,
+            patientRecords: updatedVaccines.filter(record => record.entryId !== action.payload)
+        }
+    }
+}
+
 const patientAddSuccess = (state, action) => {
     let newPatients = [action.payload].concat(state.healthcare.patients);
 
@@ -72,6 +85,9 @@ const reducer = (state = initialState, action) => {
         case actionTypes.IMMU_PATIENT_ADD_ENTRY_SUCCESS:
             console.log('patient add entry case');
             return patientAddEntrySuccess(state, action);    
+        case actionTypes.IMMU_PATIENT_REMOVE_ENTRY_SUCCESS:
+            console.log('patient add entry case');
+            return patientRemoveEntrySuccess(state, action);        
         case actionTypes.IMMU_PATIENT_ADD_SUCCESS:
             console.log('patient add case');
             return patientAddSuccess(state, action);   

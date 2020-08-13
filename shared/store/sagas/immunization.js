@@ -83,6 +83,21 @@ export function* patientAddEntryPending(action){
     }
 }
 
+export function* patientRemoveEntryPending(action){
+    try {
+        console.log ('Saga response');
+        console.log(action);
+        let payload = {entryId: action.entryId, ohip: action.ohip}
+        console.log(payload);
+        let response = yield axios.post("http://127.0.0.1:5000/deletePatientRecord", payload);
+
+        yield put (actions.patientRemoveEntrySuccess(action.entryId))
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
 export function* patientAddPending(action){
     try {
         console.log ('Saga add response');
