@@ -51,6 +51,23 @@ class PatientRecordVaccines extends React.Component {
 
     };
 
+    onCancel = () => {
+        this.updatedVaccine = {
+            dateAdmin: this.props.dateAdmin,
+            brandName: this.props.brandName,
+            bacteria: this.props.bacteria || [],
+            lot: this.props.lot,
+            expiryDate: this.props.expiryDate,
+            administeredUnder: this.props.administeredUnder,
+            location: this.props.location,
+            entryId: this.props.entryId,
+            otherVaccine: false
+    
+        };
+
+        this.setState({editing: false});
+    }
+
     onChangeEvent = (value, type) => {
         let temp = {...this.updatedVaccine}
 
@@ -166,6 +183,7 @@ class PatientRecordVaccines extends React.Component {
             <div>
                 <Typography hidden={!this.state.error}>Please ensure you have filled all of the information</Typography>
                 <Button variant={'outlined'} onClick={() => this.onSubmitEvent()}>Submit</Button>
+                <Button variant={'outlined'} onClick={() => this.onCancel()}>Cancel</Button>
                 <ul className="flex-container longhand">
                     <TextField
                         type="date"
