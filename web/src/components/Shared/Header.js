@@ -11,13 +11,25 @@ class Header extends React.Component {
             <div>
                 <AppBar position={'static'}>
                     <Toolbar>
-                        <Typography variant={'h3'} style={{margin: "10px"}}>ImmuTrack</Typography>
+                        <Typography variant={'h3'} style={{margin: "10px"}} onClick={() => window.location.reload('localhost:3000/')}>ImmuTrack</Typography>
                         {this.props.loggedIn ?
                             <>
-                                <Button>
+                                {/* <Button>
                                     <Link to='/'>Main</Link>
                                 </Button>
-                                <Button variant={'default'} onClick={() => this.props.onSignout()}>Sign Out</Button>
+                                <Button variant={'default'} onClick={() => this.props.onSignout()}>Sign Out</Button> */}
+                                <div style={{width:"100%"}}>
+                                <Link to='/' style={{float: "right", textDecoration:"none"}}>
+                                    <Button >
+                                        <Typography style={{color:"white"}}>Main</Typography>
+                                    </Button>
+                                </Link>
+                                <Link style={{float: "right", textDecoration:"none"}}>
+                                    <Button onClick={() => this.props.onSignout()}>
+                                        <Typography style={{color:"white"}}>Signout</Typography>
+                                    </Button>
+                                </Link>
+                            </div>
                             </>
                             :
                             <>
