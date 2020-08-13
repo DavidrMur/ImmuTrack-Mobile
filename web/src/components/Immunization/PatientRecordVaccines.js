@@ -183,7 +183,7 @@ class PatientRecordVaccines extends React.Component {
             <div>
                 <Typography hidden={!this.state.error}>Please ensure you have filled all of the information</Typography>
                 <Button variant={'outlined'} onClick={() => this.onSubmitEvent()}>Submit</Button>
-                <Button variant={'outlined'} onClick={() => this.onCancel()}>Cancel</Button>
+                {this.state.editing ? <Button variant={'outlined'} onClick={() => this.onCancel()}>Cancel</Button> : this.props.adding ? <Button variant={'outlined'} onClick={() => this.props.onCancel()}>Cancel</Button> : null}
                 <ul className="flex-container longhand">
                     <TextField
                         type="date"
