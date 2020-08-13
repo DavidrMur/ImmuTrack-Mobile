@@ -44,10 +44,7 @@ const patientAddEntrySuccess = (state, action) => {
 
 const patientRemoveEntrySuccess = (state, action) => {
 
-    debugger;
     let updatedVaccines = state.patient.patientRecords;
-    let temp = updatedVaccines.find(x => x.entryId === action.payload);
-    let index = updatedVaccines.indexOf(temp);
     
     return {
         ...state,
