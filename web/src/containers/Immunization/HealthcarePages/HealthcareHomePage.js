@@ -9,9 +9,7 @@ import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
-import DirectionsIcon from '@material-ui/icons/Directions';
+import AddIcon from '@material-ui/icons/Add';
 
 class HealthcareHomePage extends Component {
 
@@ -49,7 +47,7 @@ class HealthcareHomePage extends Component {
 
         return(
             <div className={'background'} align='center'>
-{/*                <Grid container spacing={2}>
+                {/* <Grid container spacing={2}>
                     <Grid item xs={1} >
                     <TextField label="OHIP" onChange={(e) => this.setState({addPatientOHIP: e.target.value})}/>
                     </Grid>
@@ -60,10 +58,9 @@ class HealthcareHomePage extends Component {
                 <Paper component="form">
                     <InputBase onChange={(e) => this.setState({addPatientOHIP: e.target.value})}
                         placeholder="Enter OHIP to add patient"
-                        inputProps={{ 'aria-label': 'search google maps' }}
                     />
                     <IconButton onClick={() => this.props.patientAddPending(this.state.addPatientOHIP)} type="submit" aria-label="search">
-                        <SearchIcon />
+                        <AddIcon />
                     </IconButton>
                     <Divider orientation="vertical" />
                 </Paper>
