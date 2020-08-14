@@ -4,6 +4,7 @@ import * as actions from 'redux-saga-store/actions/index';
 import { PatientDisplayTile } from '../../../components/Immunization/HealthcarePages/HealthcarePageComponents';
 import { Button, Typography } from '@material-ui/core'
 import PatientVaccines from '../PatientVaccines';
+import MaterialTable from 'material-table';
 import './HealthcareRecordPage.css'
 
 // TODO: refactor this page, the vaccines table should be a separate entity

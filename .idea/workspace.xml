@@ -19,27 +19,31 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cab8b85-8baf-4a8f-b4a9-2193137b543b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareHomePage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareRecordPage.css" afterDir="false" />
+    <list default="true" id="7cab8b85-8baf-4a8f-b4a9-2193137b543b" name="Default Changelist" comment="Change Header background colour">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Immunization/HealthcarePages/BacteriaList.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Immunization/HealthcarePages/BacteriaList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Shared/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Shared/Header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Auth/SecurityDisclosure.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Auth/SecurityDisclosure.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Immunization/PatientRecordVaccines.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Immunization/PatientRecordVaccines.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/containers/Auth/ForgotPage/ForgotPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/containers/Auth/ForgotPage/ForgotPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/containers/Auth/LoginPage/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/containers/Auth/LoginPage/LoginPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/containers/Auth/SignupPage/SignupPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/containers/Auth/SignupPage/SignupPage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/containers/Auth/SignupPage/SignupPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/containers/Auth/SignupPage/SignupPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareHomePage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareRecordPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareRecordPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,6 +57,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -61,6 +66,24 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\camer\PycharmProjects\ImmuTrack-Frontend\web\src\containers\Immunization\HealthcarePages" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -76,8 +99,24 @@
       <workItem from="1596740995890" duration="5568000" />
       <workItem from="1596819633093" duration="7723000" />
       <workItem from="1596829845076" duration="3318000" />
-      <workItem from="1596892303138" duration="1406000" />
+      <workItem from="1596892303138" duration="2000000" />
+      <workItem from="1596899115752" duration="800000" />
+      <workItem from="1596995980688" duration="1886000" />
+      <workItem from="1597076691811" duration="1575000" />
+      <workItem from="1597151596969" duration="131000" />
+      <workItem from="1597170336103" duration="3357000" />
+      <workItem from="1597263662778" duration="1578000" />
+      <workItem from="1597321683598" duration="1081000" />
+      <workItem from="1597418965470" duration="5580000" />
     </task>
+    <task id="LOCAL-00001" summary="Change Header background colour">
+      <created>1596893842454</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1596893842455</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,35 +134,44 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Change Header background colour" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change Header background colour" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="206" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596831412118">
-      <screen x="0" y="0" width="1500" height="960" />
+    <state x="264" y="146" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597000274343">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="206" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960@0.0.1500.960" timestamp="1596831412118" />
+    <state x="264" y="146" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-491.1080.1500.960@0.0.1920.1040" timestamp="1597000274343" />
     <state x="431" y="216" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1596829492497">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="431" y="216" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1500.960@0.0.1500.960" timestamp="1596829492497" />
-    <state width="1458" height="256" key="GridCell.Tab.0.bottom" timestamp="1596847205295">
+    <state width="1458" height="255" key="GridCell.Tab.0.bottom" timestamp="1597359791665">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="256" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1596847205295" />
-    <state width="1458" height="256" key="GridCell.Tab.0.center" timestamp="1596847205295">
+    <state width="1458" height="255" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1597359791665" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-491.1080.1500.960@0.0.1920.1040" timestamp="1597001515558" />
+    <state width="1458" height="255" key="GridCell.Tab.0.center" timestamp="1597359791665">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="256" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1596847205295" />
-    <state width="1458" height="256" key="GridCell.Tab.0.left" timestamp="1596847205295">
+    <state width="1458" height="255" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1597359791665" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-491.1080.1500.960@0.0.1920.1040" timestamp="1597001515558" />
+    <state width="1458" height="255" key="GridCell.Tab.0.left" timestamp="1597359791664">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="256" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1596847205295" />
-    <state width="1458" height="256" key="GridCell.Tab.0.right" timestamp="1596847205295">
+    <state width="1458" height="255" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1597359791664" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-491.1080.1500.960@0.0.1920.1040" timestamp="1597001515558" />
+    <state width="1458" height="255" key="GridCell.Tab.0.right" timestamp="1597359791665">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="256" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1596847205295" />
-    <state x="143" y="78" key="MergeDialog" timestamp="1596830758470">
+    <state width="1458" height="255" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1597359791665" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-491.1080.1500.960@0.0.1920.1040" timestamp="1597001515558" />
+    <state x="143" y="78" key="MergeDialog" timestamp="1597321872667">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="143" y="78" key="MergeDialog/0.0.1500.960@0.0.1500.960" timestamp="1596830758470" />
+    <state x="143" y="78" key="MergeDialog/0.0.1500.960@0.0.1500.960" timestamp="1597321872667" />
     <state x="389" y="241" key="MultipleFileMergeDialog" timestamp="1596748708619">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
@@ -132,9 +180,14 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="252" y="125" key="SettingsEditor/0.0.1500.960@0.0.1500.960" timestamp="1596758391590" />
-    <state x="558" y="394" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596892361978">
+    <state x="343" y="213" key="Vcs.Push.Dialog.v2" timestamp="1596893850384">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="558" y="394" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1500.960@0.0.1500.960" timestamp="1596892361978" />
+    <state x="343" y="213" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1596893850384" />
+    <state x="558" y="394" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597419228350">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="558" y="394" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1500.960@0.0.1500.960" timestamp="1597419228350" />
+    <state x="714" y="427" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-491.1080.1500.960@0.0.1920.1040" timestamp="1597170886251" />
   </component>
 </project>

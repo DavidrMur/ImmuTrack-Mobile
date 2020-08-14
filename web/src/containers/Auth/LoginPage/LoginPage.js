@@ -71,9 +71,12 @@ class LoginPage extends Component {
                         <Button variant="contained" onClick={(e) => this.onSubmit(e)}>Login</Button>
                     </Grid>
                     <Grid item xs={12}>
-                        <Button>
-                        <Link to="/signup">Create an Account</Link>
-                        </Button>
+                        <Link to="/signup">
+                            <Button>
+                                <Typography variant={'body1'}>Create Account</Typography>
+                            </Button>
+                        </Link>
+
                         <Button onClick={() => this.setState({profession: undefined})}>Back</Button>
                     </Grid>
                 

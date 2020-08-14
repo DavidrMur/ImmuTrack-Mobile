@@ -8,6 +8,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import MaterialTable from "material-table";
 import BacteriaList from './HealthcarePages/BacteriaList';
 import DeleteRecord from './HealthcarePages/DeleteRecord';
 import './HealthcarePages/HealthcarePageComponents.css';
@@ -60,7 +61,7 @@ class PatientRecordVaccines extends React.Component {
             location: this.props.location,
             entryId: this.props.entryId,
             otherVaccine: false
-    
+
         };
 
         this.setState({editing: false});
@@ -139,7 +140,7 @@ class PatientRecordVaccines extends React.Component {
 
         let patientRecordDisplay = (
             <div>
-                {this.props.displayOnly ? null : 
+                {this.props.displayOnly ? null :
                     <div className={'flex-container'}>
                         <Button className='flex-item'variant={'outlined'} onClick={() => this.setState({editing: true})} disabled={!this.props.editable} >Edit</Button>
                         <DeleteRecord removeEntry={() => this.props.removeEntry(this.props.entryId)} />

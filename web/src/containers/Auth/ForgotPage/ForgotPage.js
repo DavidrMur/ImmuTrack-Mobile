@@ -33,7 +33,7 @@ class ForgotPage extends Component {
 
         if (this.state.profession === 'patient') {
             forgotView = (
-                <Grid container spacing={2} style={{'text-align': 'center'}}>
+                <Grid container spacing={2} style={{'text-align': 'center', position:'relative', top:'30px'}}>
                     <Grid item xs={6}>
                         <TextField style={{width: "70%"}} required type="text" label="OHIP" onChange={(event) => this.setValue(event, 'OHIP')}/>
                     </Grid>
