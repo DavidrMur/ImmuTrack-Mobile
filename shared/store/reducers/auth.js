@@ -25,7 +25,7 @@ const initialState = {
         signupWorkLocations: [],
     },
     userInfo: {
-        profession: 'Nurse',
+        profession: 'patient',
         firstName: 'Rubert',
         lastName: 'Scott',
         OHIP: '78654-AB',

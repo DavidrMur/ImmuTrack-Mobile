@@ -1,20 +1,29 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import LoginPage from './containers/LoginPage/LoginPage';
+import React, { Component } from 'react';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
+import rootSaga from 'redux-saga-store/sagas/index.js';
+import authReducer from 'redux-saga-store/reducers/auth';
+import createSagaMiddleware from 'redux-saga';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <LoginPage />
-    </View>
-  );
+const sagaMiddleware = createSagaMiddleware();
+
+const rootReducer = combineReducers({
+    auth: authReducer,
+    immunization: immunizationReducer
+})
+
+const store = createStore(rootReducer, composeEnhancers (
+    applyMiddleware(sagaMiddleware)
+));
+
+sagaMiddleware.run(rootSaga);
+
+export default class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <div>hi</div>
+      </Provider>
+    );
+  } 
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

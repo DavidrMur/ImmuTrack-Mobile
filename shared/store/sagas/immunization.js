@@ -21,6 +21,7 @@ export function* patientInfoPending(action){
         //     patientOHIP: action.OHIP,
         //     jwtToken: localStorage.getItem('jwtToken')
         // }
+        debugger;
         let body = {ohip: action.patientOHIP }
         let response = yield axios.post("http://127.0.0.1:5000/retrievePatientRecord",body);
         // let response = {

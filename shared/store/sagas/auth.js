@@ -14,7 +14,7 @@ export function* loginPending(action){
         localStorage.setItem('jwtToken', JSON.stringify(object));
         localStorage.setItem('loggedIn', true);
         response.data = {
-            profession: 'Nurse',
+            profession: 'patient',
             firstName: 'Rubert',
             lastName: 'Scott',
             OHIP: '',
