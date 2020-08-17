@@ -29,50 +29,23 @@ class BacteriaList extends React.Component {
             <div>
             { this.props.otherVaccine ?
             // adding
-            <Accordion>
-                <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-                >
+            <div style={{'text-align': 'center'}}>
                 <form onSubmit={(event) => this.onSubmit(event)}>
-                <Autocomplete 
-                        options={bacteriaGroups}
-                        value={this.state.bacteria}
-                        getOptionLabel={(option) => option }
-                        style={{ width: '200px' }}
-                        freeSolo
-                        renderInput={(params) => <TextField {...params} defaultValue={this.props.brandName} variant="outlined" />}
-                        onChange={(event, newValue) => this.setState({bacteria: newValue})}
-                        />
+                <TextField value={this.state.bacteria} variant="outlined" onChange={(event) => this.setState({bacteria: event.target.value})}/>
                 </form>
-                </AccordionSummary>
-                <AccordionDetails>
-                    <ul>
-                    { this.props.bacteria.map((bacteria) => {
+                <ul style={{display: 'inline-block'}}>
+                { this.props.bacteria.map((bacteria) => {
                         return <li>{bacteria}</li>
                     })}
                     </ul>
-                </AccordionDetails>
-             </Accordion>
+                    </div>
              : this.props.editing ?
                 // editing
-            <Accordion>
-                <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-                >
-                    <Typography variant="body1">Pathogen(s)</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                    <ul>
-                    {this.props.vaccineGroups && this.props.vaccineGroups.find(x => x.vaccine === this.props.vaccine) && this.props.vaccineGroups.find(x => x.vaccine === this.props.vaccine).bacteria.map((bacteria) => {
+                <ul style={{display: 'inline-block', 'text-align': 'left'}}>
+                {this.props.vaccineGroups && this.props.vaccineGroups.find(x => x.vaccine === this.props.vaccine) && this.props.vaccineGroups.find(x => x.vaccine === this.props.vaccine).bacteria.map((bacteria) => {
                         return <li>{bacteria}</li>
                     })}
-                    </ul>
-                </AccordionDetails>
-            </Accordion> :
+            </ul>  :
              // display
             <ul style={{display: 'inline-block', 'text-align': 'left'}}>
                 {this.props.vaccineGroups && this.props.vaccineGroups.find(x => x.vaccine === this.props.vaccine) && this.props.vaccineGroups.find(x => x.vaccine === this.props.vaccine).bacteria.map((bacteria) => {

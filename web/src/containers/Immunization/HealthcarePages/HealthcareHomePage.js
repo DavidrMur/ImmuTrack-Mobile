@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from 'redux-saga-store/actions/index';
-import { TextField, Button, Grid } from '@material-ui/core'
+import { TextField, Button, Grid, Typography } from '@material-ui/core'
 import { PatientRecordTile } from '../../../components/Immunization/HealthcarePages/HealthcarePageComponents';
 import './HealthcareHomePage.css'
 import makeStyles from "@material-ui/core/styles/makeStyles";
@@ -55,12 +55,13 @@ class HealthcareHomePage extends Component {
                     <Button onClick={() => this.props.patientAddPending(this.state.addPatientOHIP)}>Add Patient</Button>
                     </Grid>
                 </Grid>*/}
-                <Paper component="form">
+                <Paper component="form" elevation={2}>
                     <InputBase onChange={(e) => this.setState({addPatientOHIP: e.target.value})}
-                        placeholder="Enter OHIP to add patient"
+                        placeholder="Enter OHIP"
                     />
                     <IconButton onClick={() => this.props.patientAddPending(this.state.addPatientOHIP)} type="submit" aria-label="search">
                         <AddIcon />
+                        <Typography variant="body1">Add Patient</Typography>
                     </IconButton>
                     <Divider orientation="vertical" />
                 </Paper>

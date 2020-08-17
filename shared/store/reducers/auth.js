@@ -28,7 +28,7 @@ const initialState = {
         profession: 'Nurse',
         firstName: 'Rubert',
         lastName: 'Scott',
-        OHIP: '78654-AB',
+        OHIP: '',
         DOB: '',
         workLocations: [{
             workName: 'Family Wellness',

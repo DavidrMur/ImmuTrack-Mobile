@@ -84,7 +84,6 @@ class PatientVaccines extends Component {
 
         return (
             <div>
-                <PatientRecordVaccineTitles />
                 <div style={{'margin-bottom': '20px'}}>
                     <Typography variant='h5'>Sort by:</Typography>
                     <Button onClick={() => this.onSortBy('brandName')} endIcon={this.state.sorting.brandName ? <ArrowUpwardIcon>Vaccine</ArrowUpwardIcon> : <ArrowDownwardIcon>Vaccine</ArrowDownwardIcon>}>Vaccine</Button>
@@ -92,7 +91,8 @@ class PatientVaccines extends Component {
                     <Button onClick={() => this.onSortBy('reset')}>Reset</Button>
                 </div>
                 {this.state.adding ? <PatientRecordVaccines adding vaccines={this.props.vaccines} userInfo={this.props.currentUser} onSubmitEvent={this.onNewEntrySubmitEvent} onCancel={this.onCancel} /> : !this.props.displayOnly ? <Button onClick={() => (this.setState({adding: true}))} >Add Entry</Button> : null}
-                {this.state.patientRecords && this.state.patientRecords.map((vaccine) => {
+                <Button style={{'left': '85%'}}>Sync All</Button>
+                {this.state.patientRecords && this.state.patientRecords.map((vaccine, i) => {
                     return (<PatientRecordVaccines
                         dateAdmin={vaccine.dateAdmin}
                         brandName={vaccine.brandName}
@@ -104,6 +104,7 @@ class PatientVaccines extends Component {
                         userInfo={this.props.currentUser}
                         entryId={vaccine.entryId}
                         key={vaccine.entryId}
+                        index={i}
                         vaccines={this.props.vaccines}
                         editable={vaccine.editable && vaccine.administeredUnder === `Dr. ${this.props.currentUser.lastName}`}
                         displayOnly={this.props.displayOnly}
