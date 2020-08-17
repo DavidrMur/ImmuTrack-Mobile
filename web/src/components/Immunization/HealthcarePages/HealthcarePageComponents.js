@@ -1,6 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Typography, Button} from '@material-ui/core';
+import { Typography, Button, TableContainer} from '@material-ui/core';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
 import { MDBCard, MDBCardTitle, MDBCardText, MDBContainer } from "mdbreact";
 import './HealthcarePageComponents.css';
 
@@ -44,6 +50,33 @@ export const PatientDisplayTile = (props) => {
 
 export const PatientRecordVaccineTitles = (props) => {
     return (
-        <div></div>
+        <TableContainer style={{margin:'5px', width:'98%', justifyContent:'center'}} component={Paper}>
+            <Table aria-label="simple table">
+                <TableHead>
+                        <TableRow>
+                            <TableCell>Date of Admin</TableCell>
+                            <TableCell align="left">Vaccine Brand</TableCell>
+                            <TableCell align="left">Pathogen(s)</TableCell>
+                            <TableCell align="left">Lot#</TableCell>
+                            <TableCell align="left">Expiry</TableCell>
+                            <TableCell align="left">Administered by</TableCell>
+                            <TableCell align="left">Location</TableCell>
+                        </TableRow>
+                </TableHead>
+                <TableBody>
+                        <TableRow>
+                            <TableCell align="left"></TableCell>
+                            <TableCell align="right"></TableCell>
+                            <TableCell align="right">
+                                {/* <BacteriaList vaccine={this.updatedVaccine.brandName} bacteria={this.props.bacteria} vaccineGroups={this.props.vaccines} /> */}
+                            </TableCell>
+                            <TableCell align="right"></TableCell>
+                            <TableCell align="right"></TableCell>
+                            <TableCell align="right"></TableCell>
+                            <TableCell align="right"></TableCell>
+                        </TableRow>
+                </TableBody>
+            </Table>
+        </TableContainer>
     )
 }
