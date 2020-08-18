@@ -186,6 +186,14 @@ export const signupSetProfession = (payload) => {
     };
 };
 
+export const signupSetTitle = (payload) => {
+    console.log('signuptitle');
+    return {
+        type: actionTypes.SIGNUP_SET_TITLE,
+        payload
+    };
+};
+
 export const signupSetLicense = (payload) => {
     return {
         type: actionTypes.SIGNUP_SET_LICENSE,

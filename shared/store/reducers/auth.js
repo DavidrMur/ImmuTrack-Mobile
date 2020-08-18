@@ -21,6 +21,7 @@ const initialState = {
     },
     healthcareInfo: {
         signupProfession: '',
+        signupTitle: '',
         signupLicense: '',
         signupWorkLocations: [],
     },
@@ -235,6 +236,17 @@ const signupSetProfession = (state, action) => {
     }
 }
 
+const signupSetTitle = (state, action) => {
+    console.log('setting title');
+    return {
+        ...state,
+        healthcareInfo: {
+            ...state.healthcareInfo,
+            signupTitle: action.payload
+        }
+    }
+}
+
 const signupSetLicense = (state, action) => {
     console.log('setting license');
     return {
@@ -434,6 +446,9 @@ const reducer = (state = initialState, action) => {
         case actionTypes.SIGNUP_SET_PROFESSION:
             console.log('profession case');
             return signupSetProfession(state,action); 
+        case actionTypes.SIGNUP_SET_TITLE:
+            console.log('title case');
+            return signupSetTitle(state,action); 
         case actionTypes.SIGNUP_SET_LICENSE:
             console.log('license case');
             return signupSetLicense(state,action);  

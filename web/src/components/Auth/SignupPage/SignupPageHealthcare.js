@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {  SignupName, SignupLicense, SignupProfession, SignupPrimaryWork, SignupOtherWork, SignupCredentials } from './SignupPageComponents';
+import {  SignupName, SignupLicense, SignupProfession, SignupTitle, SignupPrimaryWork, SignupOtherWork, SignupCredentials } from './SignupPageComponents';
 import { Grid, Button } from '@material-ui/core'
 
 class SignupPageHealthcare extends Component {
@@ -21,6 +21,7 @@ class SignupPageHealthcare extends Component {
             <Grid container spacing={4} style={{'text-align': 'center', 'width': '80vw', 'margin': 'auto'}}>
                 <Grid item xs={6} >
                     <SignupProfession fieldFunction = {this.props.healthcareSignupFunctions.signupSetProfession} />
+                    <SignupTitle fieldFunction = {this.props.healthcareSignupFunctions.signupSetTitle} />
                 </Grid>
                 <Grid item xs={6} >
                     <SignupLicense fieldFunction = {this.props.healthcareSignupFunctions.signupSetLicense}/>
