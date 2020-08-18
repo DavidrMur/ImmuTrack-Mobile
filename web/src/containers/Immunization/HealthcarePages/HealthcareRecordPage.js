@@ -5,6 +5,8 @@ import { PatientDisplayTile } from '../../../components/Immunization/HealthcareP
 import { Button, Typography } from '@material-ui/core'
 import PatientVaccines from '../PatientVaccines';
 import MaterialTable from 'material-table';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 import './HealthcareRecordPage.css'
 
 // TODO: refactor this page, the vaccines table should be a separate entity
@@ -21,6 +23,54 @@ class HealthcareRecordPage extends Component {
         }
     }
 
+    downloadPDF = () => {
+
+        // html2canvas(document.body).then(function(canvas) {
+        //     document.body.appendChild(canvas);
+        //     debugger;
+        //     let imgData = canvas.toDataURL('image/png');
+
+        //     let doc = new jsPDF('p', 'pt', 'a4');
+
+        //     doc.addImage(imgData, 'PNG', 10,10);
+        //     doc.save();
+        //     window.open(imgData);
+        // });
+        let noscript = document.getElementsByTagName('noscript');
+        document.body.removeChild(noscript[0])
+
+        html2canvas(document.body, ).then(function(canvas) {
+            //document.body.appendChild(canvas);
+
+            debugger;
+            let imgData = canvas.toDataURL();
+
+            let doc = new jsPDF('p', 'px', 'a4', true);
+
+            const imgProps= doc.getImageProperties(imgData);
+            const pdfWidth = doc.internal.pageSize.getWidth();
+            const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+            doc.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight, '', 'FAST');
+            doc.save();
+        });
+
+
+        // window.html2canvas = html2canvas;
+        // let doc = new jsPDF();
+        // // let width = document.body.clientWidth;
+        // // document.body.style.width = '1700px';
+        // doc.html(document.body, {
+        //     scale: 1,
+        //     callback: function (doc) {
+                
+        //       doc.save();
+        //       //document.body.style.width = width+'px';
+        //     }
+        //  });
+
+    }
+
     patientRecords = (<Typography variant={'paragraph'}>loading</Typography>);
     
     render(){
@@ -35,7 +85,7 @@ class HealthcareRecordPage extends Component {
                     OHIP={this.props.currentPatient.OHIP}
                 />
                 <PatientVaccines />
-                <Button variant={'outlined'}>Download PDF</Button>
+                <Button variant={'outlined'} onClick={() => this.downloadPDF()}>Download PDF</Button>
             </div>
 
         );
