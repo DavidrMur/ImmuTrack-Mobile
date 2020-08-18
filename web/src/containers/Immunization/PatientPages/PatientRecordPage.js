@@ -26,7 +26,6 @@ class PatientRecordPage extends Component {
                     OHIP={this.props.currentPatient.OHIP}
                 />
                 {_.isEmpty(this.props.vaccines) ? null : <PatientVaccines displayOnly />}
-                <Button variant={'outlined'}>Download PDF</Button>
             </div>
 
         );
