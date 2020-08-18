@@ -17,7 +17,7 @@ export function* loginPending(action){
             profession: 'Nurse',
             firstName: 'Rubert',
             lastName: 'Scott',
-            OHIP: '',
+            OHIP: '78654-AB',
             DOB: '',
             workLocations: [{
                 workName: 'Family Wellness',

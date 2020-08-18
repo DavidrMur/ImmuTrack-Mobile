@@ -17,6 +17,7 @@ class HealthcareRecordPage extends Component {
             patientVaccines: this.props.currentPatient.patientRecords,
             editing: false,
             add: false,
+            downloading: false,
             newEntry: {}
         }
     }
@@ -34,8 +35,7 @@ class HealthcareRecordPage extends Component {
                     DOB={this.props.currentPatient.DOB}
                     OHIP={this.props.currentPatient.OHIP}
                 />
-                <PatientVaccines />
-                <Button variant={'outlined'}>Download PDF</Button>
+                <PatientVaccines downloading={this.state.downloading} />
             </div>
 
         );
