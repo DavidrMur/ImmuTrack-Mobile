@@ -48,6 +48,7 @@ class SignupPage extends Component {
         },
 
         signupSetProfession: this.props.signupSetProfession,
+        signupSetTitle: this.props.signupSetTitle,
         signupSetLicense: this.props.signupSetLicense,
 
         signupSetWork: {
@@ -118,6 +119,7 @@ const mapDispathToProps = dispatch => {
 
         // Healthcare functions
         signupSetProfession: (payload) => dispatch(actions.signupSetProfession(payload)),
+        signupSetTitle: (payload) => dispatch(actions.signupSetTitle(payload)),
         signupSetLicense: (payload) => dispatch(actions.signupSetLicense(payload)),
         signupSetWorkName: (workName, index) => dispatch(actions.signupSetWorkName(workName, index)),
         signupSetWorkAddress: (workAddress, index) => dispatch(actions.signupSetWorkAddress(workAddress, index)),

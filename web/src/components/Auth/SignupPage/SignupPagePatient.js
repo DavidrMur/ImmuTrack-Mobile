@@ -63,7 +63,7 @@ class SignupPagePatient extends Component {
                 {this.state.redirect ? 
                     <Typography>Your signup was successful! You will be redirected to the login page where you can login using your new account</Typography>
                 :
-            <div>
+            <div style={{'text-align': 'center', 'width': '80vw', 'margin': 'auto'}}>
                 {signupView}
                 {/* TODO: Make into a component (do we really need to?)*/}
                 <Button style={{margin: "10px"}} onClick={() => this.setState({pageCount: this.state.pageCount - 1})} disabled ={this.state.pageCount === 1} >Back</Button>

@@ -162,11 +162,9 @@ class SignupCredentials extends React.Component {
 
 const SignupGeneral = (props) => {
     return (
-        <div>
+        <div style={{margin: '10px'}}>
             <Typography >General Information</Typography>
             <TextField type="text" label="Postal Code" onChange={(event) => props.fieldFunction(event.target.value)}/>
-            {/* DROPDOWN - Race / Depends on UI*/}
-            {/* DROPDOWN - Level of Education / Depends on UI*/}
         </div>
     )
 }
@@ -174,14 +172,29 @@ const SignupGeneral = (props) => {
 const SignupProfession = (props) => {
     return (
         <div>
-        <Typography variant="paragraph">Please enter your profession</Typography>
+        <Typography variant="paragraph">Please select your profession</Typography>
         {/* <TextField type="text" label="DROPDOWN - profession" onChange={(event) => props.fieldFunction(event.target.value)} /> */}
         <Select onChange={(event) => props.fieldFunction(event.target.value)}>
           <MenuItem value={'Physician'}>Physician</MenuItem>
           <MenuItem value={'Nurse'}>Nurse</MenuItem>
           <MenuItem value={'Nurse Practitioner'}>Nurse Practitioner</MenuItem>
           <MenuItem value={"Physician Assistant"}>Physician's Assistant</MenuItem>
-          <MenuItem value={'Pharamacist'}>Pharmacist</MenuItem>
+          <MenuItem value={'Pharmacist'}>Pharmacist</MenuItem>
+          </Select>
+        </div>
+  )
+}
+
+const SignupTitle = (props) => {
+    return (
+        <div>
+        <Typography variant="paragraph">Please select your title abbreviation</Typography>
+        {/* <TextField type="text" label="DROPDOWN - profession" onChange={(event) => props.fieldFunction(event.target.value)} /> */}
+        <Select onChange={(event) => props.fieldFunction(event.target.value)}>
+          <MenuItem value={'MD'}>MD</MenuItem>
+          <MenuItem value={'RN'}>RN</MenuItem>
+          <MenuItem value={'RPN'}>RPN</MenuItem>
+          <MenuItem value={'Pharm'}>Pharm</MenuItem>
           </Select>
         </div>
   )
@@ -266,6 +279,7 @@ export {
     SignupCredentials,
     SignupGeneral,
     SignupProfession,
+    SignupTitle,
     SignupLicense,
     SignupPrimaryWork,
     SignupOtherWork

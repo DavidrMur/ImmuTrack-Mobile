@@ -24,6 +24,7 @@ export {
     signupSetRace,
     signupSetEduLevel,
     signupSetProfession,
+    signupSetTitle,
     signupSetLicense,
     signupSetWorkName,
     signupSetWorkAddress,
