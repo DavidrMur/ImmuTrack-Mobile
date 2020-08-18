@@ -84,14 +84,14 @@ class PatientVaccines extends Component {
 
         return (
             <div>
-                <div style={{'margin-bottom': '20px'}}>
+                <div hidden={this.props.downloading} style={{'margin-bottom': '20px'}}>
                     <Typography variant='h5'>Sort by:</Typography>
                     <Button onClick={() => this.onSortBy('brandName')} endIcon={this.state.sorting.brandName ? <ArrowUpwardIcon>Vaccine</ArrowUpwardIcon> : <ArrowDownwardIcon>Vaccine</ArrowDownwardIcon>}>Vaccine</Button>
                     <Button onClick={() => this.onSortBy('dateAdmin')} endIcon={this.state.sorting.dateAdmin ? <ArrowUpwardIcon>Date of Administration</ArrowUpwardIcon> : <ArrowDownwardIcon>Date of Administration</ArrowDownwardIcon>}>Date of Administration</Button>
                     <Button onClick={() => this.onSortBy('reset')}>Reset</Button>
                 </div>
-                {this.state.adding ? <PatientRecordVaccines adding vaccines={this.props.vaccines} userInfo={this.props.currentUser} onSubmitEvent={this.onNewEntrySubmitEvent} onCancel={this.onCancel} /> : !this.props.displayOnly ? <Button onClick={() => (this.setState({adding: true}))} >Add Entry</Button> : null}
-                <Button style={{'left': '85%'}}>Sync All</Button>
+                {this.state.adding ? <PatientRecordVaccines adding vaccines={this.props.vaccines} userInfo={this.props.currentUser} onSubmitEvent={this.onNewEntrySubmitEvent} onCancel={this.onCancel} /> : !this.props.displayOnly && !this.props.downloading ? <Button onClick={() => (this.setState({adding: true}))} >Add Entry</Button> : null}
+                { !this.props.downloading ? <Button style={{'left': '85%'}}>Sync All</Button> : null }
                 {this.state.patientRecords && this.state.patientRecords.map((vaccine, i) => {
                     return (<PatientRecordVaccines
                         dateAdmin={vaccine.dateAdmin}
@@ -107,7 +107,7 @@ class PatientVaccines extends Component {
                         index={i}
                         vaccines={this.props.vaccines}
                         editable={vaccine.editable && vaccine.administeredUnder === `Dr. ${this.props.currentUser.lastName}`}
-                        displayOnly={this.props.displayOnly}
+                        displayOnly={this.props.displayOnly || this.props.downloading}
                         removeEntry={(entryId) => this.props.patientRemoveEntryPending(entryId, this.props.currentPatient.OHIP)}
                         onSubmitEvent={(payload ) => this.props.patientUpdateInfoPending({...payload, ohip: this.props.currentPatient.OHIP})}
                 />)

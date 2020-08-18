@@ -19,23 +19,12 @@ class HealthcareRecordPage extends Component {
             patientVaccines: this.props.currentPatient.patientRecords,
             editing: false,
             add: false,
+            downloading: false,
             newEntry: {}
         }
     }
 
     downloadPDF = () => {
-
-        // html2canvas(document.body).then(function(canvas) {
-        //     document.body.appendChild(canvas);
-        //     debugger;
-        //     let imgData = canvas.toDataURL('image/png');
-
-        //     let doc = new jsPDF('p', 'pt', 'a4');
-
-        //     doc.addImage(imgData, 'PNG', 10,10);
-        //     doc.save();
-        //     window.open(imgData);
-        // });
         let noscript = document.getElementsByTagName('noscript');
         document.body.removeChild(noscript[0])
 
@@ -55,6 +44,25 @@ class HealthcareRecordPage extends Component {
             doc.save();
         });
 
+        this.setState({downloading: false});
+        document.getElementById('header-right').style.display = "block"
+    }
+
+    prepPDF = () => {
+
+        // html2canvas(document.body).then(function(canvas) {
+        //     document.body.appendChild(canvas);
+        //     debugger;
+        //     let imgData = canvas.toDataURL('image/png');
+
+        //     let doc = new jsPDF('p', 'pt', 'a4');
+
+        //     doc.addImage(imgData, 'PNG', 10,10);
+        //     doc.save();
+        //     window.open(imgData);
+        // });
+        document.getElementById('header-right').style.display = "none"
+        this.setState({downloading: true}, this.downloadPDF);
 
         // window.html2canvas = html2canvas;
         // let doc = new jsPDF();
@@ -84,8 +92,8 @@ class HealthcareRecordPage extends Component {
                     DOB={this.props.currentPatient.DOB}
                     OHIP={this.props.currentPatient.OHIP}
                 />
-                <PatientVaccines />
-                <Button variant={'outlined'} onClick={() => this.downloadPDF()}>Download PDF</Button>
+                <PatientVaccines downloading={this.state.downloading} />
+                <Button variant={'outlined'} onClick={() => this.prepPDF()}>Download PDF</Button>
             </div>
 
         );

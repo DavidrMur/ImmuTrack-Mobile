@@ -18,7 +18,7 @@ class Header extends React.Component {
                                     <Link to='/'>Main</Link>
                                 </Button>
                                 <Button variant={'default'} onClick={() => this.props.onSignout()}>Sign Out</Button> */}
-                                <div style={{width:"100%"}}>
+                                <div id="header-right" style={{width:"100%"}}>
                                 <Link to='/' style={{float: "right", textDecoration:"none"}}>
                                     <Button >
                                         <Typography style={{color:"white"}}>Main</Typography>
