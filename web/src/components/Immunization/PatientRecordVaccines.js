@@ -40,6 +40,7 @@ class PatientRecordVaccines extends React.Component {
 
     updatedVaccine = {
         dateAdmin: this.props.dateAdmin,
+        age: 26,
         brandName: this.props.brandName,
         bacteria: this.props.bacteria || [],
         lot: this.props.lot,
@@ -153,28 +154,29 @@ class PatientRecordVaccines extends React.Component {
                     {this.props.index === 0 ?
                         <TableHead>
                             <TableRow>
-                                <TableCell>Date of Admin</TableCell>
-                                <TableCell align="right">Age</TableCell>
-                                <TableCell align="right">Vaccine Brand</TableCell>
-                                <TableCell align="right">Pathogen(s)</TableCell>
-                                <TableCell align="right">Lot#</TableCell>
-                                <TableCell align="right">Expiry</TableCell>
-                                <TableCell align="right">Administered by</TableCell>
-                                <TableCell align="right">Location</TableCell>
+                                <TableCell style={{'width': '220px'}}>Date of Admin</TableCell>
+                                <TableCell style={{'width': '120px'}} align="right">Age</TableCell>
+                                <TableCell style={{'width': '220px'}} align="right">Vaccine Brand</TableCell>
+                                <TableCell style={{'width': '220px'}} align="right">Pathogen(s)</TableCell>
+                                <TableCell style={{'width': '220px'}} align="right">Lot#</TableCell>
+                                <TableCell style={{'width': '220px'}} align="right">Expiry</TableCell>
+                                <TableCell style={{'width': '220px'}} align="right">Administered by</TableCell>
+                                <TableCell style={{'width': '220px'}} align="right">Location</TableCell>
                             </TableRow>
                         </TableHead>
                         : null}
                         <TableBody>
                                 <TableRow>
-                                    <TableCell align="left">{this.updatedVaccine.dateAdmin}</TableCell>
-                                    <TableCell align="right">{this.updatedVaccine.brandName}</TableCell>
-                                    <TableCell align="right">
+                                    <TableCell style={{'width': '220px'}} align="left">{this.updatedVaccine.dateAdmin}</TableCell>
+                                    <TableCell style={{'width': '120px'}} align="right">{this.updatedVaccine.age}</TableCell>
+                                    <TableCell style={{'width': '220px'}} align="right">{this.updatedVaccine.brandName}</TableCell>
+                                    <TableCell style={{'width': '220px'}} align="right">
                                         <BacteriaList vaccine={this.updatedVaccine.brandName} bacteria={this.props.bacteria} vaccineGroups={this.props.vaccines} />
                                     </TableCell>
-                                    <TableCell align="right">{this.updatedVaccine.lot}</TableCell>
-                                    <TableCell align="right">{this.updatedVaccine.expiryDate}</TableCell>
-                                    <TableCell align="right">{this.updatedVaccine.administeredUnder}</TableCell>
-                                    <TableCell align="right">{this.updatedVaccine.location}</TableCell>
+                                    <TableCell style={{'width': '220px'}} align="right">{this.updatedVaccine.lot}</TableCell>
+                                    <TableCell style={{'width': '220px'}} align="right">{this.updatedVaccine.expiryDate}</TableCell>
+                                    <TableCell style={{'width': '220px'}} align="right">{this.updatedVaccine.administeredUnder}</TableCell>
+                                    <TableCell style={{'width': '220px'}} align="right">{this.updatedVaccine.location}</TableCell>
                                 </TableRow>
                         </TableBody>
                     </Table>
