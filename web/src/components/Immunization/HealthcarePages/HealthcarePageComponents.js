@@ -19,6 +19,8 @@ export const PatientRecordTile = (props) => {
                     <Typography variant='h5'>{props.firstName}</Typography>
                     <Typography variant={'paragraph'}>{props.DOB}</Typography>
                     <div variant={'paragraph'}>{props.OHIP}</div>
+                    <div variant={'paragraph'}>Age: {props.age}</div>
+                    <div variant={'paragraph'}>Postal Code: {props.postalCode}</div>
                     <div onClick={() => props.redirectQuery(props.OHIP)}>
                         <Button variant={'outlined'}>
                         <Link to='/view-patient'>View Record</Link>
@@ -41,6 +43,8 @@ export const PatientDisplayTile = (props) => {
                     <Typography variant='paragraph'>{props.firstName}</Typography>
                     <Typography variant={'paragraph'}>{props.DOB}</Typography>
                     <div variant={'paragraph'}>{props.OHIP}</div>
+                    <div variant={'paragraph'}>Age: {props.age}</div>
+                    <div variant={'paragraph'}>Postal Code: {props.postalCode}</div>
                 </MDBCardText>
             </MDBCard>
         </MDBContainer>

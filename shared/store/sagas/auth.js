@@ -13,32 +13,7 @@ export function* loginPending(action){
         var object = {token: response.data.token, timestamp: new Date().getTime()}
         localStorage.setItem('jwtToken', JSON.stringify(object));
         localStorage.setItem('loggedIn', true);
-        response.data = {
-            profession: 'Nurse',
-            firstName: 'Rubert',
-            lastName: 'Scott',
-            OHIP: '78654-AB',
-            DOB: '',
-            workLocations: [{
-                workName: 'Family Wellness',
-                workAddress: '123 Appleton',
-                workCity: 'Hamilton',
-                workPostal: 'L8S 2B8',
-                workPhoneNumber: '905-664-7867',
-                EMRIntegration: 'Green'
-    
-            },
-            {
-                workName: 'Better Health',
-                workAddress: '27 Westbrooke',
-                workCity: 'Toronto',
-                workPostal: 'L2B 8S2',
-                workPhoneNumber: '905-789-3857',
-                EMRIntegration: 'Blue'
-    
-            }    
-        ]
-        };
+        localStorage.setItem('userInfo', JSON.stringify(response.data));
         yield put (actions.loginSuccess(response.data))
     } catch (error) {
         console.log('Saga Error')
