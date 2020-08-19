@@ -26,30 +26,12 @@ const initialState = {
         signupWorkLocations: [],
     },
     userInfo: {
-        profession: 'Nurse',
-        firstName: 'Rubert',
-        lastName: 'Scott',
-        OHIP: '78654-AB',
+        profession: '',
+        firstName: '',
+        lastName: '',
+        OHIP: '',
         DOB: '',
-        workLocations: [{
-            workName: 'Family Wellness',
-            workAddress: '123 Appleton',
-            workCity: 'Hamilton',
-            workPostal: 'L8S 2B8',
-            workPhoneNumber: '905-664-7867',
-            EMRIntegration: 'Green'
-
-        },
-        {
-            workName: 'Better Health',
-            workAddress: '27 Westbrooke',
-            workCity: 'Toronto',
-            workPostal: 'L2B 8S2',
-            workPhoneNumber: '905-789-3857',
-            EMRIntegration: 'Blue'
-
-        }    
-    ]
+        workLocations: []
     }
 
 }

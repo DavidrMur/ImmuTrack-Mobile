@@ -41,6 +41,8 @@ class HealthcareHomePage extends Component {
                     lastName={patient.lastName}
                     DOB={patient.DOB}
                     OHIP={patient.ohip}
+                    age={patient.age.years > 1 ? `${patient.age.years} yr` : `${patient.age.months} mo`}
+                    postalCode={patient.postalCode}
                     redirectQuery={this.props.patientInfoPending}
                         /> </Grid>)
         })}

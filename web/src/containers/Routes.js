@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import * as actions from 'redux-saga-store/actions/index';
 import LoginPage from './Auth/LoginPage/LoginPage';
 import SignupPage from './Auth/SignupPage/SignupPage';
 import ForgotPage from './Auth/ForgotPage/ForgotPage';
@@ -25,6 +26,7 @@ class Routes extends Component {
         localStorage.removeItem('jwtToken');
         localStorage.removeItem('acceptDisclosure');
         localStorage.removeItem('loggedIn');
+        localStorage.removeItem('userInfo');
 
         this.loggedIn  = (localStorage.getItem('jwtToken') !== undefined && localStorage.getItem('jwtToken') !== null); 
         window.location.reload(false);
@@ -42,6 +44,11 @@ class Routes extends Component {
         let object = JSON.parse(localStorage.getItem("jwtToken")), dateString = object && object.timestamp, now = new Date().getTime().toString();
         object && this.checkToken(dateString, now);
         this.loggedIn = (localStorage.getItem('jwtToken') !== undefined && localStorage.getItem('jwtToken') !== null); 
+        let userInfoStatus = (this.props.userInfo.firstName !== '');
+        
+        if (this.loggedIn && !userInfoStatus) {
+            this.props.loginSuccess(JSON.parse(localStorage.getItem('userInfo')))
+        }
 
         // let acceptDisclosure = (localStorage.getItem('acceptDisclosure') && localStorage.getItem('acceptDisclosure') === true);
     
@@ -89,5 +96,11 @@ const mapStateToProps = state => {
     
 };
 
+const mapDispathToProps = dispatch => {
+    return {
+        loginSuccess: (payload) => dispatch(actions.loginSuccess(payload)),
+    };
+};
+
 //export default connect(mapStateToProps,mapDispathToProps)(SummonerProfile);
-export default connect(mapStateToProps)(Routes)
+export default connect(mapStateToProps, mapDispathToProps)(Routes)

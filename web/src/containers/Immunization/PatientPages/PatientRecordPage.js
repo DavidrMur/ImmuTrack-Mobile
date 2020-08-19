@@ -15,6 +15,7 @@ class PatientRecordPage extends Component {
     }
     
     render(){
+
         return(
             <div className={'background'}>
                 <PatientDisplayTile
