@@ -37,7 +37,6 @@ const initialState = {
 }
 
 const loginSuccess = (state, action) => {
-    debugger;
     return {
         ...state,
         userInfo: action.payload
