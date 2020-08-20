@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField, Typography, Button } from '@material-ui/core';
+import { TextField, Typography, Button, Select, MenuItem } from '@material-ui/core';
 import { Autocomplete } from '@material-ui/lab';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -46,6 +46,7 @@ class PatientRecordVaccines extends React.Component {
         lot: this.props.lot,
         expiryDate: this.props.expiryDate,
         administeredUnder: this.props.administeredUnder,
+        administeredUnderTitle: this.props.administeredUnderTitle,
         location: this.props.location,
         entryId: this.props.entryId,
         otherVaccine: false
@@ -61,6 +62,7 @@ class PatientRecordVaccines extends React.Component {
             lot: this.props.lot,
             expiryDate: this.props.expiryDate,
             administeredUnder: this.props.administeredUnder,
+            administeredUnderTitle: this.props.administeredUnderTitle,
             location: this.props.location,
             entryId: this.props.entryId,
             otherVaccine: false
@@ -76,7 +78,8 @@ class PatientRecordVaccines extends React.Component {
         switch (type) {
             case 'dateAdmin':
                 if (value === this.state.maxDate) {
-                    temp['administeredUnder'] = `Dr. ${this.props.userInfo.lastName}`;
+                    temp['administeredUnder'] = this.props.administeredUnder || `${this.props.userInfo.firstName} ${this.props.userInfo.lastName}` ;
+                    temp['administeredUnderTitle'] = this.props.administeredUnderTitle || this.props.userInfo.title;
                     temp['dateAdmin'] = value;
                     if (temp['otherVaccine']) {
                         temp['otherVaccine'] = false;
@@ -176,7 +179,7 @@ class PatientRecordVaccines extends React.Component {
                                     </TableCell>
                                     <TableCell style={{'width': '220px'}} align="right">{this.updatedVaccine.lot}</TableCell>
                                     <TableCell style={{'width': '220px'}} align="right">{this.updatedVaccine.expiryDate}</TableCell>
-                                    <TableCell style={{'width': '220px'}} align="right">{this.updatedVaccine.administeredUnder}</TableCell>
+                                    <TableCell style={{'width': '220px'}} align="right">{this.updatedVaccine.administeredUnderTitle} {this.updatedVaccine.administeredUnder}</TableCell>
                                     <TableCell style={{'width': '220px'}} align="right">{this.updatedVaccine.location}</TableCell>
                                 </TableRow>
                         </TableBody>
@@ -255,8 +258,22 @@ class PatientRecordVaccines extends React.Component {
                                     <ExpiryDate defaultValue={this.updatedVaccine.expiryDate} className="flex-item" onChange={this.onChangeEvent} />
                                 </TableCell>
                                 <TableCell align="right">
-                                    <TextField type="text" disabled={this.state.disableAdministered} value={this.updatedVaccine.administeredUnder} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value, 'administeredUnder')} style={{width: '100px'}}/>
-                                </TableCell>
+                                    { !this.state.disableAdministered ? 
+                                    <>
+                                    <Select defaultValue={this.props.userInfo.title} onChange={(event) => this.onChangeEvent(event.target.value,'administeredUnderTitle')}>
+                                        <MenuItem value={'MD'}>MD</MenuItem>
+                                        <MenuItem value={'RN'}>RN</MenuItem>
+                                        <MenuItem value={'RPN'}>RPN</MenuItem>
+                                        <MenuItem value={'Pharm'}>Pharm</MenuItem>
+                                    </Select>
+                                    <TextField type="text" defaultValue={this.updatedVaccine.administeredUnder} className="flex-item" onChange={(event) => this.onChangeEvent(event.target.value, 'administeredUnder')} style={{width: '100px'}}/>
+                                        </>
+                                        :
+                                        <>
+                                        <TextField disabled type="text" value={`${this.updatedVaccine.administeredUnderTitle} ${this.updatedVaccine.administeredUnder}`} className="flex-item" style={{width: '100px'}}/>
+                                        </>
+                                    }
+                                    </TableCell>
                                 <TableCell align="right">
                                     <Autocomplete 
                                         options={this.props.userInfo.workLocations}
