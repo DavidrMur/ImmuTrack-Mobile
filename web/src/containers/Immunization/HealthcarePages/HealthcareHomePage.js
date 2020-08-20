@@ -36,13 +36,15 @@ class HealthcareHomePage extends Component {
             this.patientRecordTiles = (this.props.patients.slice(0,this.state.selectionCount)).map((patient) => {
                 return (
                     <Grid item xs={3} >
+                        {patient.age ? 
                         <PatientRecordTile
                     firstName={patient.firstName}
                     lastName={patient.lastName}
+                    key={patient.ohip}
                     DOB={patient.DOB}
                     OHIP={patient.ohip}
                     redirectQuery={this.props.patientInfoPending}
-                        /> </Grid>)
+                        /> : null }</Grid>)
         })}
 
         return(
@@ -59,7 +61,7 @@ class HealthcareHomePage extends Component {
                     <InputBase onChange={(e) => this.setState({addPatientOHIP: e.target.value})}
                         placeholder="Enter OHIP"
                     />
-                    <IconButton onClick={() => this.props.patientAddPending(this.state.addPatientOHIP)} type="submit" aria-label="search">
+                    <IconButton onClick={() => this.props.patientAddPending(this.state.addPatientOHIP)} aria-label="search">
                         <AddIcon />
                         <Typography variant="body1">Add Patient</Typography>
                     </IconButton>
@@ -79,26 +81,6 @@ const mapStateToProps = state => {
         patients: state.immunization.healthcare.patients
     };
 };
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        padding: '2px 4px',
-        display: 'flex',
-        alignItems: 'center',
-        width: 400,
-    },
-    input: {
-        marginLeft: theme.spacing(1),
-        flex: 1,
-    },
-    iconButton: {
-        padding: 10,
-    },
-    divider: {
-        height: 28,
-        margin: 4,
-    },
-}));
 
 const mapDispathToProps = dispatch => {
     return {

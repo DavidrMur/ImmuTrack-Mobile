@@ -132,6 +132,7 @@ class PatientVaccines extends Component {
                         location={vaccine.location}
                         userInfo={this.props.currentUser}
                         entryId={vaccine.entryId}
+                        ageAdmin={vaccine.ageAdmin}
                         key={vaccine.entryId}
                         index={i}
                         vaccines={this.props.vaccines}

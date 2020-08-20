@@ -16,6 +16,7 @@ export function* patientsPending(action){
 
 export function* patientInfoPending(action){
     try {
+        debugger;
         console.log ('Saga response');
         // let payload = {
         //     patientOHIP: action.OHIP,
@@ -56,7 +57,8 @@ export function* patientUpdateInfoPending(action){
         if (action.payload.otherVaccine) yield axios.post("http://127.0.0.1:5000/addVaccine", {vaccine: action.payload.brandName, bacteria: action.payload.bacteria});
         let response = yield axios.post("http://127.0.0.1:5000/editPatientRecord", action.payload);
         // gonna call the api again for updated page?
-        yield put (actions.patientAddEntrySuccess(action.payload))
+        yield put (actions.patientInfoPending(action.payload.ohip));
+        //yield put (actions.patientAddEntrySuccess(action.payload))
         
     } catch (error) {
         // TODO: proper error handling
@@ -104,7 +106,8 @@ export function* patientAddPending(action){
         let response = yield axios.post("http://127.0.0.1:5000/addPatient", {ohip: action.ohip});
         // TODO: fix inconsistency on backend
         response.data.OHIP = response.data.ohip;
-        yield put (actions.patientAddSuccess(response.data));
+        //yield put (actions.patientAddSuccess(response.data));
+        yield put (actions.patientsPending())
         
     } catch (error) {
         // TODO: proper error handling
