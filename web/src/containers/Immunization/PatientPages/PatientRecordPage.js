@@ -10,7 +10,7 @@ class PatientRecordPage extends Component {
 
     
     componentDidMount = () => {
-        this.props.patientInfoPending(this.props.userInfo.OHIP);
+        this.props.patientInfoPending(this.props.userInfo.ohip);
         this.props.retrieveVaccinesPending();
     }
     
@@ -18,6 +18,7 @@ class PatientRecordPage extends Component {
 
         return(
             <div className={'background'}>
+                {this.props.currentPatient.age ? 
                 <PatientDisplayTile
                     key={this.props.currentPatient.id}
                     id={this.props.currentPatient.id}
@@ -25,7 +26,9 @@ class PatientRecordPage extends Component {
                     lastName={this.props.currentPatient.lastName}
                     DOB={this.props.currentPatient.DOB}
                     OHIP={this.props.currentPatient.OHIP}
-                />
+                    age={this.props.currentPatient.age && this.props.currentPatient.age.years && this.props.currentPatient.age.months && this.props.currentPatient.age.years > 1 ? `${this.props.currentPatient.age.years} yr` : `${this.props.currentPatient.age.months} mo`}
+                    postalCode={this.props.currentPatient.postalCode}
+                /> : null}
                 {_.isEmpty(this.props.vaccines) ? null : <PatientVaccines displayOnly />}
             </div>
 

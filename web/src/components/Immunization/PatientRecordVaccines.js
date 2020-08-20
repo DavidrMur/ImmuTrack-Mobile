@@ -40,7 +40,7 @@ class PatientRecordVaccines extends React.Component {
 
     updatedVaccine = {
         dateAdmin: this.props.dateAdmin,
-        age: 26,
+        ageAdmin: this.props.adding ? '' : this.props.ageAdmin && this.props.ageAdmin.years > 1 ? `${this.props.ageAdmin.years} yr` : `${this.props.ageAdmin.months} mo`,
         brandName: this.props.brandName,
         bacteria: this.props.bacteria || [],
         lot: this.props.lot,
@@ -55,6 +55,7 @@ class PatientRecordVaccines extends React.Component {
     onCancel = () => {
         this.updatedVaccine = {
             dateAdmin: this.props.dateAdmin,
+            ageAdmin: this.props.adding ? '' : this.props.ageAdmin && this.props.ageAdmin.years > 1 ? `${this.props.ageAdmin.years} yr` : `${this.props.ageAdmin.months} mo`,
             brandName: this.props.brandName,
             bacteria: this.props.bacteria || [],
             lot: this.props.lot,
@@ -168,7 +169,7 @@ class PatientRecordVaccines extends React.Component {
                         <TableBody>
                                 <TableRow>
                                     <TableCell style={{'width': '220px'}} align="left">{this.updatedVaccine.dateAdmin}</TableCell>
-                                    <TableCell style={{'width': '120px'}} align="right">{this.updatedVaccine.age}</TableCell>
+                                    <TableCell style={{'width': '120px'}} align="right">{this.updatedVaccine.ageAdmin}</TableCell>
                                     <TableCell style={{'width': '220px'}} align="right">{this.updatedVaccine.brandName}</TableCell>
                                     <TableCell style={{'width': '220px'}} align="right">
                                         <BacteriaList vaccine={this.updatedVaccine.brandName} bacteria={this.props.bacteria} vaccineGroups={this.props.vaccines} />

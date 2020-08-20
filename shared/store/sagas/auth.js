@@ -23,6 +23,7 @@ export function* loginPending(action){
 
 export function* signupPending(action){
     try {
+        debugger;
         console.log ('Saga response');
         let auth = yield select(getAuth);
         // auth holds relevant auth information
