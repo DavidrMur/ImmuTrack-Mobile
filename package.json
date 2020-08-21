@@ -4,7 +4,7 @@
   "description": "Both the web and mobile are using React and Node. Make sure you have node.js installed.",
   "main": "index.js",
   "scripts": {
-    "start": "npm start --prefix ./web"
+    "start": "npm install --prefix ./web && npm start --prefix ./web"
   },
   "repository": {
     "type": "git",
