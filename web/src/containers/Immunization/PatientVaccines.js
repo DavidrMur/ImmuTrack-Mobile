@@ -129,13 +129,16 @@ class PatientVaccines extends Component {
                         lot={vaccine.lot}
                         expiryDate={vaccine.expiryDate}
                         administeredUnder={vaccine.administeredUnder}
+                        administeredUnderTitle={vaccine.administeredUnderTitle}
                         location={vaccine.location}
                         userInfo={this.props.currentUser}
                         entryId={vaccine.entryId}
+                        ageAdmin={vaccine.ageAdmin}
                         key={vaccine.entryId}
                         index={i}
                         vaccines={this.props.vaccines}
-                        editable={vaccine.editable && vaccine.administeredUnder === `Dr. ${this.props.currentUser.lastName}`}
+                        // TODO : editable should just use the provider's license number
+                        editable={vaccine.editable && vaccine.administeredUnder === `${this.props.currentUser.firstName} ${this.props.currentUser.lastName}` && vaccine.administeredUnderTitle === `${this.props.currentUser.title}`}
                         displayOnly={this.props.displayOnly || this.state.downloading}
                         removeEntry={(entryId) => this.props.patientRemoveEntryPending(entryId, this.props.currentPatient.OHIP)}
                         onSubmitEvent={(payload ) => this.props.patientUpdateInfoPending({...payload, ohip: this.props.currentPatient.OHIP})}
