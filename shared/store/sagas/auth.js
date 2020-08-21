@@ -9,7 +9,7 @@ export function* loginPending(action){
     try {
         console.log ('Saga response');
         let payload = formatStateToLoginPayload(action);
-        let response = yield axios.post("http://127.0.0.1:5000/signin", payload)
+        let response = yield axios.post("https://immutrack.herokuapp.com/signin", payload)
         var object = {token: response.data.token, timestamp: new Date().getTime()}
         localStorage.setItem('jwtToken', JSON.stringify(object));
         localStorage.setItem('loggedIn', true);
@@ -31,7 +31,7 @@ export function* signupPending(action){
         console.log(auth);
         let payload = formatStateToSignupPayload(auth);
         console.log(payload);
-        let response = yield axios.post("http://127.0.0.1:5000/signup",payload)
+        let response = yield axios.post("https://immutrack.herokuapp.com/signup",payload)
         yield put (actions.loginSuccess(response.data))
     } catch (error) {
         console.log('Saga Error')
@@ -43,7 +43,7 @@ export function* verifyPasswordPending(action){
     try {
         console.log ('Saga response');
         let payload = formatStateToVerifyPasswordPayload(action.payload);
-        let response = yield axios.post("http://127.0.0.1:5000/verifyChangePassword",payload)
+        let response = yield axios.post("https://immutrack.herokuapp.com/verifyChangePassword",payload)
         localStorage.setItem('jwtToken', response.data.token);
         yield put (actions.loginSuccess(response.data))
     } catch (error) {
@@ -55,7 +55,7 @@ export function* verifyPasswordPending(action){
 export function* changePasswordPending(action){
     try {
         console.log ('Saga response');
-        let response = yield axios.post("http://127.0.0.1:5000/changePassword",action.payload)
+        let response = yield axios.post("https://immutrack.herokuapp.com/changePassword",action.payload)
         yield put (actions.loginSuccess(response.data))
     } catch (error) {
         console.log('Saga Error')
