@@ -21,7 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7cab8b85-8baf-4a8f-b4a9-2193137b543b" name="Default Changelist" comment="Styling of add patient function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/containers/Immunization/HealthcarePages/HealthcareHomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Auth/SignupPage/SignupPageHealthcare.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Auth/SignupPage/SignupPageHealthcare.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,19 +64,6 @@
       <recent name="C:\Users\camer\PycharmProjects\ImmuTrack-Frontend\web\src\containers\Immunization\HealthcarePages" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
@@ -97,7 +86,11 @@
       <workItem from="1597170336103" duration="3357000" />
       <workItem from="1597263662778" duration="1578000" />
       <workItem from="1597321683598" duration="1081000" />
-      <workItem from="1597418965470" duration="5986000" />
+      <workItem from="1597418965470" duration="6887000" />
+      <workItem from="1597453208247" duration="325000" />
+      <workItem from="1597763260273" duration="432000" />
+      <workItem from="1597935821869" duration="5217000" />
+      <workItem from="1598030182150" duration="1343000" />
     </task>
     <task id="LOCAL-00001" summary="Change Header background colour">
       <created>1596893842454</created>
@@ -146,25 +139,25 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="431" y="216" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1500.960@0.0.1500.960" timestamp="1596829492497" />
-    <state width="1458" height="255" key="GridCell.Tab.0.bottom" timestamp="1597359791665">
+    <state width="1458" height="254" key="GridCell.Tab.0.bottom" timestamp="1597961409122">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="255" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1597359791665" />
+    <state width="1458" height="254" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1597961409122" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-491.1080.1500.960@0.0.1920.1040" timestamp="1597001515558" />
-    <state width="1458" height="255" key="GridCell.Tab.0.center" timestamp="1597359791665">
+    <state width="1458" height="254" key="GridCell.Tab.0.center" timestamp="1597961409121">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="255" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1597359791665" />
+    <state width="1458" height="254" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1597961409121" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-491.1080.1500.960@0.0.1920.1040" timestamp="1597001515558" />
-    <state width="1458" height="255" key="GridCell.Tab.0.left" timestamp="1597359791664">
+    <state width="1458" height="254" key="GridCell.Tab.0.left" timestamp="1597961409118">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="255" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1597359791664" />
+    <state width="1458" height="254" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1597961409118" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-491.1080.1500.960@0.0.1920.1040" timestamp="1597001515558" />
-    <state width="1458" height="255" key="GridCell.Tab.0.right" timestamp="1597359791665">
+    <state width="1458" height="254" key="GridCell.Tab.0.right" timestamp="1597961409122">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="255" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1597359791665" />
+    <state width="1458" height="254" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1597961409121" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-491.1080.1500.960@0.0.1920.1040" timestamp="1597001515558" />
     <state x="143" y="78" key="MergeDialog" timestamp="1597321872667">
       <screen x="0" y="0" width="1500" height="960" />
@@ -182,10 +175,10 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="343" y="213" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1597428649100" />
-    <state x="558" y="394" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597428589100">
+    <state x="558" y="394" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597945289475">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="558" y="394" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1500.960@0.0.1500.960" timestamp="1597428589100" />
+    <state x="558" y="394" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1500.960@0.0.1500.960" timestamp="1597945289475" />
     <state x="714" y="427" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-491.1080.1500.960@0.0.1920.1040" timestamp="1597170886251" />
   </component>
 </project>
